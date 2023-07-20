@@ -51,4 +51,5 @@ function init() {
         $("#box-" + i).html(boxes[i]);
     }
     MathJax.typeset();
+    try { render_gSignIn(); } catch(e){}
 }

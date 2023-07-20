@@ -138,11 +138,8 @@ function next() {
         if (learnmode) {
             if (missed.length == 0) {
                 $("#main-td").html(`<h1>You've finished learn mode!</h1>`);
-                $("#bottom-btns").html(`<button style='background-color:#0668FD;border-radius:8px;border:2px solid #0668FD;padding:12px 36px;color:white;font-size:1em;'
-    }
-onclick='location.href="../mc/?learn=true"'>Study More&nbsp;&nbsp;<i class="fa-solid fa-rotate"></i></button>
-<button style='background-color:#FFF;border-radius:8px;border:2px solid #0668FD;padding:12px 36px;color:black;font-size:1em;margin-bottom:12px;'
-onclick='location.href="../"'>Return Home&nbsp;&nbsp;<i class="fa-solid fa-house"></i></button>`);
+                $("#bottom-btns").html(`<button class='btn-blue'>Study More&nbsp;&nbsp;<i class="fa-solid fa-rotate"></i></button>
+                <button onclick='location.href="../"'>Return Home&nbsp;&nbsp;<i class="fa-solid fa-house"></i></button>`);
             } else {
                 window.words = missed.slice();
                 window.defs = missedDefs.slice();
@@ -159,16 +156,12 @@ onclick='location.href="../"'>Return Home&nbsp;&nbsp;<i class="fa-solid fa-house
             allowreview = !missed.length;
             console.log(allowreview);
             if (!allowreview) {
-                $("#bottom-btns").html(`<button style='background-color:#0668FD;border-radius:8px;border:2px solid #0668FD;padding:12px 36px;color:white;font-size:1em;'
-onclick='location.reload()'>Study More&nbsp;&nbsp;<i class="fa-solid fa-rotate"></i></button>
-            <button style='background-color:#FFF;border-radius:8px;border:2px solid #0668FD;padding:12px 36px;color:black;font-size:1em;margin-bottom:12px;'
-onclick='location.href="../"'>Return Home&nbsp;&nbsp;<i class="fa-solid fa-house"></i></button> <button style='background-color:#FFF;border-radius:8px;border:2px solid #0668FD;padding:12px 36px;color:black;font-size:1em;margin-bottom:12px;'
-onclick='reviewMissed()'>Review Missed Questions&nbsp;&nbsp;<i class="fa-solid fa-rotate-right"></i></button>`);
+                $("#bottom-btns").html(`<button class='btn-blue' onclick='location.reload()'>Study More&nbsp;&nbsp;<i class="fa-solid fa-rotate"></i></button>
+            <button onclick='location.href="../"'>Return Home&nbsp;&nbsp;<i class="fa-solid fa-house"></i></button>
+            <button onclick='reviewMissed()'>Review Missed Questions&nbsp;&nbsp;<i class="fa-solid fa-rotate-right"></i></button>`);
             } else {
-                $("#bottom-btns").html(`<button style='background-color:#0668FD;border-radius:8px;border:2px solid #0668FD;padding:12px 36px;color:white;font-size:1em;'
-onclick='location.reload()'>Study More&nbsp;&nbsp;<i class="fa-solid fa-rotate"></i></button>
-<button style='background-color:#FFF;border-radius:8px;border:2px solid #0668FD;padding:12px 36px;color:black;font-size:1em;margin-bottom:12px;'
-onclick='location.href="../"'>Return Home&nbsp;&nbsp;<i class="fa-solid fa-house"></i></button>`);
+                $("#bottom-btns").html(`<button class='btn-blue' onclick='location.reload()'>Study More&nbsp;&nbsp;<i class="fa-solid fa-rotate"></i></button>
+            <button onclick='location.href="../"'>Return Home&nbsp;&nbsp;<i class="fa-solid fa-house"></i></button>`);
             }
         }
     }

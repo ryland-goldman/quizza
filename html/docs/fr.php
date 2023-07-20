@@ -65,8 +65,8 @@
   <div id="options" class="modal">
     <h2>Options</h2>
     <a rel="modal:close">
-      <button style='padding:8px;border:1px solid black;background:white;border-radius:8px;' onclick='swt()'>Start with Term</button>
-      <button style='padding:8px;border:1px solid black;background:white;border-radius:8px;' onclick='swd()'>Start with Definition</button>
+      <button class='modalbtn' onclick='swt()'>Start with Term</button>
+      <button class='modalbtn' onclick='swd()'>Start with Definition</button>
     </a>
   </div>
 
