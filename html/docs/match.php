@@ -72,6 +72,9 @@
     </div>
 
   </div>
+
+  <?php require("/var/www/html/docs/lib/footer.php"); ?>
+  
 </body>
 
 </html>
