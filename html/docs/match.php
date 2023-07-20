@@ -6,9 +6,10 @@
   <title>Match | Quizza</title>
   <?php require("/var/www/html/docs/lib/imports.php"); ?>
   <script src='https://www.quizza.org/static/scripts/match.js'></script>
-  <script>
+  <script async>
     var answers = [<?php $words = $thisClass->query("SELECT * FROM ".$type.$setID); if($words->num_rows > 0){ while($row = $words->fetch_assoc()){ echo '[`'.str_replace("\\","\\\\",$row[$type=="Set"?"Term":"Question"]).'`,`'.str_replace("\\","\\\\",$row[$type=="Set"?"Definition":"C1"]).'`],'; } } ?>[]];
     answers.pop();
+    if(answers.length < 16){ location.href = "<?php echo $className."/".$setID; ?>"; }
   </script>
 </head>
 
@@ -74,7 +75,7 @@
   </div>
 
   <?php require("/var/www/html/docs/lib/footer.php"); ?>
-  
+
 </body>
 
 </html>

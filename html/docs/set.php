@@ -146,7 +146,7 @@
       <button class='modalbtn modalbtn-first' onclick='location.href="/<?php echo $classID."/".$setID; ?>/mc"'>Multiple Choice</button>
       <button class='modalbtn' onclick='location.href="/<?php echo $classID."/".$setID; ?>/fr"'>Free Response</button>
       <button class='modalbtn' onclick='location.href="/<?php echo $classID."/".$setID; ?>/mc?learn=true"'>Learn</button>
-      <button class='modalbtn' onclick='location.href="/<?php echo $classID."/".$setID; ?>/match"'>Match</button>
+      <?php if($term_number >= 16) { ?><button class='modalbtn' onclick='location.href="/<?php echo $classID."/".$setID; ?>/match"'>Match</button><?php } ?>
     </a>
   </div>
 
