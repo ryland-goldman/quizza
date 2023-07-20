@@ -5,3 +5,7 @@ Copyright &copy; 2022-23 Ryland Goldman and Collin Wentzien
 
 ## Notice
 You must read LICENSE.md before using this repository. By continuing to use this repository, you agree to the license agreement.
+
+## Contribute
+
+Contribute by creating a pull request or submitting [issues](https://github.com/ryland-goldman/quizza/issues).
