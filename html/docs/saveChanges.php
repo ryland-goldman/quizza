@@ -21,7 +21,7 @@ if($_GET["DELETE"]=="TRUE"){ // Deleting a set
   $admin->query("DELETE FROM ".$classID."Sets WHERE ID=\"$setID\"");
   $thisClass->query("DROP TABLE IF EXISTS Archive".$type.$setID);
   $thisClass->query("ALTER TABLE ".$type.$setID." RENAME Archive".$type.$setID);
-  die("<script>location.href='../../';</script>");
+  die("<script>location.href='/".$classID."';</script>");
 } else {
   if($type == "Set"){
     $thisClass->query("DELETE FROM Set".$setID);
