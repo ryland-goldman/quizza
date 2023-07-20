@@ -46,7 +46,7 @@
 
     <div class='study-box'>
 
-      <table style='width:100%;<?php if(!isMobileDevice()) { ?>min-height:50vh;<?php } else { ?>min-height:20vh;<?php } ?>'>
+      <table>
         &nbsp;
         <tr>
           <td  style='text-align:center;' id='main-td'></td>

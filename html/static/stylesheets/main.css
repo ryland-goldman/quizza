@@ -365,3 +365,4 @@ html, body {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;background:#FFF;border-radius:8px;display:flex;
   }
   #match-table{table-layout: fixed;width: 100%;}
+  #response1, #response2, #response3, #response4 { margin: 4px; }
