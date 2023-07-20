@@ -1,0 +1,6 @@
+{
+    "require": {
+        "lcobucci/jwt": "^5.0",
+        "google/apiclient": "^2.15"
+    }
+}

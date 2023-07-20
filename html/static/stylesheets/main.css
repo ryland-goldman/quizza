@@ -1,0 +1,345 @@
+html, body {
+     height: 100%;
+     width: 100%;
+}
+ body {
+     margin: 0;
+     padding: 0;
+     background-image: url("https://www.quizza.org/static/images/diag.svg");
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-attachment: fixed;
+}
+ a, button {
+     cursor: pointer;
+     text-decoration: none;
+     color: black;
+}
+ * {
+     font-family: "Gotham";
+}
+ .terms, .defs, #title {
+     box-sizing: border-box;
+     border: 2px solid #ccc;
+     border-radius: 8px;
+     font-size: 16px;
+     font-weight: 400;
+     background-color: white;
+     padding: 12px 20px 12px 20px;
+}
+ #addInputBox, #textToSend, #qbox {
+     width: 100%;
+     box-sizing: border-box;
+     border: 2px solid #ccc;
+     border-radius: 8px;
+     font-size: 16px;
+     font-weight: 400;
+     padding: 12px 20px 12px 20px;
+}
+ #search {
+     transition: width 0.4s ease-in-out;
+     width: 10vw;
+     box-sizing: border-box;
+     border: 2px solid #ccc;
+     border-radius: 8px;
+     font-size: 16px;
+     font-weight: 400;
+     background-color: white;
+     background-image: url("https://www.quizza.org/static/images/searchicon.png");
+     background-position: 10px 10px;
+     background-repeat: no-repeat;
+     padding: 12px 20px 12px 40px;
+}
+ .submitbtn,.uploadBtn, .modalbtn {
+     transition:0.3s;
+     background:white;
+     cursor:pointer;
+     padding:8px;
+}
+ .submitbtn:hover, .uploadBtn:hover, .modalbtn:hover {
+     background: #eee!important;
+}
+ @font-face {
+     font-family: "Gotham";
+     font-weight: 400;
+     src: url("https://www.quizza.org/static/fonts/gotham-reg.ttf") format("truetype");
+}
+ @font-face {
+     font-family: "Gotham";
+     font-weight: 700;
+     src: url("https://www.quizza.org/static/fonts/gotham-bold.ttf") format("truetype");
+}
+ #frontpage-alert {
+     padding: 20px;
+     background-color: #9ac2fe;
+     color: black;
+     border-radius: 8px;
+     margin-left: 20vw;
+     margin-right: 20vw;
+     text-align: center;
+}
+ #frontpage-closebtn {
+     margin-left: 15px;
+     color: black;
+     font-weight: bold;
+     float: right;
+     font-size: 22px;
+     line-height: 20px;
+     cursor: pointer;
+     transition: 0.3s;
+}
+ #frontpage-closebtn:hover {
+     color: white;
+}
+ #frontpage-alert a {
+     text-decoration: underline;
+     color: #444;
+}
+ #top-bar {
+     top: 0;
+     width: 100%;
+     position: fixed;
+}
+ #top-bar-table-blue {
+     height: 3vh;
+     width: 100%;
+     background-color: #0668fd;
+}
+ #top-bar-table {
+     height: 3vh;
+     width: 100%;
+     background-color: white;
+}
+ #top-bar-upper-icon {
+     width: 40%;
+     text-align: right;
+     padding: 13px 20px 5px;
+}
+ #top-bar-name {
+     color: currentcolor;
+     text-decoration: none;
+}
+ #top-bar-icon-image {
+     height: 16pt;
+     border-radius: 8pt;
+}
+ @media only screen and (max-width: 600px) {
+     #top-bar-table-logo {
+         padding: 13px 20px 5px;
+         text-align: center;
+         width: 100%;
+    }
+     #titletable td {
+         text-align:center;
+         width:100%;
+    }
+     #titletable, #title-button-blue, .title-button-white {
+         width: 100%;
+    }
+     .title-button-white {
+         margin-top:4px;
+    }
+     #search {
+         width:100%;
+    }
+     #footer{
+         margin-left:32px;
+         margin-right:32px;
+    }
+     #main-content {
+         margin-left: 16px;
+         margin-right: 16px;
+    }
+    #back-link {text-align:center;}
+    .study-box {margin-left:5vw;margin-right:5vw;padding:16px;}
+    .study-box table {min-height:20vh;}
+}
+ @media only screen and (min-width: 600px) {
+     #top-bar-table-logo {
+         padding: 13px 20px 5px;
+         width: 60%;
+    }
+     #search:focus {
+         width: 30vw;
+    }
+     #main-content {
+         margin-left: 32px;
+         margin-right: 32px;
+    }
+    .study-box {margin-left:15vw;margin-right:15vw;}
+    .study-box table {min-height:50vh;padding:16px;}
+}
+ #title-button-blue, #title-button-blue-bottom {
+     background-color:#0668FD;
+     border-radius:8px;
+     border:2px solid #0668FD;
+     padding:12px 36px;
+     color:white;
+     font-size:1em;
+}
+ .title-button-white {
+     background-color:#FFF;
+     border-radius:8px;
+     border:2px solid #0668FD;
+     padding:12px 36px;
+     color:black;
+     font-size:1em;
+}
+ .title-button-red {
+     background-color:#F00;
+     border-radius:8px;
+     border:2px solid #F00;
+     padding:12px 36px;
+     color:black;
+     font-size:1em;
+}
+ #frontpage-header-large {
+     color: white;
+     text-align: center;
+}
+ #frontpage-header-small {
+     color: white;
+     margin-bottom: 5vh;
+     text-align: center;
+}
+ .subject-row {
+     background-color: rgba(240, 240, 240, 1);
+     border-radius: 8px;
+     margin-bottom: 3vh;
+}
+ .frontpage-studybtn, .class-practicebtn {
+     background-color: #0668fd;
+     border-radius: 8px;
+     border: none;
+     padding: 20px;
+     color: white;
+     font-size: 1em;
+}
+ .subject-row table, #no-items-card table {
+     padding: 6px 18px;
+     width: 100%;
+     text-align: center;
+}
+ .item-card table {
+     padding: 6px 18px;
+     width: 100%;
+}
+ .classes {
+     display: inline-block;
+     width: 100%;
+     text-align: center;
+}
+ .classes div {
+     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+     border-radius: 8px;
+     text-align: center;
+     padding: 16px;
+     display: inline-block;
+     margin: 8px;
+}
+ #footer {
+     text-align: center;
+     color: #111;
+     padding-bottom: 5vh;
+     line-height: 1.5;
+}
+ #footer a {
+     color: black;
+     text-decoration: underline;
+}
+ .item-card {
+     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+     background:#FFF;
+     border-radius:8px;
+     margin-bottom:2vh;
+}
+ .rightalign{
+     text-align:right;
+}
+ #no-items-card p {
+     text-align:center;
+}
+ .submitbtn, .uploadBtn, .modalbtn {
+     font-weight:bold;
+     padding:12px;
+     border:1px solid black;
+     border-radius:10px;
+     color:black!important;
+}
+ .submitbtn-first, .uploadBtn-first, .modalbtn-first {
+     margin-top:8px;
+     margin-bottom: 8px;
+}
+ #newSetModal a {
+     color:#101010;
+     text-decoration:underline;
+}
+ .disabled {
+    color:#888;
+    background:#EEE!important;
+    transition:0.15s;
+}
+ .enabled{
+    color:#000;
+    transition:0.15s;
+}
+ .delete-btn {
+    background-color:red;
+    border-radius:8px;
+    padding:12px;
+    border:none;
+    font-size:16px;
+}
+ .image-upload-btn {
+    background-color:#FFF;
+    border-radius:8px;
+    border:2px solid #0668FD;
+    padding:12px 36px;
+    color:black;
+    font-size:1em;
+    text-decoration:none;
+    margin-left:2px 4px;
+    float:right;
+}
+ #resultURL {
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: white;
+    padding: 12px 20px 12px 20px;
+}
+ #imgmodal-spacer {
+    width:100%;
+    height:16px;
+}
+ #imgmodal-table{
+    width:100%;
+}
+ #math a {
+    color:#0668FD!important;
+}
+.ic1, .ic2, .ic3 {
+    background:#d8707c;
+}
+.c1 {
+    background:#92c479;
+}
+.terms, .defs {
+    width: 100%;
+}
+
+        .sm{font-size:1.2em;}
+        #t {font-size:1.2em;text-align:center;}
+        #back-link {color:#0668FD;text-decoration:none;}
+
+        .study-box {box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;background:#FFF;border-radius:8px;}
+        .study-box table {width:100%;}
+        #titletable a {color:black;text-decoration:none;}
+        .study-btn-bottom {text-align:center;}
+        .btn-blue {background-color:#0668FD!important;color:white!important;}
+        .study-btn-bottom button {background-color:white;border-radius:8px;border:2px solid #0668FD;padding:12px 36px;color:black;font-size:1em;}
+        .study-btn-bottom a button {background-color:#FFF;border-radius:8px;border:2px solid #0668FD;padding:12px 36px;color:black;font-size:1em;margin-bottom:12px;}
