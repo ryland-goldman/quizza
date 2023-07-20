@@ -29,6 +29,7 @@
           <h1>
             <a href='../'>
               <?php echo $class_icon."&nbsp;&nbsp;".$setName; ?>
+            </a>
           </h1>
         </td>
       </tr>

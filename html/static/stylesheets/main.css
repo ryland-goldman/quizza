@@ -343,3 +343,12 @@ html, body {
         .btn-blue {background-color:#0668FD!important;color:white!important;}
         .study-btn-bottom button {background-color:white;border-radius:8px;border:2px solid #0668FD;padding:12px 36px;color:black;font-size:1em;}
         .study-btn-bottom a button {background-color:#FFF;border-radius:8px;border:2px solid #0668FD;padding:12px 36px;color:black;font-size:1em;margin-bottom:12px;}
+        #response{text-align:center;
+          transition: width 0.4s ease-in-out;
+          min-width: 30vw;
+          box-sizing: border-box;
+          border: 2px solid #ccc;
+          border-radius: 8px;
+          font-size: 16px;
+          font-weight: 400;
+          padding: 12px 20px 12px 20px;}
