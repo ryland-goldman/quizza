@@ -3,7 +3,9 @@
     <table id='top-bar-table<?php if($_SERVER['PHP_SELF']=="/index.php") { ?>-blue<?php } ?>'>
       <tr>
         <td id='top-bar-table-logo'>
-          <h1><img src='https://www.quizza.org/static/images/logo<?php if($_SERVER['PHP_SELF']=="/index.php") { ?>-white<?php } ?>.svg' style='height:1em;'></h1>
+          <a href='/'>
+            <h1><img src='https://www.quizza.org/static/images/logo<?php if($_SERVER['PHP_SELF']=="/index.php") { ?>-white<?php } ?>.svg' style='height:1em;'></h1>
+          </a>
         </td>
         <?php if (!isMobileDevice()) { ?><td>&nbsp;</td>
         <td id="top-bar-upper-icon">
