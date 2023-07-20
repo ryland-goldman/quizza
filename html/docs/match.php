@@ -9,7 +9,7 @@
   <script async>
     var answers = [<?php $words = $thisClass->query("SELECT * FROM ".$type.$setID); if($words->num_rows > 0){ while($row = $words->fetch_assoc()){ echo '[`'.str_replace("\\","\\\\",$row[$type=="Set"?"Term":"Question"]).'`,`'.str_replace("\\","\\\\",$row[$type=="Set"?"Definition":"C1"]).'`],'; } } ?>[]];
     answers.pop();
-    if(answers.length < 16){ location.href = "<?php echo $className."/".$setID; ?>"; }
+    if(answers.length < 16){ location.href = "<?php echo $classID."/".$setID; ?>"; }
   </script>
 </head>
 
@@ -21,7 +21,7 @@
       <tr>
         <td>
           <h1>
-            <a href='/<?php echo $className."/".$setID; ?>'>
+            <a href='/<?php echo $classID."/".$setID; ?>'>
               <?php echo $class_icon."&nbsp;&nbsp;".$setName; ?>
             </a>
           </h1>
@@ -30,7 +30,7 @@
     </table>
 
     <p id='back-link'>
-      <a href='/<?php echo $className."/".$setID; ?>'>
+      <a href='/<?php echo $classID."/".$setID; ?>'>
         <i class="fa-solid fa-arrow-left"></i> Back
       </a>
     </p>

@@ -30,7 +30,7 @@
       <tr>
         <td>
           <h1>
-            <a href='/<?php echo $className."/".$setID; ?>'>
+            <a href='/<?php echo $classID."/".$setID; ?>'>
               <?php echo $class_icon."&nbsp;&nbsp;".$setName; ?>
             </a>
           </h1>
@@ -39,7 +39,7 @@
     </table>
 
     <p id="back-link">
-      <a href='/<?php echo $className."/".$setID; ?>'>
+      <a href='/<?php echo $classID."/".$setID; ?>'>
         <i class="fa-solid fa-arrow-left"></i> Back
       </a>
     </p>
