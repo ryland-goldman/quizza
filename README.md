@@ -1,7 +1,7 @@
 # Quizza
 Copyright &copy; 2022-23 Ryland Goldman and Collin Wentzien
 
-![favicon](https://github.com/ryland-goldman/quizza/assets/48637662/4db26fb0-0b0e-4e93-8cc3-d891e32ef47d)
+![favicon-3](https://github.com/ryland-goldman/quizza/assets/48637662/00460452-b59a-4c6b-a447-14f4e0cc0b65)
 
 ## Notice
 You must read LICENSE.md before using this repository. By continuing to use this repository, you agree to the license agreement.
