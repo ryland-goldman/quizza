@@ -100,7 +100,7 @@
                   <td class='classes'>
 
                     <?php
-                    $classlist = $admin->query("SELECT * FROM Classes WHERE Subject=\"".$current_subject["i"]."\"");
+                    $classlist = $admin->query("SELECT * FROM Classes WHERE Subject=\"".$current_subject["id"]."\"");
                     if ($classlist->num_rows > 0) {
                         while ($current_class = $classlist->fetch_assoc()) { ?>
                           <div>
