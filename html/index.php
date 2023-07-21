@@ -76,12 +76,19 @@
                       <div>
                         <h3><i class='<?php echo $row["Icon"]; ?>'></i>&nbsp;&nbsp;<?php echo $row["ShortName"]; ?></h3>
                         <a href='<?php echo $row["ID"]; ?>'>
-                          <button style='background-color:#0668FD;border-radius:8px;border:none;padding:20px;color:white;font-size:1em;'>Study</button>
+                          <button class="frontpage-studybtn">Study</button>
                         </a>
                       </div><?php 
                     }
                   }
                 } ?>
+                <div>
+                  <h3><i class='fa-solid fa-lock'></i>&nbsp;&nbsp;Private Sets</h3>
+                  <a href='https://www.quizza.org/private'>
+                    <button class="frontpage-studybtn">Study</button>
+                  </a>
+                </div>
+
               </td>
             </tr>
           </table>
@@ -90,7 +97,7 @@
 
 
     <!-- All classes -->
-    <?php $subjectlist = $schooldb->query("SELECT * FROM subjects".$school);
+    <?php $subjectlist = $schooldb->query("SELECT * FROM subjects".$school." ORDER BY Name DESC");
         if ($subjectlist->num_rows > 0) { 
           while ($current_subject = $subjectlist->fetch_assoc()) { ?>
             <div class='subject-row'>
