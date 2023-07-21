@@ -72,7 +72,7 @@ html, body {
 }
  #frontpage-alert {
      padding: 20px;
-     background-color: #9ac2fe;
+     background-color: #b8f9ed;
      color: black;
      border-radius: 8px;
      margin-left: 20vw;
@@ -104,7 +104,7 @@ html, body {
  #top-bar-table-blue {
      height: 3vh;
      width: 100%;
-     background-color: #0668fd;
+     background-color: #12DCB6;
 }
  #top-bar-table {
      height: 3vh;
@@ -203,9 +203,9 @@ html, body {
      }
 }
  #title-button-blue, #title-button-blue-bottom {
-     background-color:#0668FD;
+     background-color:#12DCB6;
      border-radius:8px;
-     border:2px solid #0668FD;
+     border:2px solid #12DCB6;
      padding:12px 36px;
      color:white;
      font-size:1em;
@@ -213,7 +213,7 @@ html, body {
  .title-button-white {
      background-color:#FFF;
      border-radius:8px;
-     border:2px solid #0668FD;
+     border:2px solid #12DCB6;
      padding:12px 36px;
      color:black;
      font-size:1em;
@@ -241,7 +241,7 @@ html, body {
      margin-bottom: 3vh;
 }
  .frontpage-studybtn, .class-practicebtn {
-     background-color: #0668fd;
+     background-color: #12DCB6;
      border-radius: 8px;
      border: none;
      padding: 20px;
@@ -326,7 +326,7 @@ html, body {
  .image-upload-btn {
      background-color:#FFF;
      border-radius:8px;
-     border:2px solid #0668FD;
+     border:2px solid #12DCB6;
      padding:12px 36px;
      color:black;
      font-size:1em;
@@ -352,7 +352,7 @@ html, body {
      width:100%;
 }
  #math a {
-     color:#0668FD!important;
+     color:#12DCB6!important;
 }
  .ic1, .ic2, .ic3 {
      background:#d8707c;
@@ -371,11 +371,11 @@ html, body {
     text-align:center;
 }
  #back-link {
-    color:#0668FD;
+    color:#12DCB6;
     text-decoration:none;
 }
  #back-link a {
-    color: #0668FD!important;
+    color: #12DCB6!important;
  }
  .study-box {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -394,13 +394,13 @@ html, body {
     text-align:center;
 }
  .btn-blue {
-    background-color:#0668FD!important;
+    background-color:#12DCB6!important;
     color:white!important;
 }
  .study-btn-bottom button {
     background-color:white;
     border-radius:8px;
-    border:2px solid #0668FD;
+    border:2px solid #12DCB6;
     padding:12px 36px;
     color:black;
     font-size:1em;
@@ -408,7 +408,7 @@ html, body {
  .study-btn-bottom a button {
     background-color:#FFF;
     border-radius:8px;
-    border:2px solid #0668FD;
+    border:2px solid #12DCB6;
     padding:12px 36px;
     color:black;
     font-size:1em;
@@ -448,7 +448,7 @@ html, body {
 }
  .btn-match{
     border-radius:8px;
-    border:2px solid #0668FD;
+    border:2px solid #12DCB6;
     background-color: white;
     height:100%;
     width:100%;
