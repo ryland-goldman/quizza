@@ -360,7 +360,7 @@ html, body {
  .sm{
     font-size:1.2em;
 }
- #t {
+ #t, #t0, #t1 {
     font-size:1.2em;
     text-align:center;
 }

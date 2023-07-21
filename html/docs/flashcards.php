@@ -42,25 +42,29 @@
       </a>
     </p>
 
-    <div class='study-box'>
-      <table>
-        &nbsp;
-        <tr>
-          <td>
-            <h1 id='t'></h1>
-          </td>
-        </tr>
-      </table>
+    <div class='study-box' id='flashcard'>
+      <?php for ($i = 0; $i < 2; $i++) { ?>
+        <div class="<?php echo $i==0 ? "front" : "back"; ?>">
+          <table>
+            &nbsp;
+            <tr>
+              <td>
+                <h1 id='t<?php echo $i; ?>'></h1>
+              </td>
+            </tr>
+          </table>
 
-      <div id='bottom-btns' class='study-btn-bottom'>
-        <button onclick='reveal()' class='btn-blue'>Flip&nbsp;&nbsp;<i class="fa-solid fa-repeat"></i></button>
-        <button onclick='back()'>Back&nbsp;&nbsp;<i class="fa-solid fa-arrow-left"></i></button>
-        <button onclick='next()'>Next (<span id='complete'>--/--</span>)&nbsp;&nbsp;<i class="fa-solid fa-arrow-right"></i></button>
+          <div class='study-btn-bottom'>
+            <button onclick='reveal()' class='btn-blue'>Flip&nbsp;&nbsp;<i class="fa-solid fa-repeat"></i></button>
+            <button onclick='back()'>Back&nbsp;&nbsp;<i class="fa-solid fa-arrow-left"></i></button>
+            <button onclick='next()'>Next (<span class='complete'>--/--</span>)&nbsp;&nbsp;<i class="fa-solid fa-arrow-right"></i></button>
 
-        <a rel="modal:open" href='#options'>
-          <button  onclick='options()'>Options&nbsp;&nbsp;<i class="fa-solid fa-sliders"></i></button>
-        </a>
-      </div>
+            <a rel="modal:open" href='#options'>
+              <button  onclick='options()'>Options&nbsp;&nbsp;<i class="fa-solid fa-sliders"></i></button>
+            </a>
+          </div>
+        </div>
+      <?php } ?>
     </div>
 
     <div style='height:5vh;'>&nbsp;</div>
