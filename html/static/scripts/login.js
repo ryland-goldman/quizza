@@ -26,8 +26,9 @@ function render_gSignIn(prompt_login=false) {
     });
     google.accounts.id.renderButton(
         document.getElementById("buttonDiv"), {
-            theme: "outline",
-            size: "large"
+            theme: (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? "filled_black" : "outline",
+            size: "large",
+            text: "signin"
         }
     );
     if (mobileCheck() || prompt_login) {
