@@ -1,4 +1,4 @@
-var current_flashcard = 0;
+var current_flashcard = -1;
 var start_with_term = true;
 var is_flipped = false;
 var total = -1;
@@ -49,15 +49,11 @@ function reveal(){
     is_flipped = !is_flipped;
 }
 
-function next(){
-    if(is_flipped){
-        is_flipped = false;
-        $("#flashcard").toggleClass("front").toggleClass("back");
-        $(".front-side").toggle();
-        $(".back-side").toggle();
-    }
+function next(go_back = false){
+    if(is_flipped){ reveal(); }
 
-    current_flashcard++;
+    if(go_back) { current_flashcard--; } else { current_flashcard++; }
+
     if (current_flashcard == words.length){
         // End 
         $("#t0").removeClass("sm");
@@ -79,6 +75,8 @@ function next(){
     // Typeset LaTeX
     MathJax.typeset();
 }
+
+function back(){ next(true); }
 
 function swt(){
     var start_with_term = true;
