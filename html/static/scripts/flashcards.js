@@ -5,7 +5,7 @@ var total = -1;
 
 function init(){
     $("#back-side").hide();
-    
+
     // Make arrays in a random order
     for (var i=words.length-1; i>=0; i--){
         var j = Math.floor(Math.random()*(i+1));
@@ -41,8 +41,8 @@ function init(){
 
 function reveal(){
     $("#flashcard").toggleClass("front").toggleClass("back");
-    $("#front-side").toggle();
-    $("#back-side").toggle();
+    $(".front-side").toggle();
+    $(".back-side").toggle();
     is_flipped = !is_flipped;
 }
 
@@ -50,8 +50,8 @@ function next(){
     if(is_flipped){
         is_flipped = false;
         $("#flashcard").toggleClass("front").toggleClass("back");
-        $("#front-side").toggle();
-        $("#back-side").toggle();
+        $(".front-side").toggle();
+        $(".back-side").toggle();
     }
 
     current_flashcard++;
