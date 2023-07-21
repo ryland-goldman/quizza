@@ -198,6 +198,9 @@ html, body {
      .mt-cell{
         padding:16px;
     }
+     .back-link {
+        margin-left: 5px;
+     }
 }
  #title-button-blue, #title-button-blue-bottom {
      background-color:#0668FD;
