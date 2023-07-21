@@ -371,6 +371,9 @@ html, body {
     color:#0668FD;
     text-decoration:none;
 }
+ #back-link a {
+    color: #0668FD!important;
+ }
  .study-box {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background:#FFF;
