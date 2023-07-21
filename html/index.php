@@ -97,7 +97,7 @@
 
 
     <!-- All classes -->
-    <?php $subjectlist = $schooldb->query("SELECT * FROM subjects".$school." ORDER BY Name DESC");
+    <?php $subjectlist = $schooldb->query("SELECT * FROM subjects".$school." ORDER BY Name ASC");
         if ($subjectlist->num_rows > 0) { 
           while ($current_subject = $subjectlist->fetch_assoc()) { ?>
             <div class='subject-row'>
