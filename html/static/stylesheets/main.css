@@ -21,7 +21,7 @@ html, body {
      background-attachment: fixed;
 }
 #index-php-body {
-    background-image: var(--bgimage-home);
+    background-image: var(--bgimage-home)!important;
 }
 @media (prefers-color-scheme: dark) {
     :root {
@@ -265,7 +265,7 @@ html, body {
      text-align: center;
 }
  .subject-row {
-     background-color: rgba(240, 240, 240, 1);
+     background-color: var(--color-light);
      border-radius: 8px;
      margin-bottom: 3vh;
 }
