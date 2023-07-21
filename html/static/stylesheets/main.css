@@ -277,7 +277,7 @@ html, body {
      text-align: center;
 }
  .subject-row {
-     background-color: var(--color-light);
+     background-color: var(--color-background);
      border-radius: 8px;
      margin-bottom: 3vh;
 }
@@ -304,7 +304,7 @@ html, body {
      text-align: center;
 }
  .classes div {
-     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+     box-shadow: rgba(0, 0, 0, 0.45) 0px 5px 15px;
      border-radius: 8px;
      text-align: center;
      padding: 16px;
