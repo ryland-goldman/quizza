@@ -14,7 +14,6 @@
     words.pop();
     defs.pop();
   </script>
-  <style>*{transition:0.2s;}</style>
 
 </head>
 
