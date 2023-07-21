@@ -35,9 +35,9 @@ html, body {
 @media (prefers-color-scheme: dark) {
     :root {
         --color-text: white;
-        --color-background: #222;
+        --color-background: #202020;
         --color-theme: #085e4e;
-        --color-light: #444;
+        --color-light: #333;
         --color-alert: #042f27;
         --logo-home: url("https://www.quizza.org/static/images/logo-green-dark.svg");
         --bgimage-main: url("https://www.quizza.org/static/images/diag-dark.svg");
