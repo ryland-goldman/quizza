@@ -20,7 +20,7 @@ html, body {
      background-size: cover;
      background-attachment: fixed;
 }
-#index-php-body {
+#indexphp-body {
     background-image: var(--bgimage-home)!important;
 }
 @media (prefers-color-scheme: dark) {
