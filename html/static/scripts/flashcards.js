@@ -5,28 +5,6 @@ var total = 0;
 var f = false;
 var term_or_definition = true; // 1 = show term, 0 = show definition
 
-document.body.onkeydown = function(e) {
-    var keycode;
-    if (window.event)
-        keycode = window.event.keyCode;
-    else if (e)
-        keycode = e.which;
-    switch (keycode) {
-        case 39:
-            if (f) {
-                location.reload();
-            } else {
-                next();
-            }
-            break;
-        case 32:
-            reveal();
-            break;
-        default:
-            console.log(keycode);
-    }
-}
-
 function swt() {
     term_or_definition = true;
     cn = Math.floor(Math.random() * words.length);
@@ -127,8 +105,7 @@ onclick='location.href="../"'>Return Home&nbsp;&nbsp;<i class="fa-solid fa-house
     }
 }
 
-var backW = [];
-var backD = [];
+var backW, backD;
 var cw = "";
 var cd = "";
 
@@ -206,4 +183,27 @@ function init() {
     }
     MathJax.typeset()
     try { render_gSignIn(); } catch(e) {}
+    document.body.onkeydown = function(e) {
+        var keycode;
+        if (window.event)
+            keycode = window.event.keyCode;
+        else if (e)
+            keycode = e.which;
+        switch (keycode) {
+            case 39:
+                if (f) {
+                    location.reload();
+                } else {
+                    next();
+                }
+                break;
+            case 32:
+                reveal();
+                break;
+            default:
+                console.log(keycode);
+        }
+    }
+    window.backW = [];
+    window.backD = [];
 }
