@@ -517,3 +517,6 @@ html, body {
 .back-side {
     transform: rotateY(180deg);
 }
+.modal {
+    background: var(--color-alert)!important;
+}
