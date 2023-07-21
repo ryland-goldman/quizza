@@ -265,11 +265,11 @@ html, body {
      font-size:1em;
 }
  #frontpage-header-large {
-     color: #0a7662;
+     color: var(--color-text);
      text-align: center;
 }
  #frontpage-header-small {
-     color: #0a7662;
+     color: var(--color-text);
      margin-bottom: 5vh;
      text-align: center;
 }
