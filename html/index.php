@@ -32,6 +32,8 @@
 
         }
 
+        $("#fav").show();
+
         // attempt to render sign in button if it exists
         try {
             render_gSignIn();
