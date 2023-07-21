@@ -42,7 +42,7 @@
     }
   </script>
 </head>
-<body onload="onload()" style='background-image:url("https://www.quizza.org/static/images/diag-2.svg");'>
+<body onload="onload()" id='indexphp-body'>
 
   <?php require("/var/www/html/docs/lib/topBar.php"); ?>
   

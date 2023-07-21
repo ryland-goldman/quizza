@@ -17,7 +17,7 @@
                 <a href='https://www.quizza.org/private' id='top-bar-name'>Welcome, <?php echo $name; ?>.</a>
               </td>
               <td>
-                <img src='<?php echo $pic; ?>' id='top-bar-icon-image'>
+                <img src='<?php echo $pic; ?>' id='top-bar-icon-image<?php if($_SERVER['PHP_SELF']=="/index.php") { ?>-home<?php } ?>'>
               </td>
               <?php } ?>
             </tr>

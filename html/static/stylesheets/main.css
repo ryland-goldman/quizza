@@ -2,19 +2,46 @@ html, body {
      height: 100%;
      width: 100%;
 }
+:root {
+    --color-text: black;
+    --color-background: white;
+    --color-theme: #12DCB6;
+    --bgimage-main: url("https://www.quizza.org/static/images/diag.svg");
+    --bgimage-home: url("https://www.quizza.org/static/images/diag-2.svg");
+}
+
  body {
      margin: 0;
      padding: 0;
-     background-image: url("https://www.quizza.org/static/images/diag.svg");
+     background-image: var(--bgimage-main);
      background-position: center;
      background-repeat: no-repeat;
      background-size: cover;
      background-attachment: fixed;
 }
+#index-php-body {
+    background-image: var(--bgimage-home);
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-text: white;
+        --color-background: black;
+        --color-theme: #085e4e;
+        --bgimage-main: url("https://www.quizza.org/static/images/diag-dark.svg");
+        --bgimage-home: url("https://www.quizza.org/static/images/diag-2-dark.svg");
+    }
+    #top-bar-image-home {
+        content:url("https://www.quizza.org/static/images/logo-green-dark.svg");
+    }
+    body{
+        color: var(--color-text);
+        background-color: var(--color-background);
+    }
+}
  a, button {
      cursor: pointer;
      text-decoration: none;
-     color: black;
+     color: var(--color-text);
 }
  * {
      font-family: "Gotham";
@@ -25,7 +52,7 @@ html, body {
      border-radius: 8px;
      font-size: 16px;
      font-weight: 400;
-     background-color: white;
+     background-color: var(--color-background);
      padding: 12px 20px 12px 20px;
 }
  #addInputBox, #textToSend, #qbox {
@@ -45,7 +72,7 @@ html, body {
      border-radius: 8px;
      font-size: 16px;
      font-weight: 400;
-     background-color: white;
+     background-color: var(--color-background);
      background-image: url("https://www.quizza.org/static/images/searchicon.png");
      background-position: 10px 10px;
      background-repeat: no-repeat;
@@ -53,7 +80,7 @@ html, body {
 }
  .submitbtn,.uploadBtn, .modalbtn {
      transition:0.3s;
-     background:white;
+     background:var(--color-background);
      cursor:pointer;
      padding:8px;
 }
@@ -73,7 +100,7 @@ html, body {
  #frontpage-alert {
      padding: 20px;
      background-color: #b8f9ed;
-     color: black;
+     color: var(--color-text);
      border-radius: 8px;
      margin-left: 20vw;
      margin-right: 20vw;
@@ -81,7 +108,7 @@ html, body {
 }
  #frontpage-closebtn {
      margin-left: 15px;
-     color: black;
+     color: var(--color-text);
      font-weight: bold;
      float: right;
      font-size: 22px;
@@ -90,7 +117,7 @@ html, body {
      transition: 0.3s;
 }
  #frontpage-closebtn:hover {
-     color: white;
+     color: var(--color-background);
 }
  #frontpage-alert a {
      text-decoration: underline;
@@ -104,12 +131,12 @@ html, body {
  #top-bar-table-blue {
      height: 3vh;
      width: 100%;
-     background-color: #12DCB6;
+     background-color: var(--color-theme);
 }
  #top-bar-table {
      height: 3vh;
      width: 100%;
-     background-color: white;
+     background-color: var(--color-background);
 }
  #top-bar-upper-icon {
      width: 40%;
@@ -120,7 +147,7 @@ html, body {
      color: currentcolor;
      text-decoration: none;
 }
- #top-bar-icon-image {
+ #top-bar-icon-image, #top-bar-icon-image-home {
      height: 16pt;
      border-radius: 8pt;
 }
@@ -203,19 +230,19 @@ html, body {
      }
 }
  #title-button-blue, #title-button-blue-bottom {
-     background-color:#12DCB6;
+     background-color:var(--color-theme);
      border-radius:8px;
-     border:2px solid #12DCB6;
+     border:2px solid var(--color-theme);
      padding:12px 36px;
-     color:white;
+     color:var(--color-background);
      font-size:1em;
 }
  .title-button-white {
-     background-color:#FFF;
+     background-color:var(--color-background);
      border-radius:8px;
-     border:2px solid #12DCB6;
+     border:2px solid var(--color-theme);
      padding:12px 36px;
-     color:black;
+     color:var(--color-text);
      font-size:1em;
 }
  .title-button-red {
@@ -241,11 +268,11 @@ html, body {
      margin-bottom: 3vh;
 }
  .frontpage-studybtn, .class-practicebtn {
-     background-color: #12DCB6;
+     background-color: var(--color-theme);
      border-radius: 8px;
      border: none;
      padding: 20px;
-     color: white;
+     color: var(--color-background);
      font-size: 1em;
 }
  .subject-row table, #no-items-card table {
@@ -277,12 +304,12 @@ html, body {
      line-height: 1.5;
 }
  #footer a {
-     color: black;
+     color: var(--color-text);
      text-decoration: underline;
 }
  .item-card {
      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-     background:#FFF;
+     background:var(--color-background);
      border-radius:8px;
      margin-bottom:2vh;
 }
@@ -297,7 +324,7 @@ html, body {
      padding:12px;
      border:1px solid black;
      border-radius:10px;
-     color:black!important;
+     color:var(--color-text)!important;
 }
  .submitbtn-first, .uploadBtn-first, .modalbtn-first {
      margin-top:8px;
@@ -313,7 +340,7 @@ html, body {
      transition:0.15s;
 }
  .enabled{
-     color:#000;
+     color:var(--color-text);
      transition:0.15s;
 }
  .delete-btn {
@@ -324,11 +351,11 @@ html, body {
      font-size:16px;
 }
  .image-upload-btn {
-     background-color:#FFF;
+     background-color:var(--color-background);
      border-radius:8px;
-     border:2px solid #12DCB6;
+     border:2px solid var(--color-theme);
      padding:12px 36px;
-     color:black;
+     color:var(--color-text);
      font-size:1em;
      text-decoration:none;
      margin-left:2px 4px;
@@ -341,7 +368,7 @@ html, body {
      border-radius: 8px;
      font-size: 16px;
      font-weight: 400;
-     background-color: white;
+     background-color: var(--color-background);
      padding: 12px 20px 12px 20px;
 }
  #imgmodal-spacer {
@@ -352,7 +379,7 @@ html, body {
      width:100%;
 }
  #math a {
-     color:#12DCB6!important;
+     color:var(--color-theme)!important;
 }
  .ic1, .ic2, .ic3 {
      background:#d8707c;
@@ -371,15 +398,15 @@ html, body {
     text-align:center;
 }
  #back-link {
-    color:#12DCB6;
+    color:var(--color-theme);
     text-decoration:none;
 }
  #back-link a {
-    color: #12DCB6!important;
+    color: var(--color-theme)!important;
  }
  .study-box {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    background:#FFF;
+    background:var(--color-background);
     border-radius:8px;
     padding-bottom:12px;
 }
@@ -387,30 +414,30 @@ html, body {
     width:100%;
 }
  #titletable a {
-    color:black;
+    color:var(--color-text);
     text-decoration:none;
 }
  .study-btn-bottom {
     text-align:center;
 }
  .btn-blue {
-    background-color:#12DCB6!important;
-    color:white!important;
+    background-color:var(--color-theme)!important;
+    color:var(--color-background)!important;
 }
  .study-btn-bottom button {
-    background-color:white;
+    background-color:var(--color-background);
     border-radius:8px;
-    border:2px solid #12DCB6;
+    border:2px solid var(--color-theme);
     padding:12px 36px;
-    color:black;
+    color:var(--color-text);
     font-size:1em;
 }
  .study-btn-bottom a button {
-    background-color:#FFF;
+    background-color:var(--color-background);
     border-radius:8px;
-    border:2px solid #12DCB6;
+    border:2px solid var(--color-theme);
     padding:12px 36px;
-    color:black;
+    color:var(--color-text);
     font-size:1em;
 }
  #response{
@@ -426,7 +453,7 @@ html, body {
 }
  .finished {
     background-color: rgba(0,255,0,0.3)!important;
-     color:black!important;
+     color:var(--color-text)!important;
 }
  .selected {
     background-color: rgba(0,0,0,0.3)!important;
@@ -448,14 +475,14 @@ html, body {
 }
  .btn-match{
     border-radius:8px;
-    border:2px solid #12DCB6;
-    background-color: white;
+    border:2px solid var(--color-theme);
+    background-color: var(--color-background);
     height:100%;
     width:100%;
 }
  #content_box {
      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    background:#FFF;
+    background:var(--color-background);
     border-radius:8px;
     display:flex;
 }
