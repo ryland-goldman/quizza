@@ -78,6 +78,8 @@
           </button>
         </a>
 
+        <?php mobileBR(); ?>
+
         <?php if(!$empty_set){ ?>
           <a href='/<?php echo $classID."/".$setID; ?>/flashcards'>
             <button class='title-button-white'>Flashcards&nbsp;&nbsp;<i class="fa-solid fa-layer-group"></i></button>
