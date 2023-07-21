@@ -44,7 +44,7 @@
 
     <div class='study-box' id='flashcard'>
       <?php for ($i = 0; $i < 2; $i++) { ?>
-        <div class="<?php echo $i==0 ? "front" : "back"; ?>">
+        <div class="<?php echo $i==0 ? "front" : "back"; ?>-side">
           <table>
             &nbsp;
             <tr>
