@@ -506,6 +506,10 @@ html, body {
 }
  #response1, #response2, #response3, #response4 {
      margin: 4px;
+     border: 0px;
+     border-radius: 8px;
+     background-color: var(--color-theme);
+     color: var(--color-text);
 }
 
  #flashcard {
