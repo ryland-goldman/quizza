@@ -42,7 +42,7 @@
       </a>
     </p>
 
-    <div class='study-box' id='flashcard'>
+    <div class='study-box' id='card'>
       <?php for ($i = 0; $i < 2; $i++) { ?>
         <div class="<?php echo $i==0 ? "front" : "back"; ?>">
           <table>
