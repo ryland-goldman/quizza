@@ -381,6 +381,7 @@ html, body {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background:#FFF;
     border-radius:8px;
+    padding-bottom:12px;
 }
  .study-box table {
     width:100%;
@@ -391,7 +392,6 @@ html, body {
 }
  .study-btn-bottom {
     text-align:center;
-    margin-bottom:12px;
 }
  .btn-blue {
     background-color:#0668FD!important;
