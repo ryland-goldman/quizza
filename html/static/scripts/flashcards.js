@@ -38,12 +38,12 @@ function init(){
 }
 
 function reveal(){
-    $("#card").flip();
+    $("#flashcard").toggleClass("front").toggleClass("back");
     is_flipped = !is_flipped;
 }
 
 function next(){
-    if(is_flipped){ is_flipped = false; $("#card").flip(); }
+    if(is_flipped){ is_flipped = false; $("#flashcard").toggleClass("front").toggleClass("back"); }
 
     current_flashcard++;
     if (current_flashcard == words.length){

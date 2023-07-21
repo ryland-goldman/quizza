@@ -457,3 +457,15 @@ html, body {
  #response1, #response2, #response3, #response4 {
      margin: 4px;
 }
+
+ #flashcard {
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+.front, .back {
+    backface-visibility: hidden;
+}
+.back {
+    transform: rotateY(180deg);
+}
+  
