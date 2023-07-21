@@ -167,6 +167,9 @@ html, body {
         margin-right:5vw;
         padding:16px;
     }
+    .study-btn-bottom button {
+        width:100%;
+    }
 }
  @media only screen and (min-width: 600px) {
      #top-bar-table-logo {
