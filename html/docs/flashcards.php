@@ -35,8 +35,8 @@
       </tr>
     </table>
 
-    <p>
-      <a href='/<?php echo $classID."/".$setID; ?>' id='back-link'>
+    <p id='back-link'>
+      <a href='/<?php echo $classID."/".$setID; ?>'>
         <i class="fa-solid fa-arrow-left"></i> Back
       </a>
     </p>
