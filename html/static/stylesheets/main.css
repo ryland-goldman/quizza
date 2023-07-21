@@ -459,11 +459,7 @@ html, body {
 }
 
  #flashcard {
-    transform-style: preserve-3d;
     transition: transform 0.6s;
-}
-.front, .back {
-    backface-visibility: hidden;
 }
 .back {
     transform: rotateY(180deg);
