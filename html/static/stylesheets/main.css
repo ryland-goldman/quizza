@@ -468,4 +468,6 @@ html, body {
 .back {
     transform: rotateY(180deg);
 }
-  
+.back-side {
+    transform: rotateY(180deg);
+}

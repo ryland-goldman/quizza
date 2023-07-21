@@ -21,6 +21,9 @@ function init(){
     // Render signin button
     try { render_gSignIn(); } catch(e) {}
 
+    // Get session storage state
+    start_with_term = !sessionStorage.def;
+
     // Set key press buttons
     document.body.onkeydown = function(e) {
         var keycode;
@@ -75,6 +78,18 @@ function next(){
 
     // Typeset LaTeX
     MathJax.typeset();
+}
+
+function swt(){
+    var start_with_term = true;
+    next();
+    sessionStorage.def = false;
+}
+
+function swd(){
+    var start_with_term = false;
+    next();
+    sessionStorage.def = true;
 }
 
 /*
