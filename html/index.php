@@ -50,12 +50,14 @@
     <h1 id='frontpage-header-large'>Access Free Study Materials for <?php echo $school_shortname; ?> Students</h1>
     <p id='frontpage-header-small'>Just select your class to view study sets made by your peers, or to create your own!</p>
 
-    <!-- Updates box -->
-    <div id="frontpage-alert">
-      <span id="frontpage-closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-      <strong>Updates</strong><?php if(isMobileDevice()) { echo "<br>"; } else { echo " • "; } ?>View new Quizza features on our <a href='https://www.quizza.org/blog'>update blog</a>
-    </div>
-    <br>
+    <?php if(!isMobileDevice()) { ?>
+      <!-- Updates box -->
+      <div id="frontpage-alert">
+        <span id="frontpage-closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        <strong>Updates</strong><?php if(isMobileDevice()) { echo "<br>"; } else { echo " • "; } ?>View new Quizza features on our <a href='https://www.quizza.org/blog'>update blog</a>
+      </div>
+      <br>
+    <?php } ?>
 
 
     <?php if ($loggedIn) {
