@@ -6,6 +6,7 @@ html, body {
     --color-text: black;
     --color-background: white;
     --color-theme: #12DCB6;
+    --color-light: #CCC;
     --bgimage-main: url("https://www.quizza.org/static/images/diag.svg");
     --bgimage-home: url("https://www.quizza.org/static/images/diag-2.svg");
 }
@@ -25,8 +26,9 @@ html, body {
 @media (prefers-color-scheme: dark) {
     :root {
         --color-text: white;
-        --color-background: black;
+        --color-background: #111;
         --color-theme: #085e4e;
+        --color-light: #444;
         --bgimage-main: url("https://www.quizza.org/static/images/diag-dark.svg");
         --bgimage-home: url("https://www.quizza.org/static/images/diag-2-dark.svg");
     }
@@ -48,7 +50,7 @@ html, body {
 }
  .terms, .defs, #title {
      box-sizing: border-box;
-     border: 2px solid #ccc;
+     border: 2px solid var(--color-light);
      border-radius: 8px;
      font-size: 16px;
      font-weight: 400;
@@ -58,7 +60,7 @@ html, body {
  #addInputBox, #textToSend, #qbox {
      width: 100%;
      box-sizing: border-box;
-     border: 2px solid #ccc;
+     border: 2px solid var(--color-light);
      border-radius: 8px;
      font-size: 16px;
      font-weight: 400;
@@ -68,7 +70,7 @@ html, body {
      transition: width 0.4s ease-in-out;
      width: 10vw;
      box-sizing: border-box;
-     border: 2px solid #ccc;
+     border: 2px solid var(--color-light);
      border-radius: 8px;
      font-size: 16px;
      font-weight: 400;
@@ -364,7 +366,7 @@ html, body {
  #resultURL {
      width: 100%;
      box-sizing: border-box;
-     border: 2px solid #ccc;
+     border: 2px solid var(--color-light);
      border-radius: 8px;
      font-size: 16px;
      font-weight: 400;
@@ -445,7 +447,7 @@ html, body {
      transition: width 0.4s ease-in-out;
      min-width: 30vw;
      box-sizing: border-box;
-     border: 2px solid #ccc;
+     border: 2px solid var(--color-light);
      border-radius: 8px;
      font-size: 16px;
      font-weight: 400;
