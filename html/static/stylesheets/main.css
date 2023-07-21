@@ -9,6 +9,8 @@ html, body {
     --color-light: #CCC;
     --bgimage-main: url("https://www.quizza.org/static/images/diag.svg");
     --bgimage-home: url("https://www.quizza.org/static/images/diag-2.svg");
+    --logo-home: url("https://www.quizza.org/static/images/logo-green-2.png");
+    --logo: url("https://www.quizza.org/static/images/logo-green.png");
 }
 
  body {
@@ -23,17 +25,21 @@ html, body {
 #indexphp-body {
     background-image: var(--bgimage-home)!important;
 }
+#logo-home {
+    content: var(--logo-home);
+}
+#logo {
+    content: var(--logo);
+}
 @media (prefers-color-scheme: dark) {
     :root {
         --color-text: white;
         --color-background: #111;
         --color-theme: #085e4e;
         --color-light: #444;
+        --logo-home: url("https://www.quizza.org/static/images/logo-green-dark.svg");
         --bgimage-main: url("https://www.quizza.org/static/images/diag-dark.svg");
         --bgimage-home: url("https://www.quizza.org/static/images/diag-2-dark.svg");
-    }
-    #top-bar-image-home {
-        content:url("https://www.quizza.org/static/images/logo-green-dark.svg");
     }
     body{
         color: var(--color-text);

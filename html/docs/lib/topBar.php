@@ -4,7 +4,7 @@
       <tr>
         <td id='top-bar-table-logo'>
           <a href='/'>
-            <h1><img src='https://www.quizza.org/static/images/logo-green<?php if($_SERVER['PHP_SELF']=="/index.php") { ?>-2<?php } ?>.png' style='height:1em;'></h1>
+            <h1><img style='height:1em;' id='logo<?php if($_SERVER['PHP_SELF']=="/index.php") { ?>-home<?php } ?>'></h1>
           </a>
         </td>
         <?php if (!isMobileDevice()) { ?><td>&nbsp;</td>
@@ -17,7 +17,7 @@
                 <a href='https://www.quizza.org/private' id='top-bar-name'>Welcome, <?php echo $name; ?>.</a>
               </td>
               <td>
-                <img src='<?php echo $pic; ?>' id='top-bar-icon-image<?php if($_SERVER['PHP_SELF']=="/index.php") { ?>-home<?php } ?>'>
+                <img src='<?php echo $pic; ?>' id='top-bar-icon-image'>
               </td>
               <?php } ?>
             </tr>
