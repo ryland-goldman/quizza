@@ -42,9 +42,9 @@
       </a>
     </p>
 
-    <div class='study-box' id='flashcard'>
+    <div id='flashcard' class='front'>
       <?php for ($i = 0; $i < 2; $i++) { ?>
-        <div class="<?php echo $i==0 ? "front" : "back"; ?>-side">
+        <div class="<?php echo $i==0 ? "front" : "back"; ?>-side study-box">
           <table>
             &nbsp;
             <tr>

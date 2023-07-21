@@ -4,7 +4,7 @@ var is_flipped = false;
 var total = -1;
 
 function init(){
-    $("#back-side").hide();
+    $(".back-side").hide();
 
     // Make arrays in a random order
     for (var i=words.length-1; i>=0; i--){
