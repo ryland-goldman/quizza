@@ -52,6 +52,7 @@ function reveal(){
 function next(go_back = false){
     if(is_flipped){ reveal(); }
 
+    if(go_back && current_flashcard == 0){ return; }
     if(go_back) { current_flashcard--; } else { current_flashcard++; }
 
     if (current_flashcard == words.length){
