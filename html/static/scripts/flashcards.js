@@ -67,10 +67,8 @@ function reveal() {
 
 function next() {
     toggle = !term_or_definition;
-    if (cn !== -1) {
-        backW.push(words[cn]);
-        backD.push(defs[cn]);
-    }
+    backW.push(words[cn]);
+    backD.push(defs[cn]);
     words.splice(cn, 1);
     defs.splice(cn, 1);
     cn = Math.floor(Math.random() * words.length);
@@ -118,7 +116,6 @@ function back() {
     cd = backD.pop();
     words.push(cw);
     defs.push(cd);
-    cn = -1;
     if (term_or_definition) {
         $("#t").html(cw);
         if (cw.length > 50) {
