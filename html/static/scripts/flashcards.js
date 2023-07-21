@@ -116,6 +116,8 @@ function back() {
     toggle = !term_or_definition;
     cw = backW.pop();
     cd = backD.pop();
+    words.push(cw);
+    defs.push(cd);
     cn = -1;
     if (term_or_definition) {
         $("#t").html(cw);
