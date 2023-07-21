@@ -7,7 +7,7 @@
   <?php require("/var/www/html/docs/lib/imports.php"); ?>
 
   <!-- Other scripts -->
-  <script async>var loggedIn = <?php echo $loggedIn; ?>;</script>
+  <script async>var loggedIn = <?php if($loggedIn==true){echo "true";} else {echo "false";} ?>;</script>
   <script async>var classID = "<?php echo $classID;?>";</script>
   <script src="https://www.quizza.org/static/scripts/class.js"></script>
 
