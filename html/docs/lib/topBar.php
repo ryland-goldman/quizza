@@ -4,7 +4,7 @@
       <tr>
         <td id='top-bar-table-logo'>
           <a href='/'>
-            <h1><img src='https://www.quizza.org/static/images/logo-green.svg' style='height:1em;'></h1>
+            <h1><img src='https://www.quizza.org/static/images/logo-green.png' style='height:1em;'></h1>
           </a>
         </td>
         <?php if (!isMobileDevice()) { ?><td>&nbsp;</td>

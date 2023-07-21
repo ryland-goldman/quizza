@@ -17,5 +17,5 @@
   <!-- Metadata -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <meta name="theme-color" content="#0668FD" />
+  <meta name="theme-color" content="#12DCB6" />
   <?php if ($loggedIn == false) { ?><meta content="117895756240-ujiuojlsbtruthgqnghnu215d2hn7flp.apps.googleusercontent.com" name="google-signin-client_id" /><?php } ?>
