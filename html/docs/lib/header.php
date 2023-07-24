@@ -2,10 +2,10 @@
 require "/var/www/html/docs/lib/login-endpoint/header.php";
 $sql_db_password =  trim(file_get_contents("/var/www/sql.privkey"));
 $school = 			array_shift((explode('.', $_SERVER['HTTP_HOST'])));
-$admin = 			new mysqli("localhost", "quizza", $sql_db_password, "Admin".$school);
-$schooldb = 		new mysqli("localhost","quizza", $sql_db_password, "Schools");
-try { $school_shortname = $schooldb->query("SELECT * FROM main WHERE id=\"$school\"")->fetch_assoc()["shortname"]; }
+try { $admin = 			new mysqli("localhost", "quizza", $sql_db_password, "Admin".$school); }
 catch (Exception $e) { require("/var/www/html/404.php"); }
+$schooldb = 		new mysqli("localhost","quizza", $sql_db_password, "Schools");
+$school_shortname = $schooldb->query("SELECT * FROM main WHERE id=\"$school\"")->fetch_assoc()["shortname"];
 
 function isMobileDevice() { return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]); }
 function mobileBR() { if(isMobileDevice()) { echo "<br><br>"; } }
@@ -26,7 +26,7 @@ if(isset($classID)){
 
 
 // Define current set, if exists in request
-if(isset($_GET["set"])){ $setID = $admin->real_escape_string(filter_var($_GET["set"],FILTER_SANITIZE_STRING)); }
+if(issetg($_GET["set"])){ $setID = $admin->real_escape_string(filter_var($_GET["set"],FILTER_SANITIZE_STRING)); }
 else if(isset($_POST["set"])){ $setID = $admin->real_escape_string(filter_var($_POST["set"],FILTER_SANITIZE_STRING)); }
 
 // Get set information
