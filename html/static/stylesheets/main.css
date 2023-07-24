@@ -243,7 +243,7 @@ html, body {
         margin-left: 5px;
      }
 }
- #title-button-blue, #title-button-blue-bottom {
+ #title-button-blue, #title-button-blue-bottom, #button-404 {
      background-color:var(--color-theme);
      border-radius:8px;
      border:2px solid var(--color-theme);
@@ -524,4 +524,15 @@ html, body {
 }
 .modal {
     background: var(--color-alert)!important;
+}
+#title-404 {
+    font-size: 200pt;
+    margin: 0px;
+}
+#title-404, #button-404, #body-404 {
+    text-align: center;
+}
+#body-404 {
+    background-image: var(--bgimage-home)!important;
+    color: var(--color-text)!important;
 }
