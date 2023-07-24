@@ -9,12 +9,14 @@
 </head>
 
 <body id='body-404'>
-
-  <h1 id='title-404'>404</h1>
-	<a href='https://www.quizza.org/'>
-		<button id='button-404'>Home</button>
-	</a>
-
+	<div id='outside-404'>
+		<div id='inside-404'>
+		  <h1 id='title-404'>404</h1>
+			<a href='https://www.quizza.org/'>
+				<button id='button-404'>Home</button>
+			</a>
+		</div>
+	</div>
 </body>
 
 </html>

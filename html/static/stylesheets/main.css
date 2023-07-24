@@ -251,6 +251,9 @@ html, body {
      color:white;
      font-size:1em;
 }
+ #button-404 {
+    background-color: var(--color-background)!important;
+}
  .title-button-white {
      background-color:var(--color-background);
      border-radius:8px;
@@ -535,4 +538,14 @@ html, body {
 #body-404 {
     background-image: var(--bgimage-home)!important;
     color: var(--color-text)!important;
+}
+#inside-404 {
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+#outside-404 {
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
 }
