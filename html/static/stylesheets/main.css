@@ -211,6 +211,10 @@ html, body {
     .study-btn-bottom button {
         width:100%;
     }
+    #title-404 {
+        font-size: 100pt;
+        margin: 0px;
+    }
 }
  @media only screen and (min-width: 600px) {
      #top-bar-table-logo {
@@ -242,6 +246,10 @@ html, body {
      .back-link {
         margin-left: 5px;
      }
+     #title-404 {
+        font-size: 200pt;
+        margin: 0px;
+    }
 }
  #title-button-blue, #title-button-blue-bottom, #button-404 {
      background-color:var(--color-theme);
@@ -528,10 +536,6 @@ html, body {
 }
 .modal {
     background: var(--color-alert)!important;
-}
-#title-404 {
-    font-size: 200pt;
-    margin: 0px;
 }
 #title-404, #button-404, #body-404 {
     text-align: center;
