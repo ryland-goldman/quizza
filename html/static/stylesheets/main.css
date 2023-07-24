@@ -253,6 +253,7 @@ html, body {
 }
  #button-404 {
     background-color: var(--color-background)!important;
+    color: var(--color-text)!important;
 }
  .title-button-white {
      background-color:var(--color-background);
