@@ -539,12 +539,12 @@ html, body {
     background-image: var(--bgimage-home)!important;
     color: var(--color-text)!important;
 }
-#inside-404 {
+#outside-404 {
     height: 100%;
     width: 100%;
     display: table;
 }
-#outside-404 {
+#inside-404 {
     display: table-cell;
     height: 100%;
     vertical-align: middle;
