@@ -4,7 +4,8 @@ $sql_db_password =  trim(file_get_contents("/var/www/sql.privkey"));
 $school = 			array_shift((explode('.', $_SERVER['HTTP_HOST'])));
 $admin = 			new mysqli("localhost", "quizza", $sql_db_password, "Admin".$school);
 $schooldb = 		new mysqli("localhost","quizza", $sql_db_password, "Schools");
-$school_shortname = $schooldb->query("SELECT * FROM main WHERE id=\"$school\"")->fetch_assoc()["shortname"];
+try { $school_shortname = $schooldb->query("SELECT * FROM main WHERE id=\"$school\"")->fetch_assoc()["shortname"]; }
+except (Exception $e) { require("/var/www/html/404.php"); }
 
 function isMobileDevice() { return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]); }
 function mobileBR() { if(isMobileDevice()) { echo "<br><br>"; } }
@@ -15,7 +16,9 @@ else if(isset($_POST["class"]))	{ $classID = $admin->real_escape_string(filter_v
 
 // Get set information
 if(isset($classID)){
-	$thisClass = new mysqli("localhost","quizza",$sql_db_password,$school.$classID);
+	try { $thisClass = new mysqli("localhost","quizza",$sql_db_password,$school.$classID); }
+	catch (Exception $e) { require("/var/www/html/404.php"); }
+
 	$class_shortname = 	$admin->query("SELECT * FROM Classes WHERE ID='$classID'")->fetch_assoc()["ShortName"];
 	$class_longname = 	$admin->query("SELECT * FROM Classes WHERE ID='$classID'")->fetch_assoc()["LongName"];
 	$class_icon = 		"<i class='".$admin->query("SELECT * FROM Classes WHERE ID=\"$classID\"")->fetch_assoc()["Icon"]."'></i>";
@@ -28,7 +31,9 @@ else if(isset($_POST["set"])){ $setID = $admin->real_escape_string(filter_var($_
 
 // Get set information
 if(isset($setID)) {
-	$type = 			$admin->query("SELECT * FROM ".$classID."Sets WHERE ID=\"$setID\"")->fetch_assoc()["Type"];
+	try { $type = $admin->query("SELECT * FROM ".$classID."Sets WHERE ID=\"$setID\"")->fetch_assoc()["Type"]; }
+	catch (Exception $e) { require("/var/www/html/404.php"); }
+
 	$creator = 			$admin->query("SELECT * FROM ".$classID."Sets WHERE ID=\"$setID\"")->fetch_assoc()["Creator"];
 	$setName = 			$admin->query("SELECT * FROM ".$classID."Sets WHERE ID=$setID")->fetch_assoc()["Name"];
 
