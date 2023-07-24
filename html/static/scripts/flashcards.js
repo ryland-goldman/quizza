@@ -36,6 +36,9 @@ function init(){
             case 32:
                 reveal();
                 break;
+            case 37:
+                back();
+                break;
             default:
                 console.log(keycode);
         }
