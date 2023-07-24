@@ -5,7 +5,7 @@ $school = 			array_shift((explode('.', $_SERVER['HTTP_HOST'])));
 $admin = 			new mysqli("localhost", "quizza", $sql_db_password, "Admin".$school);
 $schooldb = 		new mysqli("localhost","quizza", $sql_db_password, "Schools");
 try { $school_shortname = $schooldb->query("SELECT * FROM main WHERE id=\"$school\"")->fetch_assoc()["shortname"]; }
-except (Exception $e) { require("/var/www/html/404.php"); }
+catch (Exception $e) { require("/var/www/html/404.php"); }
 
 function isMobileDevice() { return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]); }
 function mobileBR() { if(isMobileDevice()) { echo "<br><br>"; } }
