@@ -29,27 +29,28 @@ if(isset($classID)){
 if(isset($_GET["set"])){ $setID = $admin->real_escape_string(filter_var($_GET["set"],FILTER_SANITIZE_STRING)); }
 else if(isset($_POST["set"])){ $setID = $admin->real_escape_string(filter_var($_POST["set"],FILTER_SANITIZE_STRING)); }
 
+// Leave if adding new set
+if($setId == "addSet"){ require("/var/www/html/docs/addSet.php"); die(); }
+
 // Get set information
 if(isset($setID)) {
-	if( $setID != "addSet" ){
-		try { $type = $admin->query("SELECT * FROM ".$classID."Sets WHERE ID=\"$setID\"")->fetch_assoc()["Type"]; }
-		catch (Exception $e) { require("/var/www/html/404.php"); }
+	try { $type = $admin->query("SELECT * FROM ".$classID."Sets WHERE ID=\"$setID\"")->fetch_assoc()["Type"]; }
+	catch (Exception $e) { require("/var/www/html/404.php"); }
 
-		$creator = 			$admin->query("SELECT * FROM ".$classID."Sets WHERE ID=\"$setID\"")->fetch_assoc()["Creator"];
-		$setName = 			$admin->query("SELECT * FROM ".$classID."Sets WHERE ID=$setID")->fetch_assoc()["Name"];
+	$creator = 			$admin->query("SELECT * FROM ".$classID."Sets WHERE ID=\"$setID\"")->fetch_assoc()["Creator"];
+	$setName = 			$admin->query("SELECT * FROM ".$classID."Sets WHERE ID=$setID")->fetch_assoc()["Name"];
 
-		$type = $admin->real_escape_string(filter_var($type,FILTER_SANITIZE_STRING));
-		$creator = $admin->real_escape_string(filter_var($creator,FILTER_SANITIZE_STRING));
-		$setName = $admin->real_escape_string(filter_var($setName,FILTER_SANITIZE_STRING));
+	$type = $admin->real_escape_string(filter_var($type,FILTER_SANITIZE_STRING));
+	$creator = $admin->real_escape_string(filter_var($creator,FILTER_SANITIZE_STRING));
+	$setName = $admin->real_escape_string(filter_var($setName,FILTER_SANITIZE_STRING));
 
-		$editable = $loggedIn;
-		if($loggedIn){
-			// Check for edit permissions. When $creator is blank, it is a public set.
-			if($email !== $creator && $creator !== ""){ $editable = false; }
-		}
-
-	    $empty_set = $thisClass->query("SELECT * FROM ".$type.$setID)->num_rows == 0;
+	$editable = $loggedIn;
+	if($loggedIn){
+		// Check for edit permissions. When $creator is blank, it is a public set.
+		if($email !== $creator && $creator !== ""){ $editable = false; }
 	}
+
+    $empty_set = $thisClass->query("SELECT * FROM ".$type.$setID)->num_rows == 0;
 }
 
 ?>
