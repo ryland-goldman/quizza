@@ -159,7 +159,7 @@ function next() {
     $("#response3").html("");
     $("#response4").html("");
     $("#main-td").html(`<h1 id='t'></h1>
-                        <div id='mc-div-outer'><div id='mc-div-inner'><button id='response1' onclick='submit(a1)'></button><br><button id='response2' onclick='submit(a2)'></button><br><button id='response3' onclick='submit(a3)'></button><br><button id='response4' onclick='submit(a4)'></button></div></div>`);
+                        <div id='mc-div-outer'><div id='mc-div-inner'><button id='response1' onclick='submit(a1)'></button><button id='response2' onclick='submit(a2)'></button><button id='response3' onclick='submit(a3)'></button><button id='response4' onclick='submit(a4)'></button></div></div>`);
     $("#sbtn").hide();
     $("#t").css({
         color: "black"
@@ -276,7 +276,7 @@ function init() {
         }
     });
     $("#main-td").html(`<h1 id='t'></h1>
-  <div id='mc-div-outer'><div id='mc-div-inner'><button id='response1' onclick='submit(a1)'></button><br><button id='response2' onclick='submit(a2)'></button><br><button id='response3' onclick='submit(a3)'></button><br><button id='response4' onclick='submit(a4)'></button></div></div>`);
+  <div id='mc-div-outer'><div id='mc-div-inner'><button id='response1' onclick='submit(a1)'></button><button id='response2' onclick='submit(a2)'></button><button id='response3' onclick='submit(a3)'></button><button id='response4' onclick='submit(a4)'></button></div></div>`);
     $("#sbtn").hide();
     if (sessionStorage.def == "true") {
         term_or_definition = false;

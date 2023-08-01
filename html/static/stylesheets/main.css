@@ -166,6 +166,9 @@ html, body {
      border-radius: 8pt;
 }
  @media only screen and (max-width: 600px) {
+    #response1, #response2, #response3, #response4 {
+         margin-bottom: 4px;
+    }
      #top-bar-table-logo {
          padding: 13px 20px 5px;
          text-align: center;
@@ -217,6 +220,15 @@ html, body {
     }
 }
  @media only screen and (min-width: 600px) {
+    #mc-div-outer {
+        display: inline-flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+     #mc-div-inner {
+        display: flex;
+        flex-direction: column;
+     }
      #top-bar-table-logo {
          padding: 13px 20px 5px;
          width: 60%;
@@ -516,15 +528,6 @@ html, body {
     table-layout: fixed;
     width: 100%;
 }
- #mc-div-outer {
-    display: inline-flex;
-    flex-direction: row;
-    justify-content: center;
-}
- #mc-div-inner {
-    display: flex;
-    flex-direction: column;
- }
  #response1, #response2, #response3, #response4 {
      margin: 4px;
      border: 0px;
