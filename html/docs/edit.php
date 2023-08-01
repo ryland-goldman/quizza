@@ -183,7 +183,7 @@ if($email !== $creator && $creator !== ""){ die("<script>alert('This set can onl
 
     <div id='image' class='modal'>
       <h2>Image Upload</h2>
-      <form action="/docs/imageUpload.php" method="post" enctype="multipart/form-data">
+      <form action="" method="post" enctype="multipart/form-data">
         <table id='imgmodal-table'>
           <tr>
             <td>

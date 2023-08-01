@@ -119,7 +119,7 @@ function convertToBase64(file) {
     else {alert("Image type not supported."); return; }
     reader.onload = function(e){
     $.ajax({
-        url: 'https://media.quizza.org/',
+        url: 'https://www.quizza.org/docs/imageUpload.php',
         type: 'POST',
         data: {file: e.target.result, extension: ext, auth: google_auth},
         success: function(response) {
