@@ -8,6 +8,7 @@ html, body {
     --color-theme: #0fbd9d;
     --color-light: #FFF;
     --color-light-text: #333;
+    --color-btn-hover: #eee;
     --bgimage-main: url("https://www.quizza.org/static/images/diag-light.svg");
     --bgimage-home: url("https://www.quizza.org/static/images/diag-theme-light.svg");
     --logo-home: url("https://www.quizza.org/static/images/logo-white.png");
@@ -38,6 +39,7 @@ html, body {
         --color-text: white;
         --color-background: #202020;
         --color-theme: #085e4e;
+        --color-btn-hover: #333;
         --color-light: #333;
         --color-light-text: #CCC;
         --color-alert: #042f27;
@@ -110,7 +112,7 @@ html, body {
     margin-block-start: 0;
 }
  .submitbtn:hover, .uploadBtn:hover, .modalbtn:hover {
-     background: #eee!important;
+     background: var(--color-btn-hover)!important;
 }
  @font-face {
      font-family: "Gotham";
@@ -498,7 +500,7 @@ html, body {
      background: rgba(0,0,0,0);
      min-width: 30vw;
      box-sizing: border-box;
-     border: 2px solid var(--color-theme);
+     border: 2px solid #AAA;
      border-radius: 8px;
      font-size: 16px;
      font-weight: 400;
@@ -564,7 +566,7 @@ html, body {
     transform: rotateY(180deg);
 }
 .modal {
-    background: var(--color-alert)!important;
+    background: var(--color-theme)!important;
 }
 #title-404, #button-404, #body-404 {
     text-align: center;
