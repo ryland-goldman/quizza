@@ -280,11 +280,11 @@ html, body {
      font-size:1em;
 }
  #frontpage-header-large {
-     color: var(--color-text);
+     color: var(--color-light-text);
      text-align: center;
 }
  #frontpage-header-small {
-     color: var(--color-text);
+     color: var(--color-light-text);
      margin-bottom: 5vh;
      text-align: center;
 }
