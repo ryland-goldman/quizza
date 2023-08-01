@@ -7,8 +7,8 @@ html, body {
     --color-background: white;
     --color-theme: #0fbd9d;
     --color-light: #FFF;
-    --color-light-text: #333;
-    --color-btn-hover: #eee;
+    --color-light-text: #bbb;
+    --color-btn-hover: #ccc;
     --bgimage-main: url("https://www.quizza.org/static/images/diag-light.svg");
     --bgimage-home: url("https://www.quizza.org/static/images/diag-theme-light.svg");
     --logo-home: url("https://www.quizza.org/static/images/logo-white.png");
@@ -39,7 +39,7 @@ html, body {
         --color-text: white;
         --color-background: #202020;
         --color-theme: #085e4e;
-        --color-btn-hover: #333;
+        --color-btn-hover: #444;
         --color-light: #333;
         --color-light-text: #CCC;
         --color-alert: #042f27;
