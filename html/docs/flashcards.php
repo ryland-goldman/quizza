@@ -41,7 +41,7 @@
       </tr>
     </table>
 
-    <div id='flashcard' class='front'>
+    <div id='flashcard' class='front' style='transition: transform 0.6s;'>
       <?php for ($i = 0; $i < 2; $i++) { ?>
         <div class="<?php echo $i==0 ? "front" : "back"; ?>-side study-box">
           <p class='complete-parent'><span class="complete">2/80</span></p>
