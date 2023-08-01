@@ -60,20 +60,21 @@
     <?php } ?>
 
 
-    <?php if ($loggedIn) {
-      $favorites = $admin->query("SELECT * FROM Favorites WHERE User=\"$email\"");
-      if ($favorites->num_rows > 0) { ?>
-        <!-- Favorite classes -->
-        <div class='subject-row'>
-          <table>
-            <tr id='fav-H'>
-              <td>
-                <h2><i class="fa-solid fa-star"></i> My Classes <i class="fa-solid fa-caret-down"></i></h2>
-              </td>
-            </tr>
-            <tr id='fav-B'>
-              <td class='classes'>
-                <?php while ($favorite = $favorites->fetch_assoc()) {
+    <?php if ($loggedIn) { ?>
+      <!-- Favorite classes -->
+      <div class='subject-row'>
+        <table>
+          <tr id='fav-H'>
+            <td>
+              <h2><i class="fa-solid fa-star"></i> My Classes <i class="fa-solid fa-caret-down"></i></h2>
+            </td>
+          </tr>
+          <tr id='fav-B'>
+            <td class='classes'>
+              <?php 
+              $favorites = $admin->query("SELECT * FROM Favorites WHERE User=\"$email\"");
+              if ($favorites->num_rows > 0) {
+                 while ($favorite = $favorites->fetch_assoc()) {
                   $classes = $admin->query("SELECT * FROM Classes WHERE ID=\"" . $favorite["ID"] . "\"");
                   if ($classes->num_rows > 0) {
                     while ($row = $classes->fetch_assoc()) { ?>
@@ -86,18 +87,19 @@
                     }
                   }
                 } ?>
-                <div>
-                  <h3><i class='fa-solid fa-lock'></i>&nbsp;&nbsp;Private Sets</h3>
-                  <a href='https://www.quizza.org/private'>
-                    <button class="frontpage-studybtn">Study</button>
-                  </a>
-                </div>
+              <?php } ?>
+              <div>
+                <h3><i class='fa-solid fa-lock'></i>&nbsp;&nbsp;Private Sets</h3>
+                <a href='https://www.quizza.org/private'>
+                  <button class="frontpage-studybtn">Study</button>
+                </a>
+              </div>
 
-              </td>
-            </tr>
-          </table>
-        </div>
-    <?php } } ?>
+            </td>
+          </tr>
+        </table>
+      </div>
+    <?php } ?>
 
 
     <!-- All classes -->
