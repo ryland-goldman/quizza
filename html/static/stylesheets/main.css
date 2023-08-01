@@ -7,8 +7,8 @@ html, body {
     --color-background: white;
     --color-theme: #0fbd9d;
     --color-light: #FFF;
-    --color-light-text: #bbb;
-    --color-btn-hover: #ccc;
+    --color-light-text: #444;
+    --color-btn-hover: #bbb;
     --bgimage-main: url("https://www.quizza.org/static/images/diag-light.svg");
     --bgimage-home: url("https://www.quizza.org/static/images/diag-theme-light.svg");
     --logo-home: url("https://www.quizza.org/static/images/logo-white.png");
@@ -283,7 +283,7 @@ html, body {
      border-radius:8px;
      border:2px solid var(--color-theme);
      padding:12px 36px;
-     color:white;
+     color:var(--color-text);
      font-size:1em;
 }
  #button-404 {
@@ -325,7 +325,7 @@ html, body {
      border-radius: 8px;
      border: none;
      padding: 20px;
-     color: white;
+     color: var(--color-text);
      font-size: 1em;
 }
  .subject-row table, #no-items-card table {
