@@ -24,6 +24,12 @@ if($email !== $creator && $creator !== ""){ die("<script>alert('This set can onl
 
   <div id='main-content'>
 
+    <p id='back-link'>
+      <a href='/<?php echo $classID."/".$setID; ?>'>
+        <i class="fa-solid fa-arrow-left"></i> Back
+      </a>
+    </p>
+
     <table id='titletable'>
       <tr>
         <td>

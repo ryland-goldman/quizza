@@ -41,6 +41,13 @@
   <?php require("/var/www/html/docs/lib/topBar.php"); ?>
 
   <div id='main-content'>
+
+    <p id='back-link'>
+      <a href='/<?php echo $classID."/".$setID; ?>'>
+        <i class="fa-solid fa-arrow-left"></i> Back
+      </a>
+    </p>
+    
     <table>
       <tr>
         <td>
@@ -52,12 +59,6 @@
         </td>
       </tr>
     </table>
-
-    <p id='back-link'>
-      <a href='/<?php echo $classID."/".$setID; ?>'>
-        <i class="fa-solid fa-arrow-left"></i> Back
-      </a>
-    </p>
 
     <div class='study-box'>
 

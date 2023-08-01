@@ -59,6 +59,12 @@
 
   <div id='main-content'>
 
+    <p id='back-link'>
+      <a href='/<?php echo $classID; ?>'>
+        <i class="fa-solid fa-arrow-left"></i> Back
+      </a>
+    </p>
+
     <table id='titletable'>
       <tr>
         <td>
@@ -68,12 +74,6 @@
         </td>
       </tr>
     </table>
-
-    <p id='back-link'>
-      <a href='/<?php echo $classID."/".$setID; ?>'>
-        <i class="fa-solid fa-arrow-left"></i> Back
-      </a>
-    </p>
 
     <p>
         <a href='/<?php echo $classID."/".$setID; ?>/edit'>
