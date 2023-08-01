@@ -44,6 +44,7 @@
     <div id='flashcard' class='front'>
       <?php for ($i = 0; $i < 2; $i++) { ?>
         <div class="<?php echo $i==0 ? "front" : "back"; ?>-side study-box">
+          <p class='complete-parent'><span class="complete">2/80</span></p>
           <table>
             &nbsp;
             <tr>

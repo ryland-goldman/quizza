@@ -98,6 +98,16 @@ html, body {
      cursor:pointer;
      padding:8px;
 }
+.complete {
+    border-bottom: 1px solid #AAA;
+    padding: 8px;
+    width: 100%;
+}
+.complete-parent{
+    text-align: center;
+    margin-block-end: 0;
+    margin-block-start: 0;
+}
  .submitbtn:hover, .uploadBtn:hover, .modalbtn:hover {
      background: #eee!important;
 }
@@ -448,7 +458,7 @@ html, body {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background:var(--color-background);
     border-radius:8px;
-    padding-bottom:12px;
+    padding-bottom:1em;
 }
  .study-box table {
     width:100%;
