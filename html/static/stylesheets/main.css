@@ -550,7 +550,7 @@ html, body {
 }
 }
 
- #flashcard {
+ #flashcard, .front, .back {
     transition: transform 0.6s;
 }
 .back {
