@@ -30,7 +30,7 @@ if(isset($_GET["set"])){ $setID = $admin->real_escape_string(filter_var($_GET["s
 else if(isset($_POST["set"])){ $setID = $admin->real_escape_string(filter_var($_POST["set"],FILTER_SANITIZE_STRING)); }
 
 // Get set information
-if(isset($setID)) {
+if(isset($setID) && !($_SERVER['PHP_SELF']=="/docs/addSet.php")) {
 	try { $type = $admin->query("SELECT * FROM ".$classID."Sets WHERE ID=\"$setID\"")->fetch_assoc()["Type"]; }
 	catch (Exception $e) { require("/var/www/html/404.php"); }
 
