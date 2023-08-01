@@ -495,6 +495,7 @@ html, body {
  #response{
     text-align:center;
      transition: width 0.4s ease-in-out;
+     background: rgba(0,0,0,0);
      min-width: 30vw;
      box-sizing: border-box;
      border: 2px solid var(--color-theme);
@@ -502,6 +503,7 @@ html, body {
      font-size: 16px;
      font-weight: 400;
      padding: 12px 20px 12px 20px;
+     color: var(--color-text);
 }
  .finished {
     background-color: rgba(0,255,0,0.3)!important;
