@@ -61,7 +61,7 @@ html, body {
 }
  .terms, .defs, #title {
      box-sizing: border-box;
-     border: 2px solid var(--color-light);
+     border: 2px solid var(--color-theme);
      border-radius: 8px;
      font-size: 16px;
      font-weight: 400;
@@ -71,7 +71,7 @@ html, body {
  #addInputBox, #textToSend, #qbox {
      width: 100%;
      box-sizing: border-box;
-     border: 2px solid var(--color-light);
+     border: 2px solid var(--color-theme);
      border-radius: 8px;
      font-size: 16px;
      font-weight: 400;
@@ -81,7 +81,7 @@ html, body {
      transition: width 0.4s ease-in-out;
      width: 10vw;
      box-sizing: border-box;
-     border: 2px solid var(--color-light);
+     border: 2px solid var(--color-theme);
      border-radius: 8px;
      font-size: 16px;
      font-weight: 400;
@@ -390,7 +390,7 @@ html, body {
  #resultURL {
      width: 100%;
      box-sizing: border-box;
-     border: 2px solid var(--color-light);
+     border: 2px solid var(--color-theme);
      border-radius: 8px;
      font-size: 16px;
      font-weight: 400;
@@ -471,7 +471,7 @@ html, body {
      transition: width 0.4s ease-in-out;
      min-width: 30vw;
      box-sizing: border-box;
-     border: 2px solid var(--color-light);
+     border: 2px solid var(--color-theme);
      border-radius: 8px;
      font-size: 16px;
      font-weight: 400;
