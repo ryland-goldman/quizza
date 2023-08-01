@@ -8,10 +8,10 @@ html, body {
     --color-theme: #0fbd9d;
     --color-light: #FFF;
     --color-light-text: #333;
-    --bgimage-main: url("https://www.quizza.org/static/images/diag.svg");
-    --bgimage-home: url("https://www.quizza.org/static/images/diag-2.svg");
-    --logo-home: url("https://www.quizza.org/static/images/logo-green-2.png");
-    --logo: url("https://www.quizza.org/static/images/logo-green.png");
+    --bgimage-main: url("https://www.quizza.org/static/images/diag-light.svg");
+    --bgimage-home: url("https://www.quizza.org/static/images/diag-theme-light.svg");
+    --logo-home: url("https://www.quizza.org/static/images/logo-white.png");
+    --logo: url("https://www.quizza.org/static/images/logo-light.png");
     --color-alert: #b8f9ed;
 }
 
@@ -41,9 +41,9 @@ html, body {
         --color-light: #333;
         --color-light-text: #CCC;
         --color-alert: #042f27;
-        --logo-home: url("https://www.quizza.org/static/images/logo-green-dark.svg");
+        --logo-home: url("https://www.quizza.org/static/images/logo-white.svg");
         --bgimage-main: url("https://www.quizza.org/static/images/diag-dark.svg");
-        --bgimage-home: url("https://www.quizza.org/static/images/diag-2-dark.svg");
+        --bgimage-home: url("https://www.quizza.org/static/images/diag-theme-dark.svg");
         --logo: url("https://www.quizza.org/static/images/logo-dark.svg");
     }
     body{
