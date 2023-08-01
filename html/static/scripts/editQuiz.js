@@ -150,3 +150,48 @@ function addTerm() {
     }
     location.href = "#pageBottom";
 }
+MathJax = {
+  tex: {
+    inlineMath: [['$$$$', '$$$$']]
+  }
+};
+
+
+function confirmDeletion(){
+  if(prompt("To delete this set, please type DELETE in the field below.").toLowerCase() == "delete"){
+    location.href="saveChanges.php?DELETE=TRUE";
+  }
+}
+
+function convertToBase64(file) {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    var mime = file.type;
+    if(mime=="image/jpeg"){ var ext = ".jpg"; }
+    else if(mime=="image/png"){ var ext = ".png"; }
+    else if(mime=="image/gif"){ var ext = ".gif"; }
+    else {alert("Image type not supported."); return; }
+    reader.onload = function(e){
+    $.ajax({
+        url: 'https://www.quizza.org/docs/imageUpload.php',
+        type: 'POST',
+        data: {file: e.target.result, extension: ext, auth: google_auth},
+        success: function(response) {
+          $("#resultURL").val(response).show();
+          $("#uploadBtn").prop("disabled",false);
+          $("#uploadBtn").text("Upload");
+          $("#info").text("Copy and paste this URL into the text box to include it in a set.");
+        }
+      });
+    }
+  }
+  $('#resultURL').click(function() { $(this).select(); }).hide();
+  $('#resultURL').focus(function() { document.execCommand('copy'); });
+  function uploadBtnClick(){
+    $("#resultURL").val("");
+    $("#uploadBtn").prop("disabled",true);
+    $("#uploadBtn").text("Uploading...");
+    event.preventDefault();
+    const fileInput = document.querySelector('input[type="file"]');
+    convertToBase64(fileInput.files[0]);
+  }

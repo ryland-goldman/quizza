@@ -133,11 +133,11 @@ function convertToBase64(file) {
   }
   $('#resultURL').click(function() { $(this).select(); }).hide();
   $('#resultURL').focus(function() { document.execCommand('copy'); });
-  $("#uploadBtn").click(function (event){
+  function uploadBtnClick(){
     $("#resultURL").val("");
     $("#uploadBtn").prop("disabled",true);
     $("#uploadBtn").text("Uploading...");
     event.preventDefault();
     const fileInput = document.querySelector('input[type="file"]');
     convertToBase64(fileInput.files[0]);
-  });
+  }

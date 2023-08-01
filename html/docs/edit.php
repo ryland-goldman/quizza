@@ -196,7 +196,7 @@ if($email !== $creator && $creator !== ""){ die("<script>alert('This set can onl
               <input type="file" name="file" id='fileUploader' style='display:flex;float:left;'>
             </td>
             <td>
-              <button id='uploadBtn' class='image-upload-btn'>Upload</button>
+              <button id='uploadBtn' onclick='uploadBtnClick()' class='image-upload-btn'>Upload</button>
             </td>
           </tr>
         </table>
