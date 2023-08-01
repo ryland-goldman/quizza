@@ -198,6 +198,7 @@ html, body {
     }
      #back-link {
         text-align:center;
+        margin-left: 8px;
     }
      .study-box {
         margin-left:5vw;

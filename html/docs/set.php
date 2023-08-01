@@ -69,6 +69,11 @@
       </tr>
     </table>
 
+    <p id='back-link'>
+      <a href='/<?php echo $classID."/".$setID; ?>'>
+        <i class="fa-solid fa-arrow-left"></i> Back
+      </a>
+    </p>
 
     <p>
         <a href='/<?php echo $classID."/".$setID; ?>/edit'>
@@ -98,12 +103,6 @@
           <?php mobileBR(); ?>
 
         <?php } ?>
-
-        <a href='/<?php echo $classID; ?>'>
-          <button class='title-button-white'>Back To Class&nbsp;&nbsp;<i class="fa-solid fa-house"></i></button>
-        </a>
-
-        <?php mobileBR(); ?>
     </p>
 
     <?php 
