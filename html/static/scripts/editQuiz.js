@@ -159,7 +159,7 @@ MathJax = {
 
 function confirmDeletion(){
   if(prompt("To delete this set, please type DELETE in the field below.").toLowerCase() == "delete"){
-    location.href="saveChanges.php?DELETE=TRUE";
+    location.href="saveChanges?DELETE=TRUE";
   }
 }
 

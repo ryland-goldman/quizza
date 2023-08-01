@@ -17,7 +17,6 @@ $admin->query("INSERT INTO EditLog VALUES ('$email','$content','$classID $setID 
 
 
 if($_GET["DELETE"]=="TRUE"){ // Deleting a set
-  $title = $admin->real_escape_string(filter_var($_POST["title"],FILTER_SANITIZE_STRING));
   $admin->query("DELETE FROM ".$classID."Sets WHERE ID=\"$setID\"");
   $thisClass->query("DROP TABLE IF EXISTS Archive".$type.$setID);
   $thisClass->query("ALTER TABLE ".$type.$setID." RENAME Archive".$type.$setID);
