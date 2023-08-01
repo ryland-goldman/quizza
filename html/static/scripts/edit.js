@@ -116,10 +116,10 @@ function convertToBase64(file) {
     if(mime=="image/jpeg"){ var ext = ".jpg"; }
     else if(mime=="image/png"){ var ext = ".png"; }
     else if(mime=="image/gif"){ var ext = ".gif"; }
-    else {alert("Image type not supported."); return; }
+    else {alert("Image type not supported."); $("#uploadBtn").text("Upload"); $("#uploadBtn").prop("disabled",false); return; }
     reader.onload = function(e){
     $.ajax({
-        url: 'https://www.quizza.org/docs/imageUpload.php',
+        url: '/docs/imageUpload.php',
         type: 'POST',
         data: {file: e.target.result, extension: ext, auth: google_auth},
         success: function(response) {
