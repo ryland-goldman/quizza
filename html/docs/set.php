@@ -89,16 +89,16 @@
           <a href='/<?php echo $classID."/".$setID; ?>/flashcards'>
             <button class='title-button-white'>Flashcards&nbsp;&nbsp;<i class="fa-solid fa-layer-group"></i></button>
           </a>
-
-          <?php mobileBR(); ?>
-
-          <button onclick='prnt()' class='title-button-white'>Print&nbsp;&nbsp;<i class="fa-solid fa-print"></i></button>
           
           <?php mobileBR(); ?>
 
           <a rel='modal:open' href="#test">
             <button class='title-button-white'>Study&nbsp;&nbsp;<i class="fa-regular fa-file-lines"></i></button>
           </a>
+          
+          <?php mobileBR(); ?>
+
+          <button onclick='prnt()' class='title-button-white'>Print&nbsp;&nbsp;<i class="fa-solid fa-print"></i></button>
 
           <?php mobileBR(); ?>
 
