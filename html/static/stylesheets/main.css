@@ -168,6 +168,7 @@ html, body {
  @media only screen and (max-width: 600px) {
     #response1, #response2, #response3, #response4 {
          margin-bottom: 4px;
+         width:80%;
     }
      #top-bar-table-logo {
          padding: 13px 20px 5px;
