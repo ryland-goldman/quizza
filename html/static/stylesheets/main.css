@@ -461,7 +461,7 @@ html, body {
 }
  .btn-blue {
     background-color:var(--color-theme)!important;
-    color:var(--color-background)!important;
+    color:var(--color-text)!important;
 }
  .study-btn-bottom button {
     background-color:var(--color-background);

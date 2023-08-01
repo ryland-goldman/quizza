@@ -127,7 +127,7 @@ function next() {
                         <div id='mc-div-outer'><div id='mc-div-inner'><button id='response1' onclick='submit(a1)'></button><<button id='response2' onclick='submit(a2)'></button><button id='response3' onclick='submit(a3)'></button><button id='response4' onclick='submit(a4)'></button></div></div>`);
     $("#sbtn").hide();
     $("#t").css({
-        color: "black"
+        color: "var(--color-text)"
     });
     cn = Math.floor(Math.random() * questions.length);
 
