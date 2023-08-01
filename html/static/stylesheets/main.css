@@ -300,7 +300,7 @@ html, body {
      border-radius:8px;
      border:2px solid #F00;
      padding:12px 36px;
-     color:black;
+     color:white;
      font-size:1em;
 }
  #frontpage-header-large {
@@ -395,6 +395,7 @@ html, body {
 }
  .delete-btn {
      background-color:red;
+     color: white;
      border-radius:8px;
      padding:12px;
      border:none;
