@@ -30,24 +30,26 @@ if(isset($_GET["set"])){ $setID = $admin->real_escape_string(filter_var($_GET["s
 else if(isset($_POST["set"])){ $setID = $admin->real_escape_string(filter_var($_POST["set"],FILTER_SANITIZE_STRING)); }
 
 // Get set information
-if(isset($setID) && !($_SERVER['PHP_SELF']=="/docs/addSet.php")) {
-	try { $type = $admin->query("SELECT * FROM ".$classID."Sets WHERE ID=\"$setID\"")->fetch_assoc()["Type"]; }
-	catch (Exception $e) { require("/var/www/html/404.php"); }
+if(isset($setID)) {
+	if( $setID != "addSet" ){
+		try { $type = $admin->query("SELECT * FROM ".$classID."Sets WHERE ID=\"$setID\"")->fetch_assoc()["Type"]; }
+		catch (Exception $e) { require("/var/www/html/404.php"); }
 
-	$creator = 			$admin->query("SELECT * FROM ".$classID."Sets WHERE ID=\"$setID\"")->fetch_assoc()["Creator"];
-	$setName = 			$admin->query("SELECT * FROM ".$classID."Sets WHERE ID=$setID")->fetch_assoc()["Name"];
+		$creator = 			$admin->query("SELECT * FROM ".$classID."Sets WHERE ID=\"$setID\"")->fetch_assoc()["Creator"];
+		$setName = 			$admin->query("SELECT * FROM ".$classID."Sets WHERE ID=$setID")->fetch_assoc()["Name"];
 
-	$type = $admin->real_escape_string(filter_var($type,FILTER_SANITIZE_STRING));
-	$creator = $admin->real_escape_string(filter_var($creator,FILTER_SANITIZE_STRING));
-	$setName = $admin->real_escape_string(filter_var($setName,FILTER_SANITIZE_STRING));
+		$type = $admin->real_escape_string(filter_var($type,FILTER_SANITIZE_STRING));
+		$creator = $admin->real_escape_string(filter_var($creator,FILTER_SANITIZE_STRING));
+		$setName = $admin->real_escape_string(filter_var($setName,FILTER_SANITIZE_STRING));
 
-	$editable = $loggedIn;
-	if($loggedIn){
-		// Check for edit permissions. When $creator is blank, it is a public set.
-		if($email !== $creator && $creator !== ""){ $editable = false; }
+		$editable = $loggedIn;
+		if($loggedIn){
+			// Check for edit permissions. When $creator is blank, it is a public set.
+			if($email !== $creator && $creator !== ""){ $editable = false; }
+		}
+
+	    $empty_set = $thisClass->query("SELECT * FROM ".$type.$setID)->num_rows == 0;
 	}
-
-    $empty_set = $thisClass->query("SELECT * FROM ".$type.$setID)->num_rows == 0;
 }
 
 ?>
