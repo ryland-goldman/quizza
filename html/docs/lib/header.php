@@ -30,7 +30,7 @@ if(isset($_GET["set"])){ $setID = $admin->real_escape_string(filter_var($_GET["s
 else if(isset($_POST["set"])){ $setID = $admin->real_escape_string(filter_var($_POST["set"],FILTER_SANITIZE_STRING)); }
 
 // Leave if adding new set
-if($setId == "addSet"){ require("/var/www/html/docs/addSet.php"); die(); }
+if($setID == "addSet"){ require("/var/www/html/docs/addSet.php"); die(); }
 
 // Get set information
 if(isset($setID)) {
@@ -38,7 +38,7 @@ if(isset($setID)) {
 	catch (Exception $e) { require("/var/www/html/404.php"); }
 
 	$creator = 			$admin->query("SELECT * FROM ".$classID."Sets WHERE ID=\"$setID\"")->fetch_assoc()["Creator"];
-	$setName = 			$admin->query("SELECT * FROM ".$classID."Sets WHERE ID=$setID")->fetch_assoc()["Name"];
+	$setName = 			$admin->query("SELECT * FROM ".$classID."Sets WHERE ID=\"$setID\"")->fetch_assoc()["Name"];
 
 	$type = $admin->real_escape_string(filter_var($type,FILTER_SANITIZE_STRING));
 	$creator = $admin->real_escape_string(filter_var($creator,FILTER_SANITIZE_STRING));
