@@ -99,7 +99,7 @@
     background-position: center center; 
     background-repeat: no-repeat; 
     background-size: contain;
-    margin-top:auto 5vh;
+    margin:auto 5vh;
 }
 #top-bar {
     box-shadow: 2px 3px 22px 0px #AAA;
