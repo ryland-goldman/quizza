@@ -78,3 +78,15 @@
 .dropdown .dropdown-menu li:active {
     background-color: #e2e2e2
 }
+#homepage-bgimage-1 {
+    width: 100%; 
+    padding: 16px; 
+    background-image: url("https://www.quizza.org/static/images/main-1.webp"); 
+    height: 40vh; 
+    background-position: center center; 
+    background-repeat: no-repeat; 
+    background-size: contain;
+}
+#top-bar {
+    box-shadow: 5px 10px 18px #888888;
+}

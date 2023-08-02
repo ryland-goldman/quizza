@@ -7,7 +7,23 @@
 	<script src='https://www.quizza.org/static/scripts/homepage.js' defer></script>
 </head>
 <body>
-	<img src='https://www.quizza.org/static/images/main-1.webp' style='width:100vw;'>
+
+  <div id='top-bar'>
+    <table id='top-bar-table'>
+      <tr>
+        <td id='top-bar-table-logo'>
+          <a href='/'>
+            <h1><img style='height:1em;' id='logo'></h1>
+          </a>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Match the height of the above bar -->
+  <div><table><tr><td style='padding:13px 20px 5px;'><h1>&nbsp;</h1></td></tr></table></div>
+
+	<div id='homepage-bgimage-1'>&nbsp;</div>
 	<div id='sep'>
 		<table>
 			<tr>
