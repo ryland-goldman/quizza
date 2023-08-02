@@ -87,7 +87,6 @@
     display: none;
     max-height: 144px;
     overflow-y: auto;
-    z-index: 9
 }
 .dropdown .dropdown-menu li {
     padding: 16px;
