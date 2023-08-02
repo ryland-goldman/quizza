@@ -4,13 +4,20 @@
     }
     #sep {
         text-align:center;
+        margin-top:5vh;
+        margin-bottom:5vh;
     }
 }
+@media only screen and (min-width: 600px) {
+    #sep {
+        margin-top:15vh;
+        margin-bottom:20vh;
+    }
+}
+
 #sep {
     margin-left:10vw;
     margin-right:10vw;
-    margin-top:15vh;
-    margin-bottom:20vh;
     border-radius:36px;
     background-color:#0fbd9d;
     color:white;
@@ -87,14 +94,12 @@
     background-color: #e2e2e2
 }
 #homepage-bgimage-1 {
-    width: 100%; 
-    padding: 16px; 
     background-image: url("https://www.quizza.org/static/images/main-1.webp"); 
     height: 40vh; 
     background-position: center center; 
     background-repeat: no-repeat; 
     background-size: contain;
-    margin-top:5vh;
+    margin-top:auto 5vh;
 }
 #top-bar {
     box-shadow: 2px 3px 22px 0px #AAA;
