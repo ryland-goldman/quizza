@@ -48,7 +48,7 @@
 				</tr>
 			</table>
 		</div>
-	<? } else { ?>
+	<?php } else { ?>
 		<div id='sep'>
 			<h1>Choose your school</h1>
 			<br>
