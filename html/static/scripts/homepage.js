@@ -10,5 +10,6 @@ $('.dropdown').click(function () {
 
 
 $('.dropdown-menu li').click(function () {
-    if($(this).attr('id')){ location.href = 'https://' + $(this).attr('id') + ".quizza.org/"; }
+    var url = 'https://' + $(this).attr('id') + ".quizza.org/";
+    if(url !== "https://.quizza.org"){ location.href = url; }
 }); 

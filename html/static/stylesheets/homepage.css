@@ -1,3 +1,16 @@
+:root {
+    --color-text: black!important;
+    --color-background: white!important;
+    --color-theme: #0fbd9d!important;
+    --color-light: #FFF!important;
+    --color-light-text: #444!important;
+    --color-btn-hover: #bbb!important;
+    --bgimage-main: url("https://www.quizza.org/static/images/diag-light.svg")!important;
+    --bgimage-home: url("https://www.quizza.org/static/images/diag-theme-light.svg")!important;
+    --logo-home: url("https://www.quizza.org/static/images/logo-white.png")!important;
+    --logo: url("https://www.quizza.org/static/images/logo-light.png")!important;
+    --color-alert: #b8f9ed;
+}
 @media only screen and (max-width: 600px) {
     .dropdown {
         font-size: 12pt!important;
