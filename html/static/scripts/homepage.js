@@ -10,5 +10,5 @@ $('.dropdown').click(function () {
 
 
 $('.dropdown-menu li').click(function () {
-  location.href = "https://" + $(this).parents('.dropdown').find('input').val() + ".quizza.org/";
+    if($(this).attr('id')){ location.href = 'https://' + $(this).attr('id') + ".quizza.org/"; }
 }); 
