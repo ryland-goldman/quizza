@@ -10,7 +10,7 @@
         padding-bottom: 32px!important;
     }
     .dropdown .dropdown-menu {
-        position: relative;
+        position: relative!important;
     }
     #homepage-bgimage-1 {
         height: 20vh; 
