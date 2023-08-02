@@ -6,12 +6,23 @@
         text-align:center;
         margin-top:5vh;
         margin-bottom:5vh;
+        overflow: auto;
+        padding-bottom: 32px;
+    }
+    .dropdown .dropdown-menu li {
+        position: relative;
+    }
+    #homepage-bgimage-1 {
+        height: 20vh; 
     }
 }
 @media only screen and (min-width: 600px) {
     #sep {
         margin-top:15vh;
         margin-bottom:20vh;
+    }
+    #homepage-bgimage-1 {
+        height: 40vh; 
     }
 }
 
@@ -27,7 +38,7 @@
     width:100%;
 }
 .dropdown {
-  width: 300px;
+  width: 100%;
   display: inline-block;
   background-color: #fff;
   border-radius: 36px;
@@ -95,7 +106,6 @@
 }
 #homepage-bgimage-1 {
     background-image: url("https://www.quizza.org/static/images/main-1.webp"); 
-    height: 40vh; 
     background-position: center center; 
     background-repeat: no-repeat; 
     background-size: contain;
