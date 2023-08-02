@@ -1,3 +1,18 @@
+#sep {
+    margin-left:10vw;
+    margin-right:10vw;
+    margin-top:15vh;
+    margin-bottom:20vh;
+    border-radius:36px;
+    background-color:#0fbd9d;
+    color:white;
+    padding:8px 32px;
+    font-size:1.75vw;
+    float:right;
+}
+#sep table {
+    width:100%;
+}
 .dropdown {
   width: 300px;
   display: inline-block;
@@ -6,18 +21,18 @@
   box-shadow: 0 0 2px rgb(204, 204, 204);
   transition: all .5s ease;
   position: relative;
-  font-size: 14px;
+  font-size:1.75vw;
   color: #474747;
   height: 100%;
-  text-align: left
+  text-align: left;
 }
 .dropdown .select {
     cursor: pointer;
     display: block;
-    padding: 10px
+    padding: 16px
 }
 .dropdown .select > i {
-    font-size: 13px;
+    font-size:1.75vw;
     color: #888;
     cursor: pointer;
     transition: all .3s ease-in-out;
@@ -51,7 +66,7 @@
     z-index: 9
 }
 .dropdown .dropdown-menu li {
-    padding: 10px;
+    padding: 16px;
     transition: all .2s ease-in-out;
     cursor: pointer
 } 

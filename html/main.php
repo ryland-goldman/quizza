@@ -8,7 +8,7 @@
 </head>
 <body>
 	<img src='https://www.quizza.org/static/images/main-1.webp' style='width:100vw;'>
-	<div style='margin-left:10vw;margin-right:10vw;border-radius:36px;background-color:#0fbd9d;color:white;'>
+	<div id='sep'>
 		<table>
 			<tr>
 				<td><h1>Choose your school</h1></td>
@@ -16,6 +16,7 @@
 			    	<div class="dropdown">
 			        	<div class="select">
 			        		<span>Select School</span>
+			        		<i class="fa-solid fa-chevron-down"></i>
 			        	</div>
 			        	<input type="hidden" name="school">
 				        <ul class="dropdown-menu">
