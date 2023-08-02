@@ -1,3 +1,4 @@
+<?php if($_SERVER['HTTP_HOST']=="www.quizza.org" || $_SERVER['HTTP_HOST'] == "quizza.org"){ require("/var/www/html/main.php"); die(); } ?>
 <?php require("/var/www/html/docs/lib/header.php");?>
 <!DOCTYPE html>
 <html>
