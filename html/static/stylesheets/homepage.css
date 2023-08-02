@@ -7,9 +7,9 @@
         margin-top:5vh;
         margin-bottom:5vh;
         overflow: auto;
-        padding-bottom: 32px;
+        padding-bottom: 32px!important;
     }
-    .dropdown .dropdown-menu li {
+    .dropdown .dropdown-menu {
         position: relative;
     }
     #homepage-bgimage-1 {
