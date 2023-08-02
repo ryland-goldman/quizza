@@ -86,7 +86,8 @@
     background-position: center center; 
     background-repeat: no-repeat; 
     background-size: contain;
+    margin-top:5vh;
 }
 #top-bar {
-    box-shadow: 5px 10px 18px #888888;
+    box-shadow: 2px 3px 22px 0px #AAA;
 }
