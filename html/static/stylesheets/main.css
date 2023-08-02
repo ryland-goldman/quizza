@@ -43,7 +43,7 @@ html, body {
         --color-light: #333;
         --color-light-text: #CCC;
         --color-alert: #042f27;
-        --logo-home: url("https://www.quizza.org/static/images/logo-white.svg");
+        --logo-home: url("https://www.quizza.org/static/images/logo-white.png");
         --bgimage-main: url("https://www.quizza.org/static/images/diag-dark.svg");
         --bgimage-home: url("https://www.quizza.org/static/images/diag-theme-dark.svg");
         --logo: url("https://www.quizza.org/static/images/logo-dark.svg");
