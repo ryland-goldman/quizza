@@ -37,7 +37,7 @@
 			        	<input type="hidden" name="school">
 				        <ul class="dropdown-menu">
 				        	<li id="lghs">Los Gatos High School</li>
-				        	<li id="lgusd">Los Gatos Union School District</li>
+				        	<li id="rjf">R.J. Fisher Middle School</li>
 				        	<li id="shs">Saratoga High School</li>
 				        	<li id="ucla">University of California, Los Angeles</li>
 				        </ul>
