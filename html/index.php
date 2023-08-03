@@ -23,9 +23,15 @@
     function onload() {
         for (var i = 0; i < subjects.length; i++) { // loop over each item
 
+            $("#"+subjects[index]+"-B").hide(); // hide the row
+
+            // get classes through AJAX
+            $.get("/docs/lib/getClass.php?subj="+subjects[index], function(d,s){
+              $("#"+subjects[index]+"-B .classes").html(d);
+            })
+
             (function(index) {
                 var row = "#" + subjects[index] + "-B";
-                $(row).hide(); // hide the row
                 $("#" + subjects[index] + "-H").click(function() {
                     $(row).toggle(); // toggle it when clicked
                 });
@@ -112,20 +118,6 @@
                 <tr id='<?php echo $current_subject["id"]; ?>-H'><td><h2 style='text-align:center;'><i class="<?php echo $current_subject["icon"]; ?>"></i> <?php echo $current_subject["name"]; ?> <i class="fa-solid fa-caret-down"></i></h2></td></tr>
                 <tr id='<?php echo $current_subject["id"]; ?>-B'>
                   <td class='classes'>
-
-                    <?php
-                    $classlist = $admin->query("SELECT * FROM Classes WHERE Subject=\"".$current_subject["id"]."\"");
-                    if ($classlist->num_rows > 0) {
-                        while ($current_class = $classlist->fetch_assoc()) { ?>
-                          <div>
-                            <h3><?php echo $current_class["ShortName"]; ?></h3>
-                            <a href='<?php echo $current_class["ID"]; ?>'>
-                              <button class='frontpage-studybtn'>Study</button>
-                            </a>
-                          </div><?php
-                        }
-                      }
-                    ?>
 
                     <?php if($current_subject["id"]=="oth"){ ?><div>
                         <!-- Private sets -->
