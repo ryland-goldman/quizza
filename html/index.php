@@ -48,7 +48,7 @@
 
     }
 
-    $(document).ready(function() { onload(); }
+    $(document).ready(function() { onload(); });
   </script>
 </head>
 <body id='indexphp-body'>
