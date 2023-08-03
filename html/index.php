@@ -6,50 +6,6 @@
   <title>Quizza | Free Study Tools For <?php echo $school_shortname; ?> Students</title>
 
   <?php require("/var/www/html/docs/lib/imports.php"); ?>
-
-  <!-- Inline scripts -->
-  <script defer>
-    // list of all subjects
-    var subjects = [<?php 
-    $subjects = $schooldb->query("SELECT * FROM subjects".$school);
-      if ($subjects->num_rows > 0) { 
-        while ($subject = $subjects->fetch_assoc()) {
-          echo '"'.$subject["id"].'", ';
-        }
-      } ?>"fav"
-    ];
-
-    // runs on page load
-    function onload() {
-        for (var i = 0; i < subjects.length; i++) { // loop over each item
-
-            $("#"+subjects[i]+"-B").hide(); // hide the row
-
-            // get classes through AJAX
-            $.get("/docs/lib/getClass.php?subj="+subjects[i], function(d,s){
-              $("#"+subjects[i]+"-B .classes").html(d);
-            });
-
-            (function(index) {
-                var row = "#" + subjects[index] + "-B";
-                $("#" + subjects[index] + "-H").click(function() {
-                    $(row).toggle(); // toggle it when clicked
-                });
-            })(i);
-
-        }
-
-        $("#fav-B").show();
-
-        // attempt to render sign in button if it exists
-        try {
-            render_gSignIn();
-        } catch (e) {}
-
-    }
-
-    $(document).ready(function() { setTimeout(onload, 500); });
-  </script>
 </head>
 <body id='indexphp-body'>
 
@@ -141,6 +97,56 @@
     <?php require("/var/www/html/docs/lib/footer.php"); ?>
 
   </div>
+  <script defer>
+    // list of all subjects
+    var subjects = [<?php 
+    $subjects = $schooldb->query("SELECT * FROM subjects".$school);
+      if ($subjects->num_rows > 0) { 
+        while ($subject = $subjects->fetch_assoc()) {
+          echo '"'.$subject["id"].'", ';
+        }
+      } ?>"fav"
+    ];
+
+    // runs on page load
+    function onload_1() {
+      for (var i = 0; i < subjects.length; i++) { // loop over each item
+        (function(index) {
+          $("#"+subjects[index]+"-B").hide(); // hide the row
+
+          // get classes through AJAX
+          $.get("/docs/lib/getClass.php?subj="+subjects[index], function(d,s){
+            $("#"+subjects[index]+"-B .classes").html(d);
+          });
+        })(i);
+
+      }
+    }
+    function onload_2(){
+
+      $("#fav-B").show();
+
+      // attempt to render sign in button if it exists
+      try {
+          render_gSignIn();
+      } catch (e) {}
+
+    }
+    function onload_3(){
+      for(var i=0;i<subjects.length;i++){
+        (function(index) {
+          var row = "#" + subjects[index] + "-B";
+            $("#" + subjects[index] + "-H").click(function() {
+              $(row).toggle(); // toggle it when clicked
+            });
+        })(i);
+      }
+    }
+
+    onload_1();
+    onload_2();
+    onload_3();
+  </script>
 </body>
 
 </html>
