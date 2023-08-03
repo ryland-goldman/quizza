@@ -38,7 +38,7 @@
 @media only screen and (min-width: 600px) {
     #homepage-bgimage-1 { 
         background-image: url("https://www.quizza.org/static/images/main-1.png"); 
-        margin-top: 10vh;
+        margin-top: 10vh!important;
     }
     #sep {
         margin-top:15vh;
