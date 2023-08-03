@@ -6,7 +6,7 @@ $admin = new mysqli("localhost", "quizza", $sql_db_password, "AccessLog");
 $logData = $admin->query("SELECT * FROM AccessLog");
 if($logData->num_rows > 0){
 	while($row = $logData->fetch_assoc()){
-		echo $row["timestamp"].","$row["school"].",".$row["setn"].",".$row["section"].",".$row["user"].",".$row["ref"];
+		echo $row["timestamp"].","$row["school"].",".$row["class"].",".$row["setn"].",".$row["section"].",".$row["user"].",".$row["ref"];
 	}
 }
 ?>
