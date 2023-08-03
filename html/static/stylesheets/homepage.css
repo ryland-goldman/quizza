@@ -28,7 +28,7 @@
     .dropdown .dropdown-menu {
         position: relative!important;
     }
-    h1 {
+    #sep h1 {
         font-size: 1em;
     }
     #homepage-bgimage-1 {
@@ -137,4 +137,4 @@
     box-shadow: 2px 3px 22px 0px #AAA;
 }
 #footer p { color: black; }
-#footer p a { color: #333;  }
+#footer a { color: #333;  }
