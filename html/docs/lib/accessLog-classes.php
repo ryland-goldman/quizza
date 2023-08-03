@@ -14,7 +14,7 @@ if($schools->num_rows > 0){
 			while($class = $classes->fetch_assoc()){
 				
 				$sets = $school_db->query("SELECT COUNT(*) FROM ".$class["ID"]."Sets")->fetch_assoc()["COUNT(*)"];
-				echo $school["id"].",".$class["ID"].",".$sets;
+				echo $school["id"].",".$class["ID"].",".$sets."\n";
 
 			}
 		}
