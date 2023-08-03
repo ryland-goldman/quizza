@@ -28,6 +28,9 @@
     .dropdown .dropdown-menu {
         position: relative!important;
     }
+    h1 {
+        font-size: 1em;
+    }
     #homepage-bgimage-1 {
         height: 20vh; 
     }
@@ -39,6 +42,9 @@
     #sep {
         margin-top:15vh;
         margin-bottom:20vh;
+    }
+    .dropdown {
+        font-size:1vw;
     }
     #homepage-bgimage-1 {
         height: 40vh; 
@@ -64,7 +70,6 @@
   box-shadow: 0 0 2px rgb(204, 204, 204);
   transition: all .5s ease;
   position: relative;
-  font-size:1vw;
   color: #474747;
   height: 100%;
   text-align: left;
@@ -131,3 +136,5 @@
 #top-bar {
     box-shadow: 2px 3px 22px 0px #AAA;
 }
+#footer p { color: black; }
+#footer p a { color: #333;  }
