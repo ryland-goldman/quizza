@@ -110,7 +110,7 @@
 
     // runs on page load
     function onload_1() {
-      for (var i = 0; i < subjects.length; i++) { // loop over each item
+      for (var i = 0; i < subjects.length-1; i++) { // loop over each item
         (function(index) {
           $("#"+subjects[index]+"-B").hide(); // hide the row
 
@@ -144,7 +144,7 @@
     }
 
     onload_1();
-    onload_2();
+    setTimeout(onload_2, 1000);
     onload_3();
   </script>
 </body>
