@@ -28,7 +28,7 @@
             // get classes through AJAX
             $.get("/docs/lib/getClass.php?subj="+subjects[i], function(d,s){
               $("#"+subjects[i]+"-B .classes").html(d);
-            })
+            });
 
             (function(index) {
                 var row = "#" + subjects[index] + "-B";
