@@ -48,7 +48,7 @@
 
     }
 
-    $(document).ready(function() { onload(); });
+    $(document).ready(function() { setTimeout(onload, 500); });
   </script>
 </head>
 <body id='indexphp-body'>
