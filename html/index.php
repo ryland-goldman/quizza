@@ -47,9 +47,11 @@
         } catch (e) {}
 
     }
+
+    $(document).ready(function() { onload(); }
   </script>
 </head>
-<body onload="onload()" id='indexphp-body'>
+<body id='indexphp-body'>
 
   <?php require("/var/www/html/docs/lib/topBar.php"); ?>
   
