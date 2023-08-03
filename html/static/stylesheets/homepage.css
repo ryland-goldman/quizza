@@ -137,4 +137,4 @@
     box-shadow: 2px 3px 22px 0px #AAA;
 }
 #footer p { color: black; }
-#footer a { color: #333;  }
+#footer a { color: #333!important;  }
