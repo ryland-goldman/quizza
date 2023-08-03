@@ -68,7 +68,7 @@
 	      	</div>
 		</div>
 	<?php } ?>
-	<img src='https://www.quizza.org/static/images/main-2.webp' style='width:100vw;'>
+	<img src='https://www.quizza.org/static/images/main-2.png' style='width:100vw;'>
 	<?php require("/var/www/html/docs/lib/footer.php"); ?>
 </body>
 </head>
