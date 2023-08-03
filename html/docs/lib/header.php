@@ -53,4 +53,6 @@ if(isset($setID)) {
     $empty_set = $thisClass->query("SELECT * FROM ".$type.$setID)->num_rows == 0;
 }
 
+// Add to access log
+require("/var/www/html/docs/lib/accessLogAppend.php");
 ?>
