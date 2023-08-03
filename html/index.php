@@ -23,11 +23,11 @@
     function onload() {
         for (var i = 0; i < subjects.length; i++) { // loop over each item
 
-            $("#"+subjects[index]+"-B").hide(); // hide the row
+            $("#"+subjects[i]+"-B").hide(); // hide the row
 
             // get classes through AJAX
-            $.get("/docs/lib/getClass.php?subj="+subjects[index], function(d,s){
-              $("#"+subjects[index]+"-B .classes").html(d);
+            $.get("/docs/lib/getClass.php?subj="+subjects[i], function(d,s){
+              $("#"+subjects[i]+"-B .classes").html(d);
             })
 
             (function(index) {
