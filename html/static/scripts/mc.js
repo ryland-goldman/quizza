@@ -12,28 +12,44 @@ function check_arrays(){
 }
 
 function init(){
+    // Get session storage state
+    if(sessionStorage.def){ start_with_term = (sessionStorage.def=="false"); }
+    else { sessionStorage.def = "false"; }
+
+    // Shuffle
+    if(!start_with_term && type == "Set"){
+        var questions_tmp = JSON.parse(JSON.stringify(questions));
+        var questions = JSON.parse(JSON.stringify(c1s));
+        var c1s = JSON.parse(JSON.stringify(questions_tmp));
+        var ic1s = JSON.parse(JSON.stringify(questions_tmp));
+        var ic2s = JSON.parse(JSON.stringify(questions_tmp));
+        var ic3s = JSON.parse(JSON.stringify(questions_tmp));
+    }
+
+
     current_flashcard = -1;
     score = 0;
     missed = [];
     // Make arrays in a random order
-    var check_n = 0;
-    while(check_arrays()){
-        check_n++;
-        if(check_n == 10){ break; }
-        for (var i=c1s.length-1; i>=0; i--){
-            var j = Math.floor(Math.random()*(i+1));
-            [window.ic1s[i], window.ic1s[j]] = [ic1s[j],ic1s[i]];
-        }
-        for (var i=c1s.length-1; i>=0; i--){
-            var j = Math.floor(Math.random()*(i+1));
-            [window.ic2s[i], window.ic2s[j]] = [ic2s[j],ic2s[i]];
-        }
-        for (var i=c1s.length-1; i>=0; i--){
-            var j = Math.floor(Math.random()*(i+1));
-            [window.ic3s[i], window.ic3s[j]] = [ic3s[j],ic3s[i]];
+    if(type == "Set"){
+        var check_n = 0;
+        while(check_arrays()){
+            check_n++;
+            if(check_n == 10){ break; }
+            for (var i=c1s.length-1; i>=0; i--){
+                var j = Math.floor(Math.random()*(i+1));
+                [window.ic1s[i], window.ic1s[j]] = [ic1s[j],ic1s[i]];
+            }
+            for (var i=c1s.length-1; i>=0; i--){
+                var j = Math.floor(Math.random()*(i+1));
+                [window.ic2s[i], window.ic2s[j]] = [ic2s[j],ic2s[i]];
+            }
+            for (var i=c1s.length-1; i>=0; i--){
+                var j = Math.floor(Math.random()*(i+1));
+                [window.ic3s[i], window.ic3s[j]] = [ic3s[j],ic3s[i]];
+            }
         }
     }
-    console.log(check_n);
 
     for (var i=c1s.length-1; i>=0; i--){
         var j = Math.floor(Math.random()*(i+1));
@@ -45,9 +61,6 @@ function init(){
 
     // Render signin button
     try { render_gSignIn(); } catch(e) {}
-
-    // Get session storage state
-    start_with_term = (sessionStorage.def=="false");
 
     next();
 }
@@ -113,12 +126,12 @@ function next(){
 function swt(){
     start_with_term = true;
     sessionStorage.def = "false";
-    next();
+    init();
 }
 
 // Start with definition
 function swd(){
     start_with_term = false;
     sessionStorage.def = "true";
-    next();
+    init();
 }

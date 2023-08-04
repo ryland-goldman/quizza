@@ -12,6 +12,7 @@
 
   <?php if($type == "Set") { ?>
     <script>
+      var type = "Set";
       <?php if($_GET['learn']=='true'){ ?> var learnmode = true; <?php } else { ?> var learnmode = false; <?php } ?>
       var questions = [<?php $words = $thisClass->query("SELECT * FROM Set".$setID); if($words->num_rows > 0){ while($row = $words->fetch_assoc()){ echo '`'.str_replace("\\","\\\\",$row["Term"]).'`,'; }} ?>""];
       var c1s = [<?php $words = $thisClass->query("SELECT * FROM Set".$setID); if($words->num_rows > 0){ while($row = $words->fetch_assoc()){ echo '`'.str_replace("\\","\\\\",$row["Definition"]).'`,'; }} ?>""];
@@ -26,6 +27,7 @@
     </script>
   <?php } else { ?>
     <script>
+      var type = "Quiz";
       <?php if($_GET['learn']=='true'){ ?> var learnmode = true; <?php } else { ?> var learnmode = false; <?php } ?>
       var questions = [<?php $words = $thisClass->query("SELECT * FROM Quiz".$setID); if($words->num_rows > 0){ while($row = $words->fetch_assoc()){ echo '`'.str_replace("\\","\\\\",$row["Question"]).'`,'; }} ?>""];
       var c1s = [<?php $words = $thisClass->query("SELECT * FROM Quiz".$setID); if($words->num_rows > 0){ while($row = $words->fetch_assoc()){ echo '`'.str_replace("\\","\\\\",$row["C1"]).'`,'; }} ?>""];
@@ -78,7 +80,9 @@
       <div id='bottom-btns' class='study-btn-bottom'>
         <button class="btn-blue" id='sbtn'>Submit&nbsp;&nbsp;<i class="fa-solid fa-arrow-right-to-bracket"></i></button>
         <a rel="modal:open" href='#options'>
-          <?php if($type=="Set"){ ?><button onclick='options()'>Options&nbsp;&nbsp;<i class="fa-solid fa-sliders"></i></button><?php } ?>
+          <?php if($type=="Set" || !isset($_GET["learn"]) || $_GET["learn"]=="false"){ ?>
+            <button onclick='options()'>Options&nbsp;&nbsp;<i class="fa-solid fa-sliders"></i></button>
+          <?php } ?>
         </a>
       </div>
 

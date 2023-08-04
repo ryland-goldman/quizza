@@ -56,7 +56,9 @@
       <div id='bottom-btns' class='study-btn-bottom'>
         <button class='btn-blue' id='sbtn'>Submit&nbsp;&nbsp;<i class="fa-solid fa-arrow-right-to-bracket"></i></button>
         <a rel="modal:open" href='#options'>
-          <button onclick='options()'>Options&nbsp;&nbsp;<i class="fa-solid fa-sliders"></i></button>
+          <?php if(!isset($_GET['learn']) || $_GET["learn"]=="false") { ?>
+            <button onclick='options()'>Options&nbsp;&nbsp;<i class="fa-solid fa-sliders"></i></button>
+          <?php } ?>
         </a>
       </div>
     </div>
@@ -71,7 +73,7 @@
   </div>
 
   <script defer>init();</script>
-  
+
   <?php require("/var/www/html/docs/lib/footer.php"); ?>
 
 </body>

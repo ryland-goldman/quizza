@@ -21,7 +21,8 @@ function init(){
     try { render_gSignIn(); } catch(e) {}
 
     // Get session storage state
-    start_with_term = (sessionStorage.def=="false");
+    if(sessionStorage.def){ start_with_term = (sessionStorage.def=="false"); }
+    else { sessionStorage.def = "false"; }
 
     next();
 }
@@ -48,6 +49,21 @@ function override(){
     missed.pop();
 }
 
+function again(){
+    var missed_defs = [];
+    for(var i=0;i<missed.length;i++){
+        for(var j=0;j<words.length;j++){
+            if(words[j] == missed[i]){
+                missed_defs.push(words[j]);
+                break;
+            }
+        }
+    }
+    words = JSON.parse(JSON.stringify(missed));
+    defs = JSON.parse(JSON.stringify(missed_defs));
+    init();
+}
+
 function next(){
     current_flashcard++;
     if(current_flashcard == questions.length){
@@ -55,7 +71,7 @@ function next(){
         $("#sbtn").html(`Study Again&nbsp;&nbsp;<i class="fa-solid fa-rotate-right"></i>`);
         $("#sbtn").attr("onclick","location.reload();");
         if(missed.length > 0){
-            var str = `<h1>You've finished studying this set!</h1><p>Missed terms: `;
+            var str = `<h1>You've finished studying this set!</h1><p>Missed terms: (<a href="javascript:again();">try again with missed</a>)<br>`;
             for(var i=0;i<missed.length;i++){ str += missed[i]; str += "<br>"; }
             str += "</p>";
             $("#main-td").html(str);
