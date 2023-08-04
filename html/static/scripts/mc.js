@@ -4,9 +4,21 @@ var score = 0;
 var answers = [];
 var missed = [];
 
-function check_arrays(){
-    for(var i=0;i<c1s.length;i++){
-        if(c1s[i] == ic1s[i] || c1s[i] == ic2s[i] || c1s[i] == ic3s[i] || ic1s[i] == ic2s[i] || ic1s[i] == ic3s[i] || ic2s[i] == ic3s[i]){ return true; }
+function shuffleArray(arr) {
+    for (var i = arr.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+}
+
+function check_arrays() {
+    for (var i = 0; i < c1s.length; i++) {
+        if (c1s[i] == ic1s[i] || c1s[i] == ic2s[i] || c1s[i] == ic3s[i] || ic1s[i] == ic2s[i] || ic1s[i] == ic3s[i] || ic2s[i] == ic3s[i]) {
+            shuffleArray(ic1s); // Shuffle ic1s
+            shuffleArray(ic2s); // Shuffle ic2s
+            shuffleArray(ic3s); // Shuffle ic3s
+            return true;
+        }
     }
     return false;
 }
@@ -19,11 +31,11 @@ function init(){
     // Shuffle
     if(!start_with_term && type == "Set"){
         var questions_tmp = JSON.parse(JSON.stringify(questions));
-        var questions = JSON.parse(JSON.stringify(c1s));
-        var c1s = JSON.parse(JSON.stringify(questions_tmp));
-        var ic1s = JSON.parse(JSON.stringify(questions_tmp));
-        var ic2s = JSON.parse(JSON.stringify(questions_tmp));
-        var ic3s = JSON.parse(JSON.stringify(questions_tmp));
+        questions = JSON.parse(JSON.stringify(c1s));
+        c1s = JSON.parse(JSON.stringify(questions_tmp));
+        ic1s = JSON.parse(JSON.stringify(questions_tmp));
+        ic2s = JSON.parse(JSON.stringify(questions_tmp));
+        ic3s = JSON.parse(JSON.stringify(questions_tmp));
     }
 
 
@@ -35,19 +47,7 @@ function init(){
         var check_n = 0;
         while(check_arrays()){
             check_n++;
-            if(check_n == 10){ break; }
-            for (var i=c1s.length-1; i>=0; i--){
-                var j = Math.floor(Math.random()*(i+1));
-                [window.ic1s[i], window.ic1s[j]] = [ic1s[j],ic1s[i]];
-            }
-            for (var i=c1s.length-1; i>=0; i--){
-                var j = Math.floor(Math.random()*(i+1));
-                [window.ic2s[i], window.ic2s[j]] = [ic2s[j],ic2s[i]];
-            }
-            for (var i=c1s.length-1; i>=0; i--){
-                var j = Math.floor(Math.random()*(i+1));
-                [window.ic3s[i], window.ic3s[j]] = [ic3s[j],ic3s[i]];
-            }
+            if(check_n == 1000){ break; }
         }
     }
 
