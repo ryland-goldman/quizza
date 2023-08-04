@@ -1,4 +1,4 @@
-var current_flashcard = 0;
+var current_flashcard = -1;
 var start_with_term = true;
 var score = 0;
 
@@ -21,20 +21,24 @@ function init(){
     next();
 }
 
-function submit(){
+function submit(override=false){
     $("#sbtn").html(`Next&nbsp;&nbsp;<i class="fa-solid fa-arrow-right-to-bracket"></i>`);
     $("#sbtn").click(next);
     var answer = $("#ans").val();
-    var correct = (start_with_term ? words[current_flashcard] : defs[current_flashcard]);
+    var correct = (start_with_term ? defs[current_flashcard] : words[current_flashcard]);
     var question = (!start_with_term ? words[current_flashcard] : defs[current_flashcard]);
-    var is_correct = (answer == correct);
-    if(is_correct){ score++; }
-    current_flashcard++;
-    $("#main-td").html("<h1 style='color:"+(is_correct?'green':'red')+"'>"+correct+"</h1>");
+    if(answer == correct || override){
+        score++;
+        $("#main-td").html("<h1 style='color:green'>Correct</h1><p>"+question+": "+correct+"</p>");
+    } else {
+        $("#main-td").html("<h1 style='color:red'>Incorrect</h1><p>"+question+": "+correct+"<br>You said: "+answer+" (<a href='javascript:submit(true);'>override</a>)</p>");
+    }
 }
 
 function next(){
-    var question = (start_with_term ? words[current_flashcard] : defs[current_flashcard]);
+    current_flashcard++;
+    var correct = (start_with_term ? defs[current_flashcard] : words[current_flashcard]);
+    var question = (!start_with_term ? words[current_flashcard] : defs[current_flashcard]);
     $("#main-td").html("<h1>"+question+"</h1><input type='text' id='ans'>");
     $("#sbtn").html(`Submit&nbsp;&nbsp;<i class="fa-solid fa-arrow-right-to-bracket"></i>`);
     $("#sbtn").click(submit);
