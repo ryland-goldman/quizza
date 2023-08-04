@@ -17,21 +17,27 @@ function init(){
 
     // Get session storage state
     start_with_term = !sessionStorage.def;
+
+    next();
 }
 
 function submit(){
-    $("#sbtn").html(`&nbsp;&nbsp;<i class="fa-solid fa-arrow-right-to-bracket"></i>`);
+    $("#sbtn").html(`Next&nbsp;&nbsp;<i class="fa-solid fa-arrow-right-to-bracket"></i>`);
     $("#sbtn").click(next);
     var answer = $("#ans").val();
     var correct = (start_with_term ? words[current_flashcard] : defs[current_flashcard]);
-    var correct = (!start_with_term ? words[current_flashcard] : defs[current_flashcard]);
+    var question = (!start_with_term ? words[current_flashcard] : defs[current_flashcard]);
     var is_correct = (answer == correct);
+    if(is_correct){ score++; }
     current_flashcard++;
     $("#main-td").html("<h1 style='color:"+(is_correct?'green':'red')+"'>"+correct+"</h1>");
 }
 
 function next(){
-    alert("Next!");
+    var question = (start_with_term ? words[current_flashcard] : defs[current_flashcard]);
+    $("#main-td").html("<h1>"+question+"</h1><input type='text' id='ans'>");
+    $("#sbtn").html(`Submit&nbsp;&nbsp;<i class="fa-solid fa-arrow-right-to-bracket"></i>`);
+    $("#sbtn").click(submit);
 }
 
 // Start with term

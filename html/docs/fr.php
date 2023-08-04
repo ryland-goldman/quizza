@@ -70,6 +70,8 @@
     </a>
   </div>
 
+  <script defer>init();</script>
+  
   <?php require("/var/www/html/docs/lib/footer.php"); ?>
 
 </body>
