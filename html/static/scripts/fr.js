@@ -32,7 +32,7 @@ function submit(){
         $("#main-td").html("<h1 style='color:red'>Incorrect</h1><p>"+words[current_flashcard]+": "+defs[current_flashcard]+"<br>You said: "+answer+" (<a href='javascript:override();'>override</a>)</p>");
     }
     $("#sbtn").html(`Next&nbsp;&nbsp;<i class="fa-solid fa-arrow-right-to-bracket"></i>`);
-    $("#sbtn").click(next);
+    $("#sbtn").attr("onclick","next()");
 }
 
 function override(){
@@ -44,7 +44,7 @@ function next(){
     var question = (start_with_term ? words[current_flashcard] : defs[current_flashcard]);
     $("#main-td").html("<h1>"+question+"</h1><input type='text' id='ans'>");
     $("#sbtn").html(`Submit&nbsp;&nbsp;<i class="fa-solid fa-arrow-right-to-bracket"></i>`);
-    $("#sbtn").click(submit);
+    $("#sbtn").attr("onclick","submit()");
 }
 
 // Start with term
