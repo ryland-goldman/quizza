@@ -14,6 +14,8 @@
 @media only screen and (max-width: 600px) {
     #homepage-bgimage-1 {
         background-image: url("https://www.quizza.org/static/images/mobile-1.png");
+        margin-top: 5vh!important;
+        height: 30vh;
     }
     .dropdown {
         font-size: 12pt!important;
@@ -31,13 +33,11 @@
     #sep h1 {
         font-size: 1.5em;
     }
-    #homepage-bgimage-1 {
-        height: 20vh; 
-    }
 }
 @media only screen and (min-width: 600px) {
     #homepage-bgimage-1 { 
         background-image: url("https://www.quizza.org/static/images/main-1.png"); 
+        margin-top: 10vh!important;
     }
     #sep {
         margin-top:15vh;
@@ -132,7 +132,6 @@
     background-repeat: no-repeat; 
     background-size: contain;
     margin:auto 5vh;
-    margin-top: 10vh!important;
 }
 #top-bar {
     box-shadow: 2px 3px 22px 0px #AAA;
