@@ -84,7 +84,6 @@ h1 { margin:8px; }
     cursor: pointer;
     transition: all .3s ease-in-out;
     float: right;
-    line-height: 20px
 }
 .dropdown:hover {
     box-shadow: 0 0 4px rgb(204, 204, 204)
