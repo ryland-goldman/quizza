@@ -66,7 +66,7 @@ function again(){
 
 function next(){
     current_flashcard++;
-    if(current_flashcard == questions.length){
+    if(current_flashcard == words.length){
         // Done
         $("#sbtn").html(`Study Again&nbsp;&nbsp;<i class="fa-solid fa-rotate-right"></i>`);
         $("#sbtn").attr("onclick","location.reload();");

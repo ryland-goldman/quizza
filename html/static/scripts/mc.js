@@ -53,7 +53,7 @@ function init(){
 
     for (var i=c1s.length-1; i>=0; i--){
         var j = Math.floor(Math.random()*(i+1));
-        [window.c1s[i], window.ic1s[i], window.ic2s[i], window.ic3s[i], window.c1s[j], window.ic1s[j], window.ic2s[j], window.ic3s[j]] = [c1s[j], ic1s[j], ic2s[j], ic3s[j], c1s[i], ic1s[i], ic2s[i], ic3s[i]];
+        [window.questions[i], window.questions[j], window.c1s[i], window.ic1s[i], window.ic2s[i], window.ic3s[i], window.c1s[j], window.ic1s[j], window.ic2s[j], window.ic3s[j]] = [questions[j], questions[i], c1s[j], ic1s[j], ic2s[j], ic3s[j], c1s[i], ic1s[i], ic2s[i], ic3s[i]];
     }
 
     // Typeset LaTeX
