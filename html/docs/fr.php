@@ -8,7 +8,7 @@
 
   <?php require("/var/www/html/docs/lib/imports.php"); ?>
 
-  <script src='https://www.quizza.org/static/scripts/fr.js'></script>
+  <script src='https://www.quizza.org/static/scripts/fr.js' defer></script>
  
   <script async>
     <?php if($_GET['learn']=='true'){ ?> var learnmode = true; <?php } else { ?> var learnmode = false; <?php } ?>

@@ -8,10 +8,10 @@
 
   <?php require("/var/www/html/docs/lib/imports.php"); ?>
 
-  <script src='https://www.quizza.org/static/scripts/mc.js'></script>
+  <script src='https://www.quizza.org/static/scripts/mc.js' defer></script>
 
   <?php if($type == "Set") { ?>
-    <script>
+    <script async>
       var type = "Set";
       <?php if($_GET['learn']=='true'){ ?> var learnmode = true; <?php } else { ?> var learnmode = false; <?php } ?>
       var questions = [<?php $words = $thisClass->query("SELECT * FROM Set".$setID); if($words->num_rows > 0){ while($row = $words->fetch_assoc()){ echo '`'.str_replace("\\","\\\\",$row["Term"]).'`,'; }} ?>""];
@@ -26,7 +26,7 @@
       ic3s.pop();
     </script>
   <?php } else { ?>
-    <script>
+    <script async>
       var type = "Quiz";
       <?php if($_GET['learn']=='true'){ ?> var learnmode = true; <?php } else { ?> var learnmode = false; <?php } ?>
       var questions = [<?php $words = $thisClass->query("SELECT * FROM Quiz".$setID); if($words->num_rows > 0){ while($row = $words->fetch_assoc()){ echo '`'.str_replace("\\","\\\\",$row["Question"]).'`,'; }} ?>""];

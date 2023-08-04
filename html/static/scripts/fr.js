@@ -54,13 +54,13 @@ function again(){
     for(var i=0;i<missed.length;i++){
         for(var j=0;j<words.length;j++){
             if(words[j] == missed[i]){
-                missed_defs.push(words[j]);
+                missed_defs.push(defs[j]);
                 break;
             }
         }
     }
-    words = JSON.parse(JSON.stringify(missed));
-    defs = JSON.parse(JSON.stringify(missed_defs));
+    window.words = JSON.parse(JSON.stringify(missed));
+    window.defs = JSON.parse(JSON.stringify(missed_defs));
     init();
 }
 
