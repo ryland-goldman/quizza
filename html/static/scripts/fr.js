@@ -29,16 +29,15 @@ function submit(override=false){
     var question = (start_with_term ? words[current_flashcard] : defs[current_flashcard]);
     if(answer == correct || override){
         score++;
-        $("#main-td").html("<h1 style='color:green'>Correct</h1><p>"+question+": "+correct+"</p>");
+        $("#main-td").html("<h1 style='color:green'>Correct</h1><p>"+words[current_flashcard]+": "+defs[current_flashcard]+"</p>");
     } else {
-        $("#main-td").html("<h1 style='color:red'>Incorrect</h1><p>"+question+": "+correct+"<br>You said: "+answer+" (<a href='javascript:submit(true);'>override</a>)</p>");
+        $("#main-td").html("<h1 style='color:red'>Incorrect</h1><p>"+words[current_flashcard]+": "+defs[current_flashcard]+"<br>You said: "+answer+" (<a href='javascript:submit(true);'>override</a>)</p>");
     }
 }
 
 function next(){
     current_flashcard++;
-    var correct = (start_with_term ? defs[current_flashcard] : words[current_flashcard]);
-    var question = (!start_with_term ? words[current_flashcard] : defs[current_flashcard]);
+    var question = (start_with_term ? words[current_flashcard] : defs[current_flashcard]);
     $("#main-td").html("<h1>"+question+"</h1><input type='text' id='ans'>");
     $("#sbtn").html(`Submit&nbsp;&nbsp;<i class="fa-solid fa-arrow-right-to-bracket"></i>`);
     $("#sbtn").click(submit);
