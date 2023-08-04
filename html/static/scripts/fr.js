@@ -22,7 +22,7 @@ function init(){
 }
 
 function submit(){
-    var answer = $("#ans").val();
+    var answer = $("#response").val();
     var correct = (start_with_term ? defs[current_flashcard] : words[current_flashcard]);
     var question = (start_with_term ? words[current_flashcard] : defs[current_flashcard]);
     if(answer == correct){
@@ -33,30 +33,37 @@ function submit(){
     }
     $("#sbtn").html(`Next&nbsp;&nbsp;<i class="fa-solid fa-arrow-right-to-bracket"></i>`);
     $("#sbtn").attr("onclick","next()");
+    MathJax.typeset();
 }
 
 function override(){
     $("#main-td").html("<h1 style='color:green'>Correct</h1><p>"+words[current_flashcard]+": "+defs[current_flashcard]+"</p>");
+    MathJax.typeset();
 }
 
 function next(){
     current_flashcard++;
     var question = (start_with_term ? words[current_flashcard] : defs[current_flashcard]);
-    $("#main-td").html("<h1>"+question+"</h1><input type='text' id='ans'>");
+    $("#main-td").html("<h1>"+question+"</h1><input type='text' id='response'>");
     $("#sbtn").html(`Submit&nbsp;&nbsp;<i class="fa-solid fa-arrow-right-to-bracket"></i>`);
     $("#sbtn").attr("onclick","submit()");
+    MathJax.typeset();
 }
 
 // Start with term
 function swt(){
     start_with_term = true;
-    next();
     sessionStorage.def = false;
+    current_flashcard = -1;
+    score = 0;
+    init();
 }
 
 // Start with definition
 function swd(){
     start_with_term = false;
-    next();
     sessionStorage.def = true;
+    current_flashcard = -1;
+    score = 0;
+    init();
 }
