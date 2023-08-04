@@ -73,8 +73,8 @@ function addTerm() {
     i++;
     document.getElementById("allBoxes").innerHTML += `
   <div id='box-` + i + `'>
-<div style='box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;background:#FFF;border-radius:8px;'>
-<table style='padding:6px 18px;width:100%;'>
+<div class='item-card'>
+<table>
   <tr>
     <td>
       <h2><input type='text' class='terms'></h2>
@@ -83,11 +83,10 @@ function addTerm() {
       <p style='text-align:right;'><input type='text' value='' class='defs'></p>
     </td>
     <td>
-      <button style='background-color:red;border-radius:8px;padding:12px;border:none;font-size:16px;' onclick="$('#box-` + i + `').html('');"><i class="fa-solid fa-trash-can"></i></button>
+      <button class='delete-btn' onclick="$('#box-` + i + `').html('');"><i class="fa-solid fa-trash-can"></i></button>
   </tr>
 </table>
 </div>
-<div style='margin-top:1vh;'>&nbsp;</div>
 </div>`;
     for (var l = 0; l < document.getElementsByClassName("terms").length - 1; l++) {
         document.getElementsByClassName("terms")[l].value = allTerms[l];

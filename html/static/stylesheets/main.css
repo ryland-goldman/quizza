@@ -14,6 +14,8 @@ html, body {
     --logo-home: url("https://www.quizza.org/static/images/logo-white.png");
     --logo: url("https://www.quizza.org/static/images/logo-light.png");
     --color-alert: #b8f9ed;
+    --correct-edit-box: #92c479;
+    --incorrect-edit-box: #d8707c;
 }
 
  body {
@@ -36,6 +38,8 @@ html, body {
 }
 @media (prefers-color-scheme: dark) {
     :root {
+        --correct-edit-box: #042f1a;
+        --incorrect-edit-box: #4d0000;
         --color-text: white;
         --color-background: #202020;
         --color-theme: #085e4e;
@@ -436,10 +440,10 @@ html, body {
      color:var(--color-theme)!important;
 }
  .ic1, .ic2, .ic3 {
-     background:#d8707c;
+     background: var(--incorrect-edit-box);
 }
  .c1 {
-     background:#92c479;
+     background: var(--correct-edit-box);
 }
  .terms, .defs {
      width: 100%;

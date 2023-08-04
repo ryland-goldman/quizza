@@ -116,30 +116,29 @@ function addTerm() {
     i++;
     document.getElementById("allBoxes").innerHTML += `
   <div id='box-` + i + `'>
-<div style='box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;background:#FFF;border-radius:8px;'>
-<table style='padding:6px 18px;width:100%;'>
+<div class='item-card'>
+<table>
 <tr>
   <td>
     <h2><input type='text' value='' class='terms q' placeholder='Question'></h2>
   </td>
   <td>
-    <p style='text-align:center;'><input type='text' value='' class='defs c1' style='background:#92c479;' placeholder='Correct Answer'></p>
+    <p style='text-align:center;'><input type='text' value='' class='defs c1' placeholder='Correct Answer'></p>
   </td>
   <td>
-    <p style='text-align:center;'><input type='text' value='' class='defs ic1' style='background:#d8707c;' placeholder='Incorrect Answer'></p>
+    <p style='text-align:center;'><input type='text' value='' class='defs ic1' placeholder='Incorrect Answer'></p>
   </td>
   <td>
-    <p style='text-align:center;'><input type='text' value='' class='defs ic2' style='background:#d8707c;' placeholder='Incorrect Answer'></p>
+    <p style='text-align:center;'><input type='text' value='' class='defs ic2' placeholder='Incorrect Answer'></p>
   </td>
   <td>
-    <p style='text-align:center;'><input type='text' value='' class='defs ic3' style='background:#d8707c;' placeholder='Incorrect Answer'></p>
+    <p style='text-align:center;'><input type='text' value='' class='defs ic3' placeholder='Incorrect Answer'></p>
   </td>
   <td>
-    <button style='background-color:red;border-radius:8px;padding:12px;border:none;font-size:16px;' onclick="$('#box-` + i + `').html('');"><i class="fa-solid fa-trash-can"></i></button>
+    <button class='delete-btn' onclick="$('#box-` + i + `').html('');"><i class="fa-solid fa-trash-can"></i></button>
 </tr>
 </table>
 </div>
-<div style='margin-top:1vh;'>&nbsp;</div>
 </div>`;
     for (var l = 0; l < document.getElementsByClassName("q").length - 1; l++) {
         document.getElementsByClassName("q")[l].value = allqs[l];
