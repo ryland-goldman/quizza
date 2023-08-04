@@ -29,7 +29,7 @@
         position: relative!important;
     }
     #sep h1 {
-        font-size: 1em;
+        font-size: 1.5em;
     }
     #homepage-bgimage-1 {
         height: 20vh; 
@@ -55,7 +55,7 @@
 #sep {
     margin-left:10vw;
     margin-right:10vw;
-    border-radius:36px;
+    border-radius:18px;
     background-color:#0fbd9d;
     color:white;
     padding:8px 32px;
@@ -67,7 +67,7 @@
   width: 100%;
   display: inline-block;
   background-color: #fff;
-  border-radius: 36px;
+  border-radius: 10px;
   box-shadow: 0 0 2px rgb(204, 204, 204);
   transition: all .5s ease;
   position: relative;
