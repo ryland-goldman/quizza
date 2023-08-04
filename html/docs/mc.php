@@ -78,7 +78,7 @@
       <div id='bottom-btns' class='study-btn-bottom'>
         <button class="btn-blue" id='sbtn'>Submit&nbsp;&nbsp;<i class="fa-solid fa-arrow-right-to-bracket"></i></button>
         <a rel="modal:open" href='#options'>
-          <button onclick='options()'>Options&nbsp;&nbsp;<i class="fa-solid fa-sliders"></i></button>
+          <?php if($type=="Set"){ ?><button onclick='options()'>Options&nbsp;&nbsp;<i class="fa-solid fa-sliders"></i></button><?php } ?>
         </a>
       </div>
 
