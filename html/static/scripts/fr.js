@@ -53,14 +53,22 @@ function again(){
     var missed_defs = [];
     for(var i=0;i<missed.length;i++){
         for(var j=0;j<words.length;j++){
-            if(words[j] == missed[i]){
+            if(words[j] == missed[i] && start_with_term){
                 missed_defs.push(defs[j]);
                 break;
             }
+            if(defs[j] == missed[i] && !start_with_term){
+                missed_defs.push(words[j]);
+            }
         }
     }
-    window.words = JSON.parse(JSON.stringify(missed));
-    window.defs = JSON.parse(JSON.stringify(missed_defs));
+    if( start_with_term ){
+        window.words = JSON.parse(JSON.stringify(missed));
+        window.defs = JSON.parse(JSON.stringify(missed_defs));
+    } else {
+        window.defs = JSON.parse(JSON.stringify(missed));
+        window.words = JSON.parse(JSON.stringify(missed_defs));
+    }
     init();
 }
 
