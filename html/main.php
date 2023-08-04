@@ -69,6 +69,6 @@
 		</div>
 	<?php } ?>
 	<img src='https://www.quizza.org/static/images/<?php if(isMobileDevice()){ ?>mobile<?php } else { ?>main<?php } ?>-2.png' style='width:100vw;'>
-	<?php require("/var/www/html/docs/lib/footer.php"); ?>
+	<?php $bmac = false; require("/var/www/html/docs/lib/footer.php"); ?>
 </body>
 </head>
