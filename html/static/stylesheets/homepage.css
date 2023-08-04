@@ -25,7 +25,6 @@
         margin-top:5vh;
         margin-bottom:5vh;
         overflow: auto;
-        padding-bottom: 32px!important;
     }
     .dropdown .dropdown-menu {
         position: relative!important;
@@ -50,14 +49,14 @@
         height: 40vh; 
     }
 }
-
+h1 { margin:8px; }
 #sep {
     margin-left:10vw;
     margin-right:10vw;
     border-radius:18px;
     background-color:#0fbd9d;
     color:white;
-    padding:8px 32px;
+    padding:20px;
 }
 #sep table {
     width:100%;
