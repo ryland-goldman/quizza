@@ -32,6 +32,9 @@
     #sep h1 {
         font-size: 1.5em;
     }
+    body {
+        background: #FFF!important;
+    }
 }
 @media only screen and (min-width: 600px) {
     #homepage-bgimage-1 { 
