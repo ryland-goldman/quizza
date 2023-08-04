@@ -22,17 +22,23 @@ function init(){
 }
 
 function submit(override=false){
-    $("#sbtn").html(`Next&nbsp;&nbsp;<i class="fa-solid fa-arrow-right-to-bracket"></i>`);
-    $("#sbtn").click(next);
     var answer = $("#ans").val();
     var correct = (start_with_term ? defs[current_flashcard] : words[current_flashcard]);
     var question = (start_with_term ? words[current_flashcard] : defs[current_flashcard]);
-    if(answer == correct || override){
+    if(answer == undefined){
+        console.log(document.getElementById("ans"));
+        console.log(answer);
+        console.log(correct);
+        console.log(question);
+    }
+    if(answer == correct){
         score++;
         $("#main-td").html("<h1 style='color:green'>Correct</h1><p>"+words[current_flashcard]+": "+defs[current_flashcard]+"</p>");
     } else {
         $("#main-td").html("<h1 style='color:red'>Incorrect</h1><p>"+words[current_flashcard]+": "+defs[current_flashcard]+"<br>You said: "+answer+" (<a href='javascript:submit(true);'>override</a>)</p>");
     }
+    $("#sbtn").html(`Next&nbsp;&nbsp;<i class="fa-solid fa-arrow-right-to-bracket"></i>`);
+    $("#sbtn").click(next);
 }
 
 function next(){
