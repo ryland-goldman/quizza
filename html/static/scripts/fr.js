@@ -26,7 +26,7 @@ function submit(override=false){
     $("#sbtn").click(next);
     var answer = $("#ans").val();
     var correct = (start_with_term ? defs[current_flashcard] : words[current_flashcard]);
-    var question = (!start_with_term ? words[current_flashcard] : defs[current_flashcard]);
+    var question = (start_with_term ? words[current_flashcard] : defs[current_flashcard]);
     if(answer == correct || override){
         score++;
         $("#main-td").html("<h1 style='color:green'>Correct</h1><p>"+question+": "+correct+"</p>");
