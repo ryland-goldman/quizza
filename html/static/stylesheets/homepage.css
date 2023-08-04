@@ -71,7 +71,6 @@ h1 { margin:8px; }
   border-radius: 10px;
   box-shadow: 0 0 2px rgb(204, 204, 204);
   transition: all .5s ease;
-  position: relative;
   color: #474747;
   height: 100%;
   text-align: left;
