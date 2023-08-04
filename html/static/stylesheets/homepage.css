@@ -11,6 +11,7 @@
     --logo: url("https://www.quizza.org/static/images/logo-light.png")!important;
     --color-alert: #b8f9ed;
 }
+#top-bar { z-index: 100; }
 @media only screen and (max-width: 600px) {
     #homepage-bgimage-1 {
         background-image: url("https://www.quizza.org/static/images/mobile-1.png");
@@ -47,7 +48,6 @@
     }
     .dropdown {
         font-size:1vw;
-        position: relative;
     }
     #homepage-bgimage-1 {
         height: 40vh; 
@@ -75,6 +75,7 @@ h1 { margin:8px; }
   color: #474747;
   height: 100%;
   text-align: left;
+  position: relative;
   float:right;
 }
 .dropdown .select {
