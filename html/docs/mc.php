@@ -8,15 +8,21 @@
 
   <?php require("/var/www/html/docs/lib/imports.php"); ?>
 
-  <script src='https://www.quizza.org/static/scripts/mc<?php if($type=="Quiz"){?>Quiz<?php } ?>.js'></script>
+  <script src='https://www.quizza.org/static/scripts/mc.js'></script>
 
   <?php if($type == "Set") { ?>
     <script>
       <?php if($_GET['learn']=='true'){ ?> var learnmode = true; <?php } else { ?> var learnmode = false; <?php } ?>
-      var words = [<?php $words = $thisClass->query("SELECT * FROM Set".$setID); if($words->num_rows > 0){ while($row = $words->fetch_assoc()){ echo '`'.str_replace("\\","\\\\",$row["Term"]).'`,'; }} ?>""];
-      var defs = [<?php $words = $thisClass->query("SELECT * FROM Set".$setID); if($words->num_rows > 0){ while($row = $words->fetch_assoc()){ echo '`'.str_replace("\\","\\\\",$row["Definition"]).'`,'; }} ?>""];
-      words.pop();
-      defs.pop();
+      var questions = [<?php $words = $thisClass->query("SELECT * FROM Set".$setID); if($words->num_rows > 0){ while($row = $words->fetch_assoc()){ echo '`'.str_replace("\\","\\\\",$row["Term"]).'`,'; }} ?>""];
+      var c1s = [<?php $words = $thisClass->query("SELECT * FROM Set".$setID); if($words->num_rows > 0){ while($row = $words->fetch_assoc()){ echo '`'.str_replace("\\","\\\\",$row["Definition"]).'`,'; }} ?>""];
+      var ic1s = [<?php $words = $thisClass->query("SELECT * FROM Set".$setID); if($words->num_rows > 0){ while($row = $words->fetch_assoc()){ echo '`'.str_replace("\\","\\\\",$row["Definition"]).'`,'; }} ?>""];
+      var ic2s = [<?php $words = $thisClass->query("SELECT * FROM Set".$setID); if($words->num_rows > 0){ while($row = $words->fetch_assoc()){ echo '`'.str_replace("\\","\\\\",$row["Definition"]).'`,'; }} ?>""];
+      var ic3s = [<?php $words = $thisClass->query("SELECT * FROM Set".$setID); if($words->num_rows > 0){ while($row = $words->fetch_assoc()){ echo '`'.str_replace("\\","\\\\",$row["Definition"]).'`,'; }} ?>""];
+      questions.pop();
+      c1s.pop();
+      ic1s.pop();
+      ic2s.pop();
+      ic3s.pop();
     </script>
   <?php } else { ?>
     <script>

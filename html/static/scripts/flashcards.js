@@ -22,7 +22,7 @@ function init(){
     try { render_gSignIn(); } catch(e) {}
 
     // Get session storage state
-    start_with_term = !sessionStorage.def;
+    start_with_term = (sessionStorage.def=="false");
 
     // Set key press buttons
     document.body.onkeydown = function(e) {
@@ -86,12 +86,12 @@ function back(){ next(true); }
 function swt(){
     var start_with_term = true;
     next();
-    sessionStorage.def = false;
+    sessionStorage.def = "false";
 }
 
 // Start with definition
 function swd(){
     var start_with_term = false;
     next();
-    sessionStorage.def = true;
+    sessionStorage.def = "true";
 }
