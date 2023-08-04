@@ -25,13 +25,7 @@ function submit(override=false){
     var answer = $("#ans").val();
     var correct = (start_with_term ? defs[current_flashcard] : words[current_flashcard]);
     var question = (start_with_term ? words[current_flashcard] : defs[current_flashcard]);
-    if(answer == undefined){
-        console.log(document.getElementById("ans"));
-        console.log(answer);
-        console.log(correct);
-        console.log(question);
-    }
-    if(answer == correct){
+    if(answer == correct || override){
         score++;
         $("#main-td").html("<h1 style='color:green'>Correct</h1><p>"+words[current_flashcard]+": "+defs[current_flashcard]+"</p>");
     } else {
