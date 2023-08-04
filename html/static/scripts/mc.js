@@ -3,6 +3,7 @@ var start_with_term = true;
 var score = 0;
 var answers = [];
 var missed = [];
+var repeated = false;
 
 function shuffleArray(arr) {
     for (var i = arr.length - 1; i > 0; i--) {
@@ -29,7 +30,7 @@ function init(){
     else { sessionStorage.def = "false"; }
 
     // Shuffle
-    if(!start_with_term && type == "Set"){
+    if(!start_with_term && type == "Set" && !repeated){
         var questions_tmp = JSON.parse(JSON.stringify(questions));
         questions = JSON.parse(JSON.stringify(c1s));
         c1s = JSON.parse(JSON.stringify(questions_tmp));
@@ -90,11 +91,13 @@ function next(){
         $("#sbtn").html(`Study Again&nbsp;&nbsp;<i class="fa-solid fa-rotate-right"></i>`);
         $("#sbtn").attr("onclick","init()");
         if(missed.length > 0){
+            if(learnmode){ again(); return; }
             var str = `<h1>You've finished studying this set!</h1><p>Missed terms: (<a href="javascript:again();">try again with missed</a>)<br>`;
             for(var i=0;i<missed.length;i++){ str += missed[i]; str += "<br>"; }
             str += "</p>";
             $("#main-td").html(str);
         } else {
+            if(learnmode){ location.href = '/fr?learn=true'; return; }
             $("#main-td").html(`<h1>You've finished studying this set!</h1>`);
         }
         return;
@@ -123,9 +126,34 @@ function next(){
 }
 
 function again(){
+    repeated = true;
     if(type == "Set"){
-        
+        shuffleArray(ic1s);
+        shuffleArray(ic2s);
+        shuffleArray(ic3s);
+        ic1s = ic1s.slice(0,missed.length);
+        ic2s = ic2s.slice(0,missed.length);
+        ic3s = ic3s.slice(0,missed.length);
+    } else {
+        var new_c1s = [];
+        var new_ic1s = [];
+        var new_ic2s = [];
+        var new_ic3s = [];
+        for(var i=0;i<missed.length;i++){
+            if(missed[i] == questions[i]){
+                c1s.push(c1s[i]);
+                ic1s.push(ic1s[i]);
+                ic2s.push(ic2s[i]);
+                ic3s.push(ic3s[i]);
+            }
+        }
+        questions = JSON.parse(JSON.stringify(missed));
+        c1s = JSON.parse(JSON.stringify(new_c1s));
+        ic1s = JSON.parse(JSON.stringify(new_ic1s));
+        ic2s = JSON.parse(JSON.stringify(new_ic2s));
+        ic3s = JSON.parse(JSON.stringify(new_ic3s));
     }
+    init();
 }
 
 // Start with term

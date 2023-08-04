@@ -79,6 +79,7 @@ function next(){
         $("#sbtn").html(`Study Again&nbsp;&nbsp;<i class="fa-solid fa-rotate-right"></i>`);
         $("#sbtn").attr("onclick","location.reload();");
         if(missed.length > 0){
+            if( learnmode ){ again(); return; }
             var str = `<h1>You've finished studying this set!</h1><p>Missed terms: (<a href="javascript:again();">try again with missed</a>)<br>`;
             for(var i=0;i<missed.length;i++){ str += missed[i]; str += "<br>"; }
             str += "</p>";
