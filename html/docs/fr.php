@@ -7,8 +7,6 @@
   <title>Test | Quizza</title>
 
   <?php require("/var/www/html/docs/lib/imports.php"); ?>
-
-  <script src='https://www.quizza.org/static/scripts/fr.js' defer></script>
  
   <script async>
     <?php if($_GET['learn']=='true'){ ?> var learnmode = true; <?php } else { ?> var learnmode = false; <?php } ?>
@@ -73,6 +71,7 @@
     </a>
   </div>
 
+  <script src='https://www.quizza.org/static/scripts/fr.js' defer></script>
   <script defer>init();</script>
 
   <?php require("/var/www/html/docs/lib/footer.php"); ?>

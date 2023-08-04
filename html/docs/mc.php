@@ -8,8 +8,6 @@
 
   <?php require("/var/www/html/docs/lib/imports.php"); ?>
 
-  <script src='https://www.quizza.org/static/scripts/mc.js' defer></script>
-
   <?php if($type == "Set") { ?>
     <script async>
       var type = "Set";
@@ -44,7 +42,7 @@
 
 </head>
 
-<body onload="init()">
+<body>
 
   <?php require("/var/www/html/docs/lib/topBar.php"); ?>
 
@@ -98,6 +96,9 @@
   </div>
 
   <?php require("/var/www/html/docs/lib/footer.php"); ?>
+
+  <script src='https://www.quizza.org/static/scripts/mc.js' defer></script>
+  <script defer>init();</script>
 
 </body>
 
