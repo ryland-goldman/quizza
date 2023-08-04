@@ -79,10 +79,12 @@ function next(){
         [window.answers[i], window.answers[j]] = [answers[j], answers[i]];
     }
     $("#main-td").html("<h1>"+question+`</h1>
-        <button id='response1'>`+answers[0]+`</button>
-        <button id='response2'>`+answers[1]+`</button>
-        <button id='response3'>`+answers[2]+`</button>
-        <button id='response4'>`+answers[3]+`</button>`);
+        <div id='mc-div-outer'><div id='mc-div-inner'>
+            <button id='response1' onclick='submit(0)'>`+answers[0]+`</button>
+            <button id='response2' onclick='submit(1)'>`+answers[1]+`</button>
+            <button id='response3' onclick='submit(2)'>`+answers[2]+`</button>
+            <button id='response4' onclick='submit(3)'>`+answers[3]+`</button>
+        </div></div>`);
     $(".complete").html((current_flashcard+1) + "/" + questions.length);
     $("#sbtn").hide();
     MathJax.typeset();
