@@ -45,7 +45,7 @@
     </table>
 
     <div class='study-box'>
-
+      <p class='complete-parent'><span class="complete">2/80</span></p>
       <table>
         &nbsp;
         <tr>
@@ -54,7 +54,7 @@
       </table>
 
       <div id='bottom-btns' class='study-btn-bottom'>
-        <button class='btn-blue' id='sbtn'>Submit (--/--)&nbsp;&nbsp;<i class="fa-solid fa-arrow-right-to-bracket"></i></button>
+        <button class='btn-blue' id='sbtn'>Submit&nbsp;&nbsp;<i class="fa-solid fa-arrow-right-to-bracket"></i></button>
         <a rel="modal:open" href='#options'>
           <button onclick='options()'>Options&nbsp;&nbsp;<i class="fa-solid fa-sliders"></i></button>
         </a>
