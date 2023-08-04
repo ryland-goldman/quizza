@@ -72,7 +72,6 @@
   </div>
 
   <script src='https://www.quizza.org/static/scripts/fr.js' defer></script>
-  <script defer>init();</script>
 
   <?php require("/var/www/html/docs/lib/footer.php"); ?>
 

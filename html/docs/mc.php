@@ -42,7 +42,7 @@
 
 </head>
 
-<body>
+<body onload="init()">
 
   <?php require("/var/www/html/docs/lib/topBar.php"); ?>
 
@@ -98,7 +98,6 @@
   <?php require("/var/www/html/docs/lib/footer.php"); ?>
 
   <script src='https://www.quizza.org/static/scripts/mc.js' defer></script>
-  <script defer>init();</script>
 
 </body>
 
