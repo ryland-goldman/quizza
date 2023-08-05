@@ -67,7 +67,7 @@
     </table>
 
     <div class='study-box'>
-
+      <p class='complete-parent'><span class="complete">--/--</span></p>
       <table>
         &nbsp;
         <tr>

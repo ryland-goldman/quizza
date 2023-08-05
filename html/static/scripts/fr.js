@@ -85,6 +85,7 @@ function next(){
             str += "</p>";
             $("#main-td").html(str);
         } else {
+            if(learnmode){ $("#sbtn").attr("onclick","location.href='mc?learn=true;'"); }
             $("#main-td").html(`<h1>You've finished studying this set!</h1>`);
         }
         return;
