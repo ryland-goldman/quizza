@@ -1,7 +1,8 @@
 <?php
 $classID = "private";
 $req_permission = 3;
-require("/var/www/html/docs/lib/header.php");
+try { require("/var/www/html/docs/lib/header.php"); }
+catch (Exception $e){ }
 if(!$private_set){ header("HTTP 400 Bad Request"); die(); }
 echo "<ul>";
 $isfirst = true;
