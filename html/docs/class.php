@@ -107,6 +107,7 @@
                   </td>
                   <td>
                     <p class='rightalign'>
+                      <?php if($private_set) { ?><span class='sharebtn-wrapper' id='term-<?php echo $row["ID"]; ?>'><a href='#share'><button class='class-sharebtn'>Share</button></a></span><?php } ?>
                       <button class='class-practicebtn'>Practice</button>
                     </p>
                   </td>
@@ -186,6 +187,18 @@
     <div id="favLogin" class="modal">
       <h2>Favorite</h2>
       <p>Please sign in to favorite a set.</p>
+    </div>
+  <?php } ?>
+  <?php if($private_set){ ?>
+    <!-- Share sets -->
+    <div id="share" class="modal">
+      <h2>Share Set</h2>
+      <div id='share-list'></div>
+      <hr>
+      <input id='share-add' placeholder="Email">
+      <br>
+      <button>Add (view only)</button>
+      <button>Add (view and edit)</button>
     </div>
   <?php } ?>
 

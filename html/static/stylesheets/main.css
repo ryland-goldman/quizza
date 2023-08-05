@@ -402,6 +402,16 @@ a, button {
     font-size: 1em;
 }
 
+.class-sharebtn {
+    background-color: transparent;
+    border-radius: 8px;
+    border: 2px solid var(--color-theme);
+    padding: 20px;
+    color: var(--color-text);
+    font-size: 1em;
+}
+
+
 .subject-row table, #no-items-card table {
     padding: 6px 18px;
     width: 100%;
@@ -602,7 +612,7 @@ a, button {
     font-size: 1em;
 }
 
-#response {
+#response, #share-add {
     text-align: center;
     transition: width 0.4s ease-in-out;
     background: rgba(0,0,0,0);
@@ -615,6 +625,8 @@ a, button {
     padding: 12px 20px 12px 20px;
     color: var(--color-text);
 }
+
+#share-add { min-width:15vw!important; }
 
 .finished {
     background-color: rgba(0,255,0,0.3)!important;

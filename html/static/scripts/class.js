@@ -16,6 +16,7 @@ function save(isLoggedIn) {
     xhttp.send("class=" + classID);
 }
 
+var share_set_no = 0;
 $(document).ready(function() {
     if (!loggedIn) {
         render_gSignIn(true);
@@ -25,6 +26,10 @@ $(document).ready(function() {
         $(".allSets").filter(function() {
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
+    });
+    $(".sharebtn-wrapper").click(function(event){
+        event.stopPropagation();
+        share_set_no = parseInt(this.attr('id').substr(5));
     });
 });
 
