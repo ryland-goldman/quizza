@@ -42,14 +42,14 @@ const readFileAsText = function(isPrivate) {
         var title = document.getElementById("file-to-read").files[0].name;
         var content = fileLoadedEvent.target.result;
         var xhttp = new XMLHttpRequest();
-        xhttp.open("GET", "/docs/addSet.php?giveId=true&js_upload=true&title=" + encodeURIComponent(title) + isPrivate + "&class=" + classID, true);
+        xhttp.open("GET", "/"+classID"/addSet?giveId=true&title=" + encodeURIComponent(title) + isPrivate + "&class=" + classID, true);
         xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var xhttp2 = new XMLHttpRequest();
                 var setID = this.responseText.trim();
                 console.log(this);
-                xhttp2.open("POST", "/docs/saveChanges.php", true);
+                xhttp2.open("POST", "/"+classID+"/"+setID+"/saveChanges", true);
                 xhttp2.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                 xhttp2.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
