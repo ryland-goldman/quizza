@@ -25,6 +25,14 @@
     <?php } ?>
 
 
+    <!-- Search bar -->
+    <div id="searchbox-home">
+      <input id="search" placeholder="Search for classes...">
+      <div class="resultscontainer">
+      </div>
+    </div>
+
+
     <?php if ($loggedIn) { ?>
       <!-- Favorite classes -->
       <div class='subject-row'>
@@ -146,6 +154,33 @@
     onload_1();
     setTimeout(onload_2, 1000);
     onload_3();
+
+    $("#search").focus(function(event){
+      $(".resultscontainer").show();
+    });
+
+    $("#search").blur(function(event){
+      $(".resultscontainer").hide();
+    });
+
+    $('#search').keypress(function(event) {
+      $.get("/docs/lib/searchClasses.php?query="+encodeURIComponent($("#search").val()), function(data, status){
+        try {var results = JSON.parse(data);}
+        catch {
+          $(".resultscontainer").html("");
+          return;
+        }
+        var results_str = "";
+        for(var i=0;i<results.length && i<5;i++){
+          var id = 'resultscontainer-'+i;
+          if(results.length >= 2 && i=0){ id = 'resultscontainer-div-first'; }
+          if(results.length >= 2 && i=results.length-1){ id = 'resultscontainer-div-last'; }
+          if(results.length >= 2 && i=4){ id = 'resultscontainer-div-last'; }
+          results_str += "<a href='"+results[i][1]+"'><div id='"+id+"'>"+results[i][0]+"</div></a>";
+        }
+        $(".resultscontainer").html(results_str);
+      });
+    });
   </script>
 </body>
 
