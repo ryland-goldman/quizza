@@ -165,7 +165,12 @@
     });
 
     $('#search-home').keypress(function(event) {
-      $.get("/docs/lib/searchClasses.php?query="+encodeURIComponent($("#search-home").val()), function(data, status){
+        
+        if(!event.charCode)return;
+        var cur = this.value;
+        var val = cur.substring(0,this.selectionStart) + event.key + cur.substring(this.selectionEnd); 
+
+      $.get("/docs/lib/searchClasses.php?query="+encodeURIComponent(val), function(data, status){
         try {var results = JSON.parse(data);}
         catch {
           $(".resultscontainer").html("");
