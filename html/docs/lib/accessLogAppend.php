@@ -8,6 +8,7 @@ $set1 = "";
 $section1 = "";
 $user1 = "";
 $ref1 = "";
+$ipaddr = $_SERVER["REMOTE_ADDR"];
 if(isset($school)) { $school1 = $admin1->real_escape_string(filter_var($school,FILTER_SANITIZE_STRING)); }
 if(isset($classID)){ $class1 = $admin1->real_escape_string(filter_var($classID,FILTER_SANITIZE_STRING)); }
 if(isset($setID)){ $set1 = $admin1->real_escape_string(filter_var($setID,FILTER_SANITIZE_STRING)); }
