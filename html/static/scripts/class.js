@@ -32,7 +32,7 @@ $(document).ready(function() {
         var share_set_no = parseInt($(this).attr('id').substr(5));
         $(` <div id="share-`+modal_current+`" class="modal">
               <h2>Share Set</h2>
-              <div id='share-list'></div>
+              <div id='share-list-`+modal_current+`'></div>
               <hr>
               <input type='text' id='email-box-`+modal_current+`' class='email-box' placeholder='Email' required>
               <span id='error-`+modal_current+`' style='color:red;display:none;'><br>Invalid email address. Please try again.<br></span>
@@ -55,7 +55,7 @@ function add(edit_permission, share_set_no){
         return;
     }
     $.get("/docs/lib/share_private_set.php?set="+share_set_no+"&edit_permission="+edit_permission+"&email="+encodeURIComponent(email), function(data,status){
-        reload_perms(share_set_no);
+        $("#share-list-"+modal_current).html(data);
         $("#share-"+modal_current+" button").prop("disabled", true).css({ "cursor": "not-allowed" });
         $("#success-"+modal_current).show();
         $("#email-box-"+modal_current).val("");
@@ -63,7 +63,15 @@ function add(edit_permission, share_set_no){
 }
 
 function reload_perms(share_set_no){
+    $.get("/docs/lib/get_private_set_permissions.php?set="+share_set_no, function(data,status){
+        $("#share-list-"+modal_current).html(data);
+    });
+}
 
+function remove(number,set_no){
+    $.get("/docs/lib/remove_private_set.php?set="+share_set_no+"&user="+number, function(data,status){
+        $("#share-list-"+modal_current).html(data);
+    });
 }
 
 const readFileAsText = function(isPrivate) {
