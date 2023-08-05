@@ -10,6 +10,7 @@ $encoded = base64_encode(json_encode($allowed_obj));
 $admin->query("UPDATE privateSets SET Shared=\"".$encoded."\" WHERE ID=\"".$setID."\"");
 $to_email = $_GET["email"];
 $from_name = $name;
+$from_email = $email;
 $setname = $setName;
 require("/var/www/html/docs/lib/email-endpoint/index.php");
 require("/var/www/html/docs/lib/get_private_set_permissions.php");

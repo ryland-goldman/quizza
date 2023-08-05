@@ -31,7 +31,7 @@ $(document).ready(function() {
         event.stopPropagation();
         modal_current++;
         var share_set_no = parseInt($(this).attr('id').substr(5));
-        $(` <div id="share-`+modal_current+`" class="modal">
+        $(` <div id="share-`+modal_current+`" class="modal"> 
               <h2>Share Set</h2>
               <hr>
               <div id='share-list-`+modal_current+`'></div>
