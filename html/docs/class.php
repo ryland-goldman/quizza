@@ -126,7 +126,11 @@
           <tr>
             <td>
               <?php if($private_set){ ?>
-                <p>You have not sets. Click 'add set' to get started!</p>
+                <?php if($loggedIn){ ?>
+                  <p>You have not sets. Click 'add set' to get started!</p>
+                <?php } else { ?>
+                  <p>Sign in with Google to create a private set!</p>
+                <?php } ?>
               <?php } else { ?>
                 <p>This class has no sets. Click 'add set' to get started!</p>
               <?php } ?>
