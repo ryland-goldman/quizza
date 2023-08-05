@@ -44,14 +44,16 @@
       <?php mobileBR(); ?>
 
       <!-- Favorite button -->
-      <?php if($admin->query("SELECT * FROM Favorites WHERE ID=\"$classID\" AND User=\"$email\"")->num_rows == 0 && $loggedIn == true){ ?><!-- Not favorited, but logged in -->
-        <button id='favBtn' class='title-button-white' onclick='save()'>Favorite Class <i class="fa-regular fa-star"></i></button>
-      <?php } else if($loggedIn == true) { ?><!-- Logged in, favorited -->
-        <button id='favBtn' class='title-button-white' onclick='save()'>Remove Favorite <i class="fa-solid fa-star"></i></button>
-      <?php } else { ?><!-- Not logged in -->
-        <a rel="modal:open" href="#favLogin"><button id='favBtn' class='title-button-white'>Favorite Class <i class="fa-regular fa-star"></i></button></a>
+      <?php if(!$private_set){ ?>
+        <?php if($admin->query("SELECT * FROM Favorites WHERE ID=\"$classID\" AND User=\"$email\"")->num_rows == 0 && $loggedIn == true){ ?><!-- Not favorited, but logged in -->
+          <button id='favBtn' class='title-button-white' onclick='save()'>Favorite Class <i class="fa-regular fa-star"></i></button>
+        <?php } else if($loggedIn == true) { ?><!-- Logged in, favorited -->
+          <button id='favBtn' class='title-button-white' onclick='save()'>Remove Favorite <i class="fa-solid fa-star"></i></button>
+        <?php } else { ?><!-- Not logged in -->
+          <a rel="modal:open" href="#favLogin"><button id='favBtn' class='title-button-white'>Favorite Class <i class="fa-regular fa-star"></i></button></a>
+        <?php } ?>
+        <?php mobileBR(); ?>
       <?php } ?>
-      <?php mobileBR(); ?>
 
       <!-- Search bar -->
       <input id='search' type='text' placeholder="Search..">
