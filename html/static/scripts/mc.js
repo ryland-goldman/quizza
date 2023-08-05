@@ -134,6 +134,12 @@ function again(){
         ic1s = ic1s.slice(0,missed.length);
         ic2s = ic2s.slice(0,missed.length);
         ic3s = ic3s.slice(0,missed.length);
+        var new_c1s = [];
+        for(var i=0;i<missed.length;i++){
+            if(missed[i] == questions[i]){ new_c1s.push(c1s[i]); }
+        }
+        questions = JSON.parse(JSON.stringify(missed));
+        c1s = JSON.parse(JSON.stringify(new_c1s));
     } else {
         var new_c1s = [];
         var new_ic1s = [];
@@ -141,10 +147,10 @@ function again(){
         var new_ic3s = [];
         for(var i=0;i<missed.length;i++){
             if(missed[i] == questions[i]){
-                c1s.push(c1s[i]);
-                ic1s.push(ic1s[i]);
-                ic2s.push(ic2s[i]);
-                ic3s.push(ic3s[i]);
+                new_c1s.push(c1s[i]);
+                new_ic1s.push(ic1s[i]);
+                new_ic2s.push(ic2s[i]);
+                new_ic3s.push(ic3s[i]);
             }
         }
         questions = JSON.parse(JSON.stringify(missed));
