@@ -93,7 +93,7 @@
         
         <!-- List item -->
         <div class='allSets'>
-          <a href='/<?php echo $classID."/".$row["ID"]; ?>'>
+          <a onclick="location.href='/<?php echo $classID."/".$row["ID"]; ?>';">
             <div class='item-card'>
               <table>
                 <tr>
