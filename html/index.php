@@ -165,7 +165,7 @@
     });
 
     $('#search-home').keypress(function(event) {
-      $.get("/docs/lib/searchClasses.php?query="+encodeURIComponent($("#search").val()), function(data, status){
+      $.get("/docs/lib/searchClasses.php?query="+encodeURIComponent($("#search-home").val()), function(data, status){
         try {var results = JSON.parse(data);}
         catch {
           $(".resultscontainer").html("");
