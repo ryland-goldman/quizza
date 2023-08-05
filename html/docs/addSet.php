@@ -1,4 +1,5 @@
 <?php
+if($_GET["js_upload"]=="true"){ require("/var/www/html/docs/lib/header.php"); }
 if($loggedIn == false){ die("<script>alert(`Please sign in before creating sets.`);history.back();</script>"); }
 
 date_default_timezone_set("America/Los_Angeles");
