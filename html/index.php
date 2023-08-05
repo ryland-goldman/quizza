@@ -166,7 +166,6 @@
 
     $('#search-home').keypress(function(event) {
         
-        if(!event.charCode)return;
         var cur = this.value;
         var val = cur.substring(0,this.selectionStart) + event.key + cur.substring(this.selectionEnd); 
 
