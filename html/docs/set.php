@@ -11,6 +11,7 @@
 
   <?php if($type=="Set"){ ?><script src="https://www.quizza.org/static/scripts/set.js"></script><?php } ?>
   <?php if($type=="Quiz"){ ?><script src="https://www.quizza.org/static/scripts/setQuiz.js"></script><?php } ?>
+  <?php if($private_set) { ?><script src="https://www.quizza.org/static/scripts/share.js"></script><?php } ?>
 
   <script async>
 
@@ -34,7 +35,7 @@
 
     var loggedIn = <?php if($loggedIn){echo "true";}else{echo "false";} ?>;
 
-    window.onload = function(){
+    $(document).ready(function() {
 
       <?php if($type == "Set") { ?>
         allWords.pop();
@@ -51,7 +52,7 @@
       <?php } ?>
 
       load_function();
-    }
+    });
   </script>
 
 </head>
@@ -100,7 +101,11 @@
           
           <?php mobileBR(); ?>
 
-          <button onclick='prnt()' class='title-button-white'>Print&nbsp;&nbsp;<i class="fa-solid fa-print"></i></button>
+          <?php if($private_set && $permission == 3) { ?><button id='term-<?php echo $setID; ?>' class='sharebtn-wrapper title-button-white right'>Share</button><?php } ?>
+
+          <?php mobileBR(); ?>
+
+          <button onclick='prnt()' class='title-button-white right'>Print&nbsp;&nbsp;<i class="fa-solid fa-print"></i></button>
 
           <?php mobileBR(); ?>
 

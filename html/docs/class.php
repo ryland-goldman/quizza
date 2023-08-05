@@ -10,6 +10,7 @@
   <script async>var loggedIn = <?php if($loggedIn==true){echo "true";} else {echo "false";} ?>;</script>
   <script async>var classID = "<?php echo $classID;?>";</script>
   <script src="https://www.quizza.org/static/scripts/class.js"></script>
+  <?php if($private_set) { ?><script src="https://www.quizza.org/static/scripts/share.js"></script><?php } ?>
 
 </head>
 <body>

@@ -124,9 +124,8 @@ function load_function() {
             $("#container-" + term[1]).attr("class", "item-card enabled");
         }
     });
-    try {
-        render_gSignIn();
-    } catch (e) {}
+    try { render_gSignIn(); } catch (e) {}
+    try { share_script_init(); } catch {}
 }
 
 MathJax = {
