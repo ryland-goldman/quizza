@@ -12,6 +12,7 @@
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
   <?php if ($loggedIn == false) { ?><script src="https://accounts.google.com/gsi/client" async defer></script><?php } ?>
   <?php if ($loggedIn == false) { ?><script src="https://www.quizza.org/static/scripts/login.js"></script><?php } ?>
+  <?php if ($loggedIn == true) { ?><script>function signout(){ document.cookie = "google-signing=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"; location.reload();}</script><?php } ?>
 
   <!-- Metadata -->
   <meta charset="utf-8">

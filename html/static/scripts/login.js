@@ -35,8 +35,3 @@ function render_gSignIn(prompt_login=false) {
         google.accounts.id.prompt();
     }
 }
-
-function signout(){
-    document.cookie = "google-signing=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    location.reload();
-}
