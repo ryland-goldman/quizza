@@ -70,7 +70,6 @@ const readFileAsText = function(isPrivate) {
         $(".uploadBtn:nth-of-type(2)").prop("disabled", false).css({
             "cursor": "pointer"
         });
-        alert("No File Uploaded");
         $("#nofileuploaded").show();
     }
 }

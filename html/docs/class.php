@@ -157,7 +157,7 @@
       <!-- Middle row -->
       <p><strong>Or Upload a CSV</strong></p>
       <input id="file-to-read" type="file" accept=".csv" /><br>
-      <span id='nofileuploaded' style='color:red;display:none;'>No file uploaded. Please try again</span>
+      <span id='nofileuploaded' style='color:red;display:none;'><br>No file uploaded. Please try again<br></span>
       <input type="button" onclick="readFileAsText('&private=Create Public Set')" class='uploadBtn uploadBtn-first' value='Create<?php if(!$private_set) { ?> Public<?php } else { ?> Private<?php } ?> Set'>
       <?php if(!$private_set) { ?><input type="button" onclick="readFileAsText('&private=Create Protected Set')" class='uploadBtn' value='Create Protected Set'><?php } ?>
       <hr>
