@@ -30,6 +30,15 @@ $(document).ready(function() {
     $(".sharebtn-wrapper").click(function(event){
         event.stopPropagation();
         share_set_no = parseInt($(this).attr('id').substr(5));
+        $(` <div id="share" class="modal">
+              <h2>Share Set</h2>
+              <div id='share-list'></div>
+              <hr>
+              <input id='share-add' placeholder="Email">
+              <br>
+              <button>Add (view only)</button>
+              <button>Add (view and edit)</button>
+            </div>`).appendTo('body').modal();
     });
 });
 
