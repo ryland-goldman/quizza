@@ -16,7 +16,7 @@ function save(isLoggedIn) {
     xhttp.send("class=" + classID);
 }
 
-var modal_current = 1;
+var modal_current = 0;
 $(document).ready(function() {
     if (!loggedIn) {
         render_gSignIn(true);
@@ -29,6 +29,7 @@ $(document).ready(function() {
     });
     $(".sharebtn-wrapper").click(function(event){
         event.stopPropagation();
+        modal_current++;
         var share_set_no = parseInt($(this).attr('id').substr(5));
         $(` <div id="share-`+modal_current+`" class="modal">
               <h2>Share Set</h2>
@@ -41,7 +42,6 @@ $(document).ready(function() {
               <button class="submitbtn" onclick="add(true, `+share_set_no+`)">Add (view and edit)</button>
             </div>`).appendTo('body').modal();
         reload_perms(share_set_no);
-        modal_current++;
     });
 });
 
