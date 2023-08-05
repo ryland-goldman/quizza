@@ -18,11 +18,13 @@
 
   <div id='main-content'>
 
-    <p id='back-link'>
-      <a href='/'>
-        <i class="fa-solid fa-arrow-left"></i> Back
-      </a>
-    </p>
+    <?php if(!$private_set){ ?>
+      <p id='back-link'>
+        <a href='/'>
+          <i class="fa-solid fa-arrow-left"></i> Back
+        </a>
+      </p>
+    <?php } ?>
 
     <table id='titletable'>
       <tr>
