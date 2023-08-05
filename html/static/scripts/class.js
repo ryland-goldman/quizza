@@ -35,6 +35,7 @@ $(document).ready(function() {
               <div id='share-list'></div>
               <hr>
               <input type='text' id='email-box' placeholder='Email' required>
+              <span id='error' style='color:red;display:none;'><br>Invalid email address. Please try again.<br></span>
               <button class="submitbtn submitbtn-first" onclick="add(false, `+share_set_no+`)">Add (view only)</button>
               <button class="submitbtn" onclick="add(true, `+share_set_no+`)">Add (view and edit)</button>
             </div>`).appendTo('body').modal();
@@ -44,9 +45,21 @@ $(document).ready(function() {
 });
 
 function add(edit_permission, share_set_no){
+    $("#error").hide();
+    $("#share-"+modal_current+" button").prop("disabled", true).css({
+        "cursor": "not-allowed"
+    });
     var email = $("#email-box").val();
-    console.log(email+edit_permission);
-    reload_perms(share_set_no);
+    if(!email.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
+        $("#error").show();
+        return;
+    }
+    $.get("/docs/lib/share_private_set.php?set_n="+share_set_no+"&edit_permission="+edit_permission+"&email="+encodeURIComponent(email), function(data,status){
+        reload_perms(share_set_no);
+        $("#share-"+modal_current+" button").prop("disabled", true).css({
+            "cursor": "not-allowed"
+        });
+    });
 }
 
 function reload_perms(share_set_no){
