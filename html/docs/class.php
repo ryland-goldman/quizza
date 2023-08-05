@@ -123,7 +123,11 @@
         <table>
           <tr>
             <td>
-              <p>This class has no sets. Click 'add set' to get started!</p>
+              <?php if($private_set){ ?>
+                <p>You have not sets. Click 'add set' to get started!</p>
+              <?php } else { ?>
+                <p>This class has no sets. Click 'add set' to get started!</p>
+              <?php } ?>
             </td>
           </tr>
         </table>
@@ -139,22 +143,26 @@
 
         <!-- Top row -->
         <input type='text' id='addInputBox' name="title" placeholder='Set Name' required>
-        <input class="submitbtn submitbtn-first" value='Create Public Set' name='private' type='Submit'>
-        <input class="submitbtn" value='Create Protected Set' name='private' type='Submit'>
+        <input class="submitbtn submitbtn-first" value='Create<?php if(!$private_set) { ?> Public<?php } else { ?> Private<?php } ?> Set' name='private' type='Submit'>
+        <?php if(!$private_set) { ?><input class="submitbtn" value='Create Protected Set' name='private' type='Submit'><?php } ?>
       </form>
       <hr>
 
       <!-- Middle row -->
       <p><strong>Or Upload a CSV</strong></p>
       <input id="file-to-read" type="file" accept=".csv" /><br>
-      <input type="button" onclick="readFileAsText('&private=Create Public Set')" class='uploadBtn uploadBtn-first' value='Create Public Set'>
-      <input type="button" onclick="readFileAsText('&private=Create Protected Set')" class='uploadBtn' value='Create Protected Set'>
+      <input type="button" onclick="readFileAsText('&private=Create Public Set')" class='uploadBtn uploadBtn-first' value='Create<?php if(!$private_set) { ?> Public<?php } else { ?> Private<?php } ?> Set'>
+      <?php if(!$private_set) { ?><input type="button" onclick="readFileAsText('&private=Create Protected Set')" class='uploadBtn' value='Create Protected Set'><?php } ?>
       <hr>
 
       <!-- Bottom row -->
       <p>
         <small>
-        Public sets can be accessed and edited by anyone. Protected sets can be viewed by anyone, but only edited by the creator.
+        <?php if($private_set) { ?>
+          Private sets are only available to people you've shared them with. However, do not save sensitive information in Quizza.
+        <?php } else { ?>
+          Public sets can be accessed and edited by anyone. Protected sets can be viewed by anyone, but only edited by the creator.
+        <?php } ?>
         </small>
         <br><br>
         <small>
