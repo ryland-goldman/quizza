@@ -16,7 +16,6 @@ if($email !== $creator && $creator !== ""){ die("<script>alert('This set can onl
   <script src='https://www.quizza.org/static/scripts/edit<?php if($type=="Quiz"){ ?>Quiz<?php } ?>.js'></script>
   <script async>var class_and_set = "class=<?php echo $classID."&set=".$setID;?>&";</script>
   <script async>var google_auth = "<?php echo $gsi_auth; ?>";</script>
-  <script>$(".tooltips").mouseenter(function(){$(this).find('span').empty().append($(this).attr('tooltip'));});</script>
 
 </head>
 
@@ -209,6 +208,8 @@ if($email !== $creator && $creator !== ""){ die("<script>alert('This set can onl
       </form>
     </div>
   <?php require("/var/www/html/docs/lib/footer.php"); ?>
+
+  <script>$(".tooltips").mouseenter(function(){$(this).find('span').empty().append($(this).attr('tooltip'));});</script>
 
 </body>
 
