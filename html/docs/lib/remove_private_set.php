@@ -9,7 +9,7 @@ $i = 0;
 $allowed_obj = json_decode($allowed,true);
 foreach (json_decode($allowed) as $allowed_email => $allowed_permission) {
 	if($allowed_email === $email || $allowed_permission == 0){continue;}
-	if($i == parseInt($_GET["user"])){
+	if($i == intval($_GET["user"])){
 		$allowed_obj[$allowed_email] = 0;
 	}
 	$i++;
