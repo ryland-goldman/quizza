@@ -75,7 +75,7 @@
           if($permission == 0){ continue; }
         }
 
-        count_sets++;
+        $count_sets++;
 
         // Count number of terms
         $terms_query = $thisClass->query("SELECT COUNT(*) FROM ".$row["Type"].$row["ID"]);
