@@ -54,7 +54,7 @@ function add(edit_permission, share_set_no){
         $("#error").show();
         return;
     }
-    $.get("/docs/lib/share_private_set.php?set_n="+share_set_no+"&edit_permission="+edit_permission+"&email="+encodeURIComponent(email), function(data,status){
+    $.get("/docs/lib/share_private_set.php?set="+share_set_no+"&edit_permission="+edit_permission+"&email="+encodeURIComponent(email), function(data,status){
         reload_perms(share_set_no);
         $("#share-"+modal_current+" button").prop("disabled", true).css({
             "cursor": "not-allowed"
