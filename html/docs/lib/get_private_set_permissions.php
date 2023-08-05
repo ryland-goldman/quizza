@@ -8,7 +8,7 @@ $isfirst = true;
 $i = 0;
 foreach (json_decode($allowed) as $allowed_email => $allowed_permission) {
 	if($allowed_email === $email || $allowed_permission == 0){continue;}
-	echo "<li>".$allowed_email." - ".($allowed_permission == 1 ? "View only" : "View and edit")." - <a href='javascript:remove($i)'>Remove</a></li>";
+	echo "<li>".$allowed_email." - ".($allowed_permission == 1 ? "View only" : "View and edit")." - <a href='javascript:remove($i, $setID)'>Remove</a></li>";
 	$i++;
 }
 echo "</ul>";

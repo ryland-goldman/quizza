@@ -69,7 +69,7 @@ function reload_perms(share_set_no){
 }
 
 function remove(number,set_no){
-    $.get("/docs/lib/remove_private_set.php?set="+share_set_no+"&user="+number, function(data,status){
+    $.get("/docs/lib/remove_private_set.php?set="+set_no+"&user="+number, function(data,status){
         $("#share-list-"+modal_current).html(data);
     });
 }
