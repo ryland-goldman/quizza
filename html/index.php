@@ -164,11 +164,8 @@
       $(".resultscontainer").hide();
     });
 
-    $('#search-home').keypress(function(event) {
-        
-        var cur = this.value;
-        var val = cur.substring(0,this.selectionStart) + event.key + cur.substring(this.selectionEnd); 
-
+    $('#search-home').keyup(function(event) {
+      var val = this.value;
       $.get("/docs/lib/searchClasses.php?query="+encodeURIComponent(val), function(data, status){
         try {var results = JSON.parse(data);}
         catch {

@@ -212,6 +212,14 @@ a, button {
 }
 
 @media only screen and (max-width: 600px) {
+    .resultscontainer {
+        width: 60%!important;
+    }
+
+    #search-home {
+        width: 100%!important;
+    }
+
     #response1, #response2, #response3, #response4 {
         margin-bottom: 4px;
         width: 80%;
