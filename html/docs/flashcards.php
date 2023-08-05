@@ -1,4 +1,6 @@
-<?php require("/var/www/html/docs/lib/header.php");?>
+<?php
+ $req_permission = 1;
+ require("/var/www/html/docs/lib/header.php");?>
  <!DOCTYPE html>
 <html>
 

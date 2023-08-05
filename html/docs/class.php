@@ -62,10 +62,22 @@
     <!-- List of sets -->
     <?php
     $setLists = $admin->query("SELECT * FROM ".$classID."Sets ORDER BY Name");
+    $count_sets = 0;
     if ($setLists->num_rows > 0) {
-      while($row = $setLists->fetch_assoc()) { ?>
+      while($row = $setLists->fetch_assoc()) {
 
-        <?php // Count number of terms
+        if($private_set){
+          $allowed = base64_decode($admin->query("SELECT * FROM ".$classID."Sets WHERE ID=\"$setID\"")->fetch_assoc()["Shared"]);
+          $permission = 0;
+          foreach (json_decode($allowed) as $allowed_email => $allowed_permission) {
+            if($email == $allowed_email){ $permission = $allowed_permission; }
+          }
+          if($permission == 0){ continue; }
+        }
+
+        count_sets++;
+
+        // Count number of terms
         $terms_query = $thisClass->query("SELECT COUNT(*) FROM ".$row["Type"].$row["ID"]);
         if($terms_query->num_rows > 0){ 
           while($terms_query_result = $terms_query->fetch_assoc()){
@@ -101,7 +113,8 @@
         </div>
 
       <?php }
-    } else { ?>
+    }
+    if($count_sets == 0){ ?>
 
       <!-- No sets available -->
       <div id='no-items-card' class='item-card'>

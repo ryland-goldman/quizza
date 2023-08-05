@@ -10,7 +10,12 @@ $setID = intval($admin->query("SELECT MAX(ID) FROM ".$classID."Sets")->fetch_ass
 $thisClass->query("CREATE TABLE Set".$setID." (Term text, Definition text)");
 $title = $admin->real_escape_string(filter_var($_GET["title"],FILTER_SANITIZE_STRING));
 
-if(urldecode($_GET["private"]) !== "Create Protected Set") { $email = ""; }
-$admin->query("INSERT INTO ".$classID."Sets VALUES(\"$title\", \"$lastModified\", \"$setID\", \"$email\", \"Set\")");
+if($private_set){
+    $shared = base64_encode(json_encode(array("$email" => 3)));
+    $admin->query("INSERT INTO PrivateSets VALUES(\"$title\", \"$lastModified\", \"$setID\", \"Set\", \"$shared\")");
+} else {
+    if(urldecode($_GET["private"]) !== "Create Protected Set") { $email = ""; }
+    $admin->query("INSERT INTO ".$classID."Sets VALUES(\"$title\", \"$lastModified\", \"$setID\", \"$email\", \"Set\")");
+}
 if($_GET['giveId']=="true"){ echo $setID; } else { echo "<script>location.href='/".$classID."/".$setID."';</script>"; }
  ?>

@@ -2,10 +2,13 @@
 require "/var/www/html/docs/lib/login-endpoint/header.php";
 $sql_db_password =  trim(file_get_contents("/var/www/sql.privkey"));
 $school = 			array_shift((explode('.', $_SERVER['HTTP_HOST'])));
+if($school == "www"){ $school = "private"; }
 try { $admin = 			new mysqli("localhost", "quizza", $sql_db_password, "Admin".$school); }
 catch (Exception $e) { require("/var/www/html/404.php"); }
 $schooldb = 		new mysqli("localhost","quizza", $sql_db_password, "Schools");
-$school_shortname = $schooldb->query("SELECT * FROM main WHERE id=\"$school\"")->fetch_assoc()["shortname"];
+try { $school_shortname = $schooldb->query("SELECT * FROM main WHERE id=\"$school\"")->fetch_assoc()["shortname"]; }
+catch (Exception $e) { $school_shortname = "Private"; }
+if($school == "private") { $private_set = true; } else { $private_set = false; }
 
 function isMobileDevice() { return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]); }
 function mobileBR() { if(isMobileDevice()) { echo "<br><br>"; } }
@@ -51,6 +54,24 @@ if(isset($setID)) {
 	}
 
     $empty_set = $thisClass->query("SELECT * FROM ".$type.$setID)->num_rows == 0;
+
+    if($school == "private"){
+    	// Permission Levels:
+    	// 0 - No permission
+    	// 1 - Read permission
+    	// 2 - Read/write permission
+    	// 3 - Owner permission
+    	$private_no_permission = "You do not have permission to view this page";
+    	$allowed = base64_decode($admin->query("SELECT * FROM ".$classID."Sets WHERE ID=\"$setID\"")->fetch_assoc()["Shared"]);
+    	$permission = 0;
+    	foreach (json_decode($allowed) as $allowed_email => $allowed_permission) {
+		    if($email == $allowed_email){ $permission = $allowed_permission; }
+		}
+		if($permission == 0){ die($private_no_permission); }
+		if(isset($req_permission)){
+			if($req_permission > $permission){ die($private_no_permission); }
+		}
+    }
 }
 
 // Add to access log

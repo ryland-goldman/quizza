@@ -1,4 +1,5 @@
 <?php
+$req_permission = 2;
 require("/var/www/html/docs/lib/header.php");
 if($loggedIn == false){ die("<script>alert(`Please sign in before editing sets.`);location.href='../';</script>"); }
 if($email !== $creator && $creator !== ""){ die("<script>alert('This set can only be edited by its creator.');location.href='../';</script>"); }
@@ -14,7 +15,6 @@ $title = $admin->real_escape_string(filter_var($_POST["title"],FILTER_SANITIZE_S
 $action = ($_GET["DELETE"] == "TRUE") ? "Delete" : "Edit";
 $edittime = date("d M Y (h:i A T)");
 $admin->query("INSERT INTO EditLog VALUES ('$email','$content','$classID $setID $title','$action','$edittime')");
-
 
 if($_GET["DELETE"]=="TRUE"){ // Deleting a set
   $admin->query("DELETE FROM ".$classID."Sets WHERE ID=\"$setID\"");

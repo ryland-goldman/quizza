@@ -1,4 +1,5 @@
 <?php 
+$req_permission = 2;
 header('Access-Control-Allow-Origin: *');
 require("/var/www/html/docs/lib/header.php");
 if($loggedIn == false){  die("<script>alert(`Please sign in before editing sets.`);location.href='../';</script>"); }
