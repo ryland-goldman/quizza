@@ -78,7 +78,7 @@
     </table>
 
     <p>
-        <a href='/<?php echo $classID."/".$setID; ?>/edit'>
+        <a <?php if($editable) { ?> href='/<?php echo $classID."/".$setID; ?>/edit' <?php } else { ?> href='#noedit' rel='modal:open'<?php } ?>>
           <button id='title-button-blue'>Edit Set&nbsp;&nbsp;
             <?php if($editable){ ?><i class="fa-regular fa-pen-to-square"></i><?php } ?>
             <?php if(!$editable){ ?><i class="fa-solid fa-lock"></i><?php } ?>
@@ -151,6 +151,15 @@
       <button class='modalbtn' onclick='location.href="/<?php echo $classID."/".$setID; ?>/mc?learn=true"'>Learn</button>
       <?php if($term_number >= 16) { ?><button class='modalbtn' onclick='location.href="/<?php echo $classID."/".$setID; ?>/match"'>Match</button><?php } ?>
     </a>
+  </div>
+
+  <div id="noedit" class="modal">
+    <h2>You cannot edit this set</h2>
+    <p>
+      <?php if(!$private_set && $loggedIn) { ?>Your account does not have access to this page. Only the original owner may edit this set.<?php } ?>
+      <?php if(!$private_set && !$loggedIn) { ?>You must be logged in to edit this set.<?php } ?>
+      <?php if($private_set) { ?>Your account does not have access to this page. Contact the set's owner to get edit access.<?php } ?>
+    </p>
   </div>
 
   <?php require("/var/www/html/docs/lib/footer.php"); ?>

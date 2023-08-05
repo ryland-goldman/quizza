@@ -37,7 +37,6 @@ $(document).ready(function() {
               <div id='share-list-`+modal_current+`'></div>
               <input type='text' id='email-box-`+modal_current+`' class='email-box' placeholder='Email' required>
               <span id='error-`+modal_current+`' style='color:red;display:none;'><br>Invalid email address. Please try again.<br></span>
-              <span id='success-`+modal_current+`' style='color:green;display:none;'><br>Success!<br></span>
               <button class="submitbtn submitbtn-first" onclick="add(false, `+share_set_no+`)">Add (view only)</button>
               <button class="submitbtn" onclick="add(true, `+share_set_no+`)">Add (view and edit)</button>
             </div>`).appendTo('body').modal();
@@ -47,7 +46,6 @@ $(document).ready(function() {
 
 function add(edit_permission, share_set_no){
     $("#error-"+modal_current).hide();
-    $("#success-"+modal_current).hide();
     $("#share-"+modal_current+" button").prop("disabled", true).css({ "cursor": "not-allowed" });
     var email = $("#email-box-"+modal_current).val();
     if(!email.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
@@ -56,8 +54,7 @@ function add(edit_permission, share_set_no){
     }
     $.get("/docs/lib/share_private_set.php?set="+share_set_no+"&edit_permission="+edit_permission+"&email="+encodeURIComponent(email), function(data,status){
         $("#share-list-"+modal_current).html(data);
-        $("#share-"+modal_current+" button").prop("disabled", true).css({ "cursor": "not-allowed" });
-        $("#success-"+modal_current).show();
+        $("#share-"+modal_current+" button").prop("enabled", true).css({ "cursor": "pointer" });
         $("#email-box-"+modal_current).val("");
     });
 }

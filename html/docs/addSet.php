@@ -1,6 +1,6 @@
 <?php
 if($_GET["js_upload"]=="true"){ require("/var/www/html/docs/lib/header.php"); }
-if($loggedIn == false){ die("<script>alert(`Please sign in before creating sets.`);history.back();</script>"); }
+if($loggedIn == false){ require("/var/www/html/403.php"); }
 
 date_default_timezone_set("America/Los_Angeles");
 $lastModified = date("d M Y (h:i A T)")." by ".$name;

@@ -1,8 +1,8 @@
 <?php
 $req_permission = 2;
 require("/var/www/html/docs/lib/header.php");
-if($loggedIn == false){  die("<script>alert(`Please sign in before editing sets.`);location.href='/".$classID."/".$setID."';</script>"); }
-if($email !== $creator && $creator !== ""){ die("<script>alert('This set can only be edited by its creator.');location.href='/".$classID."/".$setID."';</script>"); }
+if($loggedIn == false){  require("/var/www/html/403.php"); }
+if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }
 
 // Set time zone to PST/PDT by default
 date_default_timezone_set("America/Los_Angeles");

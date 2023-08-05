@@ -61,16 +61,17 @@ if(isset($setID)) {
     	// 1 - Read permission
     	// 2 - Read/write permission
     	// 3 - Owner permission
-    	$private_no_permission = "You do not have permission to view this page";
     	$allowed = base64_decode($admin->query("SELECT * FROM ".$classID."Sets WHERE ID=\"$setID\"")->fetch_assoc()["Shared"]);
     	$permission = 0;
     	foreach (json_decode($allowed) as $allowed_email => $allowed_permission) {
 		    if($email == $allowed_email){ $permission = $allowed_permission; }
 		}
-		if($permission == 0){ die($private_no_permission); }
+		if($permission == 0){ require("/var/www/html/403.php"); }
 		if(isset($req_permission)){
-			if($req_permission > $permission){ die($private_no_permission); }
+			if($req_permission > $permission){ require("/var/www/html/403.php"); }
 		}
+
+		if($permission == 1) { $editable = false; } else { $editable = true; }
     }
 }
 
