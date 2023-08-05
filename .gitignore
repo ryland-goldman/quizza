@@ -1,3 +1,4 @@
 .DS_Store
 *.privkey
 static/images/user-media/*
+vendor/
