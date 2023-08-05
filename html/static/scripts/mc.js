@@ -133,7 +133,7 @@ function again(){
         shuffleArray(ic3s);
         var new_c1s = [];
         for(var i=0;i<missed.length;i++){
-            for(var j=0;j<questions.length){
+            for(var j=0;j<questions.length;i++){
                 if(missed[i] == questions[j]){ new_c1s.push(c1s[j]); }
             }
         }
@@ -145,7 +145,7 @@ function again(){
         var new_ic2s = [];
         var new_ic3s = [];
         for(var i=0;i<missed.length;i++){
-            for(var j=0;j<questions.length){
+            for(var j=0;j<questions.length;i++){
                 if(missed[i] == questions[j]){
                     new_c1s.push(c1s[j]);
                     new_ic1s.push(ic1s[j]);
