@@ -101,9 +101,13 @@
           
           <?php mobileBR(); ?>
 
-          <?php if($private_set && $permission == 3) { ?><button id='term-<?php echo $setID; ?>' class='sharebtn-wrapper title-button-white right'>Share</button><?php } ?>
+        <?php } ?>
 
-          <?php mobileBR(); ?>
+        <?php if($private_set && $permission == 3) { ?><button id='term-<?php echo $setID; ?>' class='sharebtn-wrapper title-button-white right'>Share&nbsp;&nbsp;<i class="fa-solid fa-share"></i></button><?php } ?>
+
+        <?php mobileBR(); ?>
+
+        <?php if(!$empty_set){ ?>
 
           <button onclick='prnt()' class='title-button-white right'>Print&nbsp;&nbsp;<i class="fa-solid fa-print"></i></button>
 

@@ -16,6 +16,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
   <script src='https://www.quizza.org/static/scripts/edit<?php if($type=="Quiz"){ ?>Quiz<?php } ?>.js'></script>
   <script async>var class_and_set = "class=<?php echo $classID."&set=".$setID;?>&";</script>
   <script async>var google_auth = "<?php echo $gsi_auth; ?>";</script>
+  <script async>var back_url = "<?php echo "/".$classID."/".$setID; ?>";</script>
 
 </head>
 
