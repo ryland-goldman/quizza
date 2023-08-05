@@ -29,13 +29,12 @@ $(document).ready(function() {
 });
 
 const readFileAsText = function(isPrivate) {
+    $("#nofileuploaded").hide();
     $(".uploadBtn:nth-of-type(1)").prop("disabled", true).css({
-        "cursor": "not-allowed",
-        "background": "#EEE"
+        "cursor": "not-allowed"
     });
     $(".uploadBtn:nth-of-type(2)").prop("disabled", true).css({
-        "cursor": "not-allowed",
-        "background": "#EEE"
+        "cursor": "not-allowed"
     });
     const fileToRead = document.getElementById('file-to-read').files[0]
     const fileReader = new FileReader()
@@ -66,13 +65,12 @@ const readFileAsText = function(isPrivate) {
         fileReader.readAsText(fileToRead, 'UTF-8');
     } catch (e) {
         $(".uploadBtn:nth-of-type(1)").prop("disabled", false).css({
-            "cursor": "pointer",
-            "background": "#FFF"
+            "cursor": "pointer"
         });
         $(".uploadBtn:nth-of-type(2)").prop("disabled", false).css({
-            "cursor": "pointer",
-            "background": "#FFF"
+            "cursor": "pointer"
         });
         alert("No File Uploaded");
+        $("#nofileuploaded").show();
     }
 }
