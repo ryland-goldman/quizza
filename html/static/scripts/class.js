@@ -33,8 +33,8 @@ $(document).ready(function() {
         var share_set_no = parseInt($(this).attr('id').substr(5));
         $(` <div id="share-`+modal_current+`" class="modal">
               <h2>Share Set</h2>
-              <div id='share-list-`+modal_current+`'></div>
               <hr>
+              <div id='share-list-`+modal_current+`'></div>
               <input type='text' id='email-box-`+modal_current+`' class='email-box' placeholder='Email' required>
               <span id='error-`+modal_current+`' style='color:red;display:none;'><br>Invalid email address. Please try again.<br></span>
               <span id='success-`+modal_current+`' style='color:green;display:none;'><br>Success!<br></span>
