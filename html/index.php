@@ -31,6 +31,7 @@
       <div class="resultscontainer">
       </div>
     </div>
+    <br>
 
 
     <?php if ($loggedIn) { ?>
@@ -155,15 +156,15 @@
     setTimeout(onload_2, 1000);
     onload_3();
 
-    $("#search").focus(function(event){
+    $("#search-home").focus(function(event){
       $(".resultscontainer").show();
     });
 
-    $("#search").blur(function(event){
+    $("#search-home").blur(function(event){
       $(".resultscontainer").hide();
     });
 
-    $('#search').keypress(function(event) {
+    $('#search-home').keypress(function(event) {
       $.get("/docs/lib/searchClasses.php?query="+encodeURIComponent($("#search").val()), function(data, status){
         try {var results = JSON.parse(data);}
         catch {
