@@ -97,7 +97,7 @@ function next(){
             str += "</p>";
             $("#main-td").html(str);
         } else {
-            if(learnmode){ location.href = '/fr?learn=true'; return; }
+            if(learnmode){ location.href = 'fr?learn=true'; return; }
             $("#main-td").html(`<h1>You've finished studying this set!</h1>`);
         }
         return;
@@ -131,12 +131,11 @@ function again(){
         shuffleArray(ic1s);
         shuffleArray(ic2s);
         shuffleArray(ic3s);
-        ic1s = ic1s.slice(0,missed.length);
-        ic2s = ic2s.slice(0,missed.length);
-        ic3s = ic3s.slice(0,missed.length);
         var new_c1s = [];
         for(var i=0;i<missed.length;i++){
-            if(missed[i] == questions[i]){ new_c1s.push(c1s[i]); }
+            for(var j=0;j<questions.length){
+                if(missed[i] == questions[j]){ new_c1s.push(c1s[j]); }
+            }
         }
         questions = JSON.parse(JSON.stringify(missed));
         c1s = JSON.parse(JSON.stringify(new_c1s));
@@ -146,11 +145,13 @@ function again(){
         var new_ic2s = [];
         var new_ic3s = [];
         for(var i=0;i<missed.length;i++){
-            if(missed[i] == questions[i]){
-                new_c1s.push(c1s[i]);
-                new_ic1s.push(ic1s[i]);
-                new_ic2s.push(ic2s[i]);
-                new_ic3s.push(ic3s[i]);
+            for(var j=0;j<questions.length){
+                if(missed[i] == questions[j]){
+                    new_c1s.push(c1s[j]);
+                    new_ic1s.push(ic1s[j]);
+                    new_ic2s.push(ic2s[j]);
+                    new_ic3s.push(ic3s[j]);
+                }
             }
         }
         questions = JSON.parse(JSON.stringify(missed));
