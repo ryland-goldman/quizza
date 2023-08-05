@@ -29,7 +29,7 @@ $(document).ready(function() {
     });
     $(".sharebtn-wrapper").click(function(event){
         event.stopPropagation();
-        share_set_no = parseInt(this.attr('id').substr(5));
+        share_set_no = parseInt($(this).attr('id').substr(5));
     });
 });
 
