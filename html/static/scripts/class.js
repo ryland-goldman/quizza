@@ -53,7 +53,7 @@ const readFileAsText = function(isPrivate) {
                 xhttp2.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                 xhttp2.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
-                        location.href = setID;
+                        location.href = "/"+classID+"/"+setID;
                     }
                 }
                 xhttp2.send("data=" + encodeURIComponent(content.replaceAll('"', "”")) + "&title=" + encodeURIComponent(title)) + "&set=" + setID;
