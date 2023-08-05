@@ -16,6 +16,7 @@ if($email !== $creator && $creator !== ""){ die("<script>alert('This set can onl
   <script src='https://www.quizza.org/static/scripts/edit<?php if($type=="Quiz"){ ?>Quiz<?php } ?>.js'></script>
   <script async>var class_and_set = "class=<?php echo $classID."&set=".$setID;?>&";</script>
   <script async>var google_auth = "<?php echo $gsi_auth; ?>";</script>
+  <script>$(".tooltips").mouseenter(function(){$(this).find('span').empty().append($(this).attr('tooltip'));});</script>
 
 </head>
 
@@ -46,7 +47,8 @@ if($email !== $creator && $creator !== ""){ die("<script>alert('This set can onl
         <button id='title-button-blue' onclick="saveChanges()">Save Changes&nbsp;&nbsp;<i class="fa-solid fa-floppy-disk"></i></button>
         <?php mobileBR(); ?>
 
-        <button class='title-button-white' onclick="changeType()" id='toggleBTN'>Convert to <?php echo $type=="Set" ? "Quiz":"Set"; ?>&nbsp;&nbsp;<i class="fa-solid fa-rotate"></i></button>
+        <?php if($type == "Set"){ $explanation = "A quiz allows you to specify multiple choice answers"; } else { $explanation = "A set randomizes multiple choice answers from other terms"; } ?>
+        <span class='tooltips' tooltip="<?php echo $explanation; ?>"><button class='title-button-white' onclick="changeType()" id='toggleBTN'>Convert to <?php echo $type=="Set" ? "Quiz":"Set"; ?>&nbsp;&nbsp;<i class="fa-solid fa-rotate"></i></button><span></span></span>
         <?php mobileBR(); ?>
 
         <button class='title-button-white' onclick="addTerm()">Add Term&nbsp;&nbsp;<i class="fa-solid fa-plus"></i></button>
