@@ -12,7 +12,7 @@ $title = $admin->real_escape_string(filter_var($_GET["title"],FILTER_SANITIZE_ST
 
 if($private_set){
     $shared = base64_encode(json_encode(array("$email" => 3)));
-    $admin->query("INSERT INTO PrivateSets VALUES(\"$title\", \"$lastModified\", \"$setID\", \"Set\", \"$shared\")");
+    $admin->query("INSERT INTO privateSets VALUES(\"$title\", \"$lastModified\", \"$setID\", \"Set\", \"$shared\")");
 } else {
     if(urldecode($_GET["private"]) !== "Create Protected Set") { $email = ""; }
     $admin->query("INSERT INTO ".$classID."Sets VALUES(\"$title\", \"$lastModified\", \"$setID\", \"$email\", \"Set\")");
