@@ -69,7 +69,7 @@
       while($row = $setLists->fetch_assoc()) {
 
         if($private_set){
-          $allowed = base64_decode($admin->query("SELECT * FROM ".$classID."Sets WHERE ID=\"$setID\"")->fetch_assoc()["Shared"]);
+          $allowed = base64_decode($row["Shared"]);
           $permission = 0;
           foreach (json_decode($allowed) as $allowed_email => $allowed_permission) {
             if($email == $allowed_email){ $permission = $allowed_permission; }
