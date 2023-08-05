@@ -3,7 +3,7 @@ $classID = "private";
 $req_permission = 3;
 if(!isset($loggedIn)){
 	require("/var/www/html/docs/lib/header.php");
-	$allowed = json_decode($allowed)
+	$allowed = json_decode($allowed);
 } else {
 	$allowed = $allowed_obj;
 }
