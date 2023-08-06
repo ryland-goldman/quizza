@@ -8,7 +8,7 @@
   <script src="https://www.quizza.org/static/scripts/jquery.min.js"></script>
   <script src="https://www.quizza.org/static/scripts/jquery.modal.min.js"></script>
   <script src="https://www.quizza.org/static/scripts/allpages.js"></script>
-  <script src="https://www.quizza.org/static/scripts/jspdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://www.quizza.org/static/scripts/mathjax.min.js" id="MathJax-script" async></script>
   <?php if ($loggedIn == false) { ?><script src="https://accounts.google.com/gsi/client" async defer></script><?php } ?>
