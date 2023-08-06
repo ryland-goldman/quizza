@@ -582,7 +582,7 @@ a, button {
 .study-box {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background: var(--color-background);
-    border-radius: 8px;
+    border-radius: 16px;
     padding: 1em;
 }
 
