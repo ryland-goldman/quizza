@@ -2,13 +2,13 @@
   <div id='top-bar'>
     <table id='top-bar-table<?php if($_SERVER['PHP_SELF']=="/index.php") { ?>-blue<?php } ?>'>
       <tr>
+        <td class='td-outer'>&nbsp;</td>
         <td id='top-bar-table-logo'>
           <a href='/'>
             <h1><img style='height:1em;' id='logo<?php if($_SERVER['PHP_SELF']=="/index.php") { ?>-home<?php } ?>'></h1>
           </a>
         </td>
-        <td>&nbsp;</td>
-        <td id="top-bar-upper-icon">
+        <td id="top-bar-upper-icon" class='td-outer'>
           <table style='float:right;'>
             <tr>
               <td>&nbsp;</td>
