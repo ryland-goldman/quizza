@@ -2,10 +2,10 @@
 $ignoreLog = true;
 require("/var/www/html/docs/lib/header.php");
 $query = strtolower($admin->real_escape_string(filter_var(urldecode($_GET["query"]),FILTER_SANITIZE_STRING)));
-$result1 = $admin->query("SELECT * FROM Classes WHERE LOWER(ShortName) REGEXP \"^".$query."\" OR LOWER(ShortName)=\"".$query."\" ORDER BY ShortName ASC LIMIT 10;");
-$result2 = $admin->query("SELECT * FROM Classes WHERE LOWER(LongName) REGEXP \"^".$query."\" OR LOWER(LongName)=\"".$query."\" ORDER BY LongName ASC LIMIT 10;");
-$result3 = $admin->query("SELECT * FROM Classes WHERE LOWER(ShortName) REGEXP \"".$query."\" ORDER BY ShortName ASC LIMIT 10;");
-$result4 = $admin->query("SELECT * FROM Classes WHERE LOWER(LongName) REGEXP \"".$query."\" ORDER BY LongName ASC LIMIT 10;");
+$result1 = $admin->query("SELECT * FROM Classes WHERE LOWER(ShortName) REGEXP \"^".$query."\" OR LOWER(ShortName)=\"".$query."\" ORDER BY SUBSTRING(ShortName, 1, LOCATE(' ', ShortName)), CAST(SUBSTRING(ShortName, LOCATE(' ', ShortName) + 1) AS UNSIGNED) ASC LIMIT 10;");
+$result2 = $admin->query("SELECT * FROM Classes WHERE LOWER(LongName) REGEXP \"^".$query."\" OR LOWER(LongName)=\"".$query."\"  ORDER BY SUBSTRING(ShortName, 1, LOCATE(' ', ShortName)), CAST(SUBSTRING(ShortName, LOCATE(' ', ShortName) + 1) AS UNSIGNED) ASC LIMIT 10;");
+$result3 = $admin->query("SELECT * FROM Classes WHERE LOWER(ShortName) REGEXP \"".$query."\" ORDER BY SUBSTRING(ShortName, 1, LOCATE(' ', ShortName)), CAST(SUBSTRING(ShortName, LOCATE(' ', ShortName) + 1) AS UNSIGNED) ASC LIMIT 10;");
+$result4 = $admin->query("SELECT * FROM Classes WHERE LOWER(LongName) REGEXP \"".$query."\"  ORDER BY SUBSTRING(ShortName, 1, LOCATE(' ', ShortName)), CAST(SUBSTRING(ShortName, LOCATE(' ', ShortName) + 1) AS UNSIGNED) ASC LIMIT 10;");
 
 $stack = array();
 $first = true;
