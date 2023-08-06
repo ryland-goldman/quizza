@@ -30,7 +30,7 @@
     .dropdown .dropdown-menu {
         position: relative!important;
     }
-    #sep h1 {
+    #sep h1, select {
         font-size: 1.5em;
     }
     body {
@@ -46,7 +46,7 @@
         margin-top:15vh;
         margin-bottom:20vh;
     }
-    .dropdown {
+    select, .dropdown {
         font-size:1vw;
     }
     #homepage-bgimage-1 {
