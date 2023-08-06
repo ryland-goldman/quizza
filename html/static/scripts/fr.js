@@ -35,7 +35,7 @@ function submit(){
         score++;
         $("#main-td").html("<h1 style='color:green'>Correct</h1><p>"+words[current_flashcard]+": "+defs[current_flashcard]+"</p>");
     } else {
-        $("#main-td").html("<h1 style='color:red'>Incorrect</h1><p>"+words[current_flashcard]+": "+defs[current_flashcard]+"<br>You said: <span color='#777'>"+answer+"</span> (<a href='javascript:override();'>override</a>)</p>");
+        $("#main-td").html("<h1 style='color:red'>Incorrect</h1><p>"+words[current_flashcard]+": "+defs[current_flashcard]+"<br>You said: <span color='#777'>"+answer+"</span><br><br><a href='javascript:override();' style='text-decoration:underline;'>mark correct</a></p>");
         missed.push(question);
     }
     $("#sbtn").html(`Next&nbsp;&nbsp;<i class="fa-solid fa-arrow-right-to-bracket"></i>`);
