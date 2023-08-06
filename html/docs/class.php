@@ -108,7 +108,7 @@
                   </td>
                   <td>
                     <p class='rightalign'>
-                      <?php if($private_set && $permission == 3) { ?><span class='sharebtn-wrapper' id='term-<?php echo $row["ID"]; ?>'><button class='class-sharebtn'>Share</button></span><?php } ?>
+                      <?php if($private_set) { ?><span class='sharebtn-wrapper' id='term-<?php echo $permission; ?>-<?php echo $row["ID"]; ?>'><button class='class-sharebtn'>Share</button></span><?php } ?>
                       <button class='class-practicebtn'>Practice</button>
                     </p>
                   </td>

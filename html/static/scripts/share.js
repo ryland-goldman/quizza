@@ -2,18 +2,23 @@
 var modal_current = 0;
 function share_script_init(){
     $(".sharebtn-wrapper").click(function(event){
-    event.stopPropagation();
-    modal_current++;
-    var share_set_no = parseInt($(this).attr('id').substr(5));
-    $(` <div id="share-`+modal_current+`" class="modal"> 
-              <h2>Share Set</h2>
-              <hr>
-              <div id='share-list-`+modal_current+`'></div>
-              <input type='text' id='email-box-`+modal_current+`' class='email-box' placeholder='Email' required>
-              <span id='error-`+modal_current+`' style='color:red;display:none;'><br>Invalid email address. Please try again.<br></span>
-              <button class="submitbtn submitbtn-first" onclick="add(false, `+share_set_no+`)">Add (view only)</button>
-              <button class="submitbtn" onclick="add(true, `+share_set_no+`)">Add (view and edit)</button>
-            </div>`).appendTo('body').modal();
+        event.stopPropagation();
+        modal_current++;
+        var permission = parseInt($(this).attr('id').substring(5,6));
+        var share_set_no = parseInt($(this).attr('id').substr(7));
+        if(permission == 3){
+            $(` <div id="share-`+modal_current+`" class="modal"> 
+                      <h2>Share Set</h2>
+                      <hr>
+                      <div id='share-list-`+modal_current+`'></div>
+                      <input type='text' id='email-box-`+modal_current+`' class='email-box' placeholder='Email' required>
+                      <span id='error-`+modal_current+`' style='color:red;display:none;'><br>Invalid email address. Please try again.<br></span>
+                      <button class="submitbtn submitbtn-first" onclick="add(false, `+share_set_no+`)">Add (view only)</button>
+                      <button class="submitbtn" onclick="add(true, `+share_set_no+`)">Add (view and edit)</button>
+                    </div>`).appendTo('body').modal();
+        } else {
+            $(` <div id="share-`+modal_current+`" class="modal"><h2>Share Set</h2><hr><p id='share-list-`+modal_current+`'></p></div>`).appendTo('body').modal();
+        }
         reload_perms(share_set_no);
     });
 }
