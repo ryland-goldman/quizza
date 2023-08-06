@@ -19,8 +19,8 @@
                   <span></span>
                   <span></span>
                   <div id="topbar-menu">
-                    <p style='float:left'>
-                      <?php if($loggedIn){ ?>
+                    <?php if($loggedIn){ ?>
+                        <p style='float:left'>
                         <table>
                           <tr>
                             <td>
@@ -32,20 +32,24 @@
                             </td>
                           </tr>
                         </table>
-                      <?php } else { ?><div id="buttonDiv"></div><?php } ?>
-                    </p>
+                      </p>
+                    <?php } else { ?><div id="buttonDiv"></div><?php } ?>
                     <hr>
                     <div style='float:left'>
-                      <p>Change School</p>
-                      <select>
-                        <?php if(!$private_set){ ?><option value="www" selected><?php echo $school_shortname; ?></option><?php } ?>
-                        <option value="private">Private Sets</option>
-                        <?php $schools = $schooldb->query("SELECT * FROM main");
-                        while($curr_school = $schools->fetch_assoc()){ 
-                          if($curr_school["shortname"] !== $school_shortname){ ?>
-                            <option value="<?php echo $curr_school["id"]; ?>"><?php echo $curr_school["shortname"]; ?></option>
-                        <?php } } ?>
-                      </select>
+                      <div class='select'>
+                        <select>
+                          <option value="www" selected>Select a School</option>
+                          <?php if(!$private_set){ ?><option value="private">Private Sets (No School Needed)</option><?php } ?>
+                          <?php $schools = $schooldb->query("SELECT * FROM main ORDER BY longname ASC;");
+                          while($curr_school = $schools->fetch_assoc()){ 
+                            if($curr_school["shortname"] !== $school_shortname){ ?>
+                              <option value="<?php echo $curr_school["id"]; ?>"><?php echo $curr_school["longname"]; ?></option>
+                          <?php } } ?>
+                        </select>
+                        <div class="select-after">
+                          <i class="fa-solid fa-caret-down"></i>&nbsp;
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
