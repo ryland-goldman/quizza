@@ -19,9 +19,9 @@
                   <span></span>
                   <span></span>
                   <div id="topbar-menu">
-                    <p>
+                    <p style='float:left'>
                       <?php if($loggedIn){ ?>
-                        <table style='float:right;'>
+                        <table>
                           <tr>
                             <td>
                               <a href='https://www.quizza.org/private' id='top-bar-name'>Welcome, <?php echo $name; ?></a><br>
@@ -35,16 +35,18 @@
                       <?php } else { ?><div id="buttonDiv"></div><?php } ?>
                     </p>
                     <hr>
-                    <p>Change School</p>
-                    <select>
-                      <?php if(!$private_set){ ?><option value="www" selected><?php echo $school_shortname; ?></option><?php } ?>
-                      <option value="private">Private Sets</option>
-                      <?php $schools = $schooldb->query("SELECT * FROM main");
-                      while($curr_school = $schools->fetch_assoc()){ 
-                        if($curr_school["shortname"] !== $school_shortname){ ?>
-                          <option value="<?php echo $curr_school["id"]; ?>"><?php echo $curr_school["shortname"]; ?></option>
-                      <?php } } ?>
-                    </select>
+                    <div style='float:left'>
+                      <p>Change School</p>
+                      <select>
+                        <?php if(!$private_set){ ?><option value="www" selected><?php echo $school_shortname; ?></option><?php } ?>
+                        <option value="private">Private Sets</option>
+                        <?php $schools = $schooldb->query("SELECT * FROM main");
+                        while($curr_school = $schools->fetch_assoc()){ 
+                          if($curr_school["shortname"] !== $school_shortname){ ?>
+                            <option value="<?php echo $curr_school["id"]; ?>"><?php echo $curr_school["shortname"]; ?></option>
+                        <?php } } ?>
+                      </select>
+                    </div>
                   </div>
                 </div>
               </td>

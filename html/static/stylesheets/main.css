@@ -843,6 +843,7 @@ a, button {
 }
 
 #topbar-menuToggle {
+    position: absolute;
     display: block;
     z-index: 1;
     -webkit-user-select: none;
@@ -904,12 +905,12 @@ a, button {
 #topbar-menu {
     position: absolute;
     width: 300px;
-  height: 100%;
+    height: 100%;
     margin: -100px 0 0 0;
     padding: 50px;
     padding-top: 125px;
     right: -100px;
-    background: #ededed;
+    background: var(--color-background);
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
     transform-origin: 0% 0%;
