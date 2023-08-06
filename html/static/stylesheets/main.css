@@ -834,6 +834,10 @@ a, button {
      text-align: center;
 }
 
+#school-selector {
+    text-align-last:center;
+}
+
 #school-selector option {
     font-size: 12pt;
 }

@@ -79,6 +79,6 @@ function resizeSelect(sel) {
     tempSelect.appendChild(tempOption);
 
     sel.after(tempSelect);
-    sel.style.width = `${+tempSelect.clientWidth + 50}px`;
+    sel.style.width = `${+tempSelect.clientWidth + 100}px`;
     tempSelect.remove();
 }
