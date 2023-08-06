@@ -18,7 +18,20 @@ function handleCredentialResponse(response) {
     xhttp.send("credential=" + encodeURIComponent(response.credential));
 }
 
-function render_gSignIn(prompt_login=false) {
+function render_gSignIn(prompt_login=false){
+    // Attempt to render button three times
+    setTimeout(function(){
+        try{render_gSignIn_attempt(prompt_login);} catch {
+            setTimeout(function(){
+                try{render_gSignIn_attempt(prompt_login);} catch {
+                    setTimeout(function(){ try{render_gSignIn_attempt(prompt_login);} catch {} }, 1000);
+                }
+            }, 1000);
+        }
+    }, 1000);
+}
+
+function render_gSignIn_attempt(prompt_login=false) {
     google.accounts.id.initialize({
         client_id: "117895756240-ujiuojlsbtruthgqnghnu215d2hn7flp.apps.googleusercontent.com",
         callback: handleCredentialResponse,
