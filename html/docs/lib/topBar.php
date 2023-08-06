@@ -20,8 +20,7 @@
                   <span></span>
                   <div id="topbar-menu">
                     <?php if($loggedIn){ ?>
-                        <p style='float:left'>
-                        <table>
+                        <table id='tr-border-bottom-table'>
                           <tr>
                             <td>
                               <img src='<?php echo $pic; ?>' id='top-bar-icon-image'>
@@ -31,11 +30,27 @@
                               <a href='javascript:signout()' id='top-bar-signout'>Sign Out</a>
                             </td>
                           </tr>
+                          <tr id='tr-border-bottom'>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                          </tr>
                         </table>
-                      </p>
-                    <?php } else { ?><div id="buttonDiv"></div><?php } ?>
-                    <hr>
-                    <div style='float:left'>
+                    <?php } else { ?>
+                      <table id='tr-border-bottom-table'>
+                          <tr>
+                            <td>
+                              <div id="buttonDiv"></div>
+                            </td>
+                            <td>
+                              &nbsp;
+                            </td>
+                          </tr>
+                          <tr id='tr-border-bottom'>
+                            <td>&nbsp;</td>
+                          </tr>
+                        </table>
+                      <?php } ?>
+                    <div class='left-float'>
                       <div class='select'>
                         <select>
                           <option value="www" selected>Select a School</option>

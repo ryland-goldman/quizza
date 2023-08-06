@@ -965,3 +965,15 @@ select::-ms-expand {
     transition: .25s all ease;
     pointer-events: none;
 }
+
+#tr-border-bottom {
+    border-bottom: 1px solid var(--color-text);
+}
+
+#tr-border-bottom-table {
+    border-collapse: collapse;
+}
+
+.left-float {
+    float:left;
+}
