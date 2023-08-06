@@ -777,6 +777,7 @@ a, button {
 .tooltips {
   position: relative;
   display: inline;
+  font-size: 8pt;
 }
 
 .tooltips span {
@@ -914,7 +915,8 @@ a, button {
     -webkit-font-smoothing: antialiased;
     transform-origin: 0% 0%;
     transform: translate(100%, 0);
-
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 5px 15px;
+    border-radius: 8px;
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
 }
 
