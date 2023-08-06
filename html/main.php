@@ -37,7 +37,7 @@
   <div><table><tr><td style='padding:13px 20px 5px;'><h1>&nbsp;</h1></td></tr></table></div>
 
 	<div id='homepage-bgimage-1'>&nbsp;</div>
-	<?php if(!isMobileDevice){ ?>
+	<?php if(!isMobileDevice()){ ?>
 		<div id='sep'>
 			<table>
 				<tr>
