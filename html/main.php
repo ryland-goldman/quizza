@@ -49,6 +49,7 @@
 				        	</div>
 				        	<input type="hidden" name="school">
 					        <ul class="dropdown-menu">
+					        	<li id="private">Private Sets (No School Needed)</li>
 					        	<li id="lghs">Los Gatos High School</li>
 					        	<li id="rjf">R.J. Fisher Middle School</li>
 					        	<li id="shs">Saratoga High School</li>

@@ -1,4 +1,5 @@
 <?php if($_SERVER['HTTP_HOST']=="www.quizza.org" || $_SERVER['HTTP_HOST'] == "quizza.org"){ require("/var/www/html/main.php"); die(); } ?>
+<?php if($_SERVER['HTTP_HOST']=="private.quizza.org"){ header("Location: https://www.quizza.org/private"); die("<script>location.href='https://www.quizza.org/private';</script>"); } ?>
 <?php require("/var/www/html/docs/lib/header.php");?>
 <!DOCTYPE html>
 <html>
