@@ -13,6 +13,9 @@
 }
 #top-bar { z-index: 100; }
 @media only screen and (max-width: 600px) {
+    select {
+        width: 100%;
+    }
     #homepage-bgimage-1 {
         background-image: url("https://www.quizza.org/static/images/mobile-1.png");
         margin-top: 5vh!important;
@@ -38,6 +41,9 @@
     }
 }
 @media only screen and (min-width: 600px) {
+    select {
+        width: 20em;
+    }
     #homepage-bgimage-1 { 
         background-image: url("https://www.quizza.org/static/images/main-1.png"); 
         margin-top: 10vh!important;
@@ -162,7 +168,6 @@ select::-ms-expand {
 .select {
   position: relative;
   display: flex;
-  width: 20em;
   height: 3em;
   border-radius: .25em;
   overflow: hidden;
