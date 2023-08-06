@@ -1,17 +1,4 @@
-    // runs on page load
-    function onload_1() {
-      for (var i = 0; i < subjects.length-1; i++) { // loop over each item
-        (function(index) {
-          $("#"+subjects[index]+"-B").hide(); // hide the row
 
-          // get classes through AJAX
-          $.get("/docs/lib/getClass.php?subj="+subjects[index], function(d,s){
-            $("#"+subjects[index]+"-B .classes").html(d);
-          });
-        })(i);
-
-      }
-    }
     function onload_2(){
 
       $("#fav-B").show();
@@ -33,7 +20,6 @@
       }
     }
 
-    onload_1();
     setTimeout(onload_2, 1000);
     onload_3();
 
