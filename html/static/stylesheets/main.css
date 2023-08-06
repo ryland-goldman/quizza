@@ -824,3 +824,13 @@ a, button {
     font-size:8pt;
     color: currentColor;
 }
+
+.select-after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em;
+    background-color: #34495e;
+    transition: .25s all ease;
+    pointer-events: none;
+}

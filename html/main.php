@@ -51,6 +51,9 @@
 					    	<option value="rjf">R.J. Fisher Middle School</option>
 					    	<option value="ucla">University of California, Los Angeles</option>
 					    </select>
+							<div class="select-after">
+								<i class="fa-solid fa-caret-down"></i>&nbsp;
+							</div>
 					  </div>
 					</td>
 				</tr>
