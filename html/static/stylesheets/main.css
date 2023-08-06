@@ -389,6 +389,7 @@ a, button {
 #frontpage-header-large {
     color: #EEE;
     text-align: center;
+    align-items: center;
 }
 
 #frontpage-header-small {
@@ -823,4 +824,16 @@ a, button {
 #top-bar-signout {
     font-size:8pt;
     color: currentColor;
+}
+
+#school-selector {
+    background-color: transparent;border: none;font-size: 1em;cursor: pointer;color: white;font-family: &quot;Gotham&quot;;font-weight: 700;margin: 8px;border-bottom: 1px dotted white;
+}
+
+.custom-select {
+     text-align: center;
+}
+
+#school-selector option {
+    font-size: 12pt;
 }

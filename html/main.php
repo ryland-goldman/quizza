@@ -45,11 +45,13 @@
 					<td>
 						<div class='select'>
 					    <select>
-					      <option value="www">Select a School</option>
+					      <option value="www" selected>Select a School</option>
 					      <option value="private">Private Sets (No School Needed)</option>
-					    	<option value="lghs">Los Gatos High School</option>
-					    	<option value="rjf">R.J. Fisher Middle School</option>
-					    	<option value="ucla">University of California, Los Angeles</option>
+					      <?php $schools = $schooldb->query("SELECT * FROM main ORDER BY longname ASC;");
+				        while($curr_school = $schools->fetch_assoc()){ 
+				          if($curr_school["shortname"] !== $school_shortname){ ?>
+				            <option value="<?php echo $curr_school["id"]; ?>"><?php echo $curr_school["longname"]; ?></option>
+				        <?php } } ?>
 					    </select>
 							<div class="select-after">
 								<i class="fa-solid fa-caret-down"></i>&nbsp;

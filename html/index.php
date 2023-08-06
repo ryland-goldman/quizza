@@ -13,6 +13,21 @@
   <?php require("/var/www/html/docs/lib/topBar.php"); ?>
   
   <div id='main-content'>
+    <div class="custom-select">
+    <h1 id="fontpage-header-large">
+      Access Free Study Materials for
+      <select id="school-selector">
+        <option value="www" selected><?php echo $school_shortname; ?></option>
+        <option value="private" selected>Private Sets</option>
+        <?php $schools = $schooldb->query("SELECT * FROM main");
+        while($curr_school = $schools->fetch_assoc()){ 
+          if($curr_school["shortname"] !== $school_shortname){ ?>
+            <option value="<?php echo $curr_school["id"]; ?>"><?php echo $curr_school["shortname"]; ?></option>
+        <?php } } ?>
+      </select>
+      Students
+    </h1>
+  </div>
     <h1 id='frontpage-header-large'>Access Free Study Materials for <?php echo $school_shortname; ?> Students</h1>
     <p id='frontpage-header-small'>Just select your class to view study sets made by your peers, or to create your own!</p>
 
@@ -136,6 +151,7 @@
 
   </script>
   <script defer src="https://www.quizza.org/static/scripts/index.js"></script>
+  <script src="https://www.quizza.org/static/scripts/homepage.js"></script>
 </body>
 
 </html>
