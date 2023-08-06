@@ -170,7 +170,7 @@ select::-ms-expand {
 }
 
 .select::after {
-  content: '\25BC';
+  content: '\f107';
   position: absolute;
   top: 0;
   right: 0;
@@ -178,4 +178,5 @@ select::-ms-expand {
   background-color: #34495e;
   transition: .25s all ease;
   pointer-events: none;
+  font-family: "Font Awesome 6 Free";
 }
