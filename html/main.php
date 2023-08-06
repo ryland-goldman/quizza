@@ -18,6 +18,16 @@
             <h1><img style='height:1em;' id='logo'></h1>
           </a>
         </td>
+        <?php if (!isMobileDevice() && !$loggedIn) { ?><td>&nbsp;</td>
+	        <td id="top-bar-upper-icon">
+	          <table style='float:right;'>
+	            <tr>
+	              <td>&nbsp;</td>
+	              <td><div id="buttonDiv"></div></td>
+	            </tr>
+	          </table>
+	        </td>
+	      <?php } ?>
       </tr>
     </table>
   </div>
@@ -70,5 +80,7 @@
 	<?php } ?>
 	<img src='https://www.quizza.org/static/images/<?php if(isMobileDevice()){ ?>mobile<?php } else { ?>main<?php } ?>-2.png' style='width:100vw;'>
 	<?php $bmac = false; require("/var/www/html/docs/lib/footer.php"); ?>
+
+	<?php if(!$loggedIn && !isMobileDevice()){ ?><script>$(document).ready(function(){render_gSignIn();});</script><?php } ?>
 </body>
 </head>
