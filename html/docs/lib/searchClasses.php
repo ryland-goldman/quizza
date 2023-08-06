@@ -2,8 +2,8 @@
 $ignoreLog = true;
 require("/var/www/html/docs/lib/header.php");
 $query = $admin->real_escape_string(filter_var(urldecode($_GET["query"]),FILTER_SANITIZE_STRING));
-$result1 = $admin->query("SELECT * FROM Classes WHERE LOWER(ShortName) LIKE LOWER(\"".$query."%\") OR LOWER(ShortName)=\"".$query."\") ORDER BY ShortName ASC LIMIT 10;");
-$result2 = $admin->query("SELECT * FROM Classes WHERE LOWER(LongName) LIKE LOWER(\"".$query."%\") OR LOWER(LongName)=\"".$query."\") ORDER BY LongName ASC LIMIT 10;");
+$result1 = $admin->query("SELECT * FROM Classes WHERE LOWER(ShortName) LIKE LOWER(\"".$query."%\") OR LOWER(ShortName)=LOWER(\"".$query."\") ORDER BY ShortName ASC LIMIT 10;");
+$result2 = $admin->query("SELECT * FROM Classes WHERE LOWER(LongName) LIKE LOWER(\"".$query."%\") OR LOWER(LongName)=LOWER(\"".$query."\") ORDER BY LongName ASC LIMIT 10;");
 $result3 = $admin->query("SELECT * FROM Classes WHERE LOWER(ShortName) LIKE LOWER(\"%".$query."%\") ORDER BY ShortName ASC LIMIT 10;");
 $result4 = $admin->query("SELECT * FROM Classes WHERE LOWER(LongName) LIKE LOWER(\"%".$query."%\") ORDER BY LongName ASC LIMIT 10;");
 
