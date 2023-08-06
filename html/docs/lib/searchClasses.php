@@ -2,16 +2,16 @@
 $ignoreLog = true;
 require("/var/www/html/docs/lib/header.php");
 $query = $admin->real_escape_string(filter_var(urldecode($_GET["query"]),FILTER_SANITIZE_STRING));
-$result = $admin->query("SELECT * FROM Classes WHERE ShortName LIKE \"".$query."%\" OR ShortName=\"".$query."\" ORDER BY ShortName ASC LIMIT 10;");
+$result1 = $admin->query("SELECT * FROM Classes WHERE ShortName LIKE \"".$query."%\" OR ShortName=\"".$query."\" ORDER BY ShortName ASC LIMIT 10;");
 $result2 = $admin->query("SELECT * FROM Classes WHERE LongName LIKE \"".$query."%\" OR LongName=\"".$query."\" ORDER BY LongName ASC LIMIT 10;");
 $result3 = $admin->query("SELECT * FROM Classes WHERE ShortName LIKE \"%".$query."%\" ORDER BY ShortName ASC LIMIT 10;");
 $result4 = $admin->query("SELECT * FROM Classes WHERE LongName LIKE \"%".$query."%\" ORDER BY LongName ASC LIMIT 10;");
 
 $stack = array();
 $first = true;
-if($result->num_rows > 0 && $result2->num_rows > 0 && $result3->num_rows > 0 && $result4->num_rows > 0){
+if($result1->num_rows > 0 && $result2->num_rows > 0 && $result3->num_rows > 0 && $result4->num_rows > 0){
 	echo "[";
-	$results = [$result, $result2, $result3, $result4];
+	$results = [$result1, $result2, $result3, $result4];
 	foreach($results as $result){
 		if($result->num_rows > 0){
 		 	while ($class = $result->fetch_assoc()) {
