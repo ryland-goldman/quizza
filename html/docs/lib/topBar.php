@@ -54,13 +54,11 @@
                     <div class='left-float'>
                       <div class='select'>
                         <select>
-                          <option value="www" selected>Select a School</option>
                           <?php if(!$private_set){ ?><option value="private">Private Sets (No School Needed)</option><?php } ?>
                           <?php $schools = $schooldb->query("SELECT * FROM main ORDER BY longname ASC;");
-                          while($curr_school = $schools->fetch_assoc()){ 
-                            if($curr_school["shortname"] !== $school_shortname){ ?>
-                              <option value="<?php echo $curr_school["id"]; ?>"><?php echo $curr_school["longname"]; ?></option>
-                          <?php } } ?>
+                          while($curr_school = $schools->fetch_assoc()){ ?>
+                            <option value="<?php echo $curr_school["id"]; ?>"<?php if($curr_school["shortname"] !== $school_shortname){ ?> selected<?php } ?>><?php echo $curr_school["longname"]; ?></option>
+                          <?php } ?>
                         </select>
                         <div class="select-after">
                           <i class="fa-solid fa-caret-down"></i>&nbsp;
