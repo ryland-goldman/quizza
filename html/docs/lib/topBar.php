@@ -24,11 +24,11 @@
                         <table>
                           <tr>
                             <td>
-                              <a href='https://www.quizza.org/private' id='top-bar-name'>Welcome, <?php echo $name; ?></a><br>
-                              <a href='javascript:signout()' id='top-bar-signout'>Sign Out</a>
+                              <img src='<?php echo $pic; ?>' id='top-bar-icon-image'>
                             </td>
                             <td>
-                              <img src='<?php echo $pic; ?>' id='top-bar-icon-image'>
+                              <a href='https://www.quizza.org/private' id='top-bar-name'>Welcome, <?php echo $name; ?></a><br>
+                              <a href='javascript:signout()' id='top-bar-signout'>Sign Out</a>
                             </td>
                           </tr>
                         </table>
