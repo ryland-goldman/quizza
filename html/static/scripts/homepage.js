@@ -1,2 +1,2 @@
 $("select").on('change', function(event) {var url = 'https://' + $("select").val() + ".quizza.org/";
-    if(url !== "https://.quizza.org"){ location.href = url; } });
+    if(url !== "https://.quizza.org/" && url !== "https://www.quizza.org/"){ location.href = url; } });
