@@ -16,6 +16,7 @@
     <div class="custom-select">
     <h1 id="fontpage-header-large">
       Access Free Study Materials for
+      <?php mobileBR(); ?>
       <select id="school-selector">
         <option value="www" selected><?php echo $school_shortname; ?></option>
         <option value="private">Private Sets</option>
@@ -25,6 +26,7 @@
             <option value="<?php echo $curr_school["id"]; ?>"><?php echo $curr_school["shortname"]; ?></option>
         <?php } } ?>
       </select>
+      <?php mobileBR(); ?>
       Students
     </h1>
   </div>

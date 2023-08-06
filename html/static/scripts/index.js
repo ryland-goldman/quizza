@@ -1,5 +1,7 @@
 function onload_1() {
-    document.querySelectorAll("select").forEach(resizeSelect);
+    if(!mobile){
+        document.querySelectorAll("select").forEach(resizeSelect);
+    }
 }
 
 function onload_2() {
