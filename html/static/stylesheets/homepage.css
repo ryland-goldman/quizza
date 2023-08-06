@@ -166,7 +166,7 @@ select::-ms-expand {
   height: 3em;
   border-radius: .25em;
   overflow: hidden;
-  float:left;
+  float: right;
 }
 
 .select::after {
