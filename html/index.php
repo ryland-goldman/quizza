@@ -17,6 +17,7 @@
     <h1 id="fontpage-header-large">
       Access Free Study Materials for <?php echo $school_shortname; ?> Students
     </h1>
+    <p id='frontpage-header-small'>Just select your class to view study sets made by your peers, or to create your own!</p>
   </div>
 
     <?php if(false) { ?> <!-- Decide whether to keep or remove -->
