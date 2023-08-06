@@ -17,6 +17,7 @@ html, body {
     --color-alert: #b8f9ed;
     --correct-edit-box: #92c479;
     --incorrect-edit-box: #d8707c;
+    --hamburger-color: black;
 }
 
 body {
@@ -56,6 +57,7 @@ body {
         --bgimage-main: url("https://www.quizza.org/static/images/diag-dark.svg");
         --bgimage-home: url("https://www.quizza.org/static/images/diag-theme-dark.svg");
         --logo: url("https://www.quizza.org/static/images/logo-dark.svg");
+        --hamburger-color: white;
     }
 
     body {
@@ -873,7 +875,7 @@ a, button {
     height: 4px;
     margin-bottom: 5px;
     position: relative;
-    background: var(--color-text);
+    background: var(--hamburger-color);
     border-radius: 3px;
     z-index: 1;
     transform-origin: 4px 0px;

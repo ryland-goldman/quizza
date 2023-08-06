@@ -7,6 +7,8 @@
   <title>Quizza | Free Study Tools For <?php echo $school_shortname; ?> Students</title>
 
   <?php require("/var/www/html/docs/lib/imports.php"); ?>
+
+  <style>:root{--hamburger-color: #EEE!important;}</style>
 </head>
 <body id='indexphp-body'>
 
@@ -14,7 +16,7 @@
   
   <div id='main-content'>
     <div class="custom-select">
-    <h1 id="fontpage-header-large">
+    <h1 id="frontpage-header-large">
       Access Free Study Materials for <?php echo $school_shortname; ?> Students
     </h1>
     <p id='frontpage-header-small'>Just select your class to view study sets made by your peers, or to create your own!</p>
