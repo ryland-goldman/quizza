@@ -918,12 +918,7 @@ a, button {
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
 }
 
-#topbar-menu li {
-    padding: 10px 0;
-    font-size: 22px;
-}
-
-#topbar-menuToggle input:checked~ul {
+#topbar-menuToggle input:checked~div {
     transform: scale(1.0, 1.0);
     opacity: 1;
 }
