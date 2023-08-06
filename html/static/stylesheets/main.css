@@ -814,3 +814,8 @@ a, button {
   left: 50%;
   margin-left: -76px;
 }
+
+#mark-correct {
+    text-decoration:underline;
+    color: var(--color-light-text);
+}
