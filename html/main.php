@@ -42,20 +42,13 @@
 				<tr>
 					<td><h1>Choose your school</h1></td>
 					<td>
-				    	<div class="dropdown">
-				        	<div class="select">
-				        		<span>Select School</span>
-				        		<i class="fa-solid fa-chevron-down"></i>
-				        	</div>
-				        	<input type="hidden" name="school">
-					        <ul class="dropdown-menu">
-					        	<li id="private">Private Sets (No School Needed)</li>
-					        	<li id="lghs">Los Gatos High School</li>
-					        	<li id="rjf">R.J. Fisher Middle School</li>
-					        	<li id="shs">Saratoga High School</li>
-					        	<li id="ucla">University of California, Los Angeles</li>
-					        </ul>
-				      	</div>
+						<div class='select'>
+					    <select>
+					      <option id="private">Private Sets (No School Needed)</option>
+					    	<option id="lghs">Los Gatos High School</option>
+					    	<option id="rjf">R.J. Fisher Middle School</option>
+					    </select>
+					  </div>
 					</td>
 				</tr>
 			</table>
