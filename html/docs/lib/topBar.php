@@ -15,7 +15,7 @@
               <?php if ($loggedIn == false) { ?><td><div id="buttonDiv"></div></td><?php } ?>
               <?php if ($loggedIn == true) { ?><td<?php if($_SERVER['PHP_SELF']=="/index.php") { ?> style='color:white;'<?php } ?>>
                 <a href='https://www.quizza.org/private' id='top-bar-name'>Welcome, <?php echo $name; ?></a><br>
-                <a style='font-size:8pt;' href='javascript:signout()'>Sign Out</a>
+                <a href='javascript:signout()' id='top-bar-signout'>Sign Out</a>
               </td>
               <td>
                 <img src='<?php echo $pic; ?>' id='top-bar-icon-image'>
