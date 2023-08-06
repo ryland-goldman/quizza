@@ -7,23 +7,43 @@
             <h1><img style='height:1em;' id='logo<?php if($_SERVER['PHP_SELF']=="/index.php") { ?>-home<?php } ?>'></h1>
           </a>
         </td>
-        <?php if (!isMobileDevice()) { ?><td>&nbsp;</td>
+        <td>&nbsp;</td>
         <td id="top-bar-upper-icon">
-          <table style='float:right;'>
-            <tr>
-              <td>&nbsp;</td>
-              <?php if ($loggedIn == false) { ?><td><div id="buttonDiv"></div></td><?php } ?>
-              <?php if ($loggedIn == true) { ?><td<?php if($_SERVER['PHP_SELF']=="/index.php") { ?> style='color:white;'<?php } ?>>
-                <a href='https://www.quizza.org/private' id='top-bar-name'>Welcome, <?php echo $name; ?></a><br>
-                <a href='javascript:signout()' id='top-bar-signout'>Sign Out</a>
-              </td>
-              <td>
-                <img src='<?php echo $pic; ?>' id='top-bar-icon-image'>
-              </td>
-              <?php } ?>
-            </tr>
-          </table>
-        </td> <?php } ?>
+          <div id="topbar-menuToggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <div id="topbar-menu">
+              <p>
+                <?php if($loggedIn){ ?>
+                  <table style='float:right;'>
+                    <tr>
+                      <td>
+                        <a href='https://www.quizza.org/private' id='top-bar-name'>Welcome, <?php echo $name; ?></a><br>
+                        <a href='javascript:signout()' id='top-bar-signout'>Sign Out</a>
+                      </td>
+                      <td>
+                        <img src='<?php echo $pic; ?>' id='top-bar-icon-image'>
+                      </td>
+                    </tr>
+                  </table>
+                <?php } else { ?><div id="buttonDiv"></div><?php } ?>
+              </p>
+              <hr>
+              <p>Change School</p>
+              <select>
+                <?php if(!$private_set){ ?><option value="www" selected><?php echo $school_shortname; ?></option><?php } ?>
+                <option value="private">Private Sets</option>
+                <?php $schools = $schooldb->query("SELECT * FROM main");
+                while($curr_school = $schools->fetch_assoc()){ 
+                  if($curr_school["shortname"] !== $school_shortname){ ?>
+                    <option value="<?php echo $curr_school["id"]; ?>"><?php echo $curr_school["shortname"]; ?></option>
+                <?php } } ?>
+              </select>
+            </div>
+          </div>
+        </td>
       </tr>
     </table>
   </div>

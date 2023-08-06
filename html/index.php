@@ -15,21 +15,7 @@
   <div id='main-content'>
     <div class="custom-select">
     <h1 id="fontpage-header-large">
-      Access Free Study Materials for
-      <?php if(isMobileDevice()) { ?>
-        <a style="text-decoration:underline;color:white;" href='https://www.quizza.org/#sep'><?php echo $school_shortname; ?></a>
-      <?php } else { ?>
-        <select id="school-selector">
-          <option value="www" selected><?php echo $school_shortname; ?></option>
-          <option value="private">Private Sets</option>
-          <?php $schools = $schooldb->query("SELECT * FROM main");
-          while($curr_school = $schools->fetch_assoc()){ 
-            if($curr_school["shortname"] !== $school_shortname){ ?>
-              <option value="<?php echo $curr_school["id"]; ?>"><?php echo $curr_school["shortname"]; ?></option>
-          <?php } } ?>
-        </select>
-      <?php } ?>
-      Students
+      Access Free Study Materials for <?php echo $school_shortname; ?> Students
     </h1>
   </div>
 
