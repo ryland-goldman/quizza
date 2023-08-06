@@ -103,7 +103,7 @@
 
         <?php } ?>
 
-        <?php if($private_set && $permission == 3) { ?><button id='term-<?php echo $setID; ?>' class='sharebtn-wrapper title-button-white right'>Share&nbsp;&nbsp;<i class="fa-solid fa-share"></i></button><?php } ?>
+        <?php if($private_set) { ?><button id='term-<?php echo $permission; ?>-<?php echo $setID; ?>' class='sharebtn-wrapper title-button-white right'>Share&nbsp;&nbsp;<i class="fa-solid fa-share"></i></button><?php } ?>
 
         <?php mobileBR(); ?>
 
