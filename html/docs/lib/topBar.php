@@ -49,7 +49,8 @@
                             <td>&nbsp;</td>
                           </tr>
                         </table>
-                      <?php } ?>
+                    <?php } ?>
+                    <br>
                     <div class='left-float'>
                       <div class='select'>
                         <select>
