@@ -166,6 +166,7 @@ select::-ms-expand {
   height: 3em;
   border-radius: .25em;
   overflow: hidden;
+  float:left;
 }
 
 .select::after {
@@ -177,8 +178,4 @@ select::-ms-expand {
   background-color: #34495e;
   transition: .25s all ease;
   pointer-events: none;
-}
-
-.select:hover::after {
-  color: #f39c12;
 }
