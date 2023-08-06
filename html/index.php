@@ -19,7 +19,7 @@
     </h1>
   </div>
 
-    <?php if(!isMobileDevice()) { ?>
+    <?php if(false) { ?> <!-- Decide whether to keep or remove -->
       <!-- Updates box -->
       <div id="frontpage-alert">
         <span id="frontpage-closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
