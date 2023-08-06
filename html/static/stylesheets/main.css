@@ -831,15 +831,16 @@ a, button {
 }
 
 #school-selector {
-    background-color: transparent;border: none;font-size: 1em;cursor: pointer;color: white;font-family: &quot;Gotham&quot;;font-weight: 700;margin: 8px;border-bottom: 1px dotted white;
+    background-color: transparent;border: none;font-size: 1em;cursor: pointer;color: white;font-family: "Gotham";font-weight: 700;margin: 8px;border-bottom: 1px dotted white;text-align-last:center;appearance: none;-webkit-appearance: none;
+}
+
+#school-selector:after{
+   content: "\f078";
+   font: normal normal normal 14px/1 FontAwesome;
 }
 
 .custom-select {
      text-align: center;
-}
-
-#school-selector {
-    text-align-last:center;
 }
 
 #school-selector option {
