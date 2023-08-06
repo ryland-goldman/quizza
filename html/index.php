@@ -22,7 +22,7 @@
         <?php $schools = $schooldb->query("SELECT * FROM main");
         while($curr_school = $schools->fetch_assoc()){ 
           if($curr_school["shortname"] !== $school_shortname){ ?>
-            <option value="<?php echo $curr_school["id"]; ?>"><?php echo $curr_school["shortname"]; ?></option>
+            <option value="<?php echo $curr_school["id"]; ?>"><?php echo $curr_school["mediumname"]; ?></option>
         <?php } } ?>
       </select>
       Students
