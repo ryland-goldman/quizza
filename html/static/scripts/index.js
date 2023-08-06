@@ -79,6 +79,7 @@ function resizeSelect(sel) {
     tempSelect.appendChild(tempOption);
 
     sel.after(tempSelect);
-    sel.style.width = `${+tempSelect.clientWidth + 100}px`;
+    var padding = mobile ? 100: 50;
+    sel.style.width = `${+tempSelect.clientWidth + padding}px`;
     tempSelect.remove();
 }
