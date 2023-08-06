@@ -47,7 +47,8 @@
 					    <select>
 					      <option value="www" selected>Select a School</option>
 					      <option value="private">Private Sets (No School Needed)</option>
-					      <?php $schools = $schooldb->query("SELECT * FROM main ORDER BY longname ASC;");
+					      <?php $schooldb = new mysqli("localhost","quizza", trim(file_get_contents("/var/www/sql.privkey")), "Schools");
+					      $schools = $schooldb->query("SELECT * FROM main ORDER BY longname ASC;");
 				        while($curr_school = $schools->fetch_assoc()){ 
 				          if($curr_school["shortname"] !== $school_shortname){ ?>
 				            <option value="<?php echo $curr_school["id"]; ?>"><?php echo $curr_school["longname"]; ?></option>
