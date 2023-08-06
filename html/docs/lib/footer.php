@@ -8,13 +8,13 @@
          <table>
             <tr>
                 <?php if(!$loggedIn){ ?>
-                    <td>Sign In With Google</td>
+                    <td><p>Sign In With Google</p></td>
                     <td>
                         <div class="g_id_signin" data-type="icon" data-shape="square" data-theme="outline" data-text="signin" data-size="medium"></div>
                         <div id="g_id_onload" data-client_id="117895756240-ujiuojlsbtruthgqnghnu215d2hn7flp.apps.googleusercontent.com" data-context="signin" data-ux_mode="popup" data-callback="handleCredentialResponse" data-auto_prompt="false"></div>
                     </td>
                 <?php } else { ?>
-                    <td>Signed in as <strong><?php echo $name; ?></strong></td>
+                    <td><p>Signed in as <strong><?php echo $name; ?></strong></p></td>
                 <?php } ?>
             </tr>
         </table>
