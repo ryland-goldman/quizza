@@ -37,7 +37,7 @@
   <div><table><tr><td style='padding:13px 20px 5px;'><h1>&nbsp;</h1></td></tr></table></div>
 
 	<div id='homepage-bgimage-1'>&nbsp;</div>
-	<?php if(!isMobileDevice()){ ?>
+	<?php if(!isMobileDevice){ ?>
 		<div id='sep'>
 			<table>
 				<tr>
@@ -65,20 +65,22 @@
 	<?php } else { ?>
 		<div id='sep'>
 			<h1>Choose your school</h1>
-			<br>
-			<div class="dropdown">
-		     	<div class="select">
-			        <span>Select School</span>
-			       	<i class="fa-solid fa-chevron-down"></i>
-			    </div>
-			   	<input type="hidden" name="school">
-			    <ul class="dropdown-menu">
-		        	<li id="lghs">Los Gatos High School</li>
-		        	<li id="rjf">R.J. Fisher Middle School</li>
-		        	<li id="shs">Saratoga High School</li>
-		        	<li id="ucla">University of California, Los Angeles</li>
-		        </ul>
-	      	</div>
+			<hr>
+			<div class='select'>
+				<select>
+					<option value="www" selected>Select a School</option>
+					<option value="private">Private Sets (No School Needed)</option>
+					<?php $schooldb = new mysqli("localhost","quizza", trim(file_get_contents("/var/www/sql.privkey")), "Schools");
+					$schools = $schooldb->query("SELECT * FROM main ORDER BY longname ASC;");
+					while($curr_school = $schools->fetch_assoc()){ 
+					  if($curr_school["shortname"] !== $school_shortname){ ?>
+					    <option value="<?php echo $curr_school["id"]; ?>"><?php echo $curr_school["longname"]; ?></option>
+					<?php } } ?>
+				</select>
+				<div class="select-after">
+					<i class="fa-solid fa-caret-down"></i>&nbsp;
+				</div>
+			</div>
 		</div>
 	<?php } ?>
 	<img src='https://www.quizza.org/static/images/<?php if(isMobileDevice()){ ?>mobile<?php } else { ?>main<?php } ?>-2.png' style='width:100vw;'>
