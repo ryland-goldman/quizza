@@ -822,5 +822,5 @@ a, button {
 
 #top-bar-signout {
     font-size:8pt;
-    color: var(--color-text);
+    color: currentColor;
 }
