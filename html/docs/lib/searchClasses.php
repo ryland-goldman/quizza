@@ -9,7 +9,7 @@ $result4 = $admin->query("SELECT * FROM Classes WHERE LongName LIKE \"%".$query.
 
 $stack = array();
 $first = true;
-if($result1->num_rows > 0 && $result2->num_rows > 0 && $result3->num_rows > 0 && $result4->num_rows > 0){
+if($result1->num_rows !== 0 && $result2->num_rows !== 0 && $result3->num_rows !== 0 && $result4->num_rows !== 0){
 	echo "[";
 	$results = [$result1, $result2, $result3, $result4];
 	foreach($results as $result){
