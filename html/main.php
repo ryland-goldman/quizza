@@ -44,9 +44,10 @@
 					<td>
 						<div class='select'>
 					    <select>
-					      <option id="private">Private Sets (No School Needed)</option>
-					    	<option id="lghs">Los Gatos High School</option>
-					    	<option id="rjf">R.J. Fisher Middle School</option>
+					      <option value="private">Private Sets (No School Needed)</option>
+					    	<option value="lghs">Los Gatos High School</option>
+					    	<option value="rjf">R.J. Fisher Middle School</option>
+					    	<option value="ucla">University of California, Los Angeles</option>
 					    </select>
 					  </div>
 					</td>
