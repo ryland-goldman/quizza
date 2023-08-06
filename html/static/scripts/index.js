@@ -40,11 +40,11 @@
           return;
         }
         var results_str = "";
-        for(var i=0;i<results.length && i<5;i++){
+        if(mobile){ var max = 5; } else { var max = 10; }
+        for(var i=0;i<results.length && i<max;i++){
           var id = 'resultscontainer-'+i;
-          if(results.length >= 2 && i==0){ id = 'resultscontainer-div-first'; }
-          if(results.length >= 2 && i==results.length-1){ id = 'resultscontainer-div-last'; }
-          if(results.length >= 2 && i==4){ id = 'resultscontainer-div-last'; }
+          if(i==results.length-1){ id = 'resultscontainer-div-last'; }
+          if(i==max){ id = 'resultscontainer-div-last'; }
           results_str += "<a href='"+results[i][1]+"'><div id='"+id+"'>"+results[i][0]+"</div></a>";
         }
         $(".resultscontainer").html(results_str);

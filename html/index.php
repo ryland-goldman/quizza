@@ -132,6 +132,8 @@
       } ?>"fav"
     ];
 
+    var mobile = <?php echo isMobileDevice(); ?>;
+
   </script>
   <script defer src="https://www.quizza.org/static/scripts/index.js"></script>
 </body>
