@@ -63,7 +63,13 @@
 			</div>
 		</div>
 	<?php } ?>
-	<img id='homepage-bgimage-2' style='width:100vw;'>
+	<picture>
+		<source srcset="https://www.quizza.org/static/images/main-2-mobile-dark.png" media="(max-width: 600px) and (prefers-color-scheme: dark)">
+		<source srcset="https://www.quizza.org/static/images/main-2-mobile.png" media="(max-width: 600px) and (prefers-color-scheme: light)">
+		<source srcset="https://www.quizza.org/static/images/main-2-dark.png" media="(min-width: 600px) and (prefers-color-scheme: dark)">
+		<source srcset="https://www.quizza.org/static/images/main-2.png">
+		<img src="https://www.quizza.org/static/images/main-2-mobile-dark.png" style="width:100vw;">
+	</picture>
 	<?php $bmac = false; require("/var/www/html/docs/lib/footer.php"); ?>
 
 	<?php if(!$loggedIn && !isMobileDevice()){ ?><script>$(document).ready(function(){render_gSignIn();});</script><?php } ?>
