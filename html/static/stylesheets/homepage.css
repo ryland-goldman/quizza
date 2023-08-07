@@ -5,6 +5,7 @@
     --url-two: url("https://www.quizza.org/static/images/main-2.png");
 }
 @media only screen and (max-width: 600px) and (prefers-color-scheme: dark) {
+    body {background: #202020!important; }
     :root {
         --url-one: url("https://www.quizza.org/static/images/main-1-mobile-dark.png");
         --url-two: url("https://www.quizza.org/static/images/main-2-mobile-dark.png");
@@ -17,6 +18,7 @@
     }
 }
 @media only screen and (max-width: 600px) and (prefers-color-scheme: light) {
+    body {background: #FFF!important;}
     :root {
         --url-one: url("https://www.quizza.org/static/images/main-1-mobile.png");
         --url-two: url("https://www.quizza.org/static/images/main-2-mobile.png");
