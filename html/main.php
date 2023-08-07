@@ -11,27 +11,7 @@
 </head>
 <body>
 
-  <div id='top-bar'>
-    <table id='top-bar-table'>
-      <tr>
-        <td id='top-bar-table-logo'>
-          <a href='/'>
-            <h1><img style='height:1em;' id='logo'></h1>
-          </a>
-        </td>
-        <?php if (!isMobileDevice() && !$loggedIn) { ?><td>&nbsp;</td>
-	        <td id="top-bar-upper-icon">
-	          <table style='float:right;'>
-	            <tr>
-	              <td>&nbsp;</td>
-	              <td><div id="buttonDiv"></div></td>
-	            </tr>
-	          </table>
-	        </td>
-	      <?php } ?>
-      </tr>
-    </table>
-  </div>
+  <?php require("/var/www/html/docs/lib/topBar.php"); ?>
 
   <!-- Match the height of the above bar -->
   <div><table><tr><td style='padding:13px 20px 5px;'><h1>&nbsp;</h1></td></tr></table></div>

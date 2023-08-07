@@ -1,16 +1,4 @@
-:root {
-    --color-text: black!important;
-    --color-background: white!important;
-    --color-theme: #0fbd9d!important;
-    --color-light: #FFF!important;
-    --color-light-text: #444!important;
-    --color-btn-hover: #bbb!important;
-    --bgimage-main: url("https://www.quizza.org/static/images/diag-light.svg")!important;
-    --bgimage-home: url("https://www.quizza.org/static/images/diag-theme-light.svg")!important;
-    --logo-home: url("https://www.quizza.org/static/images/logo-white.png")!important;
-    --logo: url("https://www.quizza.org/static/images/logo-light.png")!important;
-    --color-alert: #b8f9ed;
-}
+
 #top-bar { z-index: 100; }
 @media only screen and (max-width: 600px) {
     select {
@@ -140,9 +128,6 @@ h1 { margin:8px; }
     background-repeat: no-repeat; 
     background-size: contain;
     margin:auto 5vh;
-}
-#top-bar {
-    box-shadow: 2px 3px 22px 0px #AAA;
 }
 #footer p { color: black; }
 #footer a { color: #333!important;  }
