@@ -27,6 +27,9 @@
     body {
         background: #FFF!important;
     }
+    #select, .dropdown {
+        font-size:1vw;
+    }
 }
 @media only screen and (min-width: 600px) {
     #select {
@@ -39,9 +42,6 @@
     #sep {
         margin-top:15vh;
         margin-bottom:20vh;
-    }
-    #select, .dropdown {
-        font-size:1vw;
     }
     #homepage-bgimage-1 {
         height: 40vh; 
