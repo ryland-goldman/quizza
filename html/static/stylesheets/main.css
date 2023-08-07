@@ -207,7 +207,7 @@ a, button {
     text-decoration: none;
 }
 
-#top-bar-icon-image, #top-bar-icon-image-home {
+#top-bar-icon-image, #top-bar-icon-image-home, .top-bar-icon-image-hidden {
     height: 16pt;
     border-radius: 8pt;
 }
