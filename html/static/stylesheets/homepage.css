@@ -38,6 +38,7 @@
     #select {
         width: 100%;
     }
+    h1 {margin-bottom:24px;}
     #homepage-bgimage-1 {
         height: 30vh;
     }
@@ -69,7 +70,7 @@ h1 { margin:8px; }
     margin-left:10vw;
     margin-right:10vw;
     border-radius:18px;
-    background-color:#0fbd9d;
+    background-color:var(--color-theme);
     color:white;
     padding:20px;
 }
@@ -84,3 +85,7 @@ h1 { margin:8px; }
 }
 
 select { font-size: 1em; }
+#select {
+    color: var(--color-text)!important;
+    background-color: var(--color-background)!important;
+}
