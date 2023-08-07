@@ -48,9 +48,9 @@
                       <?php } ?>
                     </table>
                     <br>
-                    <hr>
-                    <br>
                     <div class='left-float'>
+                      <hr>
+                      <br>
                       <div class='select'>
                         <select>
                           <?php if($_SERVER['HTTP_HOST']=="www.quizza.org" && $_SERVER['PHP_SELF']=="/index.php"){ ?><option selected>Select a School</option><?php } ?>

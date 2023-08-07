@@ -210,6 +210,7 @@ a, button {
 #top-bar-icon-image, #top-bar-icon-image-home, .top-bar-icon-image-hidden {
     height: 16pt;
     border-radius: 8pt;
+    margin-right: 4px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -918,6 +919,7 @@ a, button {
     box-shadow: rgba(0, 0, 0, 0.45) 0px 5px 15px;
     border-radius: 8px;
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    min-height: 100vh;
 }
 
 #topbar-menuToggle input:checked~div {
