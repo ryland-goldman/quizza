@@ -49,9 +49,6 @@
     .dropdown .dropdown-menu {
         position: relative!important;
     }
-    body {
-        background: #FFF!important;
-    }
 }
 @media only screen and (min-width: 600px) {
     #select {
