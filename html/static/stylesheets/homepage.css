@@ -5,7 +5,7 @@
         width: 100%;
     }
     #homepage-bgimage-1 {
-        background-image: url("https://www.quizza.org/static/images/mobile-1.png");
+        background-image: url("https://www.quizza.org/static/images/mobile-1.webp");
         margin-top: 5vh!important;
         height: 30vh;
     }
@@ -33,7 +33,7 @@
         width: 20em;
     }
     #homepage-bgimage-1 { 
-        background-image: url("https://www.quizza.org/static/images/main-1.png"); 
+        background-image: url("https://www.quizza.org/static/images/main-1.webp"); 
         margin-top: 10vh!important;
     }
     #sep {
