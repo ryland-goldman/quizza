@@ -831,11 +831,6 @@ a, button {
     color: var(--color-light-text);
 }
 
-.top-bar-signout {
-    font-size:8pt;
-    color: currentColor;
-}
-
 #school-selector {
     background-color: transparent;border: none;font-size: 1em;cursor: pointer;color: white;font-family: "Gotham";font-weight: 700;margin: 8px;border-bottom: 1px dotted white;text-align-last:center;
 }
@@ -979,5 +974,5 @@ select::-ms-expand {
     float:left;
 }
 .top-bar-signout {
-    color: red;
+    color: rgb(255,100,100);
 }

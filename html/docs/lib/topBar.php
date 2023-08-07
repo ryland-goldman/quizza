@@ -25,7 +25,7 @@
                             <img src='<?php echo $pic; ?>' id='top-bar-icon-image'>
                           </td>
                           <td>
-                            <a href='https://www.quizza.org/private' class='top-bar-name'>Welcome, <?php echo $name; ?></a>
+                            <a href='https://www.quizza.org/private' class='top-bar-name'><strong><?php echo $name; ?></strong></a>
                           </td>
                         </tr>
                       <?php } else { ?>
