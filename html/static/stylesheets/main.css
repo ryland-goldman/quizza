@@ -831,7 +831,7 @@ a, button {
     color: var(--color-light-text);
 }
 
-#top-bar-signout {
+.top-bar-signout {
     font-size:8pt;
     color: currentColor;
 }

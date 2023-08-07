@@ -27,7 +27,7 @@
                             </td>
                             <td>
                               <a href='https://www.quizza.org/private' id='top-bar-name'>Welcome, <?php echo $name; ?></a><br>
-                              <a href='javascript:signout()' id='top-bar-signout'>Sign Out</a>
+                              <a href='javascript:signout()' class='top-bar-signout'>Sign Out</a> • <a href='https://www.quizza.org/private' class='top-bar-signout'>Private Sets</a>
                             </td>
                           </tr>
                           <tr id='tr-border-bottom'>
@@ -76,8 +76,7 @@
                 <?php } else { ?>
                   <div class='select'>
                     <select>
-                      <?php if($_SERVER['HTTP_HOST']=="www.quizza.org" && $_SERVER['PHP_SELF']=="/index.php"){ ?><option selected>Select a School</option><?php } ?>
-                      <option value="private"<?php if($private_set) {?> selected<?php } ?>>Private Sets (No School Needed)</option>
+                      <?php if($_SERVER['HTTP_HOST']=="www.quizza.org"){ ?><option selected>Select a School</option><?php } ?>
                       <?php try {
                         $sql_db_password =  trim(file_get_contents("/var/www/sql.privkey"));
                         $schooldb = new mysqli("localhost","quizza", $sql_db_password, "Schools");
