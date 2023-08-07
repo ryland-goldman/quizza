@@ -1,16 +1,10 @@
 
 #top-bar { z-index: 100; }
 @media only screen and (max-width: 600px) {
-    #select {
-        width: 100%;
-    }
     #homepage-bgimage-1 {
         background-image: url("https://www.quizza.org/static/images/mobile-1.png");
         margin-top: 5vh!important;
         height: 30vh;
-    }
-    .dropdown {
-        font-size: 12pt!important;
     }
     #sep {
         text-align:center;
@@ -21,14 +15,8 @@
     .dropdown .dropdown-menu {
         position: relative!important;
     }
-    #sep h1, select {
-        font-size: 1.5em;
-    }
     body {
         background: #FFF!important;
-    }
-    #select, .dropdown {
-        font-size:1vw;
     }
 }
 @media only screen and (min-width: 600px) {
@@ -45,6 +33,9 @@
     }
     #homepage-bgimage-1 {
         height: 40vh; 
+    }
+    #sep h1, select {
+        font-size: 1.5em;
     }
 }
 h1 { margin:8px; }
