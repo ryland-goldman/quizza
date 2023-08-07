@@ -51,8 +51,8 @@
                     <hr>
                     <br>
                     <div>
-                      <div class='select'>
-                        <select style='float:unset;'>
+                      <div class='select' style='float:unset;'>
+                        <select>
                           <?php if($_SERVER['HTTP_HOST']=="www.quizza.org" && $_SERVER['PHP_SELF']=="/index.php"){ ?><option selected>Select a School</option><?php } ?>
                           <option value="private"<?php if($private_set) {?> selected<?php } ?>>Private Sets (No School Needed)</option>
                           <?php 
