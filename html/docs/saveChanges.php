@@ -14,15 +14,21 @@ $content = base64_encode($data);
 $title = $admin->real_escape_string(filter_var($_POST["title"],FILTER_SANITIZE_STRING));
 $action = ($_GET["DELETE"] == "TRUE") ? "Delete" : "Edit";
 $edittime = date("d M Y (h:i A T)");
+$admin->query("LOCK TABLES EditLog");
 $admin->query("INSERT INTO EditLog VALUES ('$email','$content','$classID $setID $title','$action','$edittime')");
+$admin->query("UNLOCK TABLES");
 
 if($_GET["DELETE"]=="TRUE"){ // Deleting a set
+  $admin->query("LOCK TABLES ".$classID."Sets");
   $admin->query("DELETE FROM ".$classID."Sets WHERE ID=\"$setID\"");
+  $admin->query("UNLOCK TABLES");
   $thisClass->query("DROP TABLE IF EXISTS Archive".$type.$setID);
   $thisClass->query("ALTER TABLE ".$type.$setID." RENAME Archive".$type.$setID);
   die("<script>location.href='/".$classID."';</script>");
 } else {
   if($type == "Set"){
+    $admin->query("LOCK TABLES ".$classID."Sets");
+    $admin->query("LOCK TABLES Set".$setID);
     $thisClass->query("DELETE FROM Set".$setID);
     $d = str_getcsv($data, "\n"); //parse the rows
     foreach ($d as &$row) {
@@ -67,7 +73,10 @@ if($_GET["DELETE"]=="TRUE"){ // Deleting a set
       $thisClass->query("RENAME TABLE Set".$setID." TO Quiz".$setID);
       $admin->query("UPDATE ".$classID."Sets SET Type=\"Quiz\" WHERE ID=".$setID);
     }
+    $admin->query("UNLOCK TABLES");
   } else {
+    $admin->query("LOCK TABLES ".$classID."Sets");
+    $admin->query("LOCK TABLES Quiz".$setID);
     $thisClass->query("DELETE FROM Quiz".$setID);
     if($data !== "empty"){
       $d = str_getcsv($data, "\n"); //parse the rows
@@ -148,6 +157,7 @@ if($_GET["DELETE"]=="TRUE"){ // Deleting a set
         $admin->query("UPDATE ".$classID."Sets SET Type=\"Set\" WHERE ID=".$setID);
       }
     }
+    $admin->query("UNLOCK TABLES");
   }
   
   echo "success";

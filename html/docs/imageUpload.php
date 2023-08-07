@@ -9,7 +9,9 @@ date_default_timezone_set("America/Los_Angeles");
 $content = hash("fnv1a64",$base64).$_POST['extension'];
 $action = "image-upload";
 $edittime = date("d M Y (h:i A T)");
+$admin->query("LOCK TABLES EditLog");
 $admin->query("INSERT INTO EditLog VALUES ('$email','$content','--','$action','$edittime')");
+$admin->query("UNLOCK TABLES");
 
 $imageData = base64_decode($base64);
 $filePath = "/var/www/html/static/images/user-media/".hash("fnv1a64",$base64).$_POST['extension'];
