@@ -45,7 +45,6 @@
 	<?php } else { ?>
 		<div id='sep'>
 			<h1>Choose your school</h1>
-			<hr>
 			<div class='select'>
 				<select id='select'>
 					<option value="www" selected>Select a School</option>
