@@ -906,11 +906,11 @@ a, button {
 
 #topbar-menu {
     position: absolute;
-    width: 300px;
+    width: 225px;
     margin: -100px 0 0 0;
     padding: 50px;
     padding-top: 125px;
-    right: -100px;
+    right: -25px;
     background: var(--color-background);
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
