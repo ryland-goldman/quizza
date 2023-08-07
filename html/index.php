@@ -142,7 +142,6 @@
 
   </script>
   <script defer src="https://www.quizza.org/static/scripts/index.js"></script>
-  <script src="https://www.quizza.org/static/scripts/homepage.js"></script>
 </body>
 
 </html>

@@ -15,3 +15,8 @@ function signout(){
 		}
 	})
 }
+
+$("select").first().on('change', function(event) {
+	var url = 'https://' + $("select").first().val() + ".quizza.org/";
+    if(url !== "https://.quizza.org/" && url !== "https://www.quizza.org/"){ location.href = url; }
+});
