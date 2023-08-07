@@ -57,12 +57,9 @@
     #select {
         width: 20em;
     }
-    #homepage-bgimage-1 { 
-        margin-top: 10vh!important;
-    }
     #sep {
         margin-top:15vh;
-        margin-bottom:20vh;
+        margin-bottom:10vh;
     }
     #homepage-bgimage-1 {
         height: 40vh; 
