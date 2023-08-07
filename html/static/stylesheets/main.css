@@ -202,7 +202,7 @@ a, button {
     padding: 13px 20px 5px;
 }
 
-#top-bar-name {
+.top-bar-name {
     color: currentcolor;
     text-decoration: none;
 }
@@ -940,7 +940,7 @@ select {
   flex: 1;
   padding: 0 1em;
   color: #fff;
-  background-color: #2c3e50;
+  background-color: var(--color-theme);
   background-image: none;
   cursor: pointer;
 }
@@ -963,7 +963,6 @@ select::-ms-expand {
     top: 0;
     right: 0;
     padding: 1em;
-    background-color: #34495e;
     transition: .25s all ease;
     pointer-events: none;
 }

@@ -18,37 +18,36 @@
                   <span></span>
                   <span></span>
                   <div id="topbar-menu">
-                    <?php if($loggedIn){ ?>
-                        <table id='tr-border-bottom-table'>
-                          <tr>
-                            <td>
-                              <img src='<?php echo $pic; ?>' id='top-bar-icon-image'>
-                            </td>
-                            <td>
-                              <a href='https://www.quizza.org/private' id='top-bar-name'>Welcome, <?php echo $name; ?></a><br>
-                              <a href='javascript:signout()' class='top-bar-signout'>Sign Out</a> • <a href='https://www.quizza.org/private' class='top-bar-signout'>Private Sets</a>
-                            </td>
-                          </tr>
-                          <tr id='tr-border-bottom'>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                          </tr>
-                        </table>
-                    <?php } else { ?>
-                      <table id='tr-border-bottom-table'>
-                          <tr>
-                            <td>
-                              <div id="buttonDiv"></div>
-                            </td>
-                            <td>
-                              &nbsp;
-                            </td>
-                          </tr>
-                          <tr id='tr-border-bottom'>
-                            <td>&nbsp;</td>
-                          </tr>
-                        </table>
-                    <?php } ?>
+                    <table>
+                      <?php if($loggedIn) { ?>
+                        <tr>
+                          <td>
+                            <img src='<?php echo $pic; ?>' id='top-bar-icon-image'>
+                          </td>
+                          <td>
+                            <a href='https://www.quizza.org/private' class='top-bar-name'>Welcome, <?php echo $name; ?></a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>&nbsp;</td>
+                          <td>
+                            <a href='javascript:signout()' class='top-bar-name'>Sign Out</a>
+                          </td>
+                        </tr>
+                      <?php } else { ?>
+                        <tr>
+                          <td>&nbsp;</td>
+                          <td><div id="buttonDiv"></div></td>
+                        </tr>
+                      <?php } ?>
+                      <tr>
+                        <td>
+                          <a href='https://www.quizza.org/private' class='top-bar-name'>Private Sets</a>
+                        </td>
+                      </tr>
+                    </table>
+                    <br>
+                    <hr>
                     <br>
                     <div class='left-float'>
                       <div class='select'>
