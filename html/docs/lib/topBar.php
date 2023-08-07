@@ -55,7 +55,7 @@
                       <div class='select'>
                         <select>
                           <?php if($_SERVER['HTTP_HOST']=="www.quizza.org" && $_SERVER['PHP_SELF']=="/index.php"){ ?><option selected>Select a School</option><?php } ?>
-                          <?php if(!$private_set){ ?><option value="private">Private Sets (No School Needed)</option><?php } ?>
+                          <option value="private"<?php if($private_set) {?> selected<?php } ?>>Private Sets (No School Needed)</option>
                           <?php 
                           try {
                             $sql_db_password =  trim(file_get_contents("/var/www/sql.privkey"));
