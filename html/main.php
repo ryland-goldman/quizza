@@ -63,7 +63,7 @@
 			</div>
 		</div>
 	<?php } ?>
-	<img src='https://www.quizza.org/static/images/<?php if(isMobileDevice()){ ?>mobile<?php } else { ?>main<?php } ?>-2.png' style='width:100vw;'>
+	<img src='https://www.quizza.org/static/images/main-2.webp' style='width:100vw;'>
 	<?php $bmac = false; require("/var/www/html/docs/lib/footer.php"); ?>
 
 	<?php if(!$loggedIn && !isMobileDevice()){ ?><script>$(document).ready(function(){render_gSignIn();});</script><?php } ?>
