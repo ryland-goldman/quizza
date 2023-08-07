@@ -9,10 +9,9 @@
           </a>
         </td>
         <td id="top-bar-upper-icon" class='td-outer'>
-          <table style='float:right;'>
+          <table style='width:100%'>
             <tr>
-              <td>&nbsp;</td>
-              <td>
+              <td style='float:right;'>
                 <div id="topbar-menuToggle">
                   <input type="checkbox" />
                   <span></span>
@@ -73,6 +72,10 @@
                     </div>
                   </div>
                 </div>
+              </td>
+              <td style="float:right;margin-right:8px;">
+                <?php if($loggedIn) { ?><div id="buttonDiv-2"></div><?php } ?>
+                <?php if(!$loggedIn) { ?>&nbsp;<?php } ?>
               </td>
             </tr>
           </table>
