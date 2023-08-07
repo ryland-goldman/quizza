@@ -1,6 +1,9 @@
 
 #top-bar { z-index: 100; }
 @media only screen and (max-width: 600px) {
+    #select {
+        width: 100%;
+    }
     #homepage-bgimage-1 {
         background-image: url("https://www.quizza.org/static/images/mobile-1.png");
         margin-top: 5vh!important;
@@ -34,11 +37,9 @@
     #homepage-bgimage-1 {
         height: 40vh; 
     }
-    #sep h1, select {
-        font-size: 1.5em;
-    }
 }
 h1 { margin:8px; }
+#sep h1 { font-size: 1.5em; }
 #sep {
     margin-left:10vw;
     margin-right:10vw;
@@ -58,3 +59,4 @@ h1 { margin:8px; }
 }
 #footer p { color: black; }
 #footer a { color: #333!important;  }
+select { font-size: 1em; }
