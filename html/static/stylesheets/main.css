@@ -979,3 +979,6 @@ select::-ms-expand {
 .signin-table tr {
     min-height: 21px;
 }
+.top-bar-icon-image-hidden {
+    visibility: hidden
+}

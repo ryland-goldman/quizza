@@ -28,24 +28,22 @@
                             <a href='https://www.quizza.org/private' class='top-bar-name'><strong><?php echo $name; ?></strong></a>
                           </td>
                         </tr>
+                        <tr>
+                          <td><img src='<?php echo $pic; ?>' class='top-bar-icon-image-hidden'></td>
+                          <td>
+                            <a href='https://www.quizza.org/private' class='top-bar-name'>Private Sets</a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><img src='<?php echo $pic; ?>' class='top-bar-icon-image-hidden'></td>
+                          <td>
+                            <a href='javascript:signout()' class='top-bar-name top-bar-signout'>Sign Out</a>
+                          </td>
+                        </tr>
                       <?php } else { ?>
                         <tr>
                           <td>&nbsp;</td>
                           <td><div id="buttonDiv"></div></td>
-                        </tr>
-                      <?php } ?>
-                      <tr>
-                        <td>&nbsp;</td>
-                        <td>
-                          <a href='https://www.quizza.org/private' class='top-bar-name'>Private Sets</a>
-                        </td>
-                      </tr>
-                      <?php if($loggedIn){ ?>
-                        <tr>
-                          <td>&nbsp;</td>
-                          <td>
-                            <a href='javascript:signout()' class='top-bar-name top-bar-signout'>Sign Out</a>
-                          </td>
                         </tr>
                       <?php } ?>
                     </table>
