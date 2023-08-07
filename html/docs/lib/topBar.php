@@ -18,7 +18,7 @@
                   <span></span>
                   <span></span>
                   <div id="topbar-menu">
-                    <table>
+                    <table class='signin-table'>
                       <?php if($loggedIn) { ?>
                         <tr>
                           <td>

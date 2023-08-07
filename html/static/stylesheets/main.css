@@ -976,3 +976,6 @@ select::-ms-expand {
 .top-bar-signout {
     color: rgb(255,100,100);
 }
+.signin-table tr {
+    min-height: 21px;
+}
