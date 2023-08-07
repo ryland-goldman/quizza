@@ -28,12 +28,6 @@
                             <a href='https://www.quizza.org/private' class='top-bar-name'>Welcome, <?php echo $name; ?></a>
                           </td>
                         </tr>
-                        <tr>
-                          <td>&nbsp;</td>
-                          <td>
-                            <a href='javascript:signout()' class='top-bar-name'>Sign Out</a>
-                          </td>
-                        </tr>
                       <?php } else { ?>
                         <tr>
                           <td>&nbsp;</td>
@@ -41,10 +35,19 @@
                         </tr>
                       <?php } ?>
                       <tr>
+                        <td>&nbsp;</td>
                         <td>
                           <a href='https://www.quizza.org/private' class='top-bar-name'>Private Sets</a>
                         </td>
                       </tr>
+                      <?php if($loggedIn){ ?>
+                        <tr>
+                          <td>&nbsp;</td>
+                          <td>
+                            <a href='javascript:signout()' class='top-bar-name top-bar-signout'>Sign Out</a>
+                          </td>
+                        </tr>
+                      <?php } ?>
                     </table>
                     <br>
                     <hr>

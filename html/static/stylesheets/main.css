@@ -978,3 +978,6 @@ select::-ms-expand {
 .left-float {
     float:left;
 }
+.top-bar-signout {
+    color: red;
+}
