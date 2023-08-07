@@ -81,7 +81,7 @@ h1 { margin:8px; }
 #sep table {
     width:100%;
 }
-#homepage-bgimage-1 {
+#homepage-bgimage-1, #homepage-bgimage-2 {
     background-position: center center; 
     background-repeat: no-repeat; 
     background-size: contain;
