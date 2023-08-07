@@ -44,13 +44,6 @@ function render_gSignIn_attempt(prompt_login=false) {
             text: "signin"
         }
     );
-    google.accounts.id.renderButton(
-        document.getElementById("buttonDiv-2"), {
-            theme: (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? "filled_black" : "outline",
-            size: "large",
-            text: "signin"
-        }
-    );
     if (mobileCheck() || prompt_login) {
         google.accounts.id.prompt();
     }

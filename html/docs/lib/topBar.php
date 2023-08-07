@@ -73,10 +73,6 @@
                   </div>
                 </div>
               </td>
-              <td style="float:right;margin-right:8px;">
-                <?php if(!$loggedIn) { ?><div id="buttonDiv-2"></div><?php } ?>
-                <?php if($loggedIn) { ?>&nbsp;<?php } ?>
-              </td>
             </tr>
           </table>
         </td>
