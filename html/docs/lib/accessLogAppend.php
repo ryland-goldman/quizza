@@ -17,7 +17,7 @@ if(isset($email)){ $user1 = $admin1->real_escape_string(filter_var($email,FILTER
 if(isset($_GET["ref"])){ $ref1 = $_GET["ref"]; }
 
 // Attempt to add to log three times (to avoid SQL deadlock)
-$admin1->query("LOCK TABLES AccessLog");
+$admin1->query("LOCK TABLES AccessLog write");
 try {
 	$admin1->query("INSERT IGNORE INTO AccessLog VALUES (\"$timestamp\",\"$school1\",\"$class1\",\"$set1\",\"$section1\",\"$user1\",\"$ref1\",\"$ipaddr\")");
 } catch (Exception $e){

@@ -1,5 +1,5 @@
 <?php require "/var/www/html/docs/lib/header.php";
-$admin->query("LOCK TABLES Favorites");
+$admin->query("LOCK TABLES Favorites write");
 if ($loggedIn) {
     if ( $admin->query("SELECT * FROM Favorites WHERE ID=\"$classID\" AND User=\"$email\"")->num_rows == 0 ) {
         // Not already in favorites, so add it
