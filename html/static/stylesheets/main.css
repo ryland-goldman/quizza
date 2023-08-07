@@ -31,7 +31,7 @@ body {
 }
 
 #indexphp-body {
-    background-image: var(--bgimage-home)!important;
+    background: var(--bgimage-home)!important;
 }
 
 #logo-home {
