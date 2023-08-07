@@ -55,7 +55,12 @@
                       <div class='select'>
                         <select>
                           <?php if(!$private_set){ ?><option value="private">Private Sets (No School Needed)</option><?php } ?>
-                          <?php $schools = $schooldb->query("SELECT * FROM main ORDER BY longname ASC;");
+                          <?php 
+                          try {
+                            $sql_db_password =  trim(file_get_contents("/var/www/sql.privkey"));
+                            $schooldb = new mysqli("localhost","quizza", $sql_db_password, "Schools");
+                          } catch (Exception $e) {}
+                          $schools = $schooldb->query("SELECT * FROM main ORDER BY longname ASC;");
                           while($curr_school = $schools->fetch_assoc()){ ?>
                             <option value="<?php echo $curr_school["id"]; ?>"<?php if($curr_school["shortname"] == $school_shortname){ ?> selected<?php } ?>><?php echo $curr_school["longname"]; ?></option>
                           <?php } ?>
