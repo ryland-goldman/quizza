@@ -35,9 +35,8 @@
 					<td><h1>Choose your school</h1></td>
 					<td>
 						<div class='select'>
-					    <select id='select'>
+					    <select id='select1'>
 					      <option value="www" selected>Select a School</option>
-					      <option value="private">Private Sets (No School Needed)</option>
 					      <?php $schooldb = new mysqli("localhost","quizza", trim(file_get_contents("/var/www/sql.privkey")), "Schools");
 					      $schools = $schooldb->query("SELECT * FROM main ORDER BY longname ASC;");
 				        while($curr_school = $schools->fetch_assoc()){ 
