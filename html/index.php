@@ -84,43 +84,46 @@
 
 
     <!-- All classes -->
-    <?php $subjectlist = $schooldb->query("SELECT * FROM subjects".$school." ORDER BY Name ASC");
-        if ($subjectlist->num_rows > 0) { 
-          while ($current_subject = $subjectlist->fetch_assoc()) { ?>
-            <div class='subject-row'>
-              <table>
-                <tr id='<?php echo $current_subject["id"]; ?>-H'><td><h2 style='text-align:center;'><i class="<?php echo $current_subject["icon"]; ?>"></i> <?php echo $current_subject["name"]; ?> <i class="fa-solid fa-caret-down"></i></h2></td></tr>
-                <tr id='<?php echo $current_subject["id"]; ?>-B' style='display:none;'>
-                  <td class='classes'>
-
-                    <?php
-                      $classlist = $admin->query("SELECT * FROM Classes WHERE Subject=\"".$current_subject["id"]."\"");
-                      if ($classlist->num_rows > 0) {
-                          while ($current_class = $classlist->fetch_assoc()) { ?>
-                            <div>
-                              <h3><?php echo $current_class["ShortName"]; ?></h3>
-                              <a href='<?php echo $current_class["ID"]; ?>'>
-                                <button class='frontpage-studybtn'>Study</button>
-                              </a>
-                            </div><?php
-                          }
-                        }
-                      ?>
-
-                    <?php if($current_subject["id"]=="oth"){ ?><div>
-                        <!-- Private sets -->
-                        <h3>Private Sets</h3>
-                        <a href='https://www.quizza.org/private'>
-                          <button class='frontpage-studybtn'>Study</button>
-                        </a>
-                      </div>
-                    <?php } ?>
-
-                  </td>
-                </tr>
-              </table>
-            </div>
-    <?php } } ?>
+    <?php 
+    $cached_classes = "/tmp/".$school.".cache"; 
+    if(file_exists($cached_classes) && !isset($_GET["reload_cache"])) {
+      readfile($cached_classes);
+    } else {
+      $cache_data_append = "";
+      $subjectlist = $schooldb->query("SELECT * FROM subjects".$school." ORDER BY Name ASC");
+          if ($subjectlist->num_rows > 0) { 
+            while ($current_subject = $subjectlist->fetch_assoc()) {
+              $cache_data_append .= "<div class='subject-row'>";
+              $cache_data_append .= "  <table>";
+              $cache_data_append .= "    <tr id='".$current_subject["id"]."-H'><td><h2 style='text-align:center;'><i class='".$current_subject["icon"]."'></i> ".$current_subject["name"]." <i class=\"fa-solid fa-caret-down\"></i></h2></td></tr>";
+              $cache_data_append .= "    <tr id='".$current_subject["id"]."-B' style='display:none;'>";
+              $cache_data_append .= "      <td class='classes'>";
+              $classlist = $admin->query("SELECT * FROM Classes WHERE Subject=\"".$current_subject["id"]."\"");
+              if ($classlist->num_rows > 0) {
+                while ($current_class = $classlist->fetch_assoc()) {
+                  $cache_data_append .= "<div>
+                                <h3>".$current_class["ShortName"]."</h3>
+                                <a href='".$current_class["ID"]."'>
+                                  <button class='frontpage-studybtn'>Study</button>
+                                </a>
+                              </div>";
+                }
+              }
+              if($current_subject["id"]=="oth"){
+                $cache_data_append .= "<div>
+                          <!-- Private sets -->
+                          <h3>Private Sets</h3>
+                          <a href='https://www.quizza.org/private'>
+                            <button class='frontpage-studybtn'>Study</button>
+                          </a>
+                        </div>"
+              }
+              $cache_data_append .= "</td></tr></table></div>";
+            }
+          }
+          echo $cache_data_append;
+          file_put_contents($cache_data_append, $cached_classes);
+    } ?>
 
     <div>&nbsp;</div>
 

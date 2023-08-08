@@ -7,6 +7,17 @@
 	<title>Quizza</title>
 	<?php require("/var/www/html/docs/lib/imports.php"); ?>
 	<link rel='stylesheet' href='https://www.quizza.org/static/stylesheets/homepage.css'>
+	<?php if(isMobileDevice()) { ?>
+		<link rel='preload' href='https://www.quizza.org/static/images/main-1.png' as='image' />
+		<link rel='preload' href='https://www.quizza.org/static/images/main-1-dark.png' as='image' />
+		<link rel='preload' href='https://www.quizza.org/static/images/main-2.png' as='image' />
+		<link rel='preload' href='https://www.quizza.org/static/images/main-2-dark.png' as='image' />
+	<?php } else { ?>
+		<link rel='preload' href='https://www.quizza.org/static/images/main-1-mobile.png' as='image' />
+		<link rel='preload' href='https://www.quizza.org/static/images/main-1-mobile-dark.png' as='image' />
+		<link rel='preload' href='https://www.quizza.org/static/images/main-2-mobile.png' as='image' />
+		<link rel='preload' href='https://www.quizza.org/static/images/main-2-mobile-dark.png' as='image' />
+	<?php } ?>
 	<script src='https://www.quizza.org/static/scripts/homepage.js' defer></script>
 </head>
 <body>
