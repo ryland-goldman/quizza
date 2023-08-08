@@ -85,7 +85,7 @@
 
     <!-- All classes -->
     <?php 
-    $cached_classes = "/tmp/".$school.".cache"; 
+    $cached_classes = "/var/www/".$school.".cache"; 
     if(file_exists($cached_classes) && !isset($_GET["reload_cache"])) {
       readfile($cached_classes);
     } else {

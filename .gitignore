@@ -1,4 +1,5 @@
 .DS_Store
 *.privkey
+*.cache
 static/images/user-media/*
 vendor/
