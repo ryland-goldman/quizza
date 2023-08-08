@@ -35,7 +35,7 @@
 					<td><h1>Choose your school</h1></td>
 					<td>
 						<div class='select'>
-					    <select>
+					    <select id='select'>
 					      <option value="www" selected>Select a School</option>
 					      <option value="private">Private Sets (No School Needed)</option>
 					      <?php $schooldb = new mysqli("localhost","quizza", trim(file_get_contents("/var/www/sql.privkey")), "Schools");
