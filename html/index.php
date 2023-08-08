@@ -116,7 +116,7 @@
                           <a href='https://www.quizza.org/private'>
                             <button class='frontpage-studybtn'>Study</button>
                           </a>
-                        </div>"
+                        </div>";
               }
               $cache_data_append .= "</td></tr></table></div>";
             }
