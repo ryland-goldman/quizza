@@ -24,6 +24,7 @@ body {
     margin: 0;
     padding: 0;
     background-image: var(--bgimage-main);
+    background-color: var(--color-background);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -31,8 +32,8 @@ body {
 }
 
 #indexphp-body {
-    background-color: rgba(0,0,0,0);
     background-image: var(--bgimage-home)!important;
+    background-color: var(--color-theme)!important;
 }
 
 #logo-home {
