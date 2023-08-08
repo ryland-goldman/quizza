@@ -35,7 +35,7 @@
 					<td><h1>Choose your school</h1></td>
 					<td>
 						<div class='select'>
-					    <select id='select1'>
+					    <select id='select'>
 					      <option value="www" selected>Select a School</option>
 					      <?php $schooldb = new mysqli("localhost","quizza", trim(file_get_contents("/var/www/sql.privkey")), "Schools");
 					      $schools = $schooldb->query("SELECT * FROM main ORDER BY longname ASC;");
