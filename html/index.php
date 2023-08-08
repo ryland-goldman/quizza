@@ -122,7 +122,7 @@
             }
           }
           echo $cache_data_append;
-          file_put_contents($cache_data_append, $cached_classes);
+          file_put_contents($cached_classes, $cache_data_append);
     } ?>
 
     <div>&nbsp;</div>
