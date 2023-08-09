@@ -7,7 +7,7 @@
 	<title>Quizza</title>
 	<?php require("/var/www/html/docs/lib/imports.php"); ?>
 	<link rel='stylesheet' href='https://www.quizza.org/static/stylesheets/homepage.css'>
-	<?php if(isMobileDevice()) { ?>
+	<?php if(!isMobileDevice()) { ?>
 		<link rel='stylesheet' href='https://www.quizza.org/static/stylesheets/homepage-desktop.css' />
 		<link rel='preload' href='https://www.quizza.org/static/images/main-1.png' as='image' />
 		<link rel='preload' href='https://www.quizza.org/static/images/main-1-dark.png' as='image' />
