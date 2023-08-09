@@ -28,7 +28,7 @@ if($_GET["DELETE"]=="TRUE"){ // Deleting a set
 } else {
   if($type == "Set"){
     $admin->query("LOCK TABLES ".$classID."Sets write");
-    $admin->query("LOCK TABLES Set".$setID." write");
+    $thisClass->query("LOCK TABLES Set".$setID." write");
     $thisClass->query("DELETE FROM Set".$setID);
     $d = str_getcsv($data, "\n"); //parse the rows
     foreach ($d as &$row) {
@@ -74,9 +74,10 @@ if($_GET["DELETE"]=="TRUE"){ // Deleting a set
       $admin->query("UPDATE ".$classID."Sets SET Type=\"Quiz\" WHERE ID=".$setID);
     }
     $admin->query("UNLOCK TABLES");
+    $thisClass->query("UNLOCK TABLES");
   } else {
     $admin->query("LOCK TABLES ".$classID."Sets write");
-    $admin->query("LOCK TABLES Quiz".$setID." write");
+    $thisClass->query("LOCK TABLES Quiz".$setID." write");
     $thisClass->query("DELETE FROM Quiz".$setID);
     if($data !== "empty"){
       $d = str_getcsv($data, "\n"); //parse the rows
@@ -158,6 +159,7 @@ if($_GET["DELETE"]=="TRUE"){ // Deleting a set
       }
     }
     $admin->query("UNLOCK TABLES");
+    $thisClass->query("UNLOCK TABLES");
   }
   
   echo "success";
