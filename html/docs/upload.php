@@ -7,6 +7,7 @@
 	<title>Upload Set | Quizza</title>
 	<?php require("/var/www/html/docs/lib/imports.php"); ?>
 	<script async>var classID = "<?php echo $classID;?>";</script>
+	<script src='https://www.quizza.org/static/scripts/upload.js' defer async></script>
 </head>
 <body>
 	<?php require("/var/www/html/docs/lib/topBar.php"); ?>
