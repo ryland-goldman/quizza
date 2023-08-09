@@ -11,7 +11,7 @@ function share_script_init(){
                       <h2>Share Set</h2>
                       <hr>
                       <div id='share-list-`+modal_current+`'></div>
-                      <input type='text' id='email-box-`+modal_current+`' class='email-box' placeholder='Email' required>
+                      <input type='email' id='email-box-`+modal_current+`' class='email-box' placeholder='Email' required>
                       <span id='error-`+modal_current+`' style='color:red;display:none;'><br>Invalid email address. Please try again.<br></span>
                       <button class="submitbtn submitbtn-first" onclick="add(false, `+share_set_no+`)">Add (view only)</button>
                       <button class="submitbtn" onclick="add(true, `+share_set_no+`)">Add (view and edit)</button>
