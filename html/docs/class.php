@@ -165,7 +165,7 @@
           Public sets can be accessed and edited by anyone. Protected sets can be viewed by anyone, but only edited by the creator.
         <?php } ?>
         </small>
-        <?php if(isMobileDevice()) { ?>
+        <?php if(!isMobileDevice()) { ?>
           <br><br>
           <small>
               <a href='/docs/upload.php?class=<?php echo $classID; ?>'><i class="fa-solid fa-circle-info"></i> Import from Quizlet or Upload CSV</a>
