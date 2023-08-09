@@ -40,7 +40,7 @@
 	       </a>
 
 	       <a>
-	       	<button class='title-button-white'>Help&nbsp;&nbsp;<i class="fa-solid fa-circle-info" onclick="window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ');"></i></button>
+	       	<button class='title-button-white' onclick="window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ');">Help&nbsp;&nbsp;<i class="fa-solid fa-circle-info"></i></button>
 	       </a>
 	  	</p>
 
