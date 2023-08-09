@@ -1,4 +1,4 @@
-const readFileAsText = function(isPrivate) {
+const readFileAsText = function() {
     $("#nofileuploaded").hide();
     $("#uploading").show();
     $(".uploadBtn:nth-of-type(1)").prop("disabled", true).css({
@@ -14,6 +14,7 @@ const readFileAsText = function(isPrivate) {
         var content = fileLoadedEvent.target.result;
         $("#set-title").val(title);
         $("#set-content").val(content);
+        $.modal.close();
     })
     try {
         fileReader.readAsText(fileToRead, 'UTF-8');

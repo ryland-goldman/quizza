@@ -1,4 +1,4 @@
-<?php header("HTTP 403 Forbidden"); ?>
+<?php header("HTTP 400 Bad Request"); ?>
 <!DOCTYPE html>
 <html>
 

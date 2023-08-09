@@ -1,5 +1,6 @@
 <?php require("/var/www/html/docs/lib/header.php"); ?>
 <?php if(!isset($_GET["class"])) { require("/var/www/html/400.php");} ?>
+<?php if(!$loggedIn) { require("/var/www/html/403.php"); } ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,8 +33,8 @@
 	       	<button id='title-button-blue'>From File&nbsp;&nbsp;<i class="fa-solid fa-file-import"></i></button>
 	       </a>
 
-	       <a href='#help' rel='modal:open'>
-	       	<button id='title-button-white'>Help&nbsp;&nbsp;<i class="fa-solid fa-circle-info"></i></button>
+	       <a href='https://www.youtube.com/watch?v=dQw4w9WgXcQ' target="_blank">
+	       	<button class='title-button-white'>Help&nbsp;&nbsp;<i class="fa-solid fa-circle-info"></i></button>
 	       </a>
 	  	</p>
 
@@ -61,6 +62,11 @@
     	<input id="file-to-read" type="file" accept=".csv" /><br>
     	<span id='uploadingg' style='display:none;'><br>No file uploaded. Please try again<br></span>
       	<span id='nofileuploaded' style='color:red;display:none;'><br>No file uploaded. Please try again<br></span>
+      	<input type="button" onclick="readFileAsText()" class='uploadBtn uploadBtn-first' value='Upload File'>
+    </div>
+
+    <div class='modal' id='help'>
+    	<p><strong>Help Uploading</strong></p>
     </div>
 
 	<?php require("/var/www/html/docs/lib/footer.php"); ?>
