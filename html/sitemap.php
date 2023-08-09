@@ -4,6 +4,7 @@ header("Content-Type: text/plain");
 
 $readcache = false;
 $cached_classes = "/var/www/sitemap.cache"; 
+$max_age = 0;
 if(file_exists($cached_classes)){
 	if(!isset($_GET['reload_cache'])){
 		if(filemtime($cached_classes) + $max_age > time()){
@@ -17,9 +18,9 @@ if($readcache) {
 } else {
 	$cache_data_append = "https://www.quizza.org/\nhttps://www.quizza.org/private\n";
 	$schooldb = new mysqli("localhost","quizza", trim(file_get_contents("/var/www/sql.privkey")), "Schools");
-	$schools = $schooldb->query("SELECT * FROM main ORDER BY longname ASC;");
+	$schools = $schooldb->query("SELECT * FROM main;");
 	while($curr_school = $schools->fetch_assoc()){ 
-		if($curr_school["id"] !== "private"){ continue; }
+		if($curr_school["id"] == "private"){ continue; }
 		$cache_data_append .= "https://";
 		$cache_data_append .= $curr_school["id"];
 		$cache_data_append .= ".quizza.org/\n";
