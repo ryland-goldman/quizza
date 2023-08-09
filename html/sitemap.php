@@ -34,7 +34,7 @@ if($readcache) {
 				$sets = $schooldb->query("SELECT * FROM Admin".$curr_school["id"].".".$curr_class["ID"]."Sets");
 				if($sets->num_rows > 0){
 					while($curr_set = $sets->fetch_assoc()){
-						$cache_data_append .= "https://"
+						$cache_data_append .= "https://";
 						$cache_data_append .= $curr_school["id"];
 						$cache_data_append .= ".quizza.org/";
 						$cache_data_append .= $curr_class["ID"];
