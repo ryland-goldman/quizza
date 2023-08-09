@@ -28,6 +28,7 @@ function add(edit_permission, share_set_no){
     $("#share-"+modal_current+" button").prop("disabled", true).css({ "cursor": "not-allowed" });
     var email = $("#email-box-"+modal_current).val();
     if(!email.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
+        $("#share-"+modal_current+" button").prop("disabled", false).css({ "cursor": "pointer" });
         $("#error-"+modal_current).show();
         return;
     }
