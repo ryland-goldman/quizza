@@ -4,7 +4,7 @@
       <tr>
         <td class='td-outer'>&nbsp;</td>
         <td id='top-bar-table-logo'>
-          <a href='/'>
+          <a href='<?php if($_SERVER['PHP_SELF']=="/index.php") { ?>https://www.quizza.org<?php } ?>/'>
             <h1><img style='height:1em;' id='logo<?php if($_SERVER['PHP_SELF']=="/index.php") { ?>-home<?php } ?>'></h1>
           </a>
         </td>
