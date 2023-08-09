@@ -33,7 +33,7 @@ function add(edit_permission, share_set_no){
     }
     $.get("/docs/lib/share_private_set.php?set="+share_set_no+"&edit_permission="+edit_permission+"&email="+encodeURIComponent(email), function(data,status){
         $("#share-list-"+modal_current).html(data);
-        $("#share-"+modal_current+" button").prop("enabled", true).css({ "cursor": "pointer" });
+        $("#share-"+modal_current+" button").prop("disabled", false).css({ "cursor": "pointer" });
         $("#email-box-"+modal_current).val("");
     });
 }
