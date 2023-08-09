@@ -1,12 +1,6 @@
 const readFileAsText = function() {
     $("#nofileuploaded").hide();
     $("#uploading").show();
-    $(".uploadBtn:nth-of-type(1)").prop("disabled", true).css({
-        "cursor": "not-allowed"
-    });
-    $(".uploadBtn:nth-of-type(2)").prop("disabled", true).css({
-        "cursor": "not-allowed"
-    });
     const fileToRead = document.getElementById('file-to-read').files[0]
     const fileReader = new FileReader()
     fileReader.addEventListener('load', function(fileLoadedEvent) {
@@ -19,12 +13,6 @@ const readFileAsText = function() {
     try {
         fileReader.readAsText(fileToRead, 'UTF-8');
     } catch (e) {
-        $(".uploadBtn:nth-of-type(1)").prop("disabled", false).css({
-            "cursor": "pointer"
-        });
-        $(".uploadBtn:nth-of-type(2)").prop("disabled", false).css({
-            "cursor": "pointer"
-        });
         $("#nofileuploaded").show();
     }
     $("#uploading").hide();
