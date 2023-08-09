@@ -6,8 +6,6 @@ function onload_1() {
 
 function onload_2() {
 
-    $("#fav-B").show();
-
     // attempt to render sign in button if it exists
     try {
         render_gSignIn();
@@ -27,7 +25,7 @@ function onload_3() {
 }
 
 onload_1();
-setTimeout(onload_2, 1000);
+onload_2();
 onload_3();
 
 $("#search-home").focus(function(event) {
