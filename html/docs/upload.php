@@ -32,7 +32,7 @@
 	    </table>
 
 		<p>
-		   <button onclick="uploadSet('&private=Create Public Set')" id='title-button-blue'>Upload (<?php if(!$private_set) { ?> Public <i class="fa-solid fa-lock-open"></i><?php } else { ?> Private <i class="fa-solid fa-lock"></i><?php } ?></button>
+		   <button onclick="uploadSet('&private=Create Public Set')" id='title-button-blue'>Upload <?php if(!$private_set) { ?> (Public) <i class="fa-solid fa-lock-open"></i><?php } else { ?> (Private) <i class="fa-solid fa-lock"></i><?php } ?></button>
       	   <?php if(!$private_set) { ?><button onclick="uploadSet('&private=Create Protected Set')" class='title-button-white'>Upload (Protected) <i class="fa-solid fa-lock"></i></button><?php } ?>
 	       
 	       <a href='#csv-upload' rel='modal:open'>
