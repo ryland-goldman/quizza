@@ -1,15 +1,16 @@
   <!-- Links -->
   <link rel='icon' href='https://www.quizza.org/static/images/favicon.png'>
   <link rel="stylesheet" href="https://www.quizza.org/static/stylesheets/main.css">
-  <link rel="stylesheet" href="https://www.quizza.org/static/stylesheets/jquery.modal.min.css">
+  <link rel="preload" href="https://www.quizza.org/static/stylesheets/jquery.modal.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://www.quizza.org/static/fonts/gotham-reg.woff2">
+  <link rel="preload" href="https://www.quizza.org/static/fonts/gotham-bold.woff2">
 
   <!-- Scripts -->
   <script src="https://kit.fontawesome.com/9e91fc9fc4.js" crossorigin="anonymous"></script>
   <script src="https://www.quizza.org/static/scripts/jquery.min.js"></script>
-  <script src="https://www.quizza.org/static/scripts/jquery.modal.min.js"></script>
-  <script src="https://www.quizza.org/static/scripts/allpages.js"></script>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://www.quizza.org/static/scripts/mathjax.min.js" id="MathJax-script" async></script>
+  <script src="https://www.quizza.org/static/scripts/jquery.modal.min.js" defer></script>
+  <script src="https://www.quizza.org/static/scripts/allpages.js" defer></script>
+  <script src="https://www.quizza.org/static/scripts/mathjax.min.js" id="MathJax-script" defer></script>
   <?php if ($loggedIn == false) { ?><script src="https://accounts.google.com/gsi/client" async defer></script><?php } ?>
   <?php if ($loggedIn == false) { ?><script src="https://www.quizza.org/static/scripts/login.js"></script><?php } ?>
 
