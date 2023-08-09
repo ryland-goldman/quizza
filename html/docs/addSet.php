@@ -12,8 +12,6 @@ $setID = intval($admin->query("SELECT MAX(ID) FROM ".$classID."Sets")->fetch_ass
 $thisClass->query("CREATE TABLE Set".$setID." (Term text, Definition text)");
 $title = $admin->real_escape_string(filter_var($_GET["title"],FILTER_SANITIZE_STRING));
 
-$admin->query("LOCK TABLES Set".$setID." write");
-
 if($private_set){
     $shared = base64_encode(json_encode(array("$email" => 3)));
     $admin->query("INSERT INTO privateSets VALUES(\"$title\", \"$lastModified\", \"$setID\", \"Set\", \"$shared\")");
