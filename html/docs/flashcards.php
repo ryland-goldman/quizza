@@ -8,6 +8,7 @@
   <title>Flashcards | Quizza</title>
   
   <?php require("/var/www/html/docs/lib/imports.php"); ?>
+  <meta name="robots" content="noindex" />
 
   <script src='https://www.quizza.org/static/scripts/flashcards.js'></script>  
   <script async>

@@ -5,6 +5,7 @@
 <head>
 
 	<title>Quizza | 400</title>
+	<meta name="robots" content="noindex" />
 	<?php require("/var/www/html/docs/lib/imports.php"); ?>
 
 </head>

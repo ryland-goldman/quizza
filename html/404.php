@@ -6,6 +6,7 @@
 
 	<title>Quizza | 404</title>
 	<?php require("/var/www/html/docs/lib/imports.php"); ?>
+	<meta name="robots" content="noindex" />
 
 </head>
 

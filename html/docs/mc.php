@@ -9,6 +9,7 @@
   <title>Test | Quizza</title>
 
   <?php require("/var/www/html/docs/lib/imports.php"); ?>
+  <meta name="robots" content="noindex" />
 
   <?php if($type == "Set") { ?>
     <script async>

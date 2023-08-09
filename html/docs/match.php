@@ -7,6 +7,7 @@
 <head>
   <title>Match | Quizza</title>
   <?php require("/var/www/html/docs/lib/imports.php"); ?>
+  <meta name="robots" content="noindex" />
   <script src='https://www.quizza.org/static/scripts/match.js'></script>
   <script async>
     var answers = [<?php $words = $thisClass->query("SELECT * FROM ".$type.$setID); if($words->num_rows > 0){ while($row = $words->fetch_assoc()){ echo '[`'.str_replace("\\","\\\\",$row[$type=="Set"?"Term":"Question"]).'`,`'.str_replace("\\","\\\\",$row[$type=="Set"?"Definition":"C1"]).'`],'; } } ?>[]];

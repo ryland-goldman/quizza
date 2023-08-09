@@ -12,6 +12,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
   <title>Edit Set | Quizza</title>
   
   <?php require("/var/www/html/docs/lib/imports.php"); ?>
+  <meta name="robots" content="noindex" />
 
   <script src='https://www.quizza.org/static/scripts/edit<?php if($type=="Quiz"){ ?>Quiz<?php } ?>.js'></script>
   <script async>var class_and_set = "class=<?php echo $classID."&set=".$setID;?>&";</script>

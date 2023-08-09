@@ -9,6 +9,7 @@
   <title>Test | Quizza</title>
 
   <?php require("/var/www/html/docs/lib/imports.php"); ?>
+  <meta name="robots" content="noindex" />
  
   <script async>
     <?php if($_GET['learn']=='true'){ ?> var learnmode = true; <?php } else { ?> var learnmode = false; <?php } ?>
