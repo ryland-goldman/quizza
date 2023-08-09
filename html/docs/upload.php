@@ -28,18 +28,22 @@
 	    </table>
 
 		<p>
-	       <button id='title-button-blue'>Upload CSV&nbsp;&nbsp;<i class="fa-solid fa-plus"></i></button>
+	       <a href='#csv-upload' rel='modal:open'>
+	       	<button id='title-button-blue'>From File&nbsp;&nbsp;<i class="fa-solid fa-file-import"></i></button>
+	       </a>
 	  	</p>
+
+	  	<br><br>
 
 	  	<p><strong>Set Title</strong></p>
 	  	<input type='text' id='set-title' />
 
-	  	<br>
+	  	<br><br>
 	  	
 	  	<p><strong>Enter comma-seperated values</strong></p>
 	  	<textarea id='set-content'></textarea>
 
-	  	<br>
+	  	<br><br>
 
       	<input type="button" onclick="uploadSet('&private=Create Public Set')" class='uploadBtn uploadBtn-first' value='Create<?php if(!$private_set) { ?> Public<?php } else { ?> Private<?php } ?> Set'>
       	<?php if(!$private_set) { ?><input type="button" onclick="uploadSet('&private=Create Protected Set')" class='uploadBtn' value='Create Protected Set'><?php } ?>
