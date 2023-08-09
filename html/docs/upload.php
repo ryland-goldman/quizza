@@ -32,8 +32,8 @@
 	    </table>
 
 		<p>
-		   <input type="button" onclick="uploadSet('&private=Create Public Set')" value='Create<?php if(!$private_set) { ?> Public<?php } else { ?> Private<?php } ?> Set' id='title-button-blue'>
-      	   <?php if(!$private_set) { ?><input type="button" onclick="uploadSet('&private=Create Protected Set')" class='title-button-white' value='Create Protected Set'><?php } ?>
+		   <button onclick="uploadSet('&private=Create Public Set')" id='title-button-blue'>Upload (<?php if(!$private_set) { ?> Public <i class="fa-solid fa-lock-open"></i><?php } else { ?> Private <i class="fa-solid fa-lock"></i><?php } ?></button>
+      	   <?php if(!$private_set) { ?><button onclick="uploadSet('&private=Create Protected Set')" class='title-button-white'>Upload (Protected) <i class="fa-solid fa-lock"></i></button><?php } ?>
 	       
 	       <a href='#csv-upload' rel='modal:open'>
 	       	<button class='title-button-white'>From File&nbsp;&nbsp;<i class="fa-solid fa-file-import"></i></button>
