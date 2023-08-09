@@ -109,7 +109,7 @@
 
         <?php if(!$empty_set){ ?>
 
-          <button onclick='prnt()' class='title-button-white right'>Print&nbsp;&nbsp;<i class="fa-solid fa-print"></i></button>
+          <button onclick='window.print()' class='title-button-white right'>Print&nbsp;&nbsp;<i class="fa-solid fa-print"></i></button>
 
           <?php mobileBR(); ?>
 
