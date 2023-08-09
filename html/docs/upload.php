@@ -39,8 +39,8 @@
 	       	<button class='title-button-white'>From File&nbsp;&nbsp;<i class="fa-solid fa-file-import"></i></button>
 	       </a>
 
-	       <a href='https://www.youtube.com/watch?v=dQw4w9WgXcQ' target="_blank">
-	       	<button class='title-button-white'>Help&nbsp;&nbsp;<i class="fa-solid fa-circle-info"></i></button>
+	       <a>
+	       	<button class='title-button-white'>Help&nbsp;&nbsp;<i class="fa-solid fa-circle-info" onclick="window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ');"></i></button>
 	       </a>
 	  	</p>
 
