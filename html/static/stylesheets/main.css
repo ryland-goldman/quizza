@@ -17,8 +17,8 @@ a,button{cursor:pointer;text-decoration:none;color:var(--color-text)}
 .complete{border-bottom:1px solid #AAA;padding:8px;width:100%}
 .complete-parent{text-align:center;margin-block-end:0;margin-block-start:0}
 .submitbtn:hover,.uploadBtn:hover,.modalbtn:hover{background:var(--color-btn-hover)!important}
-@font-face{font-family:"Gotham";font-weight:400;src:url(https://www.quizza.org/static/fonts/gotham-reg.ttf) format("truetype")}
-@font-face{font-family:"Gotham";font-weight:700;src:url(https://www.quizza.org/static/fonts/gotham-bold.ttf) format("truetype")}
+@font-face{font-family:"Gotham";font-weight:400;src:url(https://www.quizza.org/static/fonts/gotham-reg.woff2) format("woff2"),url(https://www.quizza.org/static/fonts/gotham-reg.ttf) format("truetype");}
+@font-face{font-family:"Gotham";font-weight:700;src:url(https://www.quizza.org/static/fonts/gotham-bold.woff2) format("woff2"),url(https://www.quizza.org/static/fonts/gotham-bold.ttf) format("truetype");}
 #frontpage-alert{padding:20px;background-color:var(--color-alert);color:var(--color-text);border-radius:8px;margin-left:20vw;margin-right:20vw;text-align:center}
 #frontpage-closebtn{margin-left:15px;color:var(--color-text);font-weight:700;float:right;font-size:22px;line-height:20px;cursor:pointer;transition:.3s}
 #frontpage-closebtn:hover{color:var(--color-background)}
