@@ -31,6 +31,10 @@
 	       <a href='#csv-upload' rel='modal:open'>
 	       	<button id='title-button-blue'>From File&nbsp;&nbsp;<i class="fa-solid fa-file-import"></i></button>
 	       </a>
+
+	       <a href='#help' rel='modal:open'>
+	       	<button id='title-button-white'>Help&nbsp;&nbsp;<i class="fa-solid fa-circle-info"></i></button>
+	       </a>
 	  	</p>
 
 	  	<br><br>
