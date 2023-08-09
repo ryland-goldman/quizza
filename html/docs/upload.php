@@ -51,7 +51,7 @@
 
 	  	<br><br>
 	  	
-	  	<p><strong>Enter comma-seperated values</strong></p>
+	  	<p><strong>Enter comma-separated values</strong></p>
 	  	<textarea id='set-content'></textarea>
 
 	  	<br><br>
