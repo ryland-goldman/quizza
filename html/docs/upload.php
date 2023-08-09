@@ -32,8 +32,11 @@
 	    </table>
 
 		<p>
+		   <input type="button" onclick="uploadSet('&private=Create Public Set')" value='Create<?php if(!$private_set) { ?> Public<?php } else { ?> Private<?php } ?> Set' id='title-button-blue'>
+      	   <?php if(!$private_set) { ?><input type="button" onclick="uploadSet('&private=Create Protected Set')" class='title-button-white' value='Create Protected Set'><?php } ?>
+	       
 	       <a href='#csv-upload' rel='modal:open'>
-	       	<button id='title-button-blue'>From File&nbsp;&nbsp;<i class="fa-solid fa-file-import"></i></button>
+	       	<button class='title-button-white'>From File&nbsp;&nbsp;<i class="fa-solid fa-file-import"></i></button>
 	       </a>
 
 	       <a href='https://www.youtube.com/watch?v=dQw4w9WgXcQ' target="_blank">
@@ -52,9 +55,6 @@
 	  	<textarea id='set-content'></textarea>
 
 	  	<br><br>
-
-      	<input type="button" onclick="uploadSet('&private=Create Public Set')" class='uploadBtn uploadBtn-first' value='Create<?php if(!$private_set) { ?> Public<?php } else { ?> Private<?php } ?> Set'>
-      	<?php if(!$private_set) { ?><input type="button" onclick="uploadSet('&private=Create Protected Set')" class='uploadBtn' value='Create Protected Set'><?php } ?>
 
 	</div>
 
