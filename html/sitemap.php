@@ -4,7 +4,7 @@ header("Content-Type: text/plain");
 
 $readcache = false;
 $cached_classes = "/var/www/sitemap.cache"; 
-$max_age = 60*60*24*7;
+$max_age = 60*60*24;
 if(file_exists($cached_classes)){
 	if(!isset($_GET['reload_cache'])){
 		if(filemtime($cached_classes) + $max_age > time()){
