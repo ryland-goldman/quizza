@@ -14,9 +14,9 @@
               <td style='float:right;'>
                 <div id="topbar-menuToggle">
                   <input type="checkbox" />
-                  <span></span>
-                  <span></span>
-                  <span></span>
+                  <span class='topbar-menuToggle-span'></span>
+                  <span class='topbar-menuToggle-span'></span>
+                  <span class='topbar-menuToggle-span'></span>
                   <div id="topbar-menu">
                     <table class='signin-table'>
                       <?php if($loggedIn) { ?>
