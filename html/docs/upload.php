@@ -8,6 +8,8 @@
 	<?php require("/var/www/html/docs/lib/imports.php"); ?>
 	<script async>var classID = "<?php echo $classID;?>";</script>
 	<script src='https://www.quizza.org/static/scripts/upload.js' defer async></script>
+	<link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+	<style>textarea{font-family:"Inconsolata",monospace,sans-serif;}</style>
 </head>
 <body>
 	<?php require("/var/www/html/docs/lib/topBar.php"); ?>
