@@ -73,6 +73,15 @@ if(isset($setID)) {
 
 		if($permission == 1) { $editable = false; } else { $editable = true; }
     }
+
+    if(!$empty_set) {
+    	if($type == "Set"){
+	    	$data = $thisClass->query("SELECT * FROM ".$type.$setID." WHERE Term LIKE '%\\\\(' OR Definition LIKE '%\\\\('");
+    	} else {
+    		$data = $thisClass->query("SELECT * FROM ".$type.$setID." WHERE Question LIKE '%\\\\(' OR C1 LIKE '%\\\\(' OR Ic1 LIKE '%\\\\(' OR Ic2 LIKE '%\\\\(' OR Ic3 LIKE '%\\\\('");
+    	}
+    	if($data->num_rows !== 0) { $mathjax = true; }
+    }
 }
 
 // Add to access log
