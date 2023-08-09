@@ -76,9 +76,9 @@ if(isset($setID)) {
 
     if(!$empty_set) {
     	if($type == "Set"){
-	    	$data = $thisClass->query("SELECT * FROM ".$type.$setID." WHERE Term LIKE '%\\\\(' OR Definition LIKE '%\\\\('");
+	    	$data = $thisClass->query("SELECT * FROM ".$type.$setID." WHERE Term LIKE '%\\(' OR Definition LIKE '%\\('");
     	} else {
-    		$data = $thisClass->query("SELECT * FROM ".$type.$setID." WHERE Question LIKE '%\\\\(' OR C1 LIKE '%\\\\(' OR Ic1 LIKE '%\\\\(' OR Ic2 LIKE '%\\\\(' OR Ic3 LIKE '%\\\\('");
+    		$data = $thisClass->query("SELECT * FROM ".$type.$setID." WHERE Question LIKE '%\\(' OR C1 LIKE '%\\(' OR Ic1 LIKE '%\\(' OR Ic2 LIKE '%\\(' OR Ic3 LIKE '%\\('");
     	}
     	if($data->num_rows !== 0) { $mathjax = true; }
     }
