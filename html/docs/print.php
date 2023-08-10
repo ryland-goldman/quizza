@@ -66,9 +66,9 @@ else { $secondary_column = $main_column=="Question" ? "C1":"Question"; }
 					$answers[$key] = $answers_tmp[$key];
 				}
 
-				$answers_2 = $answers;
-				$answers_3 = $answers;
-				$answers_4 = $answers;
+				$answers2 = $answers;
+				$answers3 = $answers;
+				$answers4 = $answers;
 
 				shuffle($answers2);
 				shuffle($answers3);
