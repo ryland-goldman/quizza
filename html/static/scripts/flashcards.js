@@ -7,7 +7,7 @@ function init(){
     current_flashcard = -1;
     is_flipped = false;
     total = -1;
-    
+
     $(".back-side").hide();
 
     // Make arrays in a random order
@@ -66,7 +66,7 @@ function next(go_back = false){
         // End 
         $("#t0").removeClass("sm");
         $("#t0").html("You've finished studying this set!");
-        $(".study-btn-bottom").html(`<button class='btn-blue' onclick='location.reload()'>Study More&nbsp;&nbsp;<i class="fa-solid fa-rotate"></i></button> <button onclick='location.href="../"'>Return Home&nbsp;&nbsp;<i class="fa-solid fa-house"></i></button>`);
+        $(".study-btn-bottom").html(`<button class='btn-blue' onclick='location.reload()'>Study More&nbsp;&nbsp;<i class="fa-solid fa-rotate"></i></button> <button onclick='location.href=return_url;'>Return Home&nbsp;&nbsp;<i class="fa-solid fa-house"></i></button>`);
     } else {
         // Next flashcard
         $("#t0").html(start_with_term ? words[current_flashcard] : defs[current_flashcard]);

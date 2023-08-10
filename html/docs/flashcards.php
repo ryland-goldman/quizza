@@ -14,6 +14,7 @@
   <script async>
     var words = [<?php $words = $thisClass->query("SELECT * FROM ".$type.$setID); if($words->num_rows > 0){ while($row = $words->fetch_assoc()){ echo '`'.str_replace("\\","\\\\",$row[$type=="Set"?"Term":"Question"]).'`,'; }} ?>""];
     var defs = [<?php $words = $thisClass->query("SELECT * FROM ".$type.$setID); if($words->num_rows > 0){ while($row = $words->fetch_assoc()){ echo '`'.str_replace("\\","\\\\",$row[$type=="Set"?"Definition":"C1"]).'`,'; }} ?>""];
+    var return_url = "/<?php echo $classID."/".$setID; ?>";
     words.pop();
     defs.pop();
   </script>
