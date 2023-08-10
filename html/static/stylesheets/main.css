@@ -96,7 +96,7 @@ a,button{cursor:pointer;text-decoration:none;color:var(--color-text)}
 #math a{color:var(--color-theme)!important}
 .ic1,.ic2,.ic3{background:var(--incorrect-edit-box)}
 .c1{background:var(--correct-edit-box)}
-.terms,.defs{width:100%;flex-grow:1;border-radius:8px 0px 0px 8px;}
+.terms,.defs{flex-grow:1;border-radius:8px 0px 0px 8px;}
 .sm{font-size:1.2em}
 #t,#t0,#t1{font-size:1.2em;text-align:center}
 #back-link{color:var(--color-theme);text-decoration:none}
