@@ -112,7 +112,7 @@ function image_upload(element){
     $("#"+element).click();
     $("#"+element).change(function(){
         $("button").prop("disabled",true);
-        const fileInput = document.querySelector('input[type="file"]');
+        const fileInput = document.querySelector('#'+element);
         convertToBase64(fileInput.files[0], "#"+element+"-text");
     });
 }
