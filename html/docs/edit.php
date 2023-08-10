@@ -167,7 +167,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
         <?php } ?>
       <?php } else { ?>
         <div id='box-1'>
-          <div class='item-card'>
+          <div class='item-card edit-card'>
             <table>
               <tr>
                 <td class='edit-td'>
