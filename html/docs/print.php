@@ -74,7 +74,7 @@ else { $secondary_column = $main_column=="Question" ? "C1":"Question"; }
 				shuffle($answers3);
 				shuffle($answers4);
 
-				for($i=0;$i<len($questions);$i++){
+				for($i=0;$i<count($questions);$i++){
 					$answers_0 = [$answers[$i],$answers2[$i],$answers3[$i],$answers4[$i]];
 					shuffle($answers_0);
 					?>
