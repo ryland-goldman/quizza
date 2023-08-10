@@ -27,7 +27,7 @@ else { $secondary_column = $main_column=="Question" ? "C1":"Question"; }
 
 	<?php if($_GET['option'] == 'mc'){ 
 		$n = 0; 
-		$terms = $thisClass->query("SELECT * FROM ".$type.$setID); 
+		$terms = $thisClass->query("SELECT * FROM ".$type.$setID." ORDER BY RAND()"); 
 		if($terms->num_rows > 0){ ?>
 			<table id='mc'>
 				<?php if($type=="Quiz" && $main_column == "C1") { 
@@ -49,21 +49,11 @@ else { $secondary_column = $main_column=="Question" ? "C1":"Question"; }
 						</tr>
 						<tr class='sep'><td>&nbsp;</td></tr>
 			<?php } } else { 
-				$questions_tmp = array();
-				$answers_tmp = array();
+				$questions = array();
+				$answers = array();
 				while($term = $terms->fetch_assoc() ){ 
-					array_push($questions_tmp, $term[$secondary_column]);
-					array_push($answers_tmp, $term[$main_column]);
-				}
-
-				$shuffledKeys = array_keys($questions_tmp);
-				shuffle($shuffledKeys);
-
-				$questions = $questions_tmp;
-				$answers = $answers_tmp;
-				foreach($shuffledKeys as $key){
-					$questions[$key] = $questions_tmp[$key];
-					$answers[$key] = $answers_tmp[$key];
+					array_push($questions, $term[$secondary_column]);
+					array_push($answers, $term[$main_column]);
 				}
 
 				$answers2 = $answers;
@@ -80,7 +70,8 @@ else { $secondary_column = $main_column=="Question" ? "C1":"Question"; }
 					?>
 					<tr class='pb'>
 						<td class='term'><?php echo ($i+1).". ".$questions[$i]; ?></td>
-						<td class='pad'>
+						<td class='pad'></td>
+						<td class='def'>
 							<ol type='A'>
 								<li><?php echo $answers_0[0]; ?></li>
 								<li><?php echo $answers_0[1]; ?></li>
@@ -98,7 +89,7 @@ else { $secondary_column = $main_column=="Question" ? "C1":"Question"; }
 		<div id='wb'>
 			<strong>Word Bank</strong><br>
 			<?php
-			$terms = $thisClass->query("SELECT * FROM ".$type.$setID);
+			$terms = $thisClass->query("SELECT * FROM ".$type.$setID." ORDER BY RAND()");
 			if($terms->num_rows > 0){
 				while($term = $terms->fetch_assoc()){
 					?>
@@ -108,7 +99,7 @@ else { $secondary_column = $main_column=="Question" ? "C1":"Question"; }
 	<?php } ?>
 
 	<?php if($_GET['option'] == 'fr' || $_GET['option'] == 'wb'){
-		$terms = $thisClass->query("SELECT * FROM ".$type.$setID);
+		$terms = $thisClass->query("SELECT * FROM ".$type.$setID." ORDER BY RAND()");
 		if($terms->num_rows > 0){
 			$n = 1;
 			while($term = $terms->fetch_assoc()){ 
@@ -123,7 +114,7 @@ else { $secondary_column = $main_column=="Question" ? "C1":"Question"; }
 
 	<?php if($_GET['option'] == 'tc'){ ?>
 		<table id='two-column'>
-			<?php $terms = $thisClass->query("SELECT * FROM ".$type.$setID);
+			<?php $terms = $thisClass->query("SELECT * FROM ".$type.$setID." ORDER BY RAND()");
 			if($terms->num_rows > 0){
 				while($term = $terms->fetch_assoc()){ ?>
 					<tr class='pb'>
