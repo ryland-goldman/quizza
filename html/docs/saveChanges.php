@@ -70,6 +70,7 @@ if($_GET["DELETE"]=="TRUE"){ // Deleting a set
       $thisClass->query("ALTER TABLE Set".$setID." ADD COLUMN Ic3 text");
       $thisClass->query("ALTER TABLE Set".$setID." RENAME COLUMN Term to Question");
       $thisClass->query("ALTER TABLE Set".$setID." RENAME COLUMN Definition to C1");
+      $thisClass->query("UNLOCK TABLES");
       $thisClass->query("RENAME TABLE Set".$setID." TO Quiz".$setID);
       $admin->query("UPDATE ".$classID."Sets SET Type=\"Quiz\" WHERE ID=".$setID);
     }
@@ -154,6 +155,7 @@ if($_GET["DELETE"]=="TRUE"){ // Deleting a set
         $thisClass->query("ALTER TABLE Quiz".$setID." DROP COLUMN Ic3");
         $thisClass->query("ALTER TABLE Quiz".$setID." RENAME COLUMN Question to Term");
         $thisClass->query("ALTER TABLE Quiz".$setID." RENAME COLUMN C1 to Definition");
+        $thisClass->query("UNLOCK TABLES");
         $thisClass->query("RENAME TABLE Quiz".$setID." TO Set".$setID);
         $admin->query("UPDATE ".$classID."Sets SET Type=\"Set\" WHERE ID=".$setID);
       }

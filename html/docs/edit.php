@@ -82,8 +82,8 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
               <table>
                 <tr>
                   <td>
-                    <h2>
-                      <input type='text' value='<?php
+                    <h2 style='display:flex'>
+                      <input style='flex-grow:1;' type='text' value='<?php
                       $str2 = str_replace('<br>', '',$row[$type=="Set"?"Term":"Question"]);
                       if (preg_match("/<img[^>]+src\s*=\s*['\"]([^'\"]+)['\"][^>]*>/i", $str2, $matches)) {
                           $imgTag = $matches[0];
@@ -92,6 +92,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                           $str2 .= $url;
                       }
                       echo $str2; ?>' class='terms <?php if($type=="Quiz"){ ?>q<?php } ?>'>
+                      <button class='title-button-white' style="padding:12px;">+</button>
                     </h2>
                   </td>
                   <td>
@@ -141,7 +142,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                         echo $str2; ?>' class='defs <?php if($type=="Quiz"){ ?>ic3<?php } ?>'></p>
                     </td>
                   <?php } ?>
-                  <td>
+                  <td style='width:38px;'>
                     <button class='delete-btn' onclick="$(`#box-<?php echo $i; ?>`).html(``)"><i class="fa-solid fa-trash-can"></i></button>
                   </td>
                 </tr>
