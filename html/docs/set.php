@@ -197,7 +197,7 @@
     </label>
     <hr>
     <p>
-      Answer with...<br>
+      Answer with...<br><br>
       <button class='modalbtn' onclick='print_set("<?php echo $type=="Set"?"Term":"Question"; ?>")'>Terms</button>
       <button class='modalbtn' onclick='print_set("<?php echo $type=="Set"?"Definition":"C1"; ?>")'>Definitions</button>
     </p>
