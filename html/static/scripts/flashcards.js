@@ -85,13 +85,13 @@ function back(){ next(true); }
 // Start with term
 function swt(){
     var start_with_term = true;
-    next();
     sessionStorage.def = "false";
+    init();
 }
 
 // Start with definition
 function swd(){
     var start_with_term = false;
-    next();
     sessionStorage.def = "true";
+    init();
 }
