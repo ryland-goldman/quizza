@@ -140,7 +140,7 @@ function convertToBase64(file, element) {
   }
 
   var math_elements = [];
-  function math(element){
+  function math_render(element){
     if(math_elements.includes(element)){
         $("#"+element+"-math").hide();
         $("#"+element+"-text").show();
