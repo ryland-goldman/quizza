@@ -40,7 +40,7 @@
                 <span style='font-size:9pt;float:right;margin-top:2px;'>
                   <a href='https://www.quizza.org/private' class='top-bar-private' style='color:inherit'>Private Sets</a> • 
                   <a href='#change-school' rel='modal:open' style='color:inherit'>Change School</a> • 
-                  <a href='javascript:signout()' class='top-bar-signout' style='color:inherit'>Sign Out</a>
+                  <a href='javascript:signout()' class='top-bar-signout'>Sign Out</a>
                 </span>
               </td>
               <td>&nbsp;</td>
