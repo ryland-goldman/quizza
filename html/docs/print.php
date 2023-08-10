@@ -26,6 +26,7 @@ else { $secondary_column = $main_column=="Question" ? "C1":"Question"; }
 	</div>
 
 	<?php if($_GET['option'] == 'mc'){ 
+		?><table class='mc'><?php
 		$n = 0; 
 		$terms = $thisClass->query("SELECT * FROM ".$type.$setID." ORDER BY RAND()"); 
 		if($terms->num_rows > 0){
@@ -35,7 +36,6 @@ else { $secondary_column = $main_column=="Question" ? "C1":"Question"; }
 						shuffle($answers);
 						$n++;
 						?>
-						<table class='mc'>
 							<tr class='pb'>
 								<td class='term'><?php echo $n.". ".$term["Question"]; ?></td>
 								<td class='pad'>
@@ -48,7 +48,6 @@ else { $secondary_column = $main_column=="Question" ? "C1":"Question"; }
 								</td>
 							</tr>
 							<tr class='sep'><td>&nbsp;</td></tr>
-						</table>
 			<?php } } else { 
 				$questions = array();
 				$answers = array();
@@ -69,7 +68,6 @@ else { $secondary_column = $main_column=="Question" ? "C1":"Question"; }
 					$answers_0 = [$answers[$i],$answers2[$i],$answers3[$i],$answers4[$i]];
 					shuffle($answers_0);
 					?>
-					<table class='mc'>
 						<tr class='pb'>
 							<td class='term'><?php echo ($i+1).". ".$questions[$i]; ?></td>
 							<td class='pad'></td>
@@ -83,9 +81,9 @@ else { $secondary_column = $main_column=="Question" ? "C1":"Question"; }
 							</td>
 						</tr>
 						<tr class='sep'><td>&nbsp;</td></tr>
-					</table>
-			<?php } } ?>
-	<?php } } ?>
+				<?php } } ?>
+		<?php } ?>
+	</table><?php } ?>
 
 	<?php if($_GET['option'] == 'wb'){ ?>
 		<div class='wb'>
@@ -115,16 +113,16 @@ else { $secondary_column = $main_column=="Question" ? "C1":"Question"; }
 	<?php } } } ?>
 
 	<?php if($_GET['option'] == 'tc'){ ?>
+		<table class='two-column'>
 			<?php $terms = $thisClass->query("SELECT * FROM ".$type.$setID." ORDER BY RAND()");
 			if($terms->num_rows > 0){
 				while($term = $terms->fetch_assoc()){ ?>
-					<table class='two-column'>
 						<tr class='pb'>
 							<td class='term'><?php echo $term[$secondary_column]; ?></td>
 					    	<td class='def'><?php echo $term[$main_column]; ?></td>
 						</tr>
-					</table>
 			<?php }  }  ?>
+		</table>
 	<?php } ?>
 </body>
 </html>
