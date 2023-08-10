@@ -208,7 +208,7 @@ function convertToBase64(file, element) {
     try {
         var m = $("#"+element+"-text").val().match(regex).join(" ").replaceAll("\\(","").replaceAll("\\)","");
         $("#"+element+"-math").html(m);
-    } catch {}
+    } catch {$("#"+element+"-math").html('');}
     $("#"+element+"-math").show();
     $("."+element+"-mathbtn").addClass("mathbtn-clicked");
     var MQ = MathQuill.getInterface(2);
