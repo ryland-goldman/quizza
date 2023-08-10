@@ -12,7 +12,7 @@ else { $secondary_column = $main_column=="Question" ? "C1":"Question"; }
 	<meta name="robots" content="noindex">
 	<meta charset="utf-8">
 	<link rel='stylesheet' href='https://www.quizza.org/static/stylesheets/print.css'>
-	<?php if(isset($mathjax)) { ?><script src="https://www.quizza.org/static/scripts/mathjax.min.js" id="MathJax-script" defer></script><script type="text/x-mathjax-config" defer>MathJax.Hub.Queue(function () {window.print()});</script><?php } else {?><script defer>window.print();</script><?php } ?>
+	<?php if(isset($mathjax)) { ?><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script><script type="text/x-mathjax-config" defer>MathJax.Hub.Queue(function () {window.print()});</script><?php } else {?><script defer>window.print();</script><?php } ?>
 </head>
 <body>
 	<div id='name'>
