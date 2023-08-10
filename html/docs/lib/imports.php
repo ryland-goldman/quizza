@@ -2,8 +2,8 @@
   <link rel='icon' href='https://www.quizza.org/static/images/favicon.png'>
   <link rel="stylesheet" href="https://www.quizza.org/static/stylesheets/main.css">
   <link rel="preload" href="https://www.quizza.org/static/stylesheets/jquery.modal.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="https://www.quizza.org/static/fonts/gotham-reg.woff2">
-  <link rel="preload" href="https://www.quizza.org/static/fonts/gotham-bold.woff2">
+  <link rel="preload" href="https://www.quizza.org/static/fonts/gotham-reg.woff2" as="font">
+  <link rel="preload" href="https://www.quizza.org/static/fonts/gotham-bold.woff2" as="font">
 
   <!-- Scripts -->
   <script src="https://kit.fontawesome.com/9e91fc9fc4.js" crossorigin="anonymous"></script>
