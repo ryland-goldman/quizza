@@ -78,12 +78,12 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
         while($row = $words->fetch_assoc()){
           $i++; ?>
           <div id='box-<?php echo $i; ?>'>
-        		<div class='item-card'>
+        		<div class='item-card edit-card'>
               <table>
                 <tr>
                   <td>
-                    <h2 style='display:flex'>
-                      <input style='flex-grow:1;' type='text' value='<?php
+                    <h2>
+                      <input type='text' value='<?php
                       $str2 = str_replace('<br>', '',$row[$type=="Set"?"Term":"Question"]);
                       if (preg_match("/<img[^>]+src\s*=\s*['\"]([^'\"]+)['\"][^>]*>/i", $str2, $matches)) {
                           $imgTag = $matches[0];
@@ -92,13 +92,13 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                           $str2 .= $url;
                       }
                       echo $str2; ?>' class='terms <?php if($type=="Quiz"){ ?>q<?php } ?>'>
-                      <button class='title-button-white' style="padding:12px;"><i class="fa-solid fa-square-root-variable"></i></button>
-                      <button class='title-button-white' style="padding:12px;"><i class="fa-solid fa-image"></i></button>
+                      <button class='edit-inline-btns'><i class="fa-solid fa-square-root-variable"></i></button>
+                      <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px"><i class="fa-solid fa-image"></i></button>
                     </h2>
                   </td>
                   <td style='width:24px;'>&nbsp;</td>
                   <td>
-                    <p style='text-align:right;display:flex;'><input type='text' style='flex-grow:1;' value='<?php
+                    <p><input type='text' value='<?php
                       $str2 = str_replace('<br>', '',$row[$type=="Set"?"Definition":"C1"]);
                       if (preg_match("/<img[^>]+src\s*=\s*['\"]([^'\"]+)['\"][^>]*>/i", $str2, $matches)) {
                           $imgTag = $matches[0];
@@ -106,15 +106,15 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                           $str2 = str_replace($imgTag, "", $str2);
                           $str2 .= $url;
                       }
-                      echo $str2; ?>' class='defs <?php if($type=="Quiz"){ ?>c1<?php } ?>'></p>
-                      <button class='title-button-white' style="padding:12px;"><i class="fa-solid fa-square-root-variable"></i></button>
-                      <button class='title-button-white' style="padding:12px;"><i class="fa-solid fa-image"></i></button>
+                      echo $str2; ?>' class='defs <?php if($type=="Quiz"){ ?>c1<?php } ?>'>
+                      <button class='edit-inline-btns'><i class="fa-solid fa-square-root-variable"></i></button>
+                      <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px"><i class="fa-solid fa-image"></i></button></p>
                   </td>
 
                   <?php if($type == "Quiz") { ?>
                   <td style='width:24px;'>&nbsp;</td>
                     <td>
-                      <p style='text-align:right;display:flex;'><input type='text' style='flex-grow:1;' value='<?php
+                      <p><input type='text' value='<?php
                         $str2 = str_replace('<br>', '',$row["Ic1"]);
                         if (preg_match("/<img[^>]+src\s*=\s*['\"]([^'\"]+)['\"][^>]*>/i", $str2, $matches)) {
                             $imgTag = $matches[0];
@@ -122,13 +122,13 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                             $str2 = str_replace($imgTag, "", $str2);
                             $str2 .= $url;
                         }
-                        echo $str2; ?>' class='defs <?php if($type=="Quiz"){ ?>ic1<?php } ?>'></p>
-                      <button class='title-button-white' style="padding:12px;"><i class="fa-solid fa-square-root-variable"></i></button>
-                      <button class='title-button-white' style="padding:12px;"><i class="fa-solid fa-image"></i></button>
+                        echo $str2; ?>' class='defs <?php if($type=="Quiz"){ ?>ic1<?php } ?>'>
+                      <button class='edit-inline-btns'><i class="fa-solid fa-square-root-variable"></i></button>
+                      <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px"><i class="fa-solid fa-image"></i></button></p>
                     </td>
                   <td style='width:24px;'>&nbsp;</td>
                     <td>
-                      <p style='text-align:right;display:flex;'><input type='text' style='flex-grow:1;' value='<?php
+                      <p><input type='text' value='<?php
                         $str2 = str_replace('<br>', '',$row["Ic2"]);
                         if (preg_match("/<img[^>]+src\s*=\s*['\"]([^'\"]+)['\"][^>]*>/i", $str2, $matches)) {
                             $imgTag = $matches[0];
@@ -136,13 +136,13 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                             $str2 = str_replace($imgTag, "", $str2);
                             $str2 .= $url;
                         }
-                        echo $str2; ?>' class='defs <?php if($type=="Quiz"){ ?>ic2<?php } ?>'></p>
-                      <button class='title-button-white' style="padding:12px;"><i class="fa-solid fa-square-root-variable"></i></button>
-                      <button class='title-button-white' style="padding:12px;"><i class="fa-solid fa-image"></i></button>
+                        echo $str2; ?>' class='defs <?php if($type=="Quiz"){ ?>ic2<?php } ?>'>
+                      <button class='edit-inline-btns'><i class="fa-solid fa-square-root-variable"></i></button>
+                      <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px"><i class="fa-solid fa-image"></i></button></p>
                     </td>
                   <td style='width:24px;'>&nbsp;</td>
                     <td>
-                      <p style='text-align:right;display:flex;'><input type='text' style='flex-grow:1;' value='<?php
+                      <p><input type='text' value='<?php
                         $str2 = str_replace('<br>', '',$row["Ic3"]);
                         if (preg_match("/<img[^>]+src\s*=\s*['\"]([^'\"]+)['\"][^>]*>/i", $str2, $matches)) {
                             $imgTag = $matches[0];
@@ -150,9 +150,9 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                             $str2 = str_replace($imgTag, "", $str2);
                             $str2 .= $url;
                         }
-                        echo $str2; ?>' class='defs <?php if($type=="Quiz"){ ?>ic3<?php } ?>'></p>
-                      <button class='title-button-white' style="padding:12px;"><i class="fa-solid fa-square-root-variable"></i></button>
-                      <button class='title-button-white' style="padding:12px;"><i class="fa-solid fa-image"></i></button>
+                        echo $str2; ?>' class='defs <?php if($type=="Quiz"){ ?>ic3<?php } ?>'>
+                      <button class='edit-inline-btns'><i class="fa-solid fa-square-root-variable"></i></button>
+                      <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px"><i class="fa-solid fa-image"></i></button></p>
                     </td>
                   <?php } ?>
                   <td style='width:38px;'>

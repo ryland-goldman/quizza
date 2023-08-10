@@ -66,6 +66,7 @@ a,button{cursor:pointer;text-decoration:none;color:var(--color-text)}
 #title-button-blue,#title-button-blue-bottom,#button-404{background-color:var(--color-theme);border-radius:8px;border:2px solid var(--color-theme);padding:12px 36px;color:var(--color-text);font-size:1em}
 #button-404{background-color:var(--color-background)!important;color:var(--color-text)!important}
 .title-button-white{background-color:var(--color-background);border-radius:8px;border:2px solid var(--color-theme);padding:12px 36px;color:var(--color-text);font-size:1em}
+.edit-inline-btns{background-color:var(--color-background);border-radius:8px;border:2px solid var(--color-theme);color:var(--color-text);font-size:1em;padding:12px;}
 .title-button-red{background-color:red;border-radius:8px;border:2px solid red;padding:12px 36px;color:#fff;font-size:1em}
 #frontpage-header-large{color:#EEE;text-align:center;align-items:center}
 #frontpage-header-small{color:#EEE;margin-bottom:5vh;text-align:center}
@@ -95,7 +96,7 @@ a,button{cursor:pointer;text-decoration:none;color:var(--color-text)}
 #math a{color:var(--color-theme)!important}
 .ic1,.ic2,.ic3{background:var(--incorrect-edit-box)}
 .c1{background:var(--correct-edit-box)}
-.terms,.defs{width:100%}
+.terms,.defs{width:100%;flex-grow:1;border-radius:8px 0px 0px 8px;}
 .sm{font-size:1.2em}
 #t,#t0,#t1{font-size:1.2em;text-align:center}
 #back-link{color:var(--color-theme);text-decoration:none}
@@ -174,3 +175,4 @@ select::-ms-expand{display:none}
 .checkmark:after {content: "";position: absolute;display: none;}
 .container input:checked ~ .checkmark:after {display: block;}
 .container .checkmark:after {top: 9px;left: 9px;width: 8px;height: 8px;border-radius: 50%;background: white;}
+.edit-card h2,.edit-card p{display:flex}
