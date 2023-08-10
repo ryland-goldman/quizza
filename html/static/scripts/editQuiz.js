@@ -118,7 +118,7 @@ function addTerm() {
     var sep = mobile=="true" ? "</tr><tr>" : "<td style='width:8px;''>&nbsp;</td>";
     document.getElementById("allBoxes").innerHTML += `
   <div id='box-` + i + `'>
-<div class='item-card'>
+<div class='item-card edit-card'>
             <table>
               <tr>
                 <td class='edit-td'>
