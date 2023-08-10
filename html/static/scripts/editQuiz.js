@@ -199,7 +199,7 @@ function convertToBase64(file, element) {
         $("#"+element+"-math").hide();
         $("#"+element+"-text").show();
         math_elements.splice(math_elements.indexOf(element),1);
-        $("#"+element+"-math-btn").removeClass("mathbtn-clicked");
+        $("."+element+"-mathbtn").removeClass("mathbtn-clicked");
         return;
     }
     math_elements.push(element);
