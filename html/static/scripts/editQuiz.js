@@ -186,7 +186,9 @@ function convertToBase64(file, element) {
         data: {file: e.target.result, extension: ext, auth: google_auth},
         success: function(response) {
             var curr_val = $(element).val();
-            $(element).val(curr_val + " "+response);
+            if(!curr_val.includes(response)){
+                $(element).val(curr_val + " "+response);
+            }
             $("button").prop("disabled",false);
         }
       });
