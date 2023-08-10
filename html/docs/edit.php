@@ -92,7 +92,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                           $str2 .= $url;
                       }
                       echo $str2; ?>' class='terms <?php if($type=="Quiz"){ ?>q<?php } ?>'>
-                      <button class='edit-inline-btns'><i class="fa-solid fa-square-root-variable"></i></button>
+                      <button class='edit-inline-btns' style='border-right:none;border-left:none'><i class="fa-solid fa-square-root-variable"></i></button>
                       <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px"><i class="fa-solid fa-image"></i></button>
                     </h2>
                   </td>
@@ -107,7 +107,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                           $str2 .= $url;
                       }
                       echo $str2; ?>' class='defs <?php if($type=="Quiz"){ ?>c1<?php } ?>'>
-                      <button class='edit-inline-btns'><i class="fa-solid fa-square-root-variable"></i></button>
+                      <button class='edit-inline-btns' style='border-right:none;border-left:none'><i class="fa-solid fa-square-root-variable"></i></button>
                       <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px"><i class="fa-solid fa-image"></i></button></p>
                   </td>
 
@@ -123,7 +123,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                             $str2 .= $url;
                         }
                         echo $str2; ?>' class='defs <?php if($type=="Quiz"){ ?>ic1<?php } ?>'>
-                      <button class='edit-inline-btns'><i class="fa-solid fa-square-root-variable"></i></button>
+                      <button class='edit-inline-btns' style='border-right:none;border-left:none'><i class="fa-solid fa-square-root-variable"></i></button>
                       <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px"><i class="fa-solid fa-image"></i></button></p>
                     </td>
                   <td style='width:24px;'>&nbsp;</td>
@@ -137,7 +137,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                             $str2 .= $url;
                         }
                         echo $str2; ?>' class='defs <?php if($type=="Quiz"){ ?>ic2<?php } ?>'>
-                      <button class='edit-inline-btns'><i class="fa-solid fa-square-root-variable"></i></button>
+                      <button class='edit-inline-btns' style='border-right:none;border-left:none'><i class="fa-solid fa-square-root-variable"></i></button>
                       <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px"><i class="fa-solid fa-image"></i></button></p>
                     </td>
                   <td style='width:24px;'>&nbsp;</td>
@@ -151,7 +151,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                             $str2 .= $url;
                         }
                         echo $str2; ?>' class='defs <?php if($type=="Quiz"){ ?>ic3<?php } ?>'>
-                      <button class='edit-inline-btns'><i class="fa-solid fa-square-root-variable"></i></button>
+                      <button class='edit-inline-btns' style='border-right:none;border-left:none'><i class="fa-solid fa-square-root-variable"></i></button>
                       <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px"><i class="fa-solid fa-image"></i></button></p>
                     </td>
                   <?php } ?>
