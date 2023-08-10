@@ -12,6 +12,20 @@
         <td id="top-bar-upper-icon">
           <table style='float:right;'>
             <tr>
+              <?php if ($loggedIn == false) { ?><td><div id="buttonDiv"></div></td><?php } ?>
+              <?php if ($loggedIn == true) { ?><td<?php if($_SERVER['PHP_SELF']=="/index.php") { ?> style='color:white;'<?php } ?>>
+                <a href='https://www.quizza.org/private' class='top-bar-name'>Welcome, <?php echo $name; ?></a><br>
+                <span style='font-size:9pt;float:right;margin-top:2px;'>
+                  <a href='https://www.quizza.org/private' class='top-bar-private'>Private Sets</a> • 
+                  <a href='javascript:signout()' class='top-bar-signout'>Sign Out</a>
+                </span>
+              </td>
+              <td>&nbsp;</td>
+              <td>
+                <img src='<?php echo $pic; ?>' id='top-bar-icon-image'>
+              </td>
+              <?php } ?>
+              <td>&nbsp;</td>
               <td>
                 <div class='select' style='float:unset;'>
                   <select>
@@ -31,20 +45,6 @@
                   </div>
                 </div>
               </td>
-              <td>&nbsp;</td>
-              <?php if ($loggedIn == false) { ?><td><div id="buttonDiv"></div></td><?php } ?>
-              <?php if ($loggedIn == true) { ?><td<?php if($_SERVER['PHP_SELF']=="/index.php") { ?> style='color:white;'<?php } ?>>
-                <a href='https://www.quizza.org/private' class='top-bar-name'>Welcome, <?php echo $name; ?></a><br>
-                <span style='font-size:8pt;float:right;'>
-                  <a href='https://www.quizza.org/private' class='top-bar-private'>Private Sets</a> • 
-                  <a href='javascript:signout()' class='top-bar-signout'>Sign Out</a>
-                </span>
-              </td>
-              <td>&nbsp;</td>
-              <td>
-                <img src='<?php echo $pic; ?>' id='top-bar-icon-image'>
-              </td>
-              <?php } ?>
             </tr>
           </table>
         </td>
