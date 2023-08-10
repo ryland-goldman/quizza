@@ -35,7 +35,7 @@ $("#search-home").focus(function(event) {
 $("#search-home").blur(function(event) {
     setTimeout(function() {
         $(".resultscontainer").hide();
-    }, 100);
+    }, 250);
 });
 
 $('#search-home').keyup(function(event) {
