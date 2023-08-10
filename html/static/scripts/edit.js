@@ -151,8 +151,10 @@ function convertToBase64(file, element) {
     math_elements.push(element);
     $("#"+element+"-text").hide();
     var regex = /(\\\()(.*?)(\\\))/g;
-    var m = $("#"+element+"-text").val().match(regex).join(" ").replaceAll("\\(","").replaceAll("\\)","");
-    $("#"+element+"-math").html();
+    try {
+        var m = $("#"+element+"-text").val().match(regex).join(" ").replaceAll("\\(","").replaceAll("\\)","");
+        $("#"+element+"-math").html(m);
+    } catch {}
     $("#"+element+"-math").show();
     $("#"+element+"-math-btn").addClass("mathbtn-clicked");
     var MQ = MathQuill.getInterface(2);
