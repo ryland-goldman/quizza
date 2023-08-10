@@ -8,6 +8,44 @@
             <h1><img style='height:1em;' id='logo<?php if($_SERVER['PHP_SELF']=="/index.php") { ?>-home<?php } ?>'></h1>
           </a>
         </td>
+        <?php if (!isMobileDevice()) { ?><td>&nbsp;</td>
+        <td id="top-bar-upper-icon">
+          <table style='float:right;'>
+            <tr>
+              <td>
+                <div class='select' style='float:unset;'>
+                  <select>
+                    <?php if($_SERVER['HTTP_HOST']=="www.quizza.org"){ ?><option selected>Select a School</option><?php } ?>
+                    <?php 
+                    try {
+                      $sql_db_password =  trim(file_get_contents("/var/www/sql.privkey"));
+                      $schooldb = new mysqli("localhost","quizza", $sql_db_password, "Schools");
+                    } catch (Exception $e) {}
+                    $schools = $schooldb->query("SELECT * FROM main ORDER BY longname ASC;");
+                    while($curr_school = $schools->fetch_assoc()){ ?>
+                      <option value="<?php echo $curr_school["id"]; ?>"<?php if($curr_school["shortname"] == $school_shortname){ ?> selected<?php } ?>><?php echo $curr_school["longname"]; ?></option>
+                    <?php } ?>
+                  </select>
+                  <div class="select-after">
+                    <i class="fa-solid fa-caret-down"></i>&nbsp;
+                  </div>
+                </div>
+              </td>
+              <td>&nbsp;</td>
+              <?php if ($loggedIn == false) { ?><td><div id="buttonDiv"></div></td><?php } ?>
+              <?php if ($loggedIn == true) { ?><td<?php if($_SERVER['PHP_SELF']=="/index.php") { ?> style='color:white;'<?php } ?>>
+                <a href='https://www.quizza.org/private' class='top-bar-name'>Welcome, <?php echo $name; ?></a><br>
+                <a href='https://www.quizza.org/private' class='top-bar-private'>Private Sets</a> • 
+                <a href='javascript:signout()' class='top-bar-signout'>Sign Out</a>
+              </td>
+              <td>
+                <img src='<?php echo $pic; ?>' id='top-bar-icon-image'>
+              </td>
+              <?php } ?>
+            </tr>
+          </table>
+        </td>
+        <?php } else { ?>
         <td id="top-bar-upper-icon" class='td-outer'>
           <table style='width:100%'>
             <tr>
@@ -75,6 +113,7 @@
             </tr>
           </table>
         </td>
+        <?php } ?>
       </tr>
     </table>
   </div>
