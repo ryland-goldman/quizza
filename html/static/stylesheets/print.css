@@ -2,13 +2,13 @@
 @font-face{font-family:"Gotham";font-weight:700;src:url(https://www.quizza.org/static/fonts/gotham-bold.woff2) format("woff2"),url(https://www.quizza.org/static/fonts/gotham-bold.ttf) format("truetype");}
 *{font-family:"Gotham"}
 body{margin-top:12px;}
-#name{display:flex;}
+#name{display:flex;margin-bottom:24px;}
 #name-name{border-bottom: 1px solid black;flex-grow: 1;}
 #name-period,#name-date{border-bottom: 1px solid black;width:100px;}
 #two-column{border-collapse:collapse;}
 #two-column .term{border-bottom: 1px solid black;border-right:1px solid black;padding:12px;}
 .fr{display:flex;}
-.fr .term{width:40vw;overflow-wrap:break-word;}
+.fr .term{width:40%;overflow-wrap:break-word;}
 #mc .term{vertical-align:top;}
 .fr .def{border-bottom: 1px solid black;flex-grow:1;}
 #two-column .def{border-bottom:1px solid black;padding:12px;}
