@@ -61,7 +61,7 @@ else { $secondary_column = $main_column=="Question" ? "C1":"Question"; }
 			$n = 1;
 			while($term = $terms->fetch_assoc()){ 
 				$n++; ?>
-				<div id='fr'>
+				<div class='fr'>
 					<div class='term'><?php echo $n.". ".$term[$main_column]; ?></div>
 			    	<div class='pad'>&nbsp;</div>
 			    	<div class='def'>&nbsp;</div>
@@ -73,11 +73,9 @@ else { $secondary_column = $main_column=="Question" ? "C1":"Question"; }
 		<table id='two-column'>
 			<?php $terms = $thisClass->query("SELECT * FROM ".$type.$setID);
 			if($terms->num_rows > 0){
-				$n = 1;
-				while($term = $terms->fetch_assoc()){ 
-					$n++; ?>
+				while($term = $terms->fetch_assoc()){ ?>
 					<tr>
-						<td class='term'><?php echo $n.". ".$term[$main_column]; ?></td>
+						<td class='term'><?php echo $term[$main_column]; ?></td>
 				    	<td class='def'><?php echo $term[$secondary_column]; ?></td>
 					</tr>
 			<?php }  }  ?>

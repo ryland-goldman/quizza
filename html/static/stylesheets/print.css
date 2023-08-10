@@ -7,10 +7,10 @@ body{margin-top:12px;}
 #name-period,#name-date{border-bottom: 1px solid black;width:100px;}
 #two-column{border-collapse:collapse;}
 #two-column .term{border-bottom: 1px solid black;border-right:1px solid black;padding:12px;}
-#fr{display:flex;}
-#fr .term{min-width:100px;max-width:40vw;overflow:wrap;}
+.fr{display:flex;}
+.fr .term{width:40vw;overflow-wrap:break-word;}
 #mc .term{vertical-align:top;}
-#fr .def{border-bottom: 1px solid black;flex-grow:1;}
+.fr .def{border-bottom: 1px solid black;flex-grow:1;}
 #two-column .def{border-bottom:1px solid black;padding:12px;}
 #wb{text-align:center;border:1px solid black;padding:12px;margin-bottom:20px;}
 #wb span{padding:12px;}
