@@ -12,7 +12,29 @@
         <td id="top-bar-upper-icon">
           <table style='float:right;'>
             <tr>
-              <?php if ($loggedIn == false) { ?><td><div id="buttonDiv"></div></td><?php } ?>
+              <?php if ($loggedIn == false) { ?>
+                <td><div id="buttonDiv"></div></td>
+                <td>&nbsp;</td>
+                <td>
+                  <div class='select' style='float:unset;'>
+                    <select>
+                      <?php if($_SERVER['HTTP_HOST']=="www.quizza.org"){ ?><option selected>Select a School</option><?php } ?>
+                      <?php 
+                      try {
+                        $sql_db_password =  trim(file_get_contents("/var/www/sql.privkey"));
+                        $schooldb = new mysqli("localhost","quizza", $sql_db_password, "Schools");
+                      } catch (Exception $e) {}
+                      $schools = $schooldb->query("SELECT * FROM main ORDER BY longname ASC;");
+                      while($curr_school = $schools->fetch_assoc()){ ?>
+                        <option value="<?php echo $curr_school["id"]; ?>"<?php if($curr_school["shortname"] == $school_shortname){ ?> selected<?php } ?>><?php echo $curr_school["longname"]; ?></option>
+                      <?php } ?>
+                    </select>
+                    <div class="select-after">
+                      <i class="fa-solid fa-caret-down"></i>&nbsp;
+                    </div>
+                  </div>
+                </td>
+              <?php } ?>
               <?php if ($loggedIn == true) { ?><td<?php if($_SERVER['PHP_SELF']=="/index.php") { ?> style='color:white;'<?php } ?>>
                 <a style='white-space:nowrap;overflow:hidden;float:right;' href='https://www.quizza.org/private' class='top-bar-name'>Welcome, <?php echo $name; ?></a><br>
                 <span style='font-size:9pt;float:right;margin-top:2px;'>
@@ -105,7 +127,7 @@
   <!-- Match the height of the above bar -->
   <div><table><tr><td style='padding:13px 20px 5px;'><h1>&nbsp;</h1></td></tr></table></div>
 
-  <?php if(!isMobileDevice()){ ?>
+  <?php if(!isMobileDevice() && $loggedIn){ ?>
     <div class='modal' id='change-school'>
       <h2>Change School</h2>
       <div class='select' style='float:unset;'>
