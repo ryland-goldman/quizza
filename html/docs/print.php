@@ -57,13 +57,22 @@ else { $secondary_column = $main_column=="Question" ? "C1":"Question"; }
 					array_push($answers, $term[$main_column]);
 				}
 
-				$answers2 = $answers;
-				$answers3 = $answers;
-				$answers4 = $answers;
+				for($i=0;$i<100;$i++){
+					$answers2 = $answers;
+					$answers3 = $answers;
+					$answers4 = $answers;
 
-				shuffle($answers2);
-				shuffle($answers3);
-				shuffle($answers4);
+					shuffle($answers2);
+					shuffle($answers3);
+					shuffle($answers4);
+
+					$ok = true;
+					for($j=0;$j<count($answers);$j++){
+						if($answers[$j] == $answers2[$j] ||$answers[$j] == $answers3[$j] || $answers[$j] == $answers4[$j] || $answers2[$j] == $answers3[$j] || $answers2[$j] == $answers4[$j] || $answers3[$j] == $answers4[$j]){ $ok = false; }
+					}
+
+					if($ok) { break; }
+				}
 
 				for($i=0;$i<count($questions);$i++){
 					$answers_0 = [$answers[$i],$answers2[$i],$answers3[$i],$answers4[$i]];
