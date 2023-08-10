@@ -17,4 +17,4 @@ body{margin-top:12px;}
 .sep{height:20px;}
 .pad{min-width:100px;}
 ol{margin:0;}
-@media print {.pb{ page-break-inside:avoid;break-inside:avoid; }}
+.pb{page-break-inside:avoid;break-inside:avoid;}
