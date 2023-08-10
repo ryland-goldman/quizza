@@ -192,3 +192,33 @@ function convertToBase64(file, element) {
       });
     }
   }
+  
+  var math_elements = [];
+  function math_render(element){
+    if(math_elements.includes(element)){
+        $("#"+element+"-math").hide();
+        $("#"+element+"-text").show();
+        math_elements.splice(math_elements.indexOf(element),1);
+        $("#"+element+"-math-btn").removeClass("mathbtn-clicked");
+        return;
+    }
+    math_elements.push(element);
+    $("#"+element+"-text").hide();
+    var regex = /(\\\()(.*?)(\\\))/g;
+    try {
+        var m = $("#"+element+"-text").val().match(regex).join(" ").replaceAll("\\(","").replaceAll("\\)","");
+        $("#"+element+"-math").html(m);
+    } catch {}
+    $("#"+element+"-math").show();
+    $("#"+element+"-math-btn").addClass("mathbtn-clicked");
+    var MQ = MathQuill.getInterface(2);
+    var answerSpan = document.getElementById(element+"-math");
+    var answerMathField = MQ.MathField(answerSpan, {
+        handlers: {
+          edit: function() {
+            var enteredMath = answerMathField.latex();
+            $("#"+element+"-text").val("\\("+enteredMath+"\\)");
+          }
+        }
+    });
+  }

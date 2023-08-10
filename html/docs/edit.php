@@ -83,7 +83,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                       }
                       echo $str2; ?>' class='terms <?php if($type=="Quiz"){ ?>q<?php } ?>' placeholder="<?php echo $type=="Set"?"Term":"Question"; ?>" id="file-<?php echo $i;?>-0-text">
                       <span id='file-<?php echo $i; ?>-0-math' class='math'></span>
-                      <button class='edit-inline-btns' style='border-right:none;border-left:none' onclick="math_render('file-<?php echo $i;?>-0')"><i class="fa-solid fa-square-root-variable"></i></button>
+                      <button class='edit-inline-btns file-<?php echo $i; ?>-0-mathbtn' style='border-right:none;border-left:none' onclick="math_render('file-<?php echo $i;?>-0')"><i class="fa-solid fa-square-root-variable"></i></button>
                       <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px" onclick="image_upload('file-<?php echo $i; ?>-0')"><i class="fa-solid fa-image"></i></button>
                       <input type="file" id="file-<?php echo $i;?>-0" style="display:none;" />
                     </p>
@@ -100,7 +100,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                       }
                       echo $str2; ?>' class='defs <?php if($type=="Quiz"){ ?>c1<?php } ?>' placeholder="<?php echo $type=="Set"?"Definition":"Correct Answer"; ?>" id="file-<?php echo $i;?>-1-text">
                       <span id='file-<?php echo $i; ?>-1-math' class='math'></span>
-                      <button class='edit-inline-btns' style='border-right:none;border-left:none' onclick="math_render('file-<?php echo $i;?>-1')"><i class="fa-solid fa-square-root-variable"></i></button>
+                      <button class='edit-inline-btns file-<?php echo $i; ?>-1-mathbtn' style='border-right:none;border-left:none' onclick="math_render('file-<?php echo $i;?>-1')"><i class="fa-solid fa-square-root-variable"></i></button>
                       <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px" onclick="image_upload('file-<?php echo $i; ?>-1')"><i class="fa-solid fa-image"></i></button>
                       <input type="file" id="file-<?php echo $i;?>-1" style="display:none;" /></p>
                   </td>
@@ -118,7 +118,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                         }
                         echo $str2; ?>' class='defs <?php if($type=="Quiz"){ ?>ic1<?php } ?>' placeholder="Incorrect Answer #1" id="file-<?php echo $i;?>-2-text">
                       <span id='file-<?php echo $i; ?>-2-math' class='math'></span>
-                      <button class='edit-inline-btns' style='border-right:none;border-left:none' onclick="math_render('file-<?php echo $i;?>-2')"><i class="fa-solid fa-square-root-variable"></i></button>
+                      <button class='edit-inline-btns file-<?php echo $i; ?>-2-mathbtn' style='border-right:none;border-left:none' onclick="math_render('file-<?php echo $i;?>-2')"><i class="fa-solid fa-square-root-variable"></i></button>
                       <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px" onclick="image_upload('file-<?php echo $i; ?>-2')"><i class="fa-solid fa-image"></i></button>
                       <input type="file" id="file-<?php echo $i;?>-2" style="display:none;" /></p>
                     </td>
@@ -134,7 +134,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                         }
                         echo $str2; ?>' class='defs <?php if($type=="Quiz"){ ?>ic2<?php } ?>' placeholder="Incorrect Answer #2" id="file-<?php echo $i;?>-3-text">
                       <span id='file-<?php echo $i; ?>-3-math' class='math'></span>
-                      <button class='edit-inline-btns' style='border-right:none;border-left:none' onclick="math_render('file-<?php echo $i;?>-3')"><i class="fa-solid fa-square-root-variable"></i></button>
+                      <button class='edit-inline-btns file-<?php echo $i; ?>-3-mathbtn' style='border-right:none;border-left:none' onclick="math_render('file-<?php echo $i;?>-3')"><i class="fa-solid fa-square-root-variable"></i></button>
                       <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px" onclick="image_upload('file-<?php echo $i; ?>-3')"><i class="fa-solid fa-image"></i></button>
                       <input type="file" id="file-<?php echo $i;?>-3" style="display:none;" /></p>
                     </td>
@@ -150,7 +150,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                         }
                         echo $str2; ?>' class='defs <?php if($type=="Quiz"){ ?>ic3<?php } ?>' placeholder="Incorrect Answer #3" id="file-<?php echo $i;?>-4-text">
                       <span id='file-<?php echo $i; ?>-4-math' class='math'></span>
-                      <button class='edit-inline-btns' style='border-right:none;border-left:none' onclick="math_render('file-<?php echo $i;?>-3')"><i class="fa-solid fa-square-root-variable"></i></button>
+                      <button class='edit-inline-btns file-<?php echo $i; ?>-4-mathbtn' style='border-right:none;border-left:none' onclick="math_render('file-<?php echo $i;?>-3')"><i class="fa-solid fa-square-root-variable"></i></button>
                       <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px" onclick="image_upload('file-<?php echo $i; ?>-4')"><i class="fa-solid fa-image"></i></button>
                       <input type="file" id="file-<?php echo $i;?>-4" style="display:none;" /></p>
                     </td>
@@ -170,13 +170,52 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
             <table>
               <tr>
                 <td>
-                  <h2><input type='text' class='terms'></h2>
+                  <p><input type='text' class='terms <?php if($type=="Quiz"){ ?>q<?php } ?>' placeholder="<?php echo $type=="Set"?"Term":"Question"; ?>" id="file-1-0-text">
+                      <span id='file-1-0-math' class='math'></span>
+                      <button class='edit-inline-btns file-1-0-mathbtn' style='border-right:none;border-left:none' onclick="math_render('file-1-0')"><i class="fa-solid fa-square-root-variable"></i></button>
+                      <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px" onclick="image_upload('file-1-0')"><i class="fa-solid fa-image"></i></button>
+                      <input type="file" id="file-1-0" style="display:none;" /></p>
                 </td>
+                <?php if(isMobileDevice()) { ?></tr><tr><?php } else {?><td style='width:8px;'>&nbsp;</td><?php } ?>
+                <td>
+                  <p><input type='text' class='terms <?php if($type=="Quiz"){ ?>c1<?php } ?>' placeholder="<?php echo $type=="Set"?"Definition":"Correct Answer"; ?>" id="file-1-1-text">
+                      <span id='file-1-1-math' class='math'></span>
+                      <button class='edit-inline-btns file-1-1-mathbtn' style='border-right:none;border-left:none' onclick="math_render('file-1-1')"><i class="fa-solid fa-square-root-variable"></i></button>
+                      <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px" onclick="image_upload('file-1-1')"><i class="fa-solid fa-image"></i></button>
+                      <input type="file" id="file-1-1" style="display:none;" /></p>
+                </td>
+                <?php if($type=="Quiz"){ ?>
+                  <?php if(isMobileDevice()) { ?></tr><tr><?php } else {?><td style='width:8px;'>&nbsp;</td><?php } ?>
+                  <td>
+                    <p><input type='text' class='terms ic1' placeholder="Incorrect Answer #1" id="file-1-2-text">
+                        <span id='file-1-2-math' class='math'></span>
+                        <button class='edit-inline-btns file-1-2-mathbtn' style='border-right:none;border-left:none' onclick="math_render('file-1-2')"><i class="fa-solid fa-square-root-variable"></i></button>
+                        <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px" onclick="image_upload('file-1-2')"><i class="fa-solid fa-image"></i></button>
+                        <input type="file" id="file-1-2" style="display:none;" /></p>
+                  </td>
+                  <?php if(isMobileDevice()) { ?></tr><tr><?php } else {?><td style='width:8px;'>&nbsp;</td><?php } ?>
+                  <td>
+                    <p><input type='text' class='terms ic2' placeholder="Incorrect Answer #2" id="file-1-3-text">
+                        <span id='file-1-3-math' class='math'></span>
+                        <button class='edit-inline-btns file-1-3-mathbtn' style='border-right:none;border-left:none' onclick="math_render('file-1-3')"><i class="fa-solid fa-square-root-variable"></i></button>
+                        <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px" onclick="image_upload('file-1-3')"><i class="fa-solid fa-image"></i></button>
+                        <input type="file" id="file-1-3" style="display:none;" /></p>
+                  </td>
+                  <?php if(isMobileDevice()) { ?></tr><tr><?php } else {?><td style='width:8px;'>&nbsp;</td><?php } ?>
+                  <td>
+                    <p><input type='text' class='terms ic3' placeholder="Incorrect Answer #3" id="file-1-4-text">
+                        <span id='file-1-4-math' class='math'></span>
+                        <button class='edit-inline-btns file-1-4-mathbtn' style='border-right:none;border-left:none' onclick="math_render('file-1-4')"><i class="fa-solid fa-square-root-variable"></i></button>
+                        <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px" onclick="image_upload('file-1-4')"><i class="fa-solid fa-image"></i></button>
+                        <input type="file" id="file-1-4" style="display:none;" /></p>
+                  </td>
+                <?php } ?>
+                <?php if(isMobileDevice()) { ?></tr><tr><?php } else {?><td style='width:8px;'>&nbsp;</td><?php } ?>
                 <td>
                   <p style='text-align:right;'><input type='text' class='defs'></p>
                 </td>
-                <td>
-                  <button class='delete-btn' onclick="$('#box-1').html('');"><i class="fa-solid fa-trash-can"></i></button>
+                <td <?php if(isMobileDevice()) { ?>style='width:100%;'<?php } else {?>style='width:38px;'<?php } ?>>
+                  <button class='delete-btn' onclick="$(`#box-<?php echo $i; ?>`).html(``)"><i class="fa-solid fa-trash-can"></i></button>
                 </td>
               </tr>
             </table>
