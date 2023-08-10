@@ -194,10 +194,12 @@
       <input type="radio" name="radio" value='tc'>
       <span class="checkmark"></span>
     </label>
-
-    <p>Answer with...</p>
-    <button class='modalbtn' onclick='print_set("<?php echo $type=="Set"?"Term":"Question"; ?>")'>Terms</button>
-    <button class='modalbtn' onclick='print_set("<?php echo $type=="Set"?"Definition":"C1"; ?>")'>Definitions</button>
+    <hr>
+    <p>
+      Answer with...<br>
+      <button class='modalbtn' onclick='print_set("<?php echo $type=="Set"?"Term":"Question"; ?>")'>Terms</button>
+      <button class='modalbtn' onclick='print_set("<?php echo $type=="Set"?"Definition":"C1"; ?>")'>Definitions</button>
+    </p>
   </div>
 
   <?php require("/var/www/html/docs/lib/footer.php"); ?>
