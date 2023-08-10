@@ -1,3 +1,14 @@
+function curly_replace(text) {
+  const curlyText = text
+    .replace(/(['"])(.*?)\1/g, (_, quoteType, content) => {
+      const openQuote = quoteType === '"' ? '“' : '‘';
+      const closeQuote = quoteType === '"' ? '”' : '’';
+      return `${openQuote}${content}${closeQuote}`;
+    });
+
+  return curlyText;
+}
+
 function saveChanges() {
     var qs = document.getElementsByClassName("q");
     var c1s = document.getElementsByClassName("c1");
@@ -5,16 +16,11 @@ function saveChanges() {
     var ic2s = document.getElementsByClassName("ic2");
     var ic3s = document.getElementsByClassName("ic3");
     for (var l = 0; l < document.getElementsByClassName("q").length; l++) {
-        document.getElementsByClassName("q")[l].value = document.getElementsByClassName("q")[l].value.replaceAll('"', "”")
-        document.getElementsByClassName("q")[l].value = document.getElementsByClassName("q")[l].value.replaceAll('\'', "‘")
-        document.getElementsByClassName("c1")[l].value = document.getElementsByClassName("c1")[l].value.replaceAll('"', "”")
-        document.getElementsByClassName("c1")[l].value = document.getElementsByClassName("c1")[l].value.replaceAll('\'', "‘")
-        document.getElementsByClassName("ic1")[l].value = document.getElementsByClassName("ic1")[l].value.replaceAll('"', "”")
-        document.getElementsByClassName("ic1")[l].value = document.getElementsByClassName("ic1")[l].value.replaceAll('\'', "‘")
-        document.getElementsByClassName("ic2")[l].value = document.getElementsByClassName("ic2")[l].value.replaceAll('"', "”")
-        document.getElementsByClassName("ic2")[l].value = document.getElementsByClassName("ic2")[l].value.replaceAll('\'', "‘")
-        document.getElementsByClassName("ic3")[l].value = document.getElementsByClassName("ic3")[l].value.replaceAll('"', "”")
-        document.getElementsByClassName("ic3")[l].value = document.getElementsByClassName("ic3")[l].value.replaceAll('\'', "‘")
+        document.getElementsByClassName("q")[l].value = curly_replace(document.getElementsByClassName("q")[l].value);
+        document.getElementsByClassName("c1")[l].value = curly_replace(document.getElementsByClassName("c1")[l].value);
+        document.getElementsByClassName("ic1")[l].value = curly_replace(document.getElementsByClassName("ic1")[l].value);
+        document.getElementsByClassName("ic2")[l].value = curly_replace(document.getElementsByClassName("ic2")[l].value);
+        document.getElementsByClassName("ic3")[l].value = curly_replace(document.getElementsByClassName("ic3")[l].value);
     }
     var request = "";
     for (var n = 0; n < qs.length; n++) {

@@ -1,11 +1,20 @@
+function curly_replace(text) {
+  const curlyText = text
+    .replace(/(['"])(.*?)\1/g, (_, quoteType, content) => {
+      const openQuote = quoteType === '"' ? '“' : '‘';
+      const closeQuote = quoteType === '"' ? '”' : '’';
+      return `${openQuote}${content}${closeQuote}`;
+    });
+
+  return curlyText;
+}
+
 function saveChanges() {
     var terms = document.getElementsByClassName("terms");
     var defs = document.getElementsByClassName("defs");
     for (var l = 0; l < document.getElementsByClassName("terms").length; l++) {
-        document.getElementsByClassName("terms")[l].value = document.getElementsByClassName("terms")[l].value.replaceAll('"', "”")
-        document.getElementsByClassName("terms")[l].value = document.getElementsByClassName("terms")[l].value.replaceAll('\'', "‘")
-        document.getElementsByClassName("defs")[l].value = document.getElementsByClassName("defs")[l].value.replaceAll('"', "”")
-        document.getElementsByClassName("defs")[l].value = document.getElementsByClassName("defs")[l].value.replaceAll('\'', "’")
+        document.getElementsByClassName("terms")[l].value = curly_replace(document.getElementsByClassName("terms")[l].value);
+        document.getElementsByClassName("defs")[l].value = curly_replace(document.getElementsByClassName("defs")[l].value);
     }
     var request = "";
     for (var i = 0; i < terms.length; i++) {
