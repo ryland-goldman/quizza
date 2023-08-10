@@ -36,7 +36,7 @@ else { $secondary_column = $main_column=="Question" ? "C1":"Question"; }
 						shuffle($answers);
 						$n++;
 						?>
-						<tr>
+						<tr class='pb'>
 							<td class='term'><?php echo $n.". ".$term["Question"]; ?></td>
 							<td class='pad'>
 								<ol type='A'>
@@ -78,7 +78,7 @@ else { $secondary_column = $main_column=="Question" ? "C1":"Question"; }
 					$answers_0 = [$answers[$i],$answers2[$i],$answers3[$i],$answers4[$i]];
 					shuffle($answers_0);
 					?>
-					<tr>
+					<tr class='pb'>
 						<td class='term'><?php echo ($i+1).". ".$questions[$i]; ?></td>
 						<td class='pad'>
 							<ol type='A'>
@@ -113,7 +113,7 @@ else { $secondary_column = $main_column=="Question" ? "C1":"Question"; }
 			$n = 1;
 			while($term = $terms->fetch_assoc()){ 
 				$n++; ?>
-				<div class='fr'>
+				<div class='fr pb'>
 					<div class='term'><?php echo $n.". ".$term[$secondary_column]; ?></div>
 			    	<div class='pad'>&nbsp;</div>
 			    	<div class='def'>&nbsp;</div>
@@ -126,7 +126,7 @@ else { $secondary_column = $main_column=="Question" ? "C1":"Question"; }
 			<?php $terms = $thisClass->query("SELECT * FROM ".$type.$setID);
 			if($terms->num_rows > 0){
 				while($term = $terms->fetch_assoc()){ ?>
-					<tr>
+					<tr class='pb'>
 						<td class='term'><?php echo $term[$secondary_column]; ?></td>
 				    	<td class='def'><?php echo $term[$main_column]; ?></td>
 					</tr>
