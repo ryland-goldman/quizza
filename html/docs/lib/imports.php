@@ -18,5 +18,5 @@
   <script src="https://www.quizza.org/static/scripts/allpages.js" defer></script>
   <?php if(isset($mathjax)) { ?><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script><?php } ?>
   <?php if(!isset($mathjax)) { ?><script>class f{constructor(){this.typeset=function(){}}};var Mathjax=new f();</script><?php } /* avoid triggering mathjax error */ ?>
-  <?php if ($loggedIn == false) { ?><script src="https://accounts.google.com/gsi/client" async defer></script><?php } ?>
+  <?php if ($loggedIn == false) { ?><script src="https://accounts.google.com/gsi/client"></script><?php } ?>
   <?php if ($loggedIn == false) { ?><script src="https://www.quizza.org/static/scripts/login.js"></script><?php } ?>
