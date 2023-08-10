@@ -1,7 +1,7 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 require("/var/www/html/docs/lib/header.php");
-if($loggedIn == false){ die("Error."); }
+if($loggedIn == false){ die("You are not logged in."); }
 $base64 = explode(',',$_POST['file'])[1];
 if($_POST['extension']!==".jpg" && $_POST['extension']!==".gif" && $_POST['extension']!==".png"){ die(""); }
 
