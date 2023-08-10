@@ -84,7 +84,7 @@ function addTerm() {
 <div class='item-card'>
             <table>
               <tr>
-                <td>
+                <td class='edit-td'>
                   <p><input type='text' class='terms' placeholder="Term" id="file-`+i+`-0-text">
                       <span id='file-`+i+`-0-math' class='math'></span>
                       <button class='edit-inline-btns file-`+i+`-0-mathbtn' style='border-right:none;border-left:none' onclick="math_render('file-`+i+`-0')"><i class="fa-solid fa-square-root-variable"></i></button>
@@ -92,7 +92,7 @@ function addTerm() {
                       <input type="file" id="file-`+i+`-0" style="display:none;" /></p>
                 </td>
                 `+sep+`
-                <td>
+                <td class='edit-td'>
                   <p><input type='text' class='defs' placeholder="Definition" id="file-`+i+`-1-text">
                       <span id='file-`+i+`-1-math' class='math'></span>
                       <button class='edit-inline-btns file-`+i+`-1-mathbtn' style='border-right:none;border-left:none' onclick="math_render('file-`+i+`-1')"><i class="fa-solid fa-square-root-variable"></i></button>
