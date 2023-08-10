@@ -65,7 +65,7 @@
             <button onclick='next()'>Next&nbsp;&nbsp;<i class="fa-solid fa-arrow-right"></i></button>
             <?php mobileBR(); ?>
             <a rel="modal:open" href='#options'>
-              <button  onclick='options()'>Options&nbsp;&nbsp;<i class="fa-solid fa-sliders"></i></button>
+              <button>Options&nbsp;&nbsp;<i class="fa-solid fa-sliders"></i></button>
             </a>
           </div>
         </div>
