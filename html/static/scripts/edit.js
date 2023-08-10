@@ -44,10 +44,8 @@ function changeType() {
     var terms = document.getElementsByClassName("terms");
     var defs = document.getElementsByClassName("defs");
     for (var l = 0; l < document.getElementsByClassName("terms").length; l++) {
-        document.getElementsByClassName("terms")[l].value = document.getElementsByClassName("terms")[l].value.replaceAll('"', "”")
-        document.getElementsByClassName("terms")[l].value = document.getElementsByClassName("terms")[l].value.replaceAll('\'', "‘")
-        document.getElementsByClassName("defs")[l].value = document.getElementsByClassName("defs")[l].value.replaceAll('"', "”")
-        document.getElementsByClassName("defs")[l].value = document.getElementsByClassName("defs")[l].value.replaceAll('\'', "’")
+        document.getElementsByClassName("terms")[l].value = curly_replace(document.getElementsByClassName("terms")[l].value);
+        document.getElementsByClassName("defs")[l].value = curly_replace(document.getElementsByClassName("defs")[l].value);
     }
     var request = "";
     for (var i = 0; i < terms.length; i++) {
@@ -83,18 +81,29 @@ function addTerm() {
     document.getElementById("allBoxes").innerHTML += `
   <div id='box-` + i + `'>
 <div class='item-card'>
-<table>
-  <tr>
-    <td>
-      <h2><input type='text' class='terms'></h2>
-    </td>
-    <td>
-      <p style='text-align:right;'><input type='text' value='' class='defs'></p>
-    </td>
-    <td>
-      <button class='delete-btn' onclick="$('#box-` + i + `').html('');"><i class="fa-solid fa-trash-can"></i></button>
-  </tr>
-</table>
+            <table>
+              <tr>
+                <td>
+                  <p><input type='text' class='terms' placeholder="Term" id="file-`+i+`-0-text">
+                      <span id='file-`+i+`-0-math' class='math'></span>
+                      <button class='edit-inline-btns file-`+i+`-0-mathbtn' style='border-right:none;border-left:none' onclick="math_render('file-`+i+`-0')"><i class="fa-solid fa-square-root-variable"></i></button>
+                      <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px" onclick="image_upload('file-`+i+`-0')"><i class="fa-solid fa-image"></i></button>
+                      <input type="file" id="file-`+i+`-0" style="display:none;" /></p>
+                </td>
+                `+sep+`
+                <td>
+                  <p><input type='text' class='defs' placeholder="Definition" id="file-`+i+`-1-text">
+                      <span id='file-`+i+`-1-math' class='math'></span>
+                      <button class='edit-inline-btns file-`+i+`-1-mathbtn' style='border-right:none;border-left:none' onclick="math_render('file-`+i+`-1')"><i class="fa-solid fa-square-root-variable"></i></button>
+                      <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px" onclick="image_upload('file-`+i+`-1')"><i class="fa-solid fa-image"></i></button>
+                      <input type="file" id="file-`+i+`-1" style="display:none;" /></p>
+                </td>
+                `+sep+`
+                <td class='delete-btn-td'>
+                  <button class='delete-btn' onclick="$('#box-`+i+`').html(``)"><i class="fa-solid fa-trash-can"></i></button>
+                </td>
+              </tr>
+            </table>
 </div>
 </div>`;
     for (var l = 0; l < document.getElementsByClassName("terms").length - 1; l++) {

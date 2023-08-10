@@ -18,6 +18,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
   <script async>var class_and_set = "class=<?php echo $classID."&set=".$setID;?>&";</script>
   <script async>var google_auth = "<?php echo $gsi_auth; ?>";</script>
   <script async>var back_url = "<?php echo "/".$classID."/".$setID; ?>";</script>
+  <script async>var mobile = "<?php echo isMobileDevice(); ?>";</script>
   <script src="https://www.quizza.org/static/scripts/mathquill.min.js"></script>
   <link rel="stylesheet" href="https://www.quizza.org/static/stylesheets/mathquill.min.css">
 
@@ -169,7 +170,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
           <div class='item-card'>
             <table>
               <tr>
-                <td>
+                <td class='edit-td'>
                   <p><input type='text' class='terms <?php if($type=="Quiz"){ ?>q<?php } ?>' placeholder="<?php echo $type=="Set"?"Term":"Question"; ?>" id="file-1-0-text">
                       <span id='file-1-0-math' class='math'></span>
                       <button class='edit-inline-btns file-1-0-mathbtn' style='border-right:none;border-left:none' onclick="math_render('file-1-0')"><i class="fa-solid fa-square-root-variable"></i></button>
@@ -177,7 +178,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                       <input type="file" id="file-1-0" style="display:none;" /></p>
                 </td>
                 <?php if(isMobileDevice()) { ?></tr><tr><?php } else {?><td style='width:8px;'>&nbsp;</td><?php } ?>
-                <td>
+                <td class='edit-td'>
                   <p><input type='text' class='terms <?php if($type=="Quiz"){ ?>c1<?php } ?>' placeholder="<?php echo $type=="Set"?"Definition":"Correct Answer"; ?>" id="file-1-1-text">
                       <span id='file-1-1-math' class='math'></span>
                       <button class='edit-inline-btns file-1-1-mathbtn' style='border-right:none;border-left:none' onclick="math_render('file-1-1')"><i class="fa-solid fa-square-root-variable"></i></button>
@@ -186,7 +187,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                 </td>
                 <?php if($type=="Quiz"){ ?>
                   <?php if(isMobileDevice()) { ?></tr><tr><?php } else {?><td style='width:8px;'>&nbsp;</td><?php } ?>
-                  <td>
+                  <td class='edit-td'>
                     <p><input type='text' class='terms ic1' placeholder="Incorrect Answer #1" id="file-1-2-text">
                         <span id='file-1-2-math' class='math'></span>
                         <button class='edit-inline-btns file-1-2-mathbtn' style='border-right:none;border-left:none' onclick="math_render('file-1-2')"><i class="fa-solid fa-square-root-variable"></i></button>
@@ -194,7 +195,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                         <input type="file" id="file-1-2" style="display:none;" /></p>
                   </td>
                   <?php if(isMobileDevice()) { ?></tr><tr><?php } else {?><td style='width:8px;'>&nbsp;</td><?php } ?>
-                  <td>
+                  <td class='edit-td'>
                     <p><input type='text' class='terms ic2' placeholder="Incorrect Answer #2" id="file-1-3-text">
                         <span id='file-1-3-math' class='math'></span>
                         <button class='edit-inline-btns file-1-3-mathbtn' style='border-right:none;border-left:none' onclick="math_render('file-1-3')"><i class="fa-solid fa-square-root-variable"></i></button>
@@ -202,7 +203,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                         <input type="file" id="file-1-3" style="display:none;" /></p>
                   </td>
                   <?php if(isMobileDevice()) { ?></tr><tr><?php } else {?><td style='width:8px;'>&nbsp;</td><?php } ?>
-                  <td>
+                  <td class='edit-td'>
                     <p><input type='text' class='terms ic3' placeholder="Incorrect Answer #3" id="file-1-4-text">
                         <span id='file-1-4-math' class='math'></span>
                         <button class='edit-inline-btns file-1-4-mathbtn' style='border-right:none;border-left:none' onclick="math_render('file-1-4')"><i class="fa-solid fa-square-root-variable"></i></button>
@@ -211,9 +212,6 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                   </td>
                 <?php } ?>
                 <?php if(isMobileDevice()) { ?></tr><tr><?php } else {?><td style='width:8px;'>&nbsp;</td><?php } ?>
-                <td>
-                  <p style='text-align:right;'><input type='text' class='defs'></p>
-                </td>
                 <td <?php if(isMobileDevice()) { ?>style='width:100%;'<?php } else {?>style='width:38px;'<?php } ?>>
                   <button class='delete-btn' onclick="$(`#box-<?php echo $i; ?>`).html(``)"><i class="fa-solid fa-trash-can"></i></button>
                 </td>
