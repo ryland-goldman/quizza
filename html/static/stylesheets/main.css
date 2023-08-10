@@ -154,13 +154,11 @@ a,button{cursor:pointer;text-decoration:none;color:var(--color-text)}
 #topbar-menuToggle input:checked~span:nth-last-child(2){opacity:1;transform:rotate(-45deg) translate(0,-1px)}
 #topbar-menu{position:absolute;width:225px;margin:-100px 0 0;padding:50px;padding-top:125px;right:-25px;background:var(--color-background);list-style-type:none;-webkit-font-smoothing:antialiased;transform-origin:0 0;transform:translate(100%,0);box-shadow:rgba(0,0,0,0.45) 0 5px 15px;border-radius:8px;transition:transform .5s cubic-bezier(0.77,0.2,0.05,1.0);min-height:100vh}
 #topbar-menuToggle input:checked~div{transform:scale(1.0,1.0);opacity:1}
-select{appearance:none;outline:0;border:0;box-shadow:none;/* Personalize */
-flex:1;padding:0 1em;color:#fff;background-color:var(--color-theme);background-image:none;cursor:pointer}
+select{appearance:none;outline:0;border:0;box-shadow:none;flex:1;padding:0 1em;color:#fff;background-color:var(--color-theme);background-image:none;cursor:pointer}
 select::-ms-expand{display:none}
 select {color: var(--color-text)!important;background-color: var(--color-background)!important;}
-.select-after {background-image: linear-gradient(to left, var(--color-background) 80%, #00000000 100%)!important;}
 .select{position:relative;display:flex;height:3em;border-radius:.25em;overflow:hidden;float:right}
-.select-after{position:absolute;top:0;right:0;padding:1em;transition:.25s all ease;pointer-events:none;background-image:linear-gradient(to left,var(--color-theme) 80%,#00000000 100%)!important}
+.select-after{position:absolute;top:0;right:0;padding:1em;transition:.25s all ease;pointer-events:none;background-image:linear-gradient(to left,var(--color-background) 80%,#00000000 100%)!important}
 #tr-border-bottom{border-bottom:1px solid var(--color-text)}
 #tr-border-bottom-table{border-collapse:collapse}
 .left-float{float:left}
