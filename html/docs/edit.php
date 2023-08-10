@@ -82,7 +82,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
               <table>
                 <tr>
                   <td>
-                    <h2>
+                    <p>
                       <input type='text' value='<?php
                       $str2 = str_replace('<br>', '',$row[$type=="Set"?"Term":"Question"]);
                       if (preg_match("/<img[^>]+src\s*=\s*['\"]([^'\"]+)['\"][^>]*>/i", $str2, $matches)) {
@@ -94,7 +94,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                       echo $str2; ?>' class='terms <?php if($type=="Quiz"){ ?>q<?php } ?>'>
                       <button class='edit-inline-btns' style='border-right:none;border-left:none'><i class="fa-solid fa-square-root-variable"></i></button>
                       <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px"><i class="fa-solid fa-image"></i></button>
-                    </h2>
+                    </p>
                   </td>
                   <td style='width:24px;'>&nbsp;</td>
                   <td>
