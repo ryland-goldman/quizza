@@ -9,7 +9,7 @@ body{margin-top:12px;}
 .two-column .term{border-bottom: 1px solid black;border-right:1px solid black;padding:12px;}
 .fr{display:flex;}
 .fr .term{width:40%;overflow-wrap:break-word;}
-.mc .term{vertical-align:top;}
+.mc .term{vertical-align:top;margin-right:24px;float:right;}
 .fr .def{border-bottom: 1px solid black;flex-grow:1;}
 .two-column .def{border-bottom:1px solid black;padding:12px;}
 .wb{text-align:center;border:1px solid black;padding:12px;margin-bottom:20px;}
