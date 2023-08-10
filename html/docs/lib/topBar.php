@@ -38,9 +38,9 @@
               <?php if ($loggedIn == true) { ?><td<?php if($_SERVER['PHP_SELF']=="/index.php") { ?> style='color:white;'<?php } ?>>
                 <a style='white-space:nowrap;overflow:hidden;float:right;' class='top-bar-name'>Welcome, <?php echo $name; ?></a><br>
                 <span style='font-size:9pt;float:right;margin-top:2px;'>
-                  <a href='https://www.quizza.org/private' class='top-bar-private'>Private Sets</a> • 
-                  <a href='#change-school' rel='modal:open'>Change School</a> • 
-                  <a href='javascript:signout()' class='top-bar-signout'>Sign Out</a>
+                  <a href='https://www.quizza.org/private' class='top-bar-private' style='color:inherit'>Private Sets</a> • 
+                  <a href='#change-school' rel='modal:open' style='color:inherit'>Change School</a> • 
+                  <a href='javascript:signout()' class='top-bar-signout' style='color:inherit'>Sign Out</a>
                 </span>
               </td>
               <td>&nbsp;</td>
