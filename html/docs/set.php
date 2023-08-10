@@ -9,8 +9,7 @@
   
   <?php require("/var/www/html/docs/lib/imports.php"); ?>
 
-  <?php if($type=="Set"){ ?><script src="https://www.quizza.org/static/scripts/set.js"></script><?php } ?>
-  <?php if($type=="Quiz"){ ?><script src="https://www.quizza.org/static/scripts/setQuiz.js"></script><?php } ?>
+  <script src="https://www.quizza.org/static/scripts/set.js"></script>
   <?php if($private_set) { ?><script src="https://www.quizza.org/static/scripts/share.js"></script><?php } ?>
 
   <script async>

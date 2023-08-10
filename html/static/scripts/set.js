@@ -11,11 +11,11 @@ function disableTerm(term, iconId) {
             return t !== term;
         });
         $("#icon-" + iconId).attr("class", "fa-solid fa-eye");
-        $("#container-" + iconId).attr("class", "item-card enabled");
+        $("#container-" + iconId).attr("class", "enabled item-card");
     } else {
         dt.push(term);
         $("#icon-" + iconId).attr("class", "fa-solid fa-eye-slash");
-        $("#container-" + iconId).attr("class", "item-card disabled");
+        $("#container-" + iconId).attr("class", "disabled item-card");
     }
     for (var p = 0; p < dt.length; p++) {
         dt[p] = encodeURIComponent(dt[p]);
@@ -24,12 +24,6 @@ function disableTerm(term, iconId) {
     localStorage.setItem("disabledTerms", JSON.stringify(dt));
 }
 
-var pdftext = "Name: __________________________________\tPeriod: _____\tDate: ________________\nPrinted from Quizza.org\n\n";
-var a1, a2, a3, a4;
-
-function getCW() {
-    return [a1, a2, a3, a4];
-}
 
 function print_set(col) {
     var type = $('input[name="radio"]:checked').val();
@@ -42,24 +36,6 @@ function print_set(col) {
             $("*").css("cursor", "default");
         },2000);
     }
-}
-
-function getWord(not) {
-    var i = 0;
-    var cgwd = "";
-    while (i < 100) {
-        i++;
-        cgwd = allDefs[Math.floor(Math.random() * allDefs.length)]
-        if (cgwd !== not && !getCW().includes(cgwd)) {
-            break;
-        } else {
-            console.log(cgwd);
-        }
-    }
-    if (cgwd == "") {
-        return getWord(not);
-    }
-    return cgwd;
 }
 
 function load_function() {
