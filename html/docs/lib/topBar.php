@@ -17,6 +17,7 @@
                 <a style='white-space:nowrap;overflow:hidden;' href='https://www.quizza.org/private' class='top-bar-name'>Welcome, <?php echo $name; ?></a><br>
                 <span style='font-size:9pt;float:right;margin-top:2px;'>
                   <a href='https://www.quizza.org/private' class='top-bar-private'>Private Sets</a> • 
+                  <a href='#change-school' rel='modal:open'>Change School</a> • 
                   <a href='javascript:signout()' class='top-bar-signout'>Sign Out</a>
                 </span>
               </td>
@@ -25,26 +26,6 @@
                 <img src='<?php echo $pic; ?>' id='top-bar-icon-image'>
               </td>
               <?php } ?>
-              <td>&nbsp;</td>
-              <td>
-                <div class='select' style='float:unset;'>
-                  <select>
-                    <?php if($_SERVER['HTTP_HOST']=="www.quizza.org"){ ?><option selected>Select a School</option><?php } ?>
-                    <?php 
-                    try {
-                      $sql_db_password =  trim(file_get_contents("/var/www/sql.privkey"));
-                      $schooldb = new mysqli("localhost","quizza", $sql_db_password, "Schools");
-                    } catch (Exception $e) {}
-                    $schools = $schooldb->query("SELECT * FROM main ORDER BY longname ASC;");
-                    while($curr_school = $schools->fetch_assoc()){ ?>
-                      <option value="<?php echo $curr_school["id"]; ?>"<?php if($curr_school["shortname"] == $school_shortname){ ?> selected<?php } ?>><?php echo $curr_school["longname"]; ?></option>
-                    <?php } ?>
-                  </select>
-                  <div class="select-after">
-                    <i class="fa-solid fa-caret-down"></i>&nbsp;
-                  </div>
-                </div>
-              </td>
             </tr>
           </table>
         </td>
@@ -123,3 +104,26 @@
 
   <!-- Match the height of the above bar -->
   <div><table><tr><td style='padding:13px 20px 5px;'><h1>&nbsp;</h1></td></tr></table></div>
+
+  <?php if(!isMobileDevice()){ ?>
+    <div class='modal' id='change-school'>
+      <h2>Change School</h2>
+      <div class='select' style='float:unset;'>
+        <select>
+          <?php if($_SERVER['HTTP_HOST']=="www.quizza.org"){ ?><option selected>Select a School</option><?php } ?>
+          <?php 
+          try {
+            $sql_db_password =  trim(file_get_contents("/var/www/sql.privkey"));
+            $schooldb = new mysqli("localhost","quizza", $sql_db_password, "Schools");
+          } catch (Exception $e) {}
+          $schools = $schooldb->query("SELECT * FROM main ORDER BY longname ASC;");
+          while($curr_school = $schools->fetch_assoc()){ ?>
+            <option value="<?php echo $curr_school["id"]; ?>"<?php if($curr_school["shortname"] == $school_shortname){ ?> selected<?php } ?>><?php echo $curr_school["longname"]; ?></option>
+          <?php } ?>
+        </select>
+        <div class="select-after">
+          <i class="fa-solid fa-caret-down"></i>&nbsp;
+        </div>
+      </div>
+    </div>
+  <?php } ?>
