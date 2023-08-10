@@ -15,7 +15,7 @@
   <script src="https://kit.fontawesome.com/9e91fc9fc4.js" crossorigin="anonymous"></script>
   <script src="https://www.quizza.org/static/scripts/jquery.min.js"></script>
   <script src="https://www.quizza.org/static/scripts/jquery.modal.min.js" defer></script>
-  <script src="https://www.quizza.org/static/scripts/allpages.js" defer></script>
+  <script src="https://www.quizza.org/static/scripts/allpages.js"></script>
   <?php if(isset($mathjax)) { ?><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script><?php } ?>
   <?php if(!isset($mathjax)) { ?><script>class f{constructor(){this.typeset=function(){}}};var MathJax=new f();</script><?php } /* avoid triggering mathjax error */ ?>
   <?php if ($loggedIn == false) { ?><script src="https://accounts.google.com/gsi/client"></script><?php } ?>
