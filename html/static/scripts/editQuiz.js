@@ -162,35 +162,33 @@ function confirmDeletion(){
   }
 }
 
-function convertToBase64(file) {
+function image_upload(element){
+    $("#"+element).click();
+    $("#"+element).change(function(){
+        $("button").prop("disabled",true);
+        const fileInput = document.querySelector('#'+element);
+        convertToBase64(fileInput.files[0], "#"+element+"-text");
+    });
+}
+
+function convertToBase64(file, element) {
     const reader = new FileReader();
     reader.readAsDataURL(file);
     var mime = file.type;
     if(mime=="image/jpeg"){ var ext = ".jpg"; }
     else if(mime=="image/png"){ var ext = ".png"; }
     else if(mime=="image/gif"){ var ext = ".gif"; }
-    else {alert("Image type not supported."); return; }
+    else {alert("Image type not supported."); $("button").prop("disabled",false); return; }
     reader.onload = function(e){
     $.ajax({
         url: '/docs/imageUpload.php',
         type: 'POST',
         data: {file: e.target.result, extension: ext, auth: google_auth},
         success: function(response) {
-          $("#resultURL").val(response).show();
-          $("#uploadBtn").prop("disabled",false);
-          $("#uploadBtn").text("Upload");
-          $("#info").text("Copy and paste this URL into the text box to include it in a set.");
+            var curr_val = $(element).val();
+            $(element).val(curr_val + " "+response);
+            $("button").prop("disabled",false);
         }
       });
     }
-  }
-  $('#resultURL').click(function() { $(this).select(); }).hide();
-  $('#resultURL').focus(function() { document.execCommand('copy'); });
-  function uploadBtnClick(){
-    $("#resultURL").val("");
-    $("#uploadBtn").prop("disabled",true);
-    $("#uploadBtn").text("Uploading...");
-    event.preventDefault();
-    const fileInput = document.querySelector('input[type="file"]');
-    convertToBase64(fileInput.files[0]);
   }
