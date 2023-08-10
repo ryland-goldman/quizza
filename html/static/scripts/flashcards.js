@@ -16,6 +16,9 @@ function init(){
         [window.words[i], window.words[j], window.defs[i], window.defs[j]] = [words[j], words[i], defs[j], defs[i]];
     }
 
+    // Get session storage state
+    start_with_term = (sessionStorage.def=="false");
+
     // First flashcard
     next();
 
@@ -24,9 +27,6 @@ function init(){
 
     // Render signin button
     try { render_gSignIn(); } catch(e) {}
-
-    // Get session storage state
-    start_with_term = (sessionStorage.def=="false");
 
     // Set key press buttons
     document.body.onkeydown = function(e) {
