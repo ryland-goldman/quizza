@@ -12,6 +12,7 @@ $lastModified = date("d M Y (h:i A T)")." by ".$name;
 $data = $_POST["data"];
 $content = base64_encode($data);
 $title = $admin->real_escape_string(filter_var($_POST["title"],FILTER_SANITIZE_STRING));
+if($title == ""){ $title = "Untitled Set"; }
 $action = ($_GET["DELETE"] == "TRUE") ? "Delete" : "Edit";
 $edittime = date("d M Y (h:i A T)");
 $admin->query("LOCK TABLES EditLog write");
