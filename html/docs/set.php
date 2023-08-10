@@ -15,6 +15,9 @@
 
   <script async>
 
+    var classID = "<?php echo $classID; ?>";
+    var setID = "<?php echo $setID; ?>";
+
     <?php if($type=="Set") { ?>
 
       var allWords = [<?php $words = $thisClass->query("SELECT * FROM ".$type.$setID); if($words->num_rows > 0){ while($row = $words->fetch_assoc()){ echo '`'.str_replace("\\","\\\\",$row["Term"]).'`,'; }} ?>""];
@@ -109,7 +112,9 @@
 
         <?php if(!$empty_set){ ?>
 
-          <button onclick='window.print()' class='title-button-white right'>Print&nbsp;&nbsp;<i class="fa-solid fa-print"></i></button>
+          <a href='#print' rel='modal:open'>
+            <button class='title-button-white right'>Print&nbsp;&nbsp;<i class="fa-solid fa-print"></i></button>
+          </a>
 
           <?php mobileBR(); ?>
 
@@ -169,6 +174,26 @@
       <?php if(!$private_set && !$loggedIn) { ?>You must be logged in to edit this set.<?php } ?>
       <?php if($private_set) { ?>Your account does not have access to this page. Contact the set's owner to get edit access.<?php } ?>
     </p>
+  </div>
+
+  <div id='print' class='modal'>
+    <h2>Print</h2>
+    <label class="container">Free Response
+      <input type="radio" checked="checked" name="radio">
+      <span class="checkmark"></span>
+    </label>
+    <label class="container">Multiple Choice
+      <input type="radio" checked="checked" name="radio">
+      <span class="checkmark"></span>
+    </label>
+    <label class="container">Word Bank
+      <input type="radio" checked="checked" name="radio">
+      <span class="checkmark"></span>
+    </label>
+    <label class="container">Flashcards
+      <input type="radio" checked="checked" name="radio">
+      <span class="checkmark"></span>
+    </label>
   </div>
 
   <?php require("/var/www/html/docs/lib/footer.php"); ?>

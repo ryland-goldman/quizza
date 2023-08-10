@@ -12,6 +12,7 @@ else { $secondary_column = $main_column=="Question" ? "C1":"Question"; }
 	<meta name="robots" content="noindex">
 	<meta charset="utf-8">
 	<link rel='stylesheet' href='https://www.quizza.org/static/stylesheets/print.css'>
+	<script>window.print();</script>
 </head>
 <body>
 	<div id='name'>
