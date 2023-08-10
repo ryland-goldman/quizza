@@ -96,7 +96,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                       <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px"><i class="fa-solid fa-image"></i></button>
                     </p>
                   </td>
-                  <td style='width:24px;'>&nbsp;</td>
+                  <td style='width:8px;'>&nbsp;</td>
                   <td>
                     <p><input type='text' value='<?php
                       $str2 = str_replace('<br>', '',$row[$type=="Set"?"Definition":"C1"]);
@@ -112,7 +112,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                   </td>
 
                   <?php if($type == "Quiz") { ?>
-                  <td style='width:24px;'>&nbsp;</td>
+                  <td style='width:8px;'>&nbsp;</td>
                     <td>
                       <p><input type='text' value='<?php
                         $str2 = str_replace('<br>', '',$row["Ic1"]);
@@ -126,7 +126,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                       <button class='edit-inline-btns' style='border-right:none;border-left:none'><i class="fa-solid fa-square-root-variable"></i></button>
                       <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px"><i class="fa-solid fa-image"></i></button></p>
                     </td>
-                  <td style='width:24px;'>&nbsp;</td>
+                  <td style='width:8px;'>&nbsp;</td>
                     <td>
                       <p><input type='text' value='<?php
                         $str2 = str_replace('<br>', '',$row["Ic2"]);
@@ -140,7 +140,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                       <button class='edit-inline-btns' style='border-right:none;border-left:none'><i class="fa-solid fa-square-root-variable"></i></button>
                       <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px"><i class="fa-solid fa-image"></i></button></p>
                     </td>
-                  <td style='width:24px;'>&nbsp;</td>
+                  <td style='width:8px;'>&nbsp;</td>
                     <td>
                       <p><input type='text' value='<?php
                         $str2 = str_replace('<br>', '',$row["Ic3"]);
@@ -155,6 +155,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                       <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px"><i class="fa-solid fa-image"></i></button></p>
                     </td>
                   <?php } ?>
+                  <td style='width:8px;'>&nbsp;</td>
                   <td style='width:38px;'>
                     <button class='delete-btn' onclick="$(`#box-<?php echo $i; ?>`).html(``)"><i class="fa-solid fa-trash-can"></i></button>
                   </td>
