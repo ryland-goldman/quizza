@@ -163,10 +163,12 @@
   <div id="test" class="modal">
     <h2>Test Yourself</h2>
     <a rel="modal:close">
-      <button class='modalbtn modalbtn-first' onclick='location.href="/<?php echo $classID."/".$setID; ?>/mc"'>Multiple Choice</button>
+      <?php if($term_number >= 4){ ?><button class='modalbtn modalbtn-first' onclick='location.href="/<?php echo $classID."/".$setID; ?>/mc"'>Multiple Choice</button><?php } ?>
       <button class='modalbtn' onclick='location.href="/<?php echo $classID."/".$setID; ?>/fr"'>Free Response</button>
-      <button class='modalbtn' onclick='location.href="/<?php echo $classID."/".$setID; ?>/mc?learn=true"'>Learn</button>
+      <?php if($term_number >= 4){ ?><button class='modalbtn' onclick='location.href="/<?php echo $classID."/".$setID; ?>/mc?learn=true"'>Learn</button><?php } ?>
       <?php if($term_number >= 16) { ?><button class='modalbtn' onclick='location.href="/<?php echo $classID."/".$setID; ?>/match"'>Match</button><?php } ?>
+      <?php if(!($term_number >= 4)){ ?><p><em>Add more terms to use Multiple Choice, Learn, and Match.</em></p><?php } ?>
+      <?php if(!($term_number >= 16) && ($term_number >= 4)){ ?><p><em>Add more terms to use Match.</em></p><?php } ?>
     </a>
   </div>
 
@@ -185,10 +187,12 @@
       <input type="radio" checked="checked" name="radio" value='fr'>
       <span class="checkmark"></span>
     </label>
-    <label class="container">Multiple Choice
-      <input type="radio" name="radio" value='mc'>
-      <span class="checkmark"></span>
-    </label>
+    <?php if($term_number >= 4){ ?>
+      <label class="container">Multiple Choice
+        <input type="radio" name="radio" value='mc'>
+        <span class="checkmark"></span>
+      </label>
+    <?php } ?>
     <label class="container">Word Bank
       <input type="radio" name="radio" value='wb'>
       <span class="checkmark"></span>
