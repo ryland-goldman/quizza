@@ -101,7 +101,7 @@ function addTerm() {
                 </td>
                 `+sep+`
                 <td class='delete-btn-td'>
-                  <button class='delete-btn' onclick="$('#box-`+i+`').html(``)"><i class="fa-solid fa-trash-can"></i></button>
+                  <button class='delete-btn' onclick="$('#box-`+i+`').html('')"><i class="fa-solid fa-trash-can"></i></button>
                 </td>
               </tr>
             </table>
