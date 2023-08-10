@@ -6,7 +6,7 @@ function curly_replace(text) {
       return `${openQuote}${content}${closeQuote}`;
     });
 
-  return curlyText.replaceAll('"', "”").replaceAll('\'', "‘");
+  return curlyText.replaceAll('"', "”").replaceAll('\'', "’");
 }
 
 function saveChanges() {
