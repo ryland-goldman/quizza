@@ -34,12 +34,12 @@ function getCW() {
 function print_set(col) {
     var type = $('input[name="radio"]:checked').val();
     $('<iframe src="/'+classID+'/'+setID+'/print?option='+type+'&col='+col+'" ></iframe>').appendTo('body').hide();
-    if(has_mathjax){
+    if(has_mathjax==1){
         $(".modalbutton").attr("disabled", true);
-        $("body").css("cursor", "progress");
+        $("*").css("cursor", "progress");
         setTimeout(function(){
             $(".modalbutton").attr("disabled", false);
-            $("body").css("cursor", "default");
+            $("*").css("cursor", "default");
         },2000);
     }
 }
