@@ -34,6 +34,12 @@ function getCW() {
 function print_set(col) {
     var type = $('input[name="radio"]:checked').val();
     $('<iframe src="/'+classID+'/'+setID+'/print?option='+type+'&col='+col+'" ></iframe>').appendTo('body').hide();
+    if(has_mathjax){
+        $(".modalbutton").attr("disabled", true).css("cursor", "progress");
+        setTimeout(function(){
+            $(".modalbutton").attr("disabled", false).css("cursor", "default");
+        },2000);
+    }
 }
 
 function getWord(not) {

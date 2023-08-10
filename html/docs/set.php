@@ -17,6 +17,7 @@
 
     var classID = "<?php echo $classID; ?>";
     var setID = "<?php echo $setID; ?>";
+    var has_mathjax = <?php echo isset($mathjax); ?>;
 
     <?php if($type=="Set") { ?>
 
