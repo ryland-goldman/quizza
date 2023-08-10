@@ -78,6 +78,7 @@ function addTerm() {
         allDefs.push(document.getElementsByClassName("defs")[l].value);
     }
     i++;
+    var sep = mobile=="true" ? "</tr><tr>" : "<td style='width:8px;''>&nbsp;</td>";
     document.getElementById("allBoxes").innerHTML += `
   <div id='box-` + i + `'>
 <div class='item-card'>
