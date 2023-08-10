@@ -14,7 +14,6 @@
   <?php if(!isset($mathjax)) { ?><script>class f{constructor(){this.typeset=function(){}}};var Mathjax=new f();</script><?php } /* avoid triggering mathjax error */ ?>
   <?php if ($loggedIn == false) { ?><script src="https://accounts.google.com/gsi/client" async defer></script><?php } ?>
   <?php if ($loggedIn == false) { ?><script src="https://www.quizza.org/static/scripts/login.js"></script><?php } ?>
-  <?php if ($loggedIn == false) { ?><script>render_gSignIn_attempt()</script><?php } ?>
 
   <!-- Metadata -->
   <meta charset="utf-8">

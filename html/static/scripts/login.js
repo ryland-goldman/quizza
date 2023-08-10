@@ -48,3 +48,5 @@ function render_gSignIn_attempt(prompt_login=false) {
         google.accounts.id.prompt();
     }
 }
+
+render_gSignIn_attempt();
