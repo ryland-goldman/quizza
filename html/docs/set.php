@@ -179,21 +179,25 @@
   <div id='print' class='modal'>
     <h2>Print</h2>
     <label class="container">Free Response
-      <input type="radio" checked="checked" name="radio">
+      <input type="radio" checked="checked" name="radio" value='fr'>
       <span class="checkmark"></span>
     </label>
     <label class="container">Multiple Choice
-      <input type="radio" checked="checked" name="radio">
+      <input type="radio" name="radio" value='mc'>
       <span class="checkmark"></span>
     </label>
     <label class="container">Word Bank
-      <input type="radio" checked="checked" name="radio">
+      <input type="radio" name="radio" value='wb'>
       <span class="checkmark"></span>
     </label>
     <label class="container">Flashcards
-      <input type="radio" checked="checked" name="radio">
+      <input type="radio" name="radio" value='tc'>
       <span class="checkmark"></span>
     </label>
+
+    <p>Answer with...</p>
+    <button class='modalbtn' onclick='print_set("<?php echo $type=="Set"?"Term":"Question"; ?>")'>Terms</button>
+    <button class='modalbtn' onclick='print_set("<?php echo $type=="Set"?"Definition":"C1"; ?>")'>Definitions</button>
   </div>
 
   <?php require("/var/www/html/docs/lib/footer.php"); ?>

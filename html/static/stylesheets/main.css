@@ -170,7 +170,7 @@ select::-ms-expand{display:none}
 .container input {position: absolute;opacity: 0;cursor: pointer;}
 .checkmark {position: absolute;top: 0;left: 0;height: 25px;width: 25px;background-color: var(--checkbox-bg);border-radius:50%;}
 .container:hover input ~ .checkmark {background-color: var(--color-btn-hover);transition: 0.2s;}
-.container input:checked ~ .checkmark {background-color: var(--color-theme);}
+.container input:checked ~ .checkmark {background-color: var(--color-background);}
 .checkmark:after {content: "";position: absolute;display: none;}
 .container input:checked ~ .checkmark:after {display: block;}
 .container .checkmark:after {top: 9px;left: 9px;width: 8px;height: 8px;border-radius: 50%;background: white;}
