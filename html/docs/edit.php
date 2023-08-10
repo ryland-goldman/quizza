@@ -71,7 +71,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
         		<div class='item-card edit-card'>
               <table>
                 <tr>
-                  <td>
+                  <td class='edit-td'>
                     <p>
                       <input type='text' value='<?php
                       $str2 = str_replace('<br>', '',$row[$type=="Set"?"Term":"Question"]);
@@ -89,7 +89,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                     </p>
                   </td>
                   <?php if(isMobileDevice()) { ?></tr><tr><?php } else {?><td style='width:8px;'>&nbsp;</td><?php } ?>
-                  <td>
+                  <td class='edit-td'>
                     <p><input type='text' value='<?php
                       $str2 = str_replace('<br>', '',$row[$type=="Set"?"Definition":"C1"]);
                       if (preg_match("/<img[^>]+src\s*=\s*['\"]([^'\"]+)['\"][^>]*>/i", $str2, $matches)) {
@@ -107,7 +107,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
 
                   <?php if($type == "Quiz") { ?>
                   </tr><tr>
-                    <td>
+                    <td class='edit-td'>
                       <p><input type='text' value='<?php
                         $str2 = str_replace('<br>', '',$row["Ic1"]);
                         if (preg_match("/<img[^>]+src\s*=\s*['\"]([^'\"]+)['\"][^>]*>/i", $str2, $matches)) {
@@ -123,7 +123,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                       <input type="file" id="file-<?php echo $i;?>-2" style="display:none;" /></p>
                     </td>
                   <?php if(isMobileDevice()) { ?></tr><tr><?php } else {?><td style='width:8px;'>&nbsp;</td><?php } ?>
-                    <td>
+                    <td class='edit-td'>
                       <p><input type='text' value='<?php
                         $str2 = str_replace('<br>', '',$row["Ic2"]);
                         if (preg_match("/<img[^>]+src\s*=\s*['\"]([^'\"]+)['\"][^>]*>/i", $str2, $matches)) {
@@ -139,7 +139,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                       <input type="file" id="file-<?php echo $i;?>-3" style="display:none;" /></p>
                     </td>
                   <?php if(isMobileDevice()) { ?></tr><tr><?php } else {?><td style='width:8px;'>&nbsp;</td><?php } ?>
-                    <td>
+                    <td class='edit-td'>
                       <p><input type='text' value='<?php
                         $str2 = str_replace('<br>', '',$row["Ic3"]);
                         if (preg_match("/<img[^>]+src\s*=\s*['\"]([^'\"]+)['\"][^>]*>/i", $str2, $matches)) {

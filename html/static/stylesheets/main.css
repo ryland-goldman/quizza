@@ -179,3 +179,4 @@ select::-ms-expand{display:none}
 .edit-card h2,.edit-card p{display:flex}
 .math{display:none;}
 .mathbtn-clicked{background-color:var(--color-btn-hover);}
+.edit-td{width:50%;box-sizing: border-box;}
