@@ -213,7 +213,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                 <?php } ?>
                 <?php if(isMobileDevice()) { ?></tr><tr><?php } else {?><td style='width:8px;'>&nbsp;</td><?php } ?>
                 <td <?php if(isMobileDevice()) { ?>style='width:100%;'<?php } else {?>style='width:38px;'<?php } ?>>
-                  <button class='delete-btn' onclick="$(`#box-<?php echo $i; ?>`).html(``)"><i class="fa-solid fa-trash-can"></i></button>
+                  <button class='delete-btn' onclick="$(`#box-1`).html(``)"><i class="fa-solid fa-trash-can"></i></button>
                 </td>
               </tr>
             </table>
