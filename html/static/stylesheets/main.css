@@ -162,7 +162,7 @@ select {color: var(--color-text)!important;background-color: var(--color-backgro
 #tr-border-bottom{border-bottom:1px solid var(--color-text)}
 #tr-border-bottom-table{border-collapse:collapse}
 .left-float{float:left}
-.top-bar-signout{color:#ff6464}
+.top-bar-signout{color:#d33}
 .signin-table tr{min-height:21px}
 .top-bar-icon-image-hidden{visibility:hidden}
 #set-title{padding:8px;width:100%;border-radius:8px;border:2px solid var(--color-theme);background-color:var(--color-background);color:var(--color-text);font-size:18pt}
