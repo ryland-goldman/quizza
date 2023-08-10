@@ -56,7 +56,7 @@ else { $secondary_column = $main_column=="Question" ? "C1":"Question"; }
 					array_push($answers_tmp, $term[$main_column]);
 				}
 
-				$shuffledKeys = array_keys($firstArray);
+				$shuffledKeys = array_keys($questions_tmp);
 				shuffle($shuffledKeys);
 
 				$questions = $questions_tmp;
