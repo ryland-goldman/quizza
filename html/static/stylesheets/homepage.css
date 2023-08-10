@@ -53,10 +53,3 @@ h1 { margin:8px; }
 }
 
 select { font-size: 1em; }
-#select {
-    color: var(--color-text)!important;
-    background-color: var(--color-background)!important;
-}
-#sep .select-after {
-    background-image: linear-gradient(to left, var(--color-background) 80%, #00000000 100%)!important;
-}
