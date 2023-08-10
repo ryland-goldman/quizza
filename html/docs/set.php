@@ -16,7 +16,10 @@
 
     var classID = "<?php echo $classID; ?>";
     var setID = "<?php echo $setID; ?>";
-    var has_mathjax = <?php echo (isset($mathjax)==true); ?>;
+    var has_mathjax = "<?php echo (isset($mathjax)==true); ?>";
+    if(has_mathjax==""){ has_mathjax = false; }
+    if(has_mathjax=="false"){ has_mathjax = false; }
+    if(has_mathjax=="true"){ has_mathjax = true; }
 
     <?php if($type=="Set") { ?>
 
