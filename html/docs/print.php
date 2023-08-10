@@ -79,7 +79,7 @@ else { $secondary_column = $main_column=="Question" ? "C1":"Question"; }
 					shuffle($answers_0);
 					?>
 					<tr>
-						<td class='term'><?php echo $i.". ".$questions[$i]; ?></td>
+						<td class='term'><?php echo ($i+1).". ".$questions[$i]; ?></td>
 						<td class='pad'>
 							<ol type='A'>
 								<li><?php echo $answers_0[0]; ?></li>
