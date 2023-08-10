@@ -1,11 +1,11 @@
 html,body{height:100%;width:100%}
-:root{--color-text:#000;--color-background:#fff;--color-theme:#0fbd9d;--color-light:#FFF;--color-light-text:#444;--color-btn-hover:#bbb;--bgimage-main:url(https://www.quizza.org/static/images/diag-light.svg);--bgimage-home:url(https://www.quizza.org/static/images/diag-theme-light.svg);--logo-home:url(https://www.quizza.org/static/images/logo-white.png);--logo:url(https://www.quizza.org/static/images/logo-light.png);--color-alert:#b8f9ed;--correct-edit-box:#92c479;--incorrect-edit-box:#d8707c;--hamburger-color:#000;--checkbox-bg:#CCC;}
-body{margin:0;padding:0;background-image:var(--bgimage-main);background-color:var(--color-background);background-position:center;background-repeat:no-repeat;background-size:cover;background-attachment:fixed}
+:root{--color-text:#000;--color-background:#fff;--color-theme:#0fbd9d;--color-light:#FFF;--color-light-text:#444;--color-btn-hover:#bbb;--bgimage-main:url(https://www.quizza.org/static/images/diag-light.svg);--bgimage-home:url(https://www.quizza.org/static/images/diag-theme-light.svg);--logo-home:url(https://www.quizza.org/static/images/logo-white.png);--logo:url(https://www.quizza.org/static/images/logo-light.png);--color-alert:#b8f9ed;--correct-edit-box:#92c479;--incorrect-edit-box:#d8707c;--hamburger-color:#000;--checkbox-bg:#CCC;--color-disabled:#EEE;}
+body{margin:0;padding:0;background-image:var(--bgimage-main);background-color:var(--color-background);background-position:center;background-repeat:no-repeat;background-size:cover;background-attachment:fixed;}
 #indexphp-body{background-image:var(--bgimage-home)!important;background-color:var(--color-theme)!important}
 #logo-home{content:var(--logo-home)}
 #logo{content:var(--logo)}
 @media (prefers-color-scheme: dark) {
-:root{--correct-edit-box:#042f1a;--incorrect-edit-box:#4d0000;--color-text:#fff;--color-background:#202020;--color-theme:#085e4e;--color-btn-hover:#444;--color-light:#333;--color-light-text:#CCC;--color-alert:#042f27;--logo-home:url(https://www.quizza.org/static/images/logo-white.png);--bgimage-main:url(https://www.quizza.org/static/images/diag-dark.svg);--bgimage-home:url(https://www.quizza.org/static/images/diag-theme-dark.svg);--logo:url(https://www.quizza.org/static/images/logo-dark.svg);--hamburger-color:#fff;--checkbox-bg:#333;}
+:root{--correct-edit-box:#042f1a;--incorrect-edit-box:#4d0000;--color-text:#fff;--color-background:#202020;--color-theme:#085e4e;--color-btn-hover:#444;--color-light:#333;--color-light-text:#CCC;--color-alert:#042f27;--logo-home:url(https://www.quizza.org/static/images/logo-white.png);--bgimage-main:url(https://www.quizza.org/static/images/diag-dark.svg);--bgimage-home:url(https://www.quizza.org/static/images/diag-theme-dark.svg);--logo:url(https://www.quizza.org/static/images/logo-dark.svg);--hamburger-color:#fff;--checkbox-bg:#333;--color-disabled:#252525;}
 body{color:var(--color-text);background-color:var(--color-background)}
 }
 a,button{cursor:pointer;text-decoration:none;color:var(--color-text)}
@@ -85,7 +85,7 @@ a,button{cursor:pointer;text-decoration:none;color:var(--color-text)}
 .submitbtn,.uploadBtn,.modalbtn{font-weight:700;padding:12px;border:1px solid #000;border-radius:10px;color:var(--color-text)!important}
 .submitbtn-first,.uploadBtn-first,.modalbtn-first{margin-top:8px;margin-bottom:8px}
 #newSetModal a{color:#101010;text-decoration:underline}
-.disabled{color:#888;background:#EEE!important;transition:.15s}
+.disabled{color:#888;background:var(--color-disabled)!important;transition:.15s}
 .enabled{color:var(--color-text);transition:.15s}
 .delete-btn{background-color:red;color:#fff;border-radius:8px;padding:12px;border:none;font-size:16px}
 .image-upload-btn{background-color:var(--color-background);border-radius:8px;border:2px solid var(--color-theme);padding:12px 36px;color:var(--color-text);font-size:1em;text-decoration:none;margin-left:2px 4px;float:right}
