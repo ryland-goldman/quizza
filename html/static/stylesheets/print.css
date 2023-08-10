@@ -5,30 +5,16 @@ body{margin-top:12px;}
 #name{display:flex;margin-bottom:24px;}
 #name-name{border-bottom: 1px solid black;flex-grow: 1;}
 #name-period,#name-date{border-bottom: 1px solid black;width:100px;}
-#two-column{border-collapse:collapse;}
-#two-column .term{border-bottom: 1px solid black;border-right:1px solid black;padding:12px;}
+.two-column{border-collapse:collapse;}
+.two-column .term{border-bottom: 1px solid black;border-right:1px solid black;padding:12px;}
 .fr{display:flex;}
 .fr .term{width:40%;overflow-wrap:break-word;}
-#mc .term{vertical-align:top;}
+.mc .term{vertical-align:top;}
 .fr .def{border-bottom: 1px solid black;flex-grow:1;}
-#two-column .def{border-bottom:1px solid black;padding:12px;}
-#wb{text-align:center;border:1px solid black;padding:12px;margin-bottom:20px;}
-#wb span{padding:12px;}
+.two-column .def{border-bottom:1px solid black;padding:12px;}
+.wb{text-align:center;border:1px solid black;padding:12px;margin-bottom:20px;}
+.wb span{padding:12px;}
 .sep{height:20px;}
 .pad{min-width:100px;}
 ol{margin:0;}
 .pb,.pb *{page-break-inside:avoid;break-inside:avoid;}
-
-@media print {
-   	td:before,
-    td:after {
-        content: "";
-        height: 4px;
-        display: block;
-    }
-}
-
-tr td{
-    page-break-inside: avoid;
-    white-space: nowrap;
-}

@@ -28,26 +28,27 @@ else { $secondary_column = $main_column=="Question" ? "C1":"Question"; }
 	<?php if($_GET['option'] == 'mc'){ 
 		$n = 0; 
 		$terms = $thisClass->query("SELECT * FROM ".$type.$setID." ORDER BY RAND()"); 
-		if($terms->num_rows > 0){ ?>
-			<table id='mc'>
-				<?php if($type=="Quiz" && $main_column == "C1") { 
+		if($terms->num_rows > 0){
+				if($type=="Quiz" && $main_column == "C1") { 
 					while($term = $terms->fetch_assoc() ){ 
 						$answers = [$term["C1"], $term["Ic1"], $term["Ic2"], $term["Ic3"]];
 						shuffle($answers);
 						$n++;
 						?>
-						<tr class='pb'>
-							<td class='term'><?php echo $n.". ".$term["Question"]; ?></td>
-							<td class='pad'>
-								<ol type='A'>
-									<li><?php echo $answers[0]; ?></li>
-									<li><?php echo $answers[1]; ?></li>
-									<li><?php echo $answers[2]; ?></li>
-									<li><?php echo $answers[3]; ?></li>
-								</ol>
-							</td>
-						</tr>
-						<tr class='sep'><td>&nbsp;</td></tr>
+						<table class='mc'>
+							<tr class='pb'>
+								<td class='term'><?php echo $n.". ".$term["Question"]; ?></td>
+								<td class='pad'>
+									<ol type='A'>
+										<li><?php echo $answers[0]; ?></li>
+										<li><?php echo $answers[1]; ?></li>
+										<li><?php echo $answers[2]; ?></li>
+										<li><?php echo $answers[3]; ?></li>
+									</ol>
+								</td>
+							</tr>
+							<tr class='sep'><td>&nbsp;</td></tr>
+						</table>
 			<?php } } else { 
 				$questions = array();
 				$answers = array();
@@ -68,25 +69,26 @@ else { $secondary_column = $main_column=="Question" ? "C1":"Question"; }
 					$answers_0 = [$answers[$i],$answers2[$i],$answers3[$i],$answers4[$i]];
 					shuffle($answers_0);
 					?>
-					<tr class='pb'>
-						<td class='term'><?php echo ($i+1).". ".$questions[$i]; ?></td>
-						<td class='pad'></td>
-						<td class='def'>
-							<ol type='A'>
-								<li><?php echo $answers_0[0]; ?></li>
-								<li><?php echo $answers_0[1]; ?></li>
-								<li><?php echo $answers_0[2]; ?></li>
-								<li><?php echo $answers_0[3]; ?></li>
-							</ol>
-						</td>
-					</tr>
-					<tr class='sep'><td>&nbsp;</td></tr>
+					<table class='mc'>
+						<tr class='pb'>
+							<td class='term'><?php echo ($i+1).". ".$questions[$i]; ?></td>
+							<td class='pad'></td>
+							<td class='def'>
+								<ol type='A'>
+									<li><?php echo $answers_0[0]; ?></li>
+									<li><?php echo $answers_0[1]; ?></li>
+									<li><?php echo $answers_0[2]; ?></li>
+									<li><?php echo $answers_0[3]; ?></li>
+								</ol>
+							</td>
+						</tr>
+						<tr class='sep'><td>&nbsp;</td></tr>
+					</table>
 			<?php } } ?>
-		</table>
 	<?php } } ?>
 
 	<?php if($_GET['option'] == 'wb'){ ?>
-		<div id='wb'>
+		<div class='wb'>
 			<strong>Word Bank</strong><br>
 			<?php
 			$terms = $thisClass->query("SELECT * FROM ".$type.$setID." ORDER BY RAND()");
@@ -113,16 +115,16 @@ else { $secondary_column = $main_column=="Question" ? "C1":"Question"; }
 	<?php } } } ?>
 
 	<?php if($_GET['option'] == 'tc'){ ?>
-		<table id='two-column'>
 			<?php $terms = $thisClass->query("SELECT * FROM ".$type.$setID." ORDER BY RAND()");
 			if($terms->num_rows > 0){
 				while($term = $terms->fetch_assoc()){ ?>
-					<tr class='pb'>
-						<td class='term'><?php echo $term[$secondary_column]; ?></td>
-				    	<td class='def'><?php echo $term[$main_column]; ?></td>
-					</tr>
+					<table class='two-column'>
+						<tr class='pb'>
+							<td class='term'><?php echo $term[$secondary_column]; ?></td>
+					    	<td class='def'><?php echo $term[$main_column]; ?></td>
+						</tr>
+					</table>
 			<?php }  }  ?>
-		</table>
 	<?php } ?>
 </body>
 </html>
