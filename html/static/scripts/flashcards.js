@@ -4,6 +4,10 @@ var is_flipped = false;
 var total = -1;
 
 function init(){
+    current_flashcard = -1;
+    is_flipped = false;
+    total = -1;
+    
     $(".back-side").hide();
 
     // Make arrays in a random order
