@@ -18,6 +18,8 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
   <script async>var class_and_set = "class=<?php echo $classID."&set=".$setID;?>&";</script>
   <script async>var google_auth = "<?php echo $gsi_auth; ?>";</script>
   <script async>var back_url = "<?php echo "/".$classID."/".$setID; ?>";</script>
+  <script src="https://www.quizza.org/static/scripts/mathquill.min.js"></script>
+  <link rel="stylesheet" href="https://www.quizza.org/static/stylesheets/mathquill.min.css">
 
 </head>
 
@@ -80,7 +82,8 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                           $str2 .= $url;
                       }
                       echo $str2; ?>' class='terms <?php if($type=="Quiz"){ ?>q<?php } ?>' placeholder="<?php echo $type=="Set"?"Term":"Question"; ?>" id="file-<?php echo $i;?>-0-text">
-                      <button class='edit-inline-btns' style='border-right:none;border-left:none'><i class="fa-solid fa-square-root-variable"></i></button>
+                      <span id='file-<?php echo $i; ?>-0-math' class='math'></span>
+                      <button class='edit-inline-btns' style='border-right:none;border-left:none' onclick="math('file-<?php echo $i;?>-0')"><i class="fa-solid fa-square-root-variable"></i></button>
                       <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px" onclick="image_upload('file-<?php echo $i; ?>-0')"><i class="fa-solid fa-image"></i></button>
                       <input type="file" id="file-<?php echo $i;?>-0" style="display:none;" />
                     </p>
@@ -96,7 +99,8 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                           $str2 .= $url;
                       }
                       echo $str2; ?>' class='defs <?php if($type=="Quiz"){ ?>c1<?php } ?>' placeholder="<?php echo $type=="Set"?"Definition":"Correct Answer"; ?>" id="file-<?php echo $i;?>-1-text">
-                      <button class='edit-inline-btns' style='border-right:none;border-left:none'><i class="fa-solid fa-square-root-variable"></i></button>
+                      <span id='file-<?php echo $i; ?>-1-math' class='math'></span>
+                      <button class='edit-inline-btns' style='border-right:none;border-left:none' onclick="math('file-<?php echo $i;?>-1')"><i class="fa-solid fa-square-root-variable"></i></button>
                       <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px" onclick="image_upload('file-<?php echo $i; ?>-1')"><i class="fa-solid fa-image"></i></button>
                       <input type="file" id="file-<?php echo $i;?>-1" style="display:none;" /></p>
                   </td>
@@ -113,7 +117,8 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                             $str2 .= $url;
                         }
                         echo $str2; ?>' class='defs <?php if($type=="Quiz"){ ?>ic1<?php } ?>' placeholder="Incorrect Answer #1" id="file-<?php echo $i;?>-2-text">
-                      <button class='edit-inline-btns' style='border-right:none;border-left:none'><i class="fa-solid fa-square-root-variable"></i></button>
+                      <span id='file-<?php echo $i; ?>-2-math' class='math'></span>
+                      <button class='edit-inline-btns' style='border-right:none;border-left:none' onclick="math('file-<?php echo $i;?>-2')"><i class="fa-solid fa-square-root-variable"></i></button>
                       <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px" onclick="image_upload('file-<?php echo $i; ?>-2')"><i class="fa-solid fa-image"></i></button>
                       <input type="file" id="file-<?php echo $i;?>-2" style="display:none;" /></p>
                     </td>
@@ -128,7 +133,8 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                             $str2 .= $url;
                         }
                         echo $str2; ?>' class='defs <?php if($type=="Quiz"){ ?>ic2<?php } ?>' placeholder="Incorrect Answer #2" id="file-<?php echo $i;?>-3-text">
-                      <button class='edit-inline-btns' style='border-right:none;border-left:none'><i class="fa-solid fa-square-root-variable"></i></button>
+                      <span id='file-<?php echo $i; ?>-3-math' class='math'></span>
+                      <button class='edit-inline-btns' style='border-right:none;border-left:none' onclick="math('file-<?php echo $i;?>-3')"><i class="fa-solid fa-square-root-variable"></i></button>
                       <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px" onclick="image_upload('file-<?php echo $i; ?>-3')"><i class="fa-solid fa-image"></i></button>
                       <input type="file" id="file-<?php echo $i;?>-3" style="display:none;" /></p>
                     </td>
@@ -143,7 +149,8 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                             $str2 .= $url;
                         }
                         echo $str2; ?>' class='defs <?php if($type=="Quiz"){ ?>ic3<?php } ?>' placeholder="Incorrect Answer #3" id="file-<?php echo $i;?>-4-text">
-                      <button class='edit-inline-btns' style='border-right:none;border-left:none'><i class="fa-solid fa-square-root-variable"></i></button>
+                      <span id='file-<?php echo $i; ?>-4-math' class='math'></span>
+                      <button class='edit-inline-btns' style='border-right:none;border-left:none' onclick="math('file-<?php echo $i;?>-3')"><i class="fa-solid fa-square-root-variable"></i></button>
                       <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px" onclick="image_upload('file-<?php echo $i; ?>-4')"><i class="fa-solid fa-image"></i></button>
                       <input type="file" id="file-<?php echo $i;?>-4" style="display:none;" /></p>
                     </td>

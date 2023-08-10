@@ -10,7 +10,7 @@ body{color:var(--color-text);background-color:var(--color-background)}
 }
 a,button{cursor:pointer;text-decoration:none;color:var(--color-text)}
 *{font-family:"Gotham"}
-.terms,.defs,#title{box-sizing:border-box;border:2px solid #AAA;border-radius:8px;font-size:16px;font-weight:400;color:var(--color-text);background-color:var(--color-background);padding:12px 20px}
+.terms,.defs,#title,.math{box-sizing:border-box;border:2px solid #AAA;border-radius:8px;font-size:16px;font-weight:400;color:var(--color-text);background-color:var(--color-background);padding:12px 20px}
 #addInputBox,#textToSend,#qbox,.email-box{width:100%;box-sizing:border-box;border:2px solid var(--color-theme);border-radius:8px;font-size:16px;font-weight:400;padding:12px 20px}
 #search,#search-home{transition:width .4s ease-in-out;width:10vw;box-sizing:border-box;border:2px solid #AAA;border-radius:8px;font-size:16px;font-weight:400;color:var(--color-text);background-color:var(--color-background);background-image:url(https://www.quizza.org/static/images/searchicon.png);background-position:10px 10px;background-repeat:no-repeat;padding:12px 20px 12px 40px;background-size:16px}
 .submitbtn,.uploadBtn,.modalbtn{transition:.3s;background:var(--color-background);cursor:pointer;padding:8px}
@@ -97,7 +97,7 @@ a,button{cursor:pointer;text-decoration:none;color:var(--color-text)}
 #math a{color:var(--color-theme)!important}
 .ic1,.ic2,.ic3{background:var(--incorrect-edit-box)}
 .c1{background:var(--correct-edit-box)}
-.terms,.defs{flex-grow:1;border-radius:8px 0px 0px 8px;}
+.terms,.defs,.math{flex-grow:1;border-radius:8px 0px 0px 8px;}
 .sm{font-size:1.2em}
 #t,#t0,#t1{font-size:1.2em;text-align:center}
 #back-link{color:var(--color-theme);text-decoration:none}
@@ -177,3 +177,5 @@ select::-ms-expand{display:none}
 .container input:checked ~ .checkmark:after {display: block;}
 .container .checkmark:after {top: 9px;left: 9px;width: 8px;height: 8px;border-radius: 50%;background: white;}
 .edit-card h2,.edit-card p{display:flex}
+.math{display:none;}
+.mathbtn-clicked{background-color:var(--color-btn-hover);}
