@@ -156,7 +156,7 @@ function convertToBase64(file, element) {
         $("#"+element+"-math").html(m);
     } catch {}
     $("#"+element+"-math").show();
-    $("#"+element+"-math-btn").addClass("mathbtn-clicked");
+    $("#"+element+"-mathbtn").addClass("mathbtn-clicked");
     var MQ = MathQuill.getInterface(2);
     var answerSpan = document.getElementById(element+"-math");
     var answerMathField = MQ.MathField(answerSpan, {
