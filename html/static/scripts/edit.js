@@ -133,7 +133,7 @@ function convertToBase64(file, element) {
         success: function(response) {
             var curr_val = $(element).val();
             $(element).val(curr_val + " "+response);
-            $("#uploadBtn").prop("disabled",false);
+            $("button").prop("disabled",false);
         }
       });
     }
