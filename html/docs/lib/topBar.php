@@ -36,7 +36,7 @@
                 </td>
               <?php } ?>
               <?php if ($loggedIn == true) { ?><td<?php if($_SERVER['PHP_SELF']=="/index.php") { ?> style='color:white;'<?php } ?>>
-                <a style='white-space:nowrap;overflow:hidden;float:right;' href='https://www.quizza.org/private' class='top-bar-name'>Welcome, <?php echo $name; ?></a><br>
+                <a style='white-space:nowrap;overflow:hidden;float:right;' class='top-bar-name'>Welcome, <?php echo $name; ?></a><br>
                 <span style='font-size:9pt;float:right;margin-top:2px;'>
                   <a href='https://www.quizza.org/private' class='top-bar-private'>Private Sets</a> • 
                   <a href='#change-school' rel='modal:open'>Change School</a> • 
