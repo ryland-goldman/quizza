@@ -79,7 +79,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                           $str2 = str_replace($imgTag, "", $str2);
                           $str2 .= $url;
                       }
-                      echo $str2; ?>' class='terms <?php if($type=="Quiz"){ ?>q<?php } ?>'>
+                      echo $str2; ?>' class='terms <?php if($type=="Quiz"){ ?>q<?php } ?>' placeholder="<?php echo $type=="Set"?"Term":"Question"; ?>">
                       <button class='edit-inline-btns' style='border-right:none;border-left:none'><i class="fa-solid fa-square-root-variable"></i></button>
                       <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px"><i class="fa-solid fa-image"></i></button>
                     </p>
@@ -94,13 +94,13 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                           $str2 = str_replace($imgTag, "", $str2);
                           $str2 .= $url;
                       }
-                      echo $str2; ?>' class='defs <?php if($type=="Quiz"){ ?>c1<?php } ?>'>
+                      echo $str2; ?>' class='defs <?php if($type=="Quiz"){ ?>c1<?php } ?>' placeholder="<?php echo $type=="Set"?"Definition":"Correct Answer"; ?>">
                       <button class='edit-inline-btns' style='border-right:none;border-left:none'><i class="fa-solid fa-square-root-variable"></i></button>
                       <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px"><i class="fa-solid fa-image"></i></button></p>
                   </td>
 
                   <?php if($type == "Quiz") { ?>
-                  <?php if(isMobileDevice()) { ?></tr><tr><?php } else {?><td style='width:8px;'>&nbsp;</td><?php } ?>
+                  </tr><tr>
                     <td>
                       <p><input type='text' value='<?php
                         $str2 = str_replace('<br>', '',$row["Ic1"]);
@@ -110,7 +110,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                             $str2 = str_replace($imgTag, "", $str2);
                             $str2 .= $url;
                         }
-                        echo $str2; ?>' class='defs <?php if($type=="Quiz"){ ?>ic1<?php } ?>'>
+                        echo $str2; ?>' class='defs <?php if($type=="Quiz"){ ?>ic1<?php } ?>' placeholder="Incorrect Answer #1">
                       <button class='edit-inline-btns' style='border-right:none;border-left:none'><i class="fa-solid fa-square-root-variable"></i></button>
                       <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px"><i class="fa-solid fa-image"></i></button></p>
                     </td>
@@ -124,7 +124,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                             $str2 = str_replace($imgTag, "", $str2);
                             $str2 .= $url;
                         }
-                        echo $str2; ?>' class='defs <?php if($type=="Quiz"){ ?>ic2<?php } ?>'>
+                        echo $str2; ?>' class='defs <?php if($type=="Quiz"){ ?>ic2<?php } ?>' placeholder="Incorrect Answer #2">
                       <button class='edit-inline-btns' style='border-right:none;border-left:none'><i class="fa-solid fa-square-root-variable"></i></button>
                       <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px"><i class="fa-solid fa-image"></i></button></p>
                     </td>
@@ -138,7 +138,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                             $str2 = str_replace($imgTag, "", $str2);
                             $str2 .= $url;
                         }
-                        echo $str2; ?>' class='defs <?php if($type=="Quiz"){ ?>ic3<?php } ?>'>
+                        echo $str2; ?>' class='defs <?php if($type=="Quiz"){ ?>ic3<?php } ?>' placeholder="Incorrect Answer #3">
                       <button class='edit-inline-btns' style='border-right:none;border-left:none'><i class="fa-solid fa-square-root-variable"></i></button>
                       <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px"><i class="fa-solid fa-image"></i></button></p>
                     </td>
