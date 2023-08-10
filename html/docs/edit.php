@@ -186,7 +186,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
                       <input type="file" id="file-1-1" style="display:none;" /></p>
                 </td>
                 <?php if($type=="Quiz"){ ?>
-                  <?php if(isMobileDevice()) { ?></tr><tr><?php } else {?><td style='width:8px;'>&nbsp;</td><?php } ?>
+                  </tr><tr>
                   <td class='edit-td'>
                     <p><input type='text' class='terms ic1' placeholder="Incorrect Answer #1" id="file-1-2-text">
                         <span id='file-1-2-math' class='math'></span>

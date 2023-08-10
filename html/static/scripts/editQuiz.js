@@ -136,7 +136,7 @@ function addTerm() {
                       <button class='edit-inline-btns' style="border-radius:0px 8px 8px 0px" onclick="image_upload('file-`+i+`-1')"><i class="fa-solid fa-image"></i></button>
                       <input type="file" id="file-`+i+`-1" style="display:none;" /></p>
                 </td>
-                  `+sep+`
+                  </tr><tr>
                   <td class='edit-td'>
                     <p><input type='text' class='defs ic1' placeholder="Incorrect Answer #1" id="file-`+i+`-2-text">
                         <span id='file-`+i+`-2-math' class='math'></span>
