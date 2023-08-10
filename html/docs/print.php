@@ -115,16 +115,16 @@ else { $secondary_column = $main_column=="Question" ? "C1":"Question"; }
 	<?php } } } ?>
 
 	<?php if($_GET['option'] == 'tc'){ ?>
-		<table class='two-column'>
 			<?php $terms = $thisClass->query("SELECT * FROM ".$type.$setID." ORDER BY RAND()");
 			if($terms->num_rows > 0){
 				while($term = $terms->fetch_assoc()){ ?>
+					<table class='two-column'>
 						<tr class='pb'>
 							<td class='term'><?php echo $term[$secondary_column]; ?></td>
 					    	<td class='def'><?php echo $term[$main_column]; ?></td>
 						</tr>
+					</table>
 			<?php }  }  ?>
-		</table>
 	<?php } ?>
 </body>
 </html>

@@ -11,7 +11,6 @@ body{margin-top:12px;}
 .fr .term{width:40%;overflow-wrap:break-word;}
 .mc .term{vertical-align:top;}
 .fr .def{border-bottom: 1px solid black;flex-grow:1;}
-.mc .def{margin-right:24px;float:right;}
 .two-column .def{border-bottom:1px solid black;padding:12px;}
 .wb{text-align:center;border:1px solid black;padding:12px;margin-bottom:20px;}
 .wb span{padding:12px;}
@@ -19,4 +18,3 @@ body{margin-top:12px;}
 .pad{min-width:100px;}
 ol{margin:0;}
 .pb,.pb *{page-break-inside:avoid;break-inside:avoid;}
-.mc{width:100%;}
