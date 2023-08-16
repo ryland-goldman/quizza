@@ -21,7 +21,7 @@
     if(has_mathjax=="false"){ has_mathjax = false; }
     if(has_mathjax=="true"){ has_mathjax = true; }
 
-    var terms = [<?php $words = $thisClass->query("SELECT * FROM ".$type.$setID); $z = 0; if($words->num_rows > 0){ while($row = $words->fetch_assoc()){ $z++; echo "[\"".str_replace("%2B","%20", urlencode($row[$type=="Set"?"Term":"Question"]))."\",".$z."],";  }}?>""];
+    var terms = [<?php $words = $thisClass->query("SELECT * FROM ".$type.$setID); $z = 0; if($words->num_rows > 0){ while($row = $words->fetch_assoc()){ $z++; echo "[\"".str_replace("+","%20", urlencode($row[$type=="Set"?"Term":"Question"]))."\",".$z."],";  }}?>""];
 
     var loggedIn = <?php if($loggedIn){echo "true";}else{echo "false";} ?>;
 
@@ -98,7 +98,7 @@
     if($all_terms->num_rows > 0){
       while($current_term = $all_terms->fetch_assoc()){ ?>
         <?php $term_number++; ?>
-        <a href='javascript:disableTerm("<?php echo str_replace("%2B","%20", urlencode($current_term[$type=="Set"?'Term':'Question'])); ?>",<?php echo $term_number; ?>)'>
+        <a href='javascript:disableTerm("<?php echo str_replace("+","%20", urlencode($current_term[$type=="Set"?'Term':'Question'])); ?>",<?php echo $term_number; ?>)'>
           <div class='item-card' id='container-<?php echo $term_number; ?>'>
             <table>
               <tr>

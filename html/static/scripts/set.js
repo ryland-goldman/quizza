@@ -3,9 +3,6 @@ function disableTerm(term, iconId) {
         sessionStorage.setItem("disabledTerms", "[]");
     }
     var dt = JSON.parse(sessionStorage.getItem("disabledTerms")).slice(0);
-    for (var p = 0; p < dt.length; p++) {
-        dt[p] = decodeURIComponent(dt[p]);
-    }
     if (dt.includes(term)) {
         dt = dt.filter(function(t) {
             return t !== term;
@@ -16,9 +13,6 @@ function disableTerm(term, iconId) {
         dt.push(term);
         $("#icon-" + iconId).attr("class", "fa-solid fa-eye-slash");
         $("#container-" + iconId).attr("class", "disabled item-card");
-    }
-    for (var p = 0; p < dt.length; p++) {
-        dt[p] = encodeURIComponent(dt[p]);
     }
     console.log(dt);
     sessionStorage.setItem("disabledTerms", JSON.stringify(dt));
