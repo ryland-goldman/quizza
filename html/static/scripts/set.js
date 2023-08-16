@@ -38,7 +38,7 @@ function load_function() {
     }
     var dt = JSON.parse(sessionStorage.getItem("disabledTerms")).slice(0);
     terms.forEach(function(term, index) {
-        if (dt.includes(term[0])) {
+        if (dt.includes(encodeURIComponent(term[0]))) {
             $("#icon-" + term[1]).attr("class", "fa-solid fa-eye-slash");
             $("#container-" + term[1]).attr("class", "item-card disabled");
         } else {
