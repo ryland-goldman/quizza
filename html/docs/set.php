@@ -128,7 +128,7 @@
     if($all_terms->num_rows > 0){
       while($current_term = $all_terms->fetch_assoc()){ ?>
         <?php $term_number++; ?>
-        <a href='javascript:disableTerm("<?php echo urlencode($current_term[$type=="Set"?'Term':'Question']); ?>",<?php echo $term_number; ?>)'>
+        <a href='javascript:disableTerm("<?php echo str_replace("%2B","%20", urlencode($current_term[$type=="Set"?'Term':'Question'])); ?>",<?php echo $term_number; ?>)'>
           <div class='item-card' id='container-<?php echo $term_number; ?>'>
             <table>
               <tr>
