@@ -106,6 +106,9 @@ function next(){
     }
     var question = (start_with_term ? words[current_flashcard] : defs[current_flashcard]);
     $("#main-td").html("<h1>"+question+"</h1><input type='text' id='response'>");
+    $("#response").keydown(function(event){
+        if(event.which == 13) {submit();}
+    });
     $("#sbtn").html(`Submit&nbsp;&nbsp;<i class="fa-solid fa-arrow-right-to-bracket"></i>`);
     $("#sbtn").attr("onclick","submit()");
     $(".complete").html((current_flashcard+1) + "/" + words.length);
