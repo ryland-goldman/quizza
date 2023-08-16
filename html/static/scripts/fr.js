@@ -53,11 +53,11 @@ function submit(){
     }
     $("#sbtn").html(`Next&nbsp;&nbsp;<i class="fa-solid fa-arrow-right-to-bracket"></i>`);
     $("#sbtn").attr("onclick","next()");
-    document.body.onkeydown = function(e) {
-            var keycode;
-            if (window.event) { keycode = window.event.keyCode; } else if (e) { keycode = e.which }; // Get keycode
-            if(keycode == 13){ next(); }
-        }
+    setTimeout(function(){document.body.onkeydown = function(e) {
+        var keycode;
+        if (window.event) { keycode = window.event.keyCode; } else if (e) { keycode = e.which }; // Get keycode
+        if(keycode == 13){ next(); }
+    }}, 200);
     MathJax.typeset();
 }
 
