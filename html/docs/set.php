@@ -21,41 +21,11 @@
     if(has_mathjax=="false"){ has_mathjax = false; }
     if(has_mathjax=="true"){ has_mathjax = true; }
 
-    <?php if($type=="Set") { ?>
-
-      var allWords = [<?php $words = $thisClass->query("SELECT * FROM ".$type.$setID); if($words->num_rows > 0){ while($row = $words->fetch_assoc()){ echo '`'.str_replace("\\","\\\\",$row["Term"]).'`,'; }} ?>""];
-      var allDefs = [<?php $words = $thisClass->query("SELECT * FROM ".$type.$setID); if($words->num_rows > 0){ while($row = $words->fetch_assoc()){ echo '`'.str_replace("\\","\\\\",$row["Definition"]).'`,'; }} ?>""];
-      var questions = [ <?php $words = $thisClass->query("SELECT * FROM ".$type.$setID); if($words->num_rows > 0){ while($row = $words->fetch_assoc()){ echo "['".preg_replace("/'/", "\'",str_replace('\\', '\\\\',$row['Term']))."','".preg_replace("/'/", "\'",str_replace('\\', '\\\\',$row['Definition']))."'],"; }} ?> [] ];
-
-    <?php } else if($type=="Quiz") { ?>
-
-      var questions = [<?php $words = $thisClass->query("SELECT * FROM ".$type.$setID); if($words->num_rows > 0){ while($row = $words->fetch_assoc()){ echo '`'.str_replace("\\","\\\\",$row["Question"]).'`,'; }} ?>""];
-      var c1s =  [<?php $words = $thisClass->query("SELECT * FROM ".$type.$setID); if($words->num_rows > 0){ while($row = $words->fetch_assoc()){ echo '`'.str_replace("\\","\\\\",$row["C1"]).'`,'; }} ?>""];
-      var ic1s = [<?php $words = $thisClass->query("SELECT * FROM ".$type.$setID); if($words->num_rows > 0){ while($row = $words->fetch_assoc()){ echo '`'.str_replace("\\","\\\\",$row["Ic1"]).'`,'; }} ?>""];
-      var ic2s = [<?php $words = $thisClass->query("SELECT * FROM ".$type.$setID); if($words->num_rows > 0){ while($row = $words->fetch_assoc()){ echo '`'.str_replace("\\","\\\\",$row["Ic2"]).'`,'; }} ?>""];
-      var ic3s = [<?php $words = $thisClass->query("SELECT * FROM ".$type.$setID); if($words->num_rows > 0){ while($row = $words->fetch_assoc()){ echo '`'.str_replace("\\","\\\\",$row["Ic3"]).'`,'; }} ?>""];
-
-    <?php } ?>
-
-    var terms = [<?php $words = $thisClass->query("SELECT * FROM ".$type.$setID); $z = 0; if($words->num_rows > 0){ while($row = $words->fetch_assoc()){ $z++; echo "[\"".$row[$type=="Set"?"Term":"Question"]."\",".$z."],";  }}?>""];
+    var terms = [<?php $words = $thisClass->query("SELECT * FROM ".$type.$setID); $z = 0; if($words->num_rows > 0){ while($row = $words->fetch_assoc()){ $z++; echo "[\"".str_replace("%2B","%20", urlencode($row[$type=="Set"?"Term":"Question"]))."\",".$z."],";  }}?>""];
 
     var loggedIn = <?php if($loggedIn){echo "true";}else{echo "false";} ?>;
 
     $(document).ready(function() {
-
-      <?php if($type == "Set") { ?>
-        allWords.pop();
-        allDefs.pop();
-        terms.pop();
-        questions.pop();
-      <?php } else { ?>
-        questions.pop();
-        terms.pop();
-        c1s.pop();
-        ic1s.pop();
-        ic2s.pop();
-        ic3s.pop();
-      <?php } ?>
 
       load_function();
     });

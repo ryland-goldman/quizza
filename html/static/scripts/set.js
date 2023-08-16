@@ -39,13 +39,10 @@ function print_set(col) {
 }
 
 function load_function() {
-    if (localStorage.getItem("disabledTerms") === null) {
+    if (localStorage.getItem("disabledTerms") === null || localStorage.getItem("disabledTerms") === undefined) {
         localStorage.setItem("disabledTerms", "[]");
     }
     var dt = JSON.parse(localStorage.getItem("disabledTerms")).slice(0);
-    for (var p = 0; p < dt.length; p++) {
-        dt[p] = decodeURIComponent(dt[p]).replaceAll("+", " ");
-    }
     terms.forEach(function(term, index) {
         if (dt.includes(term[0])) {
             $("#icon-" + term[1]).attr("class", "fa-solid fa-eye-slash");
