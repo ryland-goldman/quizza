@@ -60,11 +60,17 @@
 
           <div class='study-btn-bottom'>
             <button onclick='reveal()' class='btn-blue'>Flip&nbsp;&nbsp;<i class="fa-solid fa-repeat"></i></button>
-            <?php mobileBR(); ?>
-            <button onclick='back()'>Back&nbsp;&nbsp;<i class="fa-solid fa-arrow-left"></i></button>
-            <?php mobileBR(); ?>
-            <button onclick='next()'>Next&nbsp;&nbsp;<i class="fa-solid fa-arrow-right"></i></button>
-            <?php mobileBR(); ?>
+            <?php if(isMobileDevice()) { ?>
+              <br><br>
+              <div style='display:flex;'>
+                <button onclick='back()' style='margin-right:8px;width:auto;flex-grow:1;'>Back&nbsp;&nbsp;<i class="fa-solid fa-arrow-left"></i></button>
+                <button onclick='next()' style='margin-left:8px;width:auto;flex-grow:1;'>Next&nbsp;&nbsp;<i class="fa-solid fa-arrow-right"></i></button>
+              </div>
+              <br>
+            <?php } else { ?>
+              <button onclick='back()'>Back&nbsp;&nbsp;<i class="fa-solid fa-arrow-left"></i></button>
+              <button onclick='next()'>Next&nbsp;&nbsp;<i class="fa-solid fa-arrow-right"></i></button>
+            <?php } ?>
             <a rel="modal:open" href='#options'>
               <button>Options&nbsp;&nbsp;<i class="fa-solid fa-sliders"></i></button>
             </a>
