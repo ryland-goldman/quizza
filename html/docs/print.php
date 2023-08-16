@@ -58,7 +58,16 @@ else { $secondary_column = $main_column=="Question" ? "C1":"Question"; }
 					array_push($answers, $term[$main_column]);
 				}
 
-				for($i=0;$i<100;$i++){
+        		$max_iters = 1000;
+        		if(len($answers)==10){$max_iters=2000;}
+        		if(len($answers)==9){$max_iters=3000;}
+        		if(len($answers)==8){$max_iters=4500;}
+        		if(len($answers)==7){$max_iters=6000;}
+        		if(len($answers)==6){$max_iters=7500;}
+        		if(len($answers)==5){$max_iters=9000;}
+        		if(len($answers)==4){$max_iters=11000;}
+
+				for($i=0;$i<$max_iters;$i++){
 					$answers2 = $answers;
 					$answers3 = $answers;
 					$answers4 = $answers;

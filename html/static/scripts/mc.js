@@ -62,9 +62,17 @@ function init(){
     // Make arrays in a random order
     if(type == "Set"){
         var check_n = 0;
+        var max_iters = 1000;
+        if(questions.length == 10){ max_iters = 2000;}
+        if(questions.length == 9){ max_iters = 3000;}
+        if(questions.length == 8){ max_iters = 4500;}
+        if(questions.length == 7){ max_iters = 6000;}
+        if(questions.length == 6){ max_iters = 7500;}
+        if(questions.length == 5){ max_iters = 9000;}
+        if(questions.length == 4){ max_iters = 11000;}
         while(check_arrays()){
             check_n++;
-            if(check_n == 1000){ break; }
+            if(check_n == max_iters){ break; }
         }
     }
 
