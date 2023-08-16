@@ -29,6 +29,18 @@ function init(){
     if(sessionStorage.def){ start_with_term = (sessionStorage.def=="false"); }
     else { sessionStorage.def = "false"; }
 
+    // Disabled terms
+    var disabled_terms = localStorage.disabledTerms;
+    for (var i=0;i<disabled_terms.length;i++){
+        if(questions.includes(disabled_terms[i])){
+            c1s.splice(questions.indexOf(disabled_terms[i]));
+            ic1s.splice(questions.indexOf(disabled_terms[i]));
+            ic2s.splice(questions.indexOf(disabled_terms[i]));
+            ic3s.splice(questions.indexOf(disabled_terms[i]));
+            questions.splice(questions.indexOf(disabled_terms[i]));
+        }
+    }
+
     // Shuffle
     if(!start_with_term && type == "Set" && !repeated){
         var questions_tmp = JSON.parse(JSON.stringify(questions));

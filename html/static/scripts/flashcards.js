@@ -8,6 +8,15 @@ function init(){
     is_flipped = false;
     total = -1;
 
+    // Disabled terms
+    var disabled_terms = localStorage.disabledTerms;
+    for (var i=0;i<disabled_terms.length;i++){
+        if(words.includes(disabled_terms[i])){
+            defs.splice(words.indexOf(disabled_terms[i]));
+            words.splice(words.indexOf(disabled_terms[i]));
+        }
+    }
+
     $(".back-side").hide();
 
     // Make arrays in a random order

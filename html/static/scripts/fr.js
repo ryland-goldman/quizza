@@ -8,6 +8,15 @@ function init(){
     score = 0;
     missed = [];
 
+    // Disabled terms
+    var disabled_terms = localStorage.disabledTerms;
+    for (var i=0;i<disabled_terms.length;i++){
+        if(words.includes(disabled_terms[i])){
+            defs.splice(words.indexOf(disabled_terms[i]));
+            words.splice(words.indexOf(disabled_terms[i]));
+        }
+    }
+
     // Make arrays in a random order
     for (var i=words.length-1; i>=0; i--){
         var j = Math.floor(Math.random()*(i+1));
