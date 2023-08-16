@@ -175,7 +175,7 @@ select {color: var(--color-text)!important;background-color: var(--color-backgro
 .container input:checked ~ .checkmark {background-color: var(--color-background);}
 .checkmark:after {content: "";position: absolute;display: none;}
 .container input:checked ~ .checkmark:after {display: block;}
-.container .checkmark:after {top: 9px;left: 9px;width: 8px;height: 8px;border-radius: 50%;background: white;}
+.container .checkmark:after {top: 9px;left: 9px;width: 8px;height: 8px;border-radius: 50%;background: var(--color-text);}
 .edit-card h2,.edit-card p{display:flex}
 .math{display:none;}
 .mathbtn-clicked{background-color:var(--color-btn-hover);}
