@@ -106,7 +106,7 @@ function next(){
         $("#sbtn").attr("onclick","init()");
         if(missed.length > 0){
             if(learnmode){ again(); return; }
-            var str = `<h1>You've finished studying this set!</h1><p>Missed terms: (<a href="javascript:again();">try again with missed</a>)<br>`;
+            var str = `<h1>You've finished studying this set!</h1><p>Missed terms: (<a href="javascript:again();" id='tryagain'>try again with missed</a>)<br>`;
             for(var i=0;i<missed.length;i++){ str += missed[i]; str += "<br>"; }
             str += "</p>";
             $("#main-td").html(str);
