@@ -116,6 +116,7 @@ function next(){
     }
     var question = (start_with_term ? words[current_flashcard] : defs[current_flashcard]);
     $("#main-td").html("<h1>"+question+"</h1><input type='text' id='response' autofocus>");
+    document.getElementById("response").focus();
     document.body.onkeydown = function(){}
     $("#response").keydown(function(event){
         if(event.which == 13) {submit();}
