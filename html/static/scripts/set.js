@@ -3,14 +3,14 @@ function disableTerm(term, iconId) {
         sessionStorage.setItem("disabledTerms", "[]");
     }
     var dt = JSON.parse(sessionStorage.getItem("disabledTerms")).slice(0);
-    if (dt.includes(encodeURIComponent(term))) {
+    if (dt.includes(fixedEncodeURIComponent(term))) {
         dt = dt.filter(function(t) {
-            return t !== encodeURIComponent(term);
+            return t !== fixedEncodeURIComponent(term);
         });
         $("#icon-" + iconId).attr("class", "fa-solid fa-eye");
         $("#container-" + iconId).attr("class", "enabled item-card");
     } else {
-        dt.push(encodeURIComponent(term));
+        dt.push(fixedEncodeURIComponent(term));
         $("#icon-" + iconId).attr("class", "fa-solid fa-eye-slash");
         $("#container-" + iconId).attr("class", "disabled item-card");
     }
@@ -32,13 +32,15 @@ function print_set(col) {
     }
 }
 
+function fixedEncodeURIComponent(str) { return encodeURIComponent(str).replace(/[!'()*]/g, function(c) { return '%' + c.charCodeAt(0).toString(16); }); }
+
 function load_function() {
     if (sessionStorage.getItem("disabledTerms") === null || sessionStorage.getItem("disabledTerms") === undefined) {
         sessionStorage.setItem("disabledTerms", "[]");
     }
     var dt = JSON.parse(sessionStorage.getItem("disabledTerms")).slice(0);
     terms.forEach(function(term, index) {
-        if (dt.includes(encodeURIComponent(term[0]))) {
+        if (dt.includes(fixedEncodeURIComponent(term[0]))) {
             $("#icon-" + term[1]).attr("class", "fa-solid fa-eye-slash");
             $("#container-" + term[1]).attr("class", "item-card disabled");
         } else {
