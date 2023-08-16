@@ -1,7 +1,7 @@
 function save(isLoggedIn) {
     $("#favBtn").prop("disabled", true);
     var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "/docs/lib/login-endpoint/toggleFavorite.php", true);
+    xhttp.open("POST", "/docs/lib/toggleFavorite.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
