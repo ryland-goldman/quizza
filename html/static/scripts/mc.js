@@ -4,6 +4,7 @@ var score = 0;
 var answers = [];
 var missed = [];
 var repeated = false;
+var answer_pending = false;
 
 function shuffleArray(arr) {
     for (var i = arr.length - 1; i > 0; i--) {
@@ -79,9 +80,35 @@ function init(){
     try { render_gSignIn(); } catch(e) {}
 
     next();
+
+    document.body.onkeydown = function(e) {
+        var keycode;
+        if (window.event) { keycode = window.event.keyCode; } else if (e) { keycode = e.which }; // Get keycode
+        
+        switch (keycode) {
+            case 13:
+                if (!answer_pending && current_flashcard !== questions.length) { next(); } else if (!answer_pending){ location.reload(); }
+                break;
+            case 49:
+                if(answer_pending){submit(0);}
+                break;
+            case 50:
+                if(answer_pending){submit(1);}
+                break;
+            case 51:
+                if(answer_pending){submit(2);}
+                break;
+            case 53:
+                if(answer_pending){submit(3);}
+                break;
+            default:
+                console.log(keycode);
+        }
+    }
 }
 
 function submit(answer){
+    answer_pending = false;
     var answer = answers[answer];
     var correct = c1s[current_flashcard];
     var question = questions[current_flashcard];
@@ -118,6 +145,7 @@ function next(){
         }
         return;
     }
+    answer_pending = true;
     var question = questions[current_flashcard];
     answers = [
         c1s[current_flashcard],
@@ -138,6 +166,7 @@ function next(){
         </div></div>`);
     $(".complete").html((current_flashcard+1) + "/" + questions.length);
     $("#sbtn").hide();
+
     MathJax.typeset();
 }
 
