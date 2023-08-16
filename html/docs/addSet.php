@@ -18,7 +18,7 @@ if($private_set){
     $admin->query("INSERT INTO privateSets VALUES(\"$title\", \"$lastModified\", \"$setID\", \"Set\", \"$shared\",\"$unix\")");
 } else {
     if(urldecode($_GET["private"]) !== "Create Protected Set") { $email = ""; }
-    $admin->query("INSERT INTO ".$classID."Sets VALUES(\"$title\", \"$lastModified\", \"$setID\", \"$email\", \"Set\",\"$unix\")");
+    $admin->query("INSERT INTO ".$classID."Sets VALUES(\"$title\", \"$lastModified\", \"$setID\", \"$email\", \"Set\",$unix)");
 }
 
 $admin->query("UNLOCK TABLES");

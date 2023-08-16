@@ -29,6 +29,7 @@ if($_GET["DELETE"]=="TRUE"){ // Deleting a set
 } else {
   if($type == "Set"){
     $admin->query("LOCK TABLES ".$classID."Sets write");
+    $admin->query("UPDATE ".$classID."Sets SET modified=".time());
     $thisClass->query("LOCK TABLES Set".$setID." write");
     $thisClass->query("DELETE FROM Set".$setID);
     $d = str_getcsv($data, "\n"); //parse the rows
@@ -79,6 +80,7 @@ if($_GET["DELETE"]=="TRUE"){ // Deleting a set
     $thisClass->query("UNLOCK TABLES");
   } else {
     $admin->query("LOCK TABLES ".$classID."Sets write");
+    $admin->query("UPDATE ".$classID."Sets SET modified=".time());
     $thisClass->query("LOCK TABLES Quiz".$setID." write");
     $thisClass->query("DELETE FROM Quiz".$setID);
     if($data !== "empty"){
