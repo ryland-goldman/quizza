@@ -26,7 +26,7 @@ function check_arrays() {
 }
 
 function init(){
-    #("#optionsBtn").show();
+    $("#optionsBtn").show();
     // Get session storage state
     if(sessionStorage.def){ start_with_term = (sessionStorage.def=="false"); }
     else { sessionStorage.def = "false"; }

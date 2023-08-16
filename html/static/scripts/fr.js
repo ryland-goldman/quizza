@@ -4,7 +4,7 @@ var score = 0;
 var missed = [];
 
 function init(){
-    #("#optionsBtn").show();
+    $("#optionsBtn").show();
 
     current_flashcard = -1;
     score = 0;
@@ -91,7 +91,7 @@ function next(){
         // Done
         $("#sbtn").html(`Study Again&nbsp;&nbsp;<i class="fa-solid fa-rotate-right"></i>`);
         $("#sbtn").attr("onclick","location.reload();");
-        #("#optionsBtn").hide();
+        $("#optionsBtn").hide();
         if(missed.length > 0){
             if( learnmode ){ again(); return; }
             var str = `<h1>You've finished studying this set!</h1><p>Missed terms: (<a href="javascript:again();" id='tryagain'>try again with missed</a>)<br>`;
