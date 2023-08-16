@@ -3,14 +3,14 @@ function disableTerm(term, iconId) {
         sessionStorage.setItem("disabledTerms", "[]");
     }
     var dt = JSON.parse(sessionStorage.getItem("disabledTerms")).slice(0);
-    if (dt.includes(term)) {
+    if (dt.includes(encodeURIComponent(term))) {
         dt = dt.filter(function(t) {
-            return t !== term;
+            return t !== encodeURIComponent(term);
         });
         $("#icon-" + iconId).attr("class", "fa-solid fa-eye");
         $("#container-" + iconId).attr("class", "enabled item-card");
     } else {
-        dt.push(term);
+        dt.push(encodeURIComponent(term));
         $("#icon-" + iconId).attr("class", "fa-solid fa-eye-slash");
         $("#container-" + iconId).attr("class", "disabled item-card");
     }
