@@ -66,7 +66,7 @@
 
     <!-- List of sets -->
     <?php
-    $setLists = $admin->query("SELECT * FROM ".$classID."Sets ORDER BY timestamp, Name");
+    $setLists = $admin->query("SELECT * FROM ".$classID."Sets ORDER BY timestamp DESC, Name");
     $count_sets = 0;
     if ($setLists->num_rows > 0) {
       while($row = $setLists->fetch_assoc()) {
