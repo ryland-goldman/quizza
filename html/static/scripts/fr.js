@@ -10,7 +10,7 @@ function init(){
 
     // Disabled terms
     try {
-        var disabled_terms = JSON.parse(localStorage.disabledTerms);
+        var disabled_terms = JSON.parse(sessionStorage.disabledTerms);
         for (var i=0;i<disabled_terms.length;i++){
             if(words.includes(decodeURIComponent(disabled_terms[i]))){
                 defs.splice(words.indexOf(disabled_terms[i]));

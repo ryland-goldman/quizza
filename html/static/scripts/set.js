@@ -1,8 +1,8 @@
 function disableTerm(term, iconId) {
-    if (localStorage.getItem("disabledTerms") === null || localStorage.getItem("disabledTerms") === undefined) {
-        localStorage.setItem("disabledTerms", "[]");
+    if (sessionStorage.getItem("disabledTerms") === null || sessionStorage.getItem("disabledTerms") === undefined) {
+        sessionStorage.setItem("disabledTerms", "[]");
     }
-    var dt = JSON.parse(localStorage.getItem("disabledTerms")).slice(0);
+    var dt = JSON.parse(sessionStorage.getItem("disabledTerms")).slice(0);
     for (var p = 0; p < dt.length; p++) {
         dt[p] = decodeURIComponent(dt[p]);
     }
@@ -21,7 +21,7 @@ function disableTerm(term, iconId) {
         dt[p] = encodeURIComponent(dt[p]);
     }
     console.log(dt);
-    localStorage.setItem("disabledTerms", JSON.stringify(dt));
+    sessionStorage.setItem("disabledTerms", JSON.stringify(dt));
 }
 
 
@@ -39,10 +39,10 @@ function print_set(col) {
 }
 
 function load_function() {
-    if (localStorage.getItem("disabledTerms") === null || localStorage.getItem("disabledTerms") === undefined) {
-        localStorage.setItem("disabledTerms", "[]");
+    if (sessionStorage.getItem("disabledTerms") === null || sessionStorage.getItem("disabledTerms") === undefined) {
+        sessionStorage.setItem("disabledTerms", "[]");
     }
-    var dt = JSON.parse(localStorage.getItem("disabledTerms")).slice(0);
+    var dt = JSON.parse(sessionStorage.getItem("disabledTerms")).slice(0);
     terms.forEach(function(term, index) {
         if (dt.includes(term[0])) {
             $("#icon-" + term[1]).attr("class", "fa-solid fa-eye-slash");

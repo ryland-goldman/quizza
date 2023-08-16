@@ -43,7 +43,7 @@ function init() {
 
     // Disabled terms
     try {
-        var disabled_terms = JSON.parse(localStorage.disabledTerms);
+        var disabled_terms = JSON.parse(sessionStorage.disabledTerms);
         var answers_tmp = answers;
         for (var i=0;i<disabled_terms.length;i++){
             for (var j=0;j<answers.length;j++){
