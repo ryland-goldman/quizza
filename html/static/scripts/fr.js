@@ -9,13 +9,15 @@ function init(){
     missed = [];
 
     // Disabled terms
-    var disabled_terms = JSON.parse(localStorage.disabledTerms);
-    for (var i=0;i<disabled_terms.length;i++){
-        if(words.includes(decodeURIComponent(disabled_terms[i]))){
-            defs.splice(words.indexOf(disabled_terms[i]));
-            words.splice(words.indexOf(disabled_terms[i]));
+    try {
+        var disabled_terms = JSON.parse(localStorage.disabledTerms);
+        for (var i=0;i<disabled_terms.length;i++){
+            if(words.includes(decodeURIComponent(disabled_terms[i]))){
+                defs.splice(words.indexOf(disabled_terms[i]));
+                words.splice(words.indexOf(disabled_terms[i]));
+            }
         }
-    }
+    } catch(e) {}
 
     // Make arrays in a random order
     for (var i=words.length-1; i>=0; i--){

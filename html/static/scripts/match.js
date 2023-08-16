@@ -40,18 +40,20 @@ onclick='location.href="../"'>Return Home&nbsp;&nbsp;<i class="fa-solid fa-house
 }
 
 function init() {
-    
+
     // Disabled terms
-    var disabled_terms = JSON.parse(localStorage.disabledTerms);
-    var answers_tmp = answers;
-    for (var i=0;i<disabled_terms.length;i++){
-        for (var j=0;j<answers.length;j++){
-            if(answers[j][0] == decodeURIComponent(disabled_terms[i])){
-                answers_tmp.splice(j)
+    try {
+        var disabled_terms = JSON.parse(localStorage.disabledTerms);
+        var answers_tmp = answers;
+        for (var i=0;i<disabled_terms.length;i++){
+            for (var j=0;j<answers.length;j++){
+                if(answers[j][0] == decodeURIComponent(disabled_terms[i])){
+                    answers_tmp.splice(j)
+                }
             }
         }
-    }
-    answers = answers_tmp;
+        answers = answers_tmp;
+    } catch(e) {}
 
     answers.sort(() => Math.random() - 0.5);
     var boxes = [answers[0][0], answers[0][1], answers[1][0], answers[1][1], answers[2][0], answers[2][1], answers[3][0], answers[3][1], answers[4][0], answers[4][1], answers[5][0], answers[5][1], answers[6][0], answers[6][1], answers[7][0], answers[7][1]];

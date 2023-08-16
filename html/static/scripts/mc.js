@@ -30,16 +30,18 @@ function init(){
     else { sessionStorage.def = "false"; }
 
     // Disabled terms
-    var disabled_terms = JSON.parse(localStorage.disabledTerms);
-    for (var i=0;i<disabled_terms.length;i++){
-        if(questions.includes(decodeURIComponent(disabled_terms[i]))){
-            c1s.splice(questions.indexOf(disabled_terms[i]));
-            ic1s.splice(questions.indexOf(disabled_terms[i]));
-            ic2s.splice(questions.indexOf(disabled_terms[i]));
-            ic3s.splice(questions.indexOf(disabled_terms[i]));
-            questions.splice(questions.indexOf(disabled_terms[i]));
+    try {
+        var disabled_terms = JSON.parse(localStorage.disabledTerms);
+        for (var i=0;i<disabled_terms.length;i++){
+            if(questions.includes(decodeURIComponent(disabled_terms[i]))){
+                c1s.splice(questions.indexOf(disabled_terms[i]));
+                ic1s.splice(questions.indexOf(disabled_terms[i]));
+                ic2s.splice(questions.indexOf(disabled_terms[i]));
+                ic3s.splice(questions.indexOf(disabled_terms[i]));
+                questions.splice(questions.indexOf(disabled_terms[i]));
+            }
         }
-    }
+    } catch(e) {}
 
     // Shuffle
     if(!start_with_term && type == "Set" && !repeated){

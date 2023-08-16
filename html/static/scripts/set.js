@@ -1,5 +1,5 @@
 function disableTerm(term, iconId) {
-    if (localStorage.getItem("disabledTerms") === null) {
+    if (localStorage.getItem("disabledTerms") === null || localStorage.getItem("disabledTerms") === undefined) {
         localStorage.setItem("disabledTerms", "[]");
     }
     var dt = JSON.parse(localStorage.getItem("disabledTerms")).slice(0);
