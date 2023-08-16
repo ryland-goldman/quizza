@@ -30,9 +30,9 @@ function init(){
     else { sessionStorage.def = "false"; }
 
     // Disabled terms
-    var disabled_terms = localStorage.disabledTerms;
+    var disabled_terms = JSON.parse(localStorage.disabledTerms);
     for (var i=0;i<disabled_terms.length;i++){
-        if(questions.includes(disabled_terms[i])){
+        if(questions.includes(decodeURIComponent(disabled_terms[i]))){
             c1s.splice(questions.indexOf(disabled_terms[i]));
             ic1s.splice(questions.indexOf(disabled_terms[i]));
             ic2s.splice(questions.indexOf(disabled_terms[i]));

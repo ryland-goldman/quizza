@@ -42,11 +42,11 @@ onclick='location.href="../"'>Return Home&nbsp;&nbsp;<i class="fa-solid fa-house
 function init() {
     
     // Disabled terms
-    var disabled_terms = localStorage.disabledTerms;
+    var disabled_terms = JSON.parse(localStorage.disabledTerms);
     var answers_tmp = answers;
     for (var i=0;i<disabled_terms.length;i++){
         for (var j=0;j<answers.length;j++){
-            if(answers[j][0] == disabled_terms){
+            if(answers[j][0] == decodeURIComponent(disabled_terms[i])){
                 answers_tmp.splice(j)
             }
         }

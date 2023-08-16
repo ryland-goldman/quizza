@@ -9,9 +9,9 @@ function init(){
     missed = [];
 
     // Disabled terms
-    var disabled_terms = localStorage.disabledTerms;
+    var disabled_terms = JSON.parse(localStorage.disabledTerms);
     for (var i=0;i<disabled_terms.length;i++){
-        if(words.includes(disabled_terms[i])){
+        if(words.includes(decodeURIComponent(disabled_terms[i]))){
             defs.splice(words.indexOf(disabled_terms[i]));
             words.splice(words.indexOf(disabled_terms[i]));
         }
