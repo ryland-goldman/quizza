@@ -53,6 +53,11 @@ function submit(){
     }
     $("#sbtn").html(`Next&nbsp;&nbsp;<i class="fa-solid fa-arrow-right-to-bracket"></i>`);
     $("#sbtn").attr("onclick","next()");
+    document.body.onkeydown = function(e) {
+            var keycode;
+            if (window.event) { keycode = window.event.keyCode; } else if (e) { keycode = e.which }; // Get keycode
+            if(keycode == 13){ next(); }
+        }
     MathJax.typeset();
 }
 
@@ -102,10 +107,16 @@ function next(){
             if(learnmode){ $("#sbtn").attr("onclick","location.href='mc?learn=true;'"); }
             $("#main-td").html(`<h1>You've finished studying this set!</h1>`);
         }
+        document.body.onkeydown = function(e) {
+            var keycode;
+            if (window.event) { keycode = window.event.keyCode; } else if (e) { keycode = e.which }; // Get keycode
+            if(keycode == 13){ location.reload(); }
+        }
         return;
     }
     var question = (start_with_term ? words[current_flashcard] : defs[current_flashcard]);
     $("#main-td").html("<h1>"+question+"</h1><input type='text' id='response'>");
+    document.body.onkeydown = function(){}
     $("#response").keydown(function(event){
         if(event.which == 13) {submit();}
     });
