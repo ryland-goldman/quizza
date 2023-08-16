@@ -25,6 +25,7 @@ function check_arrays() {
 }
 
 function init(){
+    #("#optionsBtn").show();
     // Get session storage state
     if(sessionStorage.def){ start_with_term = (sessionStorage.def=="false"); }
     else { sessionStorage.def = "false"; }
@@ -104,6 +105,7 @@ function next(){
         // Done
         $("#sbtn").html(`Study Again&nbsp;&nbsp;<i class="fa-solid fa-rotate-right"></i>`);
         $("#sbtn").attr("onclick","init()");
+        $("#optionsBtn").hide();
         if(missed.length > 0){
             if(learnmode){ again(); return; }
             var str = `<h1>You've finished studying this set!</h1><p>Missed terms: (<a href="javascript:again();" id='tryagain'>try again with missed</a>)<br>`;
