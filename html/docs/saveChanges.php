@@ -29,7 +29,6 @@ if($_GET["DELETE"]=="TRUE"){ // Deleting a set
 } else {
   if($type == "Set"){
     $admin->query("LOCK TABLES ".$classID."Sets write");
-    $admin->query("UPDATE ".$classID."Sets SET timestamp=".time());
     $thisClass->query("LOCK TABLES Set".$setID." write");
     $thisClass->query("DELETE FROM Set".$setID);
     $d = str_getcsv($data, "\n"); //parse the rows
@@ -66,6 +65,7 @@ if($_GET["DELETE"]=="TRUE"){ // Deleting a set
     }
     $admin->query("UPDATE ".$classID."Sets SET Name=\"$title\" WHERE ID=\"$setID\"");
     $admin->query("UPDATE ".$classID."Sets SET Modified=\"$lastModified\" WHERE ID=\"$setID\"");
+    $admin->query("UPDATE ".$classID."Sets SET timestamp=".time()." WHERE ID=\"".$setID."\"");
     if($_POST['switchtype']=='true'){
       $thisClass->query("ALTER TABLE Set".$setID." ADD COLUMN Ic1 text");
       $thisClass->query("ALTER TABLE Set".$setID." ADD COLUMN Ic2 text");
@@ -80,7 +80,6 @@ if($_GET["DELETE"]=="TRUE"){ // Deleting a set
     $thisClass->query("UNLOCK TABLES");
   } else {
     $admin->query("LOCK TABLES ".$classID."Sets write");
-    $admin->query("UPDATE ".$classID."Sets SET modified=".time());
     $thisClass->query("LOCK TABLES Quiz".$setID." write");
     $thisClass->query("DELETE FROM Quiz".$setID);
     if($data !== "empty"){
@@ -152,6 +151,7 @@ if($_GET["DELETE"]=="TRUE"){ // Deleting a set
       }
       $admin->query("UPDATE ".$classID."Sets SET Name=\"$title\" WHERE ID=\"$setID\"");
       $admin->query("UPDATE ".$classID."Sets SET Modified=\"$lastModified\" WHERE ID=\"$setID\"");
+      $admin->query("UPDATE ".$classID."Sets SET timestamp=".time()." WHERE ID=\"".$setID."\"");
       if($_POST['switchtype']=='true'){
         $thisClass->query("ALTER TABLE Quiz".$setID." DROP COLUMN Ic1");
         $thisClass->query("ALTER TABLE Quiz".$setID." DROP COLUMN Ic2");
