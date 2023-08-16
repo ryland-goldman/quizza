@@ -44,7 +44,7 @@ function submit(){
     var answer = $("#response").val();
     var correct = (start_with_term ? defs[current_flashcard] : words[current_flashcard]);
     var question = (start_with_term ? words[current_flashcard] : defs[current_flashcard]);
-    if(answer.toLowerCase().trim() == correct.toLowerCase().replace(/<img[^>]*>/g,"").replaceAll("”","\"").replaceAll("“","\"").replaceAll("‘","'").replaceAll("’","'").trim()){
+    if(answer.toLowerCase().trim() == correct.toLowerCase().replace(/<img[^>]*>/g,"").replaceAll("”","\"").replaceAll("“","\"").replaceAll("‘","'").replaceAll("’","'").trim().replaceAll("<br>"," ")){
         score++;
         $("#main-td").html("<h1 style='color:green'>Correct</h1><p>"+words[current_flashcard]+": "+defs[current_flashcard]+"</p>");
     } else {
