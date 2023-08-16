@@ -29,7 +29,7 @@ if($_GET["DELETE"]=="TRUE"){ // Deleting a set
 } else {
   if($type == "Set"){
     $admin->query("LOCK TABLES ".$classID."Sets write");
-    $admin->query("UPDATE ".$classID."Sets SET modified=".time());
+    $admin->query("UPDATE ".$classID."Sets SET timestamp=".time());
     $thisClass->query("LOCK TABLES Set".$setID." write");
     $thisClass->query("DELETE FROM Set".$setID);
     $d = str_getcsv($data, "\n"); //parse the rows
