@@ -24,7 +24,7 @@ $email = $token->claims()->all()["email"];
 $pic = $token->claims()->all()["picture"];
 
 $client = new Google_Client(['client_id' => '117895756240-ujiuojlsbtruthgqnghnu215d2hn7flp.apps.googleusercontent.com']);
-$payload = $client->verifyIdToken($gsi_auth);
+$payload = $client->verifyIdToken($_POST["credential"]);
 
 if($payload){
     echo "Signed in ".$token->claims()->all()["name"]." with email ".$token->claims()->all()["email"]." and picture ".$token->claims()->all()["picture"];
