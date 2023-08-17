@@ -8,7 +8,7 @@ use Lcobucci\JWT\Token\Parser;
 use Lcobucci\JWT\Token\UnsupportedHeaderFound;
 use Lcobucci\JWT\UnencryptedToken;
 
-require 'vendor/autoload.php';
+require '/var/www/html/docs/lib/login-endpoint/vendor/autoload.php';
 
 $parser = new Parser(new JoseEncoder());
 
@@ -18,6 +18,23 @@ try {
     echo 'Oh no, an error: ' . $e->getMessage();
 }
 assert($token instanceof UnencryptedToken);
-setcookie("google-signin", $_POST["credential"], time() + 3600, "/",".quizza.org");
-echo "Signed in ".$token->claims()->all()["name"]." with email ".$token->claims()->all()["email"]." and picture ".$token->claims()->all()["picture"];
+
+$name = $token->claims()->all()["name"];
+$email = $token->claims()->all()["email"];
+$pic = $token->claims()->all()["picture"];
+
+$client = new Google_Client(['client_id' => '117895756240-ujiuojlsbtruthgqnghnu215d2hn7flp.apps.googleusercontent.com']);
+$payload = $client->verifyIdToken($gsi_auth);
+
+if($payload){
+    echo "Signed in ".$token->claims()->all()["name"]." with email ".$token->claims()->all()["email"]." and picture ".$token->claims()->all()["picture"];
+
+    if (session_status() === PHP_SESSION_NONE) { session_start(); }
+
+    $_SESSION["loggedIn"] = true;
+    $_SESSION["name"] = $name;
+    $_SESSION["email"] = $email;
+    $_SESSION["pic"] = $pic;
+    $_SESSION["age"] = time();
+}
 ?>
