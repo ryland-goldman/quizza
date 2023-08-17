@@ -121,7 +121,7 @@ else { $secondary_column = $main_column=="Question" ? "C1":"Question"; }
 	<?php if($_GET['option'] == 'fr' || $_GET['option'] == 'wb'){
 		$terms = $thisClass->query("SELECT * FROM ".$type.$setID." ORDER BY RAND()");
 		if($terms->num_rows > 0){
-			$n = 1;
+			$n = 0;
 			while($term = $terms->fetch_assoc()){ 
 				$n++; ?>
 				<div class='fr pb'>
