@@ -29,7 +29,7 @@ $payload = $client->verifyIdToken($_POST["credential"]);
 if($payload){
     echo "Signed in ".$token->claims()->all()["name"]." with email ".$token->claims()->all()["email"]." and picture ".$token->claims()->all()["picture"];
 
-    if (session_status() === PHP_SESSION_NONE) { session_start(); }
+    session_start();
 
     $_SESSION["loggedIn"] = true;
     $_SESSION["name"] = $name;

@@ -1,6 +1,7 @@
 <?php
 $loggedIn = false;
 $session_expiry = 60*60*4; // expire after four hours
+session_start();
 if (session_status() !== PHP_SESSION_NONE) {
   if(isset($_SESSION["loggedIn"])){
 
