@@ -44,9 +44,6 @@ function render_gSignIn_attempt(prompt_login=false) {
             text: "signin"
         }
     );
-    if (mobileCheck() || prompt_login) {
-        google.accounts.id.prompt();
-    }
 }
 
 render_gSignIn_attempt();
