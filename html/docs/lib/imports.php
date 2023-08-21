@@ -13,7 +13,7 @@
 
   <!-- Scripts -->
   <script src="https://kit.fontawesome.com/9e91fc9fc4.js" crossorigin="anonymous"></script>
-  <script src="https://www.quizza.org/static/scripts/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
   <script src="https://www.quizza.org/static/scripts/jquery.modal.min.js" defer></script>
   <script src="https://www.quizza.org/static/scripts/allpages.js"></script>
   <?php if(isset($mathjax)) { ?><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script><?php } ?>
