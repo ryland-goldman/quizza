@@ -14,7 +14,7 @@ function disableTerm(term, iconId) {
         $("#icon-" + iconId).attr("class", "fa-solid fa-eye-slash");
         $("#container-" + iconId).attr("class", "disabled item-card");
     }
-    refresh_buttons(dt.length);
+    refresh_buttons(terms.length - dt.length);
     localStorage.setItem("disabledTerms", JSON.stringify(dt));
 }
 
@@ -33,6 +33,7 @@ function print_set(col) {
 }
 
 function refresh_buttons(dt){
+    console.log(dt);
     if(dt < 4){
         $("#test-p").show();
         $("#mc-btn").hide();
@@ -70,7 +71,7 @@ function load_function(dt) {
             $("#container-" + term[1]).attr("class", "item-card enabled");
         }
     });
-    refresh_buttons(dt.length);
+    refresh_buttons(terms.length - dt.length);
     try { render_gSignIn(); } catch (e) {}
     try { share_script_init(); } catch {}
 }
