@@ -25,10 +25,7 @@ function select(row, column) {
             $("#box-" + (4 * prevRC[0] + prevRC[1])).removeClass('selected').prop("disabled", true).addClass('finished');
             num_correct++;
             if (num_correct == 8) {
-                $("#content_box").html(`<div style='text-align:center;padding:32px;width:100%;'><h1>You've finished studying this set!</h1><br><button style='background-color:#0668FD;border-radius:8px;border:2px solid #0668FD;padding:12px 36px;color:white;font-size:1em;'
-onclick='location.reload()'>Study More&nbsp;&nbsp;<i class="fa-solid fa-rotate"></i></button>
-      <button style='background-color:#FFF;border-radius:8px;border:2px solid #0668FD;padding:12px 36px;color:black;font-size:1em;margin-bottom:12px;'
-onclick='location.href="../"'>Return Home&nbsp;&nbsp;<i class="fa-solid fa-house"></i></button></div>`);
+                $("#content_box").html(`<button class='btn-blue' onclick='location.reload()'>Study More&nbsp;&nbsp;<i class="fa-solid fa-rotate"></i></button> <button onclick='location.href=return_url;'>Return Home&nbsp;&nbsp;<i class="fa-solid fa-house"></i></button>`);
             }
         } else {
             $("#box-" + (4 * row + column)).removeClass("selected").addClass('wrong');
