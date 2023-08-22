@@ -69,8 +69,8 @@
   <div id="options" class="modal">
     <h2>Options</h2>
     <a rel="modal:close">
-      <button class='modalbtn' onclick='swt()'>Start with Term</button>
-      <button class='modalbtn' onclick='swd()'>Start with Definition</button>
+      <button class='modalbtn' onclick='swt()'>Answer with Term</button>
+      <button class='modalbtn' onclick='swd()'>Answer with Definition</button>
     </a>
   </div>
 
