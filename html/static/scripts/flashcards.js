@@ -99,6 +99,7 @@ function back(){ next(true); }
 
 // Start with term
 function swt(){
+    if(is_flipped){ reveal(); }
     var start_with_term = true;
     sessionStorage.def = "false";
     init();
@@ -106,6 +107,7 @@ function swt(){
 
 // Start with definition
 function swd(){
+    if(is_flipped){ reveal(); }
     var start_with_term = false;
     sessionStorage.def = "true";
     init();
