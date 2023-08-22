@@ -14,7 +14,7 @@ function disableTerm(term, iconId) {
         $("#icon-" + iconId).attr("class", "fa-solid fa-eye-slash");
         $("#container-" + iconId).attr("class", "disabled item-card");
     }
-    refresh_buttons(dt.length + 1);
+    refresh_buttons(dt.length);
     localStorage.setItem("disabledTerms", JSON.stringify(dt));
 }
 
