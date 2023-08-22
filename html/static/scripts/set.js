@@ -38,10 +38,19 @@ function refresh_buttons(dt){
         $("#mc-btn").hide();
         $("#learn-btn").hide();
         $("#match-btn").hide();
+        $("#test-p").html(`<em>Add more terms to use Multiple Choice, Learn and Match.</em>`);
     } else if(dt < 16){
         $("#test-p").show();
         $("#test-p").html(`<em>Add more terms to use Match.</em>`);
         $("#match-btn").hide();
+        $("#mc-btn").show();
+        $("#learn-btn").show();
+    } else {
+        $("#test-p").hide();
+        $("#match").show();
+        $("#mc-btn").show();
+        $("#learn-btn").show();
+        $("#match-btn").show();
     }
 }
 
