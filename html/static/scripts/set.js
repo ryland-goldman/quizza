@@ -14,7 +14,7 @@ function disableTerm(term, iconId) {
         $("#icon-" + iconId).attr("class", "fa-solid fa-eye-slash");
         $("#container-" + iconId).attr("class", "disabled item-card");
     }
-    refresh_buttons(dt);
+    refresh_buttons(dt.length + 1);
     localStorage.setItem("disabledTerms", JSON.stringify(dt));
 }
 
@@ -33,12 +33,12 @@ function print_set(col) {
 }
 
 function refresh_buttons(dt){
-    if(dt.length < 4){
+    if(dt < 4){
         $("#test-p").show();
         $("#mc-btn").hide();
         $("#learn-btn").hide();
         $("#match-btn").hide();
-    } else if(dt.length < 16){
+    } else if(dt < 16){
         $("#test-p").show();
         $("#test-p").html(`<em>Add more terms to use Match.</em>`);
         $("#match-btn").hide();
@@ -61,7 +61,7 @@ function load_function(dt) {
             $("#container-" + term[1]).attr("class", "item-card enabled");
         }
     });
-    refresh_buttons();
+    refresh_buttons(dt.length);
     try { render_gSignIn(); } catch (e) {}
     try { share_script_init(); } catch {}
 }
