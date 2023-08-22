@@ -1,8 +1,8 @@
 function disableTerm(term, iconId) {
-    if (sessionStorage.getItem("disabledTerms") === null || sessionStorage.getItem("disabledTerms") === undefined) {
-        sessionStorage.setItem("disabledTerms", "[]");
+    if (localStorage.getItem("disabledTerms") === null || localStorage.getItem("disabledTerms") === undefined) {
+        localStorage.setItem("disabledTerms", "[]");
     }
-    var dt = JSON.parse(sessionStorage.getItem("disabledTerms")).slice(0);
+    var dt = JSON.parse(localStorage.getItem("disabledTerms")).slice(0);
     if (dt.includes(fixedEncodeURIComponent(term))) {
         dt = dt.filter(function(t) {
             return t !== fixedEncodeURIComponent(term);
@@ -14,8 +14,8 @@ function disableTerm(term, iconId) {
         $("#icon-" + iconId).attr("class", "fa-solid fa-eye-slash");
         $("#container-" + iconId).attr("class", "disabled item-card");
     }
-    console.log(dt);
-    sessionStorage.setItem("disabledTerms", JSON.stringify(dt));
+    refresh_buttons(dt);
+    localStorage.setItem("disabledTerms", JSON.stringify(dt));
 }
 
 
@@ -32,13 +32,26 @@ function print_set(col) {
     }
 }
 
+function refresh_buttons(dt){
+    if(dt.length < 4){
+        $("#test-p").show();
+        $("#mc-btn").hide();
+        $("#learn-btn").hide();
+        $("#match-btn").hide();
+    } else if(dt.length < 16){
+        $("#test-p").show();
+        $("#test-p").html(`<em>Add more terms to use Match.</em>`);
+        $("#match-btn").hide();
+    }
+}
+
 function fixedEncodeURIComponent(str) { return encodeURIComponent(str).replace(/[!'()*]/g, function(c) { return '%' + c.charCodeAt(0).toString(16); }); }
 
-function load_function() {
-    if (sessionStorage.getItem("disabledTerms") === null || sessionStorage.getItem("disabledTerms") === undefined) {
-        sessionStorage.setItem("disabledTerms", "[]");
+function load_function(dt) {
+    if (localStorage.getItem("disabledTerms") === null || localStorage.getItem("disabledTerms") === undefined) {
+        localStorage.setItem("disabledTerms", "[]");
     }
-    var dt = JSON.parse(sessionStorage.getItem("disabledTerms")).slice(0);
+    var dt = JSON.parse(localStorage.getItem("disabledTerms")).slice(0);
     terms.forEach(function(term, index) {
         if (dt.includes(term[0])) {
             $("#icon-" + term[1]).attr("class", "fa-solid fa-eye-slash");
@@ -48,6 +61,7 @@ function load_function() {
             $("#container-" + term[1]).attr("class", "item-card enabled");
         }
     });
+    refresh_buttons();
     try { render_gSignIn(); } catch (e) {}
     try { share_script_init(); } catch {}
 }

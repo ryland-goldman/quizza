@@ -131,12 +131,11 @@
   <div id="test" class="modal">
     <h2>Test Yourself</h2>
     <a rel="modal:close">
-      <?php if($term_number >= 4){ ?><button class='modalbtn modalbtn-first' onclick='location.href="/<?php echo $classID."/".$setID; ?>/mc"'>Multiple Choice</button><?php } ?>
-      <button class='modalbtn' onclick='location.href="/<?php echo $classID."/".$setID; ?>/fr"'>Free Response</button>
-      <?php if($term_number >= 4){ ?><button class='modalbtn' onclick='location.href="/<?php echo $classID."/".$setID; ?>/mc?learn=true"'>Learn</button><?php } ?>
-      <?php if($term_number >= 16) { ?><button class='modalbtn' onclick='location.href="/<?php echo $classID."/".$setID; ?>/match"'>Match</button><?php } ?>
-      <?php if(!($term_number >= 4)){ ?><p><em>Add more terms to use Multiple Choice, Learn, and Match.</em></p><?php } ?>
-      <?php if(!($term_number >= 16) && ($term_number >= 4)){ ?><p><em>Add more terms to use Match.</em></p><?php } ?>
+      <button class='modalbtn modalbtn-first' onclick='location.href="/<?php echo $classID."/".$setID; ?>/mc"' id='mc-btn'>Multiple Choice</button>
+      <button class='modalbtn' onclick='location.href="/<?php echo $classID."/".$setID; ?>/fr"' id='fr-btn'>Free Response</button>
+      <button class='modalbtn' onclick='location.href="/<?php echo $classID."/".$setID; ?>/mc?learn=true"' id='learn-btn'>Learn</button>
+      <button class='modalbtn' onclick='location.href="/<?php echo $classID."/".$setID; ?>/match"' id='match-btn'>Match</button>
+      <p id='test-p' style='display:none;'><em>Add more terms to use Multiple Choice, Learn, and Match.</em></p>
     </a>
   </div>
 
