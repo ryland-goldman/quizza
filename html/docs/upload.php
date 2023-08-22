@@ -41,7 +41,7 @@
 	       </a>
 
 	       <a>
-	       	<button class='title-button-white' onclick="window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ');">Help&nbsp;&nbsp;<i class="fa-solid fa-circle-info"></i></button>
+	       	<button class='title-button-white' onclick="window.open('https://docs.google.com/document/d/1samqfZMICdEw0wR8lvPAQK99_NRim7suAjRhuz-SXLE/edit');">Help&nbsp;&nbsp;<i class="fa-solid fa-circle-info"></i></button>
 	       </a>
 	  	</p>
 
@@ -69,9 +69,6 @@
       	<input type="button" onclick="readFileAsText()" class='uploadBtn uploadBtn-first' value='Upload File'>
     </div>
 
-    <div class='modal' id='help'>
-    	<p><strong>Help Uploading</strong></p>
-    </div>
 
 	<?php require("/var/www/html/docs/lib/footer.php"); ?>
 </body>
