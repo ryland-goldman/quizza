@@ -3,13 +3,15 @@ $req_permission = 2;
 $token_expiry_time = 60*60*6;
 require("/var/www/html/docs/lib/header.php");
 if(isset($_GET['save_token'])) {
-  $tokens = $admin1->query("SELECT * FROM SaveTokens WHERE ID='".$_GET["save_token"]."'");
+  $sanitized_id = $admin1->real_escape_string(filter_var($_GET["save_token"],FILTER_SANITIZE_STRING));
+  $tokens = $admin1->query("SELECT * FROM SaveTokens WHERE ID='$sanitized_id'");
   if($tokens->num_rows() > 0){
     $token = $tokens->fetch_assoc();
     if(intval($token["timestamp"]) <= time() + $token_expiry_time){
       $loggedIn = true;
       $email = $token["email"];
       $name = $token["name"];
+      $admin1->query("DELETE FROM SaveTokens WHERE ID='$sanitized_id'");
     }
   }
 }
