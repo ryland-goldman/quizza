@@ -36,7 +36,7 @@ function saveChanges() {
             location.href = back_url;
         }
     }
-    xhttp.send(class_and_set + "data=" + encodeURIComponent(request) + "&title=" + encodeURIComponent($("#title").val()));
+    xhttp.send(class_and_set + "data=" + encodeURIComponent(request) + "&title=" + encodeURIComponent($("#title").val()) + "&save_token=" + save_token);
 }
 
 function changeType() {

@@ -51,7 +51,7 @@ function saveChanges() {
     if (qs.length == 0) {
         xhttp.send(class_and_set + "data=empty&title=" + encodeURIComponent($("#title").val()));
     } else {
-        xhttp.send(class_and_set + "data=" + encodeURIComponent(request) + "&title=" + encodeURIComponent($("#title").val()));
+        xhttp.send(class_and_set + "data=" + encodeURIComponent(request) + "&title=" + encodeURIComponent($("#title").val()) + "&save_token=" + save_token);
     }
 }
 

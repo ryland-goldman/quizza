@@ -3,7 +3,9 @@ $req_permission = 2;
 header('Access-Control-Allow-Origin: *');
 require("/var/www/html/docs/lib/header.php");
 if($loggedIn == false){  require("/var/www/html/403.php"); }
-if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?>
+if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }
+$save_token = hash('sha3-512', $email."-".rand()."-".file_get_contents("/var/www/tokensalt.privkey"));
+$admin1->query("INSERT INTO SaveTokens VALUES('$save_token', '$name', '$email', '$timestamp');"); ?>
 <!DOCTYPE html>
 <html>
 
@@ -19,6 +21,7 @@ if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }?
   <script async>var google_auth = "<?php echo $gsi_auth; ?>";</script>
   <script async>var back_url = "<?php echo "/".$classID."/".$setID; ?>";</script>
   <script async>var mobile = "<?php echo isMobileDevice(); ?>";</script>
+  <script async>var save_token = "<?php echo $save_token; ?>";</script>
   <script src="https://www.quizza.org/static/scripts/mathquill.min.js"></script>
   <link rel="stylesheet" href="https://www.quizza.org/static/stylesheets/mathquill.min.css">
 

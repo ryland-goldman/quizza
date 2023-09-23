@@ -1,6 +1,18 @@
 <?php
 $req_permission = 2;
+$token_expiry_time = 60*60*6;
 require("/var/www/html/docs/lib/header.php");
+if(isset($_GET['save_token'])) {
+  $tokens = $admin1->query("SELECT * FROM SaveTokens WHERE ID='".$_GET["save_token"]."'");
+  if($tokens->num_rows() > 0){
+    $token = $tokens->fetch_assoc();
+    if(intval($token["timestamp"]) <= time() + $token_expiry_time){
+      $loggedIn = true;
+      $email = $token["email"];
+      $name = $token["name"];
+    }
+  }
+}
 if($loggedIn == false){  require("/var/www/html/403.php"); }
 if($email !== $creator && $creator !== ""){ require("/var/www/html/403.php"); }
 
