@@ -9,7 +9,7 @@ if(!isset($ignoreLog)) {
 	if($data->num_rows > 0){
 		$data_str = "";
 		while($row = $data->fetch_assoc()){
-			$data_str .= "[\"".$row["name"]."\",\"".$row["id"]."\"],";
+			$data_str .= "{\"name\":\"".$row["name"]."\",\"shortName\":\"".$row["id"]."\"},";
 		}
 		echo "[";
 		echo substr($data_str, 0, strlen($data_str)-1);
