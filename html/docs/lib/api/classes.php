@@ -9,7 +9,8 @@ if(!isset($ignoreLog)) {
 	if($data->num_rows > 0){
 		$data_str = "";
 		while($row = $data->fetch_assoc()){
-			$data_str .= "{\"name\":\"".$row["ShortName"]."\",\"shortName\":\"".$row["ID"]."\"},";
+			$secondary_query = $admin->query("SELECT * FROM ".$subject."Sets");
+			$data_str .= "{\"name\":\"".$row["ShortName"]."\",\"shortName\":\"".$row["ID"]."\",\"count\":".$secondary_query->num_rows."},";
 		}
 		echo "[";
 		echo substr($data_str, 0, strlen($data_str)-1);
