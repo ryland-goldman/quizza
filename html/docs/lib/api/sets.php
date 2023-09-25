@@ -13,7 +13,15 @@ if(!isset($ignoreLog)) {
 		while($row = $data->fetch_assoc()){
 			$type = $row["Type"];
 			$secondary_query = $admin->query("SELECT * FROM ".$school.$class.".".$type.$row["ID"]);
-			$data_str .= "{\"name\":\"".$row["Name"]."\",\"id\":\"".$row["ID"]."\",\"count\":".$secondary_query->num_rows.",\"type\":\"$type\"},";
+			$terms = "";
+			$defs = "";
+			if($secondary_query->num_rows > 0){
+				while($secondary_row = $secondary_query->fetch_assoc()){
+					$terms .= '"'.$secondary_row[$type=="Set"?"Term":"Question"].'",';
+					$defs .= '"'.$secondary_row[$type=="Set"?"Defs":"C1"].'",';
+				}
+			}
+			$data_str .= "{\"name\":\"".$row["Name"]."\",\"id\":".$row["ID"].",\"terms\":[".substr($terms, 0, strlen($terms)-1)."],[".substr($defs,0,strlen($defs)-1)."],\"type\":\"$type\"},";
 		}
 		echo "[";
 		echo substr($data_str, 0, strlen($data_str)-1);
