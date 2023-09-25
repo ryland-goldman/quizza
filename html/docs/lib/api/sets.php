@@ -18,7 +18,7 @@ if(!isset($ignoreLog)) {
 			if($secondary_query->num_rows > 0){
 				while($secondary_row = $secondary_query->fetch_assoc()){
 					$terms .= '"'.$secondary_row[$type=="Set"?"Term":"Question"].'",';
-					$defs .= '"'.$secondary_row[$type=="Set"?"Defs":"C1"].'",';
+					$defs .= '"'.$secondary_row[$type=="Set"?"Definition":"C1"].'",';
 				}
 			}
 			$data_str .= "{\"name\":\"".$row["Name"]."\",\"id\":".$row["ID"].",\"terms\":[".substr($terms, 0, strlen($terms)-1)."],[".substr($defs,0,strlen($defs)-1)."],\"type\":\"$type\"},";
