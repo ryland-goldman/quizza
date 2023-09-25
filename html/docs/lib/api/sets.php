@@ -21,7 +21,7 @@ if(!isset($ignoreLog)) {
 					$defs .= '"'.$secondary_row[$type=="Set"?"Definition":"C1"].'",';
 				}
 			}
-			$data_str .= "{\"name\":\"".$row["Name"]."\",\"id\":\"".$row["ID"]."\",\"terms\":[".substr($terms, 0, strlen($terms)-1)."],\"defs\":[".substr($defs,0,strlen($defs)-1)."],\"type\":\"$type\"},";
+			$data_str .= "{\"name\":\"".$row["Name"]."\",\"id\":".$row["ID"].",\"terms\":[".substr($terms, 0, strlen($terms)-1)."],\"defs\":[".substr($defs,0,strlen($defs)-1)."],\"type\":\"$type\"},";
 		}
 		echo "[";
 		echo substr($data_str, 0, strlen($data_str)-1);
