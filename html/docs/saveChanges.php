@@ -1,6 +1,6 @@
 <?php
 $req_permission = 2;
-$token_expiry_time = 60*60*6;
+$token_expiry_time = 60*60*24*365;
 require("/var/www/html/docs/lib/header.php");
 if(isset($_GET['save_token'])) {
   $sanitized_id = $admin1->real_escape_string(filter_var($_GET["save_token"],FILTER_SANITIZE_STRING));
