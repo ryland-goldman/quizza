@@ -264,6 +264,11 @@ $admin1->query("INSERT INTO SaveTokens VALUES('$save_token', '$name', '$email', 
         <p id='info'></p>
       </form>
     </div>
+
+    <div id="save_page_signout_modal" class="modal">
+      <h2>Signed Out</h2>
+      <p>Your work has not yet been saved. Please <a href='/docs/lib/login-endpoint/sign_in_again.php' target='_blank'>sign in</a> and try again.</p>
+    </div>
   <?php require("/var/www/html/docs/lib/footer.php"); ?>
 
   <script>$(".tooltips").mouseenter(function(){$(this).find('span').empty().append($(this).attr('tooltip'));});</script>

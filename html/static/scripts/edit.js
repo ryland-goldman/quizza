@@ -10,6 +10,13 @@ function curly_replace(text) {
 }
 
 function saveChanges() {
+    window.addEventListener("message",(e)=>{if(e.data=="save"){saveChanges();}});
+    $.get("/docs/lib/login-endpoint/get_login_status.php", function(data, status){
+        if(data.contains("1")){ saveChanges_main(); } else { $("#save_page_signout_modal").modal(); }
+    });
+}
+
+function saveChanges_main() {
     var terms = document.getElementsByClassName("terms");
     var defs = document.getElementsByClassName("defs");
     for (var l = 0; l < document.getElementsByClassName("terms").length; l++) {
