@@ -12,6 +12,10 @@ function handleCredentialResponse(response) {
     xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
+            try {
+                window.opener.postMessage('save');
+                window.close();
+            } catch { console.log("no session"); }
             location.reload();
         }
     }
