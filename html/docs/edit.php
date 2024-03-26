@@ -267,7 +267,7 @@ $admin1->query("INSERT INTO SaveTokens VALUES('$save_token', '$name', '$email', 
 
     <div id="save_page_signout_modal" class="modal">
       <h2>Signed Out</h2>
-      <p>Your work has not yet been saved. Please <a href='/docs/lib/login-endpoint/sign_in_again.php' target='_blank'>sign in</a> and try again.</p>
+      <p>Your work has not yet been saved. Please <a href='javascript:window.open("/docs/lib/login-endpoint/sign_in_again.php")' target='_blank'>sign in</a> and try again.</p>
     </div>
   <?php require("/var/www/html/docs/lib/footer.php"); ?>
 

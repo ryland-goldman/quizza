@@ -181,4 +181,4 @@ select {color: var(--color-text)!important;background-color: var(--color-backgro
 .mathbtn-clicked{background-color:var(--color-btn-hover);}
 .edit-td{width:50%;box-sizing: border-box;}
 #tryagain{text-decoration:underline!important;}
-a #save_page_signout_modal{text-decoration:underline!important;color:var(--color-light-text);}
+#save_page_signout_modal a{text-decoration:underline!important;color:var(--color-light-text);}
