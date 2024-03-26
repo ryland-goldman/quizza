@@ -14,8 +14,8 @@
 <body id='body-404'>
 	<div id='outside-404'>
 		<div id='inside-404'>
-		  <h1 id='title-404'>Sign In</h1>
-		  <?php if($loggedIn==true){ ?>
+		  <h2>Sign In</h2>
+		  <?php if($loggedIn !== true){ ?>
 		  	<p>Please sign back in in order to save your study materials.</p>
 			<div id='buttonDiv'></div>
 		  <?php } else { ?>
