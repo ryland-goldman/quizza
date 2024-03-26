@@ -12,7 +12,7 @@ function curly_replace(text) {
 function saveChanges() {
     window.addEventListener("message",(e)=>{if(e.data=="save"){saveChanges();}});
     $.get("/docs/lib/login-endpoint/get_login_status.php", function(data, status){
-        if(data.contains("1")){ saveChanges_main(); } else { $("#save_page_signout_modal").modal(); }
+        if(data.includes("1")){ saveChanges_main(); } else { $("#save_page_signout_modal").modal(); }
     });
 }
 
