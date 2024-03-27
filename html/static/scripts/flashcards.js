@@ -41,6 +41,7 @@ function init(){
 
     // Set key press buttons
     document.body.onkeydown = function(e) {
+        e.preventDefault();
         var keycode;
         if (window.event) { keycode = window.event.keyCode; } else if (e) { keycode = e.which }; // Get keycode
         
